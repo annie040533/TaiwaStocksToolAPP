@@ -4,7 +4,7 @@ import re
 
 def fetch_taiwan_data():
     # 請確保這是你點擊部署後產生的 https://script.google.com/macros/s/.../exec
-    GAS_URL = "你的_GOOGLE_APPS_SCRIPT_網址"
+    GAS_URL = "https://script.google.com/macros/s/AKfycbxSQneZXjYHsqWQyLHPGLKvK2a68_O6sZJnizbUNX3_0xMTeEMf1CJkqZNWpbgdtT-c/exechttps://script.google.com/macros/s/AKfycbxSQneZXjYHsqWQyLHPGLKvK2a68_O6sZJnizbUNX3_0xMTeEMf1CJkqZNWpbgdtT-c/exec"
     
     print("🚀 啟動強化版代理抓取 (處理跳轉)...")
     
