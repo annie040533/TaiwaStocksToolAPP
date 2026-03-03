@@ -1,61 +1,62 @@
 import requests
 import json
+import csv
+import io
 
 def fetch_taiwan_data():
-    print("正在抓取社群備份資料源 (避免 API 封鎖)...")
+    print("正在從政府開放資料平台獲取 CSV 分流資料...")
+    # 這是證交所提供給政府資料平台的 CSV 格式分流，對 GitHub Actions 非常友善
+    url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=csv"
     
-    # 改用社群維護的每日台股資料快照 (來源：TaiwanStockData)
-    # 這個來源通常包含所有上市股票的最新收盤、殖利率與 PBR
-    url = "https://raw.githubusercontent.com/AsunSaga/TaiwanStockData/main/data/latest_all.json"
-    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+
     try:
-        res = requests.get(url, timeout=30)
+        res = requests.get(url, headers=headers, timeout=30)
         res.raise_for_status()
-        data = res.json()
+        
+        # CSV 處理邏輯
+        decoded_content = res.content.decode('big5', errors='ignore')
+        cr = csv.reader(io.StringIO(decoded_content))
+        rows = list(cr)
         
         processed = []
-        for item in data:
-            # 執行您的篩選邏輯：必須有股價、殖利率、本淨比
+        # 前幾行通常是標題或說明，從有資料的那行開始
+        for row in rows:
+            if len(row) < 7 or len(row[0]) != 4:
+                continue
+            
             try:
-                price = float(item.get('ClosingPrice', 0))
-                y_val = float(item.get('YieldYield', 0))
-                pbr = float(item.get('PBRatio', 0))
+                # 欄位通常是: 證券代號, 證券名稱, 殖利率, 股利年度, 本益比, 股價淨值比, 最後收盤價
+                code = row[0].strip()
+                name = row[1].strip()
+                y_val = float(row[2].replace(',', '')) if row[2] != '-' else 0
+                pbr = float(row[5].replace(',', '')) if row[5] != '-' else 0
+                price = float(row[6].replace(',', '')) if row[6] != '-' else 0
                 
-                # 篩選掉不完整的資料與權證 (代碼長度為 4)
-                if price > 0 and len(item['Code']) == 4:
+                if price > 0:
                     processed.append({
-                        "id": item['Code'],
-                        "name": item['Name'],
+                        "id": code,
+                        "name": name,
                         "market": "上市",
                         "price": price,
                         "pbr": pbr,
                         "totalYield": y_val,
-                        "industry": item.get('Category', '其他')
+                        "industry": "台股個股" # CSV 來源通常不含產業，我們預設一個
                     })
-            except:
+            except Exception as e:
                 continue
-        
-        if len(processed) > 100:
-            print(f"✅ 成功抓取到 {len(processed)} 筆完整股票資料！")
+
+        if len(processed) > 500:
+            print(f"✅ 成功抓取到 {len(processed)} 筆 CSV 資料！")
             return processed
         else:
-            raise Exception("抓取筆數異常過少")
+            raise Exception("資料量不足")
 
     except Exception as e:
-        print(f"❌ 社群來源也失效: {e}")
-        # 如果最後還是失敗，我們嘗試使用最後一個備援 API
-        return fetch_backup_api()
-
-def fetch_backup_api():
-    print("嘗試最後備援 API...")
-    # 這是最後一個嘗試點，若失敗則回傳預設 6 筆
-    try:
-        res = requests.get("https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL", timeout=10)
-        # 這裡不報錯，若失敗直接跳 default
-        data = res.json()
-        # ... (簡化處理邏輯)
-        return [{"id":"2330","name":"台積電","market":"上市","price":1050,"pbr":5.2,"totalYield":3.5,"industry":"半導體"}]
-    except:
+        print(f"❌ CSV 抓取失敗: {e}")
+        # 最終保險：至少回傳台積電，讓網頁不會全白
         return [{"id":"2330","name":"台積電","market":"上市","price":1050,"pbr":5.2,"totalYield":3.5,"industry":"半導體"}]
 
 def update_html(data):
