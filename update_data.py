@@ -1,12 +1,10 @@
 import requests
 import json
-import os
 
 def fetch_taiwan_data():
-    print("正在抓取 API 資料...")
+    print("正在抓取資料...")
     headers = {'User-Agent': 'Mozilla/5.0'}
     try:
-        # 抓取證交所資料
         res = requests.get("https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL", headers=headers)
         ind_res = requests.get("https://openapi.twse.com.tw/v1/stock/stock_all", headers=headers)
         ind_lookup = {item['Code']: item for item in ind_res.json()}
@@ -26,32 +24,38 @@ def fetch_taiwan_data():
                             "totalYield": y_val, "industry": ind_lookup[code]['Category']
                         })
                 except: continue
-        print(f"成功抓取 {len(processed)} 筆股票資料")
+        print(f"成功抓取 {len(processed)} 筆資料")
         return processed
     except Exception as e:
-        print(f"API 錯誤: {e}")
+        print(f"抓取失敗: {e}")
         return []
 
 def update_html(data):
-    if not os.path.exists("index.html"):
-        print("錯誤：找不到 index.html 檔案")
-        return
-
+    # 1. 讀取原始檔案
     with open("index.html", "r", encoding="utf-8") as f:
         content = f.read()
 
-    # 這是最暴力的替換法：直接找標記並替換整塊區域
-    import re
-    pattern = r"// DATA_HERE\s+stocks: \[\],"
-    replacement = f"// DATA_HERE\n                stocks: {json.dumps(data, ensure_ascii=False)},"
-    
-    new_content = re.sub(pattern, replacement, content)
+    # 2. 定義頭尾邊界
+    start_marker = "// DATA_HERE"
+    end_marker = "get allIndustries()"
 
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(new_content)
-    print("資料已成功注入 index.html")
+    try:
+        # 拆分檔案內容
+        head = content.split(start_marker)[0]
+        tail = content.split(end_marker)[1]
+        
+        # 3. 縫合新內容 (強制寫入 stocks)
+        new_data_section = f"{start_marker}\n                stocks: {json.dumps(data, ensure_ascii=False)},\n                "
+        
+        new_content = head + new_data_section + end_marker + tail
+
+        with open("index.html", "w", encoding="utf-8") as f:
+            f.write(new_content)
+        print("index.html 檔案縫合成功！")
+    except Exception as e:
+        print(f"縫合出錯，請檢查 index.html 標記是否正確: {e}")
 
 if __name__ == "__main__":
-    data = fetch_taiwan_data()
-    if data:
-        update_html(data)
+    stocks_data = fetch_taiwan_data()
+    if stocks_data:
+        update_html(stocks_data)
