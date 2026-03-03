@@ -3,90 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台股全方位戰情室</title>
+    <title>台股價值選股雷達 - 實時全量版</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <style>[x-cloak] { display: none !important; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-slate-50 text-slate-900" x-data="stockManager()">
-    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row gap-3 items-center justify-between">
-            <h1 class="text-xl font-bold text-indigo-600 tracking-tight">台股自動分析儀</h1>
-            <div class="flex gap-2 w-full md:w-auto">
-                <input type="text" x-model="searchQuery" placeholder="代碼/名稱..." class="flex-1 md:w-40 px-3 py-2 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500">
-                <select x-model="filterIndustry" class="px-3 py-2 border rounded-xl text-sm bg-white">
-                    <option value="">所有產業</option>
-                    <template x-for="ind in allIndustries" :key="ind"><option :value="ind" x-text="ind"></option></template>
-                </select>
-            </div>
+<body class="bg-slate-50 min-h-screen">
+
+<div id="app" class="container mx-auto px-4 py-8">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+        <div>
+            <h1 class="text-3xl font-bold text-slate-800">
+                <i class="fa-solid fa-chart-line text-blue-600 mr-2"></i>台股價值選股雷達
+            </h1>
+            <p class="text-slate-500 mt-2">即時全量數據 (Google Proxy 加速版)</p>
         </div>
-    </nav>
-
-    <main class="max-w-6xl mx-auto p-4 pb-20">
-        <template x-for="range in priceLevels" :key="range.label">
-            <div class="mb-10" x-show="getFilteredStocks(range.min, range.max).length > 0">
-                <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
-                    <span class="w-1.5 h-6 bg-indigo-600 rounded-full"></span>
-                    股價 <span x-text="range.label"></span> 元區間
-                </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <template x-for="s in getFilteredStocks(range.min, range.max)" :key="s.id">
-                        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-4 hover:shadow-md transition-all">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-600" x-text="s.industry"></span>
-                                    <h3 class="text-lg font-bold mt-1" x-text="s.id + ' ' + s.name"></h3>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-2xl font-black" x-text="s.price"></div>
-                                    <div class="text-[10px] text-slate-400" x-text="'PBR: ' + s.pbr"></div>
-                                </div>
-                            </div>
-                            <div class="mt-4 grid grid-cols-3 gap-1 bg-slate-50 rounded-xl p-2 text-center">
-                                <div><div class="text-[10px] text-slate-500">殖利率</div><div class="text-sm font-bold text-emerald-600" x-text="s.totalYield + '%'"></div></div>
-                                <div class="border-x border-slate-200"><div class="text-[10px] text-slate-500">市場</div><div class="text-sm font-bold text-blue-600" x-text="s.market"></div></div>
-                                <div><div class="text-[10px] text-indigo-600 font-bold">代號</div><div class="text-sm font-bold text-indigo-700" x-text="s.id"></div></div>
-                            </div>
-                            <button @click="showChart(s.id)" class="mt-4 w-full py-2 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-indigo-600">查看線圖</button>
-                        </div>
-                    </template>
-                </div>
-            </div>
-        </template>
-    </main>
-
-    <div x-show="isModalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-2">
-        <div class="bg-white w-full max-w-5xl h-[85vh] rounded-2xl relative overflow-hidden">
-            <button @click="isModalOpen = false" class="absolute top-4 right-4 z-[60] bg-white p-2 rounded-full shadow-lg">✕</button>
-            <div id="tv_chart" class="w-full h-full"></div>
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+            <span class="text-sm text-slate-400">數據狀態：</span>
+            <span v-if="loading" class="text-orange-500 font-medium anim-pulse">
+                <i class="fa-solid fa-spinner fa-spin"></i> 正在從 Google 獲取全台股資料...
+            </span>
+            <span v-else class="text-green-600 font-medium">
+                <i class="fa-solid fa-check-circle"></i> 已連線 (共 {{ stocks.length }} 筆)
+            </span>
         </div>
     </div>
 
-    <script>
-        function stockManager() {
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="relative">
+            <i class="fa-solid fa-search absolute left-3 top-3 text-slate-400"></i>
+            <input v-model="searchQuery" type="text" placeholder="輸入代碼或名稱..." 
+                class="w-full pl-10 pr-4 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
+        </div>
+        <select v-model="filterPbr" class="bg-white px-4 py-2 rounded-lg border border-slate-200 outline-none">
+            <option value="all">本淨比 (PBR) - 全部</option>
+            <option value="low">低本淨比 (< 1.2)</option>
+            <option value="mid">中本淨比 (1.2 - 2.0)</option>
+        </select>
+        <select v-model="filterYield" class="bg-white px-4 py-2 rounded-lg border border-slate-200 outline-none">
+            <option value="all">現金殖利率 - 全部</option>
+            <option value="high">高殖利率 (> 5%)</option>
+            <option value="veryHigh">超高殖利率 (> 7%)</option>
+        </select>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left">
+                <thead class="bg-slate-800 text-white">
+                    <tr>
+                        <th class="px-6 py-4">股票代碼</th>
+                        <th class="px-6 py-4">名稱</th>
+                        <th class="px-6 py-4">收盤價</th>
+                        <th class="px-6 py-4">本淨比 (PBR)</th>
+                        <th class="px-6 py-4 text-orange-400">殖利率 (%)</th>
+                        <th class="px-6 py-4">產業</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr v-for="stock in filteredStocks" :key="stock.id" class="hover:bg-blue-50 transition-colors">
+                        <td class="px-6 py-4 font-mono font-bold text-slate-600">{{ stock.id }}</td>
+                        <td class="px-6 py-4 font-medium text-slate-800">{{ stock.name }}</td>
+                        <td class="px-6 py-4">NT$ {{ stock.price }}</td>
+                        <td class="px-6 py-4">
+                            <span :class="stock.pbr < 1.2 ? 'text-green-600 font-bold' : 'text-slate-600'">
+                                {{ stock.pbr }}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 font-bold text-orange-600">{{ stock.totalYield }}%</td>
+                        <td class="px-6 py-4 text-sm text-slate-500">{{ stock.industry }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div v-if="filteredStocks.length === 0 && !loading" class="p-20 text-center">
+            <i class="fa-solid fa-folder-open text-slate-200 text-6xl mb-4"></i>
+            <p class="text-slate-400 text-xl">找不到符合條件的股票</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const { createApp } = Vue;
+
+    createApp({
+        data() {
             return {
-                searchQuery: '', filterIndustry: '', isModalOpen: false,
-                priceLevels: [{label:'0-20',min:0,max:20},{label:'20-50',min:20,max:50},{label:'50-100',min:50,max:100},{label:'100-300',min:100,max:300},{label:'300+',min:300,max:9999}],
-                // DATA_HERE
-                stocks: [{"id": "2330", "name": "台積電", "market": "上市", "price": 1050, "pbr": 5.2, "totalYield": 3.5, "industry": "半導體"}, {"id": "2317", "name": "鴻海", "market": "上市", "price": 182, "pbr": 1.4, "totalYield": 4.2, "industry": "其他電子"}, {"id": "2454", "name": "聯發科", "market": "上市", "price": 1210, "pbr": 3.5, "totalYield": 5.5, "industry": "半導體"}],
-                get allIndustries() { return [...new Set(this.stocks.map(s => s.industry))].sort(); },
-                getFilteredStocks(min, max) {
-                    return this.stocks.filter(s => {
-                        const mSearch = s.id.includes(this.searchQuery) || s.name.includes(this.searchQuery);
-                        const mInd = this.filterIndustry === '' || s.industry === this.filterIndustry;
-                        const mPrice = s.price >= min && s.price < max;
-                        return mSearch && mInd && mPrice;
-                    }).sort((a, b) => b.totalYield - a.totalYield);
-                },
-                showChart(id) {
-                    this.isModalOpen = true;
-                    this.$nextTick(() => {
-                        new TradingView.widget({"autosize":true,"symbol":"TWSE:"+id,"interval":"D","timezone":"Asia/Taipei","theme":"light","style":"1","locale":"zh_TW","container_id":"tv_chart"});
-                    });
+                stocks: [],
+                loading: true,
+                searchQuery: '',
+                filterPbr: 'all',
+                filterYield: 'all',
+                // 請在此處替換為你部署後的 GAS URL
+                gasUrl: 'https://script.google.com/macros/s/AKfycbwxu2mOtfJokf4EdVTUC0PAzf9zlvuK-1VU7FWPIuLTxeg6e3ca5XyQuZtJiU2BZFTF3A/exec' 
+            }
+        },
+        computed: {
+            filteredStocks() {
+                return this.stocks.filter(s => {
+                    const matchSearch = s.id.includes(this.searchQuery) || s.name.includes(this.searchQuery);
+                    const matchPbr = this.filterPbr === 'all' || 
+                        (this.filterPbr === 'low' && s.pbr < 1.2) ||
+                        (this.filterPbr === 'mid' && s.pbr >= 1.2 && s.pbr <= 2.0);
+                    const matchYield = this.filterYield === 'all' ||
+                        (this.filterYield === 'high' && s.totalYield > 5) ||
+                        (this.filterYield === 'veryHigh' && s.totalYield > 7);
+                    
+                    return matchSearch && matchPbr && matchYield;
+                });
+            }
+        },
+        methods: {
+            async fetchStocks() {
+                try {
+                    const response = await fetch(this.gasUrl);
+                    const data = await response.json();
+                    
+                    if (data.error) throw new Error(data.error);
+                    
+                    // 資料已在 GAS 端完成排序，直接賦值
+                    this.stocks = data;
+                } catch (error) {
+                    console.error('抓取失敗:', error);
+                    alert('數據抓取失敗，請確認 GAS 網址是否正確並已設定為「所有人」存取。');
+                } finally {
+                    this.loading = false;
                 }
             }
+        },
+        mounted() {
+            this.fetchStocks();
         }
-    </script>
-    <script src="https://s3.tradingview.com/tv.js"></script>
+    }).mount('#app');
+</script>
+
+<style>
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+    .anim-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+</style>
+
 </body>
 </html>
