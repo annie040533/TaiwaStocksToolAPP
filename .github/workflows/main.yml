@@ -2,17 +2,23 @@ name: AutoUpdate
 on:
   schedule:
     - cron: '0 9 * * 1-5' # 台灣時間週一至週五下午 5 點執行
-  workflow_dispatch:
+  workflow_dispatch: # 允許手動執行
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests # 這行最重要，沒這行 Python 會報錯
       - name: Run Update
         run: python update_data.py
-      - name: Deploy
+      - name: Deploy to GitHub
         run: |
-          git config --global user.name "Bot"
+          git config --global user.name "StockBot"
           git config --global user.email "bot@github.com"
           git add index.html
           git commit -m "Update Daily Data" || exit 0
