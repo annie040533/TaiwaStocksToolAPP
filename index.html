@@ -3,61 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台股價值選股雷達</title>
+    <title>台股價值雷達 - 穩定更新版</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-slate-50 min-h-screen">
-<div id="app" class="container mx-auto px-4 py-8 max-w-4xl">
+<div id="app" v-cloak class="container mx-auto px-4 py-8 max-w-4xl">
     
     <div class="flex justify-between items-center mb-6">
         <div>
             <h1 class="text-2xl font-bold text-slate-800 flex items-center">
-                <i class="fa-solid fa-chart-line text-blue-600 mr-2"></i>台股價值選股雷達
+                <i class="fa-solid fa-bolt text-yellow-500 mr-2"></i>台股價值選股雷達
             </h1>
-            <p class="text-slate-400 text-sm">即時數據源：證交所 Open Data</p>
+            <p class="text-slate-400 text-sm">數據：證交所 Open Data (每日自動更新)</p>
         </div>
-        <div class="bg-white px-4 py-2 rounded-xl shadow-sm border text-sm font-medium">
-            <span v-if="loading" class="text-blue-500 animate-pulse">📡 數據同步中...</span>
-            <span v-else class="text-green-600">✅ 已載入 {{ stocks.length }} 筆資料</span>
+        <div class="bg-white px-4 py-2 rounded-xl shadow-sm border">
+            <span v-if="loading" class="text-blue-500 animate-pulse font-bold">同步中...</span>
+            <span v-else class="text-green-600 font-bold">已載入 {{ stocks.length }} 筆資料</span>
         </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <div class="relative col-span-1">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="relative col-span-1 md:col-span-2">
             <i class="fa-solid fa-search absolute left-3 top-3.5 text-slate-300"></i>
             <input v-model="search" type="text" placeholder="搜尋代碼或名稱..." 
-                   class="w-full pl-10 pr-4 py-3 rounded-xl border-none shadow-sm focus:ring-2 focus:ring-blue-400 outline-none">
+                   class="w-full pl-10 pr-4 py-3 rounded-xl shadow-sm border-none focus:ring-2 focus:ring-blue-400 outline-none">
         </div>
-        <select v-model="priceRange" class="rounded-xl border-none shadow-sm px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400">
-            <option value="all">所有價格區間</option>
-            <option value="0-20">0 - 20 元</option>
-            <option value="20-50">20 - 50 元</option>
-            <option value="50-100">50 - 100 元</option>
-            <option value="100-300">100 - 300 元</option>
-            <option value="300+">300 元以上</option>
+        <select v-model="sortMethod" class="rounded-xl border-none shadow-sm px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400">
+            <option value="yield">按殖利率排序 (高→低)</option>
+            <option value="pbr">按本淨比排序 (低→高)</option>
+            <option value="price">按股價排序 (高→低)</option>
         </select>
-        <button @click="sortByYield = !sortByYield" class="bg-blue-600 text-white rounded-xl py-3 font-bold shadow-md hover:bg-blue-700 transition">
-            <i class="fa-solid fa-sort"></i> {{ sortByYield ? '按殖利率排序' : '按價格排序' }}
-        </button>
     </div>
 
     <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
-        <table class="w-full text-left border-collapse">
+        <table class="w-full text-left">
             <thead class="bg-slate-800 text-white">
                 <tr>
-                    <th class="p-5 font-bold">代碼</th>
-                    <th class="p-5 font-bold">名稱</th>
-                    <th class="p-5 font-bold">收盤價</th>
-                    <th class="p-5 font-bold text-center">本淨比</th>
-                    <th class="p-5 font-bold text-right text-orange-400">殖利率 (%)</th>
+                    <th class="p-5">代碼</th>
+                    <th class="p-5">名稱</th>
+                    <th class="p-5">收盤價</th>
+                    <th class="p-5 text-center">本淨比</th>
+                    <th class="p-5 text-right text-orange-400">殖利率</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
                 <tr v-for="s in filteredStocks" :key="s.id" class="hover:bg-slate-50 transition">
-                    <td class="p-5 font-mono text-slate-500 font-bold">{{ s.id }}</td>
-                    <td class="p-5 font-bold text-slate-700 text-lg">{{ s.name }}</td>
+                    <td class="p-5 font-mono text-slate-500">{{ s.id }}</td>
+                    <td class="p-5 font-bold text-slate-800">{{ s.name }}</td>
                     <td class="p-5 font-semibold text-slate-600">NT$ {{ s.price }}</td>
                     <td class="p-5 text-center">
                         <span :class="s.pbr < 1.2 ? 'bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold' : 'text-slate-400'">
@@ -68,9 +62,10 @@
                 </tr>
             </tbody>
         </table>
-        <div v-if="filteredStocks.length === 0" class="p-20 text-center text-slate-300">
-            <i class="fa-solid fa-box-open fa-3x mb-4"></i>
-            <p>查無符合條件的股票資料</p>
+        
+        <div v-if="!loading && filteredStocks.length === 0" class="p-20 text-center text-slate-400">
+            <i class="fa-solid fa-folder-open fa-3x mb-4 opacity-20"></i>
+            <p>查無符合資料，請確認 GAS 網址是否正確設定</p>
         </div>
     </div>
 </div>
@@ -83,37 +78,27 @@
                 stocks: [],
                 loading: true,
                 search: '',
-                priceRange: 'all',
-                sortByYield: true,
-                // --- 這裡請貼入你最新的 GAS 網址 ---
-                gasUrl: 'https://script.google.com/macros/s/AKfycbzfYU9mO7CQvp4_SBvmT3krVhElKKvTCE1c3IeMq-Em9fRe-nSBR4Zt6Aq6KxbX41-W/exec'
+                sortMethod: 'yield',
+                // --- ⚠️ 重要：請在此處貼上你重新部署後得到的 /exec 網址 ---
+                gasUrl: 'https://script.google.com/macros/s/AKfycbwNKWjKDHMYDK8PNVQKeTaLRlhxuVq4dO-P_OrwBaQ9rSFQKHkcllWCQMilXtpgv7yR/exec'
             }
         },
         computed: {
             filteredStocks() {
-                let res = this.stocks.filter(s => {
-                    const matchText = s.id.includes(this.search) || s.name.includes(this.search);
-                    const p = s.price;
-                    let matchPrice = true;
-                    if(this.priceRange === '0-20') matchPrice = p < 20;
-                    else if(this.priceRange === '20-50') matchPrice = p >= 20 && p < 50;
-                    else if(this.priceRange === '50-100') matchPrice = p >= 50 && p < 100;
-                    else if(this.priceRange === '100-300') matchPrice = p >= 100 && p < 300;
-                    else if(this.priceRange === '300+') matchPrice = p >= 300;
-                    return matchText && matchPrice;
-                });
-
-                return res.sort((a, b) => {
-                    return this.sortByYield ? b.totalYield - a.totalYield : b.price - a.price;
-                });
+                let list = this.stocks.filter(s => s.id.includes(this.search) || s.name.includes(this.search));
+                if (this.sortMethod === 'yield') return list.sort((a, b) => b.totalYield - a.totalYield);
+                if (this.sortMethod === 'pbr') return list.sort((a, b) => a.pbr - b.pbr);
+                if (this.sortMethod === 'price') return list.sort((a, b) => b.price - a.price);
+                return list;
             }
         },
         async mounted() {
             try {
-                const r = await fetch(this.gasUrl, { redirect: 'follow' });
-                this.stocks = await r.json();
+                // 加入隨機參數防止瀏覽器快取舊資料
+                const res = await fetch(`${this.gasUrl}?t=${Date.now()}`, { redirect: 'follow' });
+                this.stocks = await res.json();
             } catch (e) {
-                console.error("載入失敗");
+                alert("抓取失敗：請檢查 GAS 是否設為「所有人」並更新網址。");
             } finally {
                 this.loading = false;
             }
