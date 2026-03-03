@@ -1,0 +1,19 @@
+name: AutoUpdate
+on:
+  schedule:
+    - cron: '0 9 * * 1-5' # 台灣時間週一至週五下午 5 點執行
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Update
+        run: python update_data.py
+      - name: Deploy
+        run: |
+          git config --global user.name "Bot"
+          git config --global user.email "bot@github.com"
+          git add index.html
+          git commit -m "Update Daily Data" || exit 0
+          git push
