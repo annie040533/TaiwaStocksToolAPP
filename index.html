@@ -3,45 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台股雷達 - 自動搜尋版</title>
+    <title>台股價值選股雷達 - 穩定版</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-100">
-<div id="app" class="container mx-auto p-6">
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-2xl font-bold text-blue-800">台股全自動選股雷達</h1>
-        <div v-if="loading" class="text-orange-500 font-bold animate-bounce">
-            🔍 正在自動尋找可用資料源...
+<body class="bg-slate-100 min-h-screen">
+<div id="app" class="container mx-auto px-4 py-8">
+    
+    <div class="flex justify-between items-center mb-8">
+        <div>
+            <h1 class="text-3xl font-bold text-slate-800">📊 台股價值雷達</h1>
+            <p class="text-slate-500">來源：證交所 Open Data (CSV 實時解析)</p>
+        </div>
+        <div class="bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-200">
+            <span v-if="loading" class="text-blue-500 animate-pulse font-bold">📡 正在同步證交所數據...</span>
+            <span v-else class="text-green-600 font-bold">✅ 已載入 {{ stocks.length }} 筆</span>
         </div>
     </div>
 
-    <div class="bg-white rounded-lg shadow p-4 mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input v-model="search" placeholder="搜尋股票代碼/名稱..." class="border p-2 rounded">
-        <div class="text-sm text-gray-500 self-center">目前載入：{{ stocks.length }} 檔股票</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="relative">
+            <input v-model="search" type="text" placeholder="輸入代碼或名稱..." 
+                   class="w-full p-3 pl-10 rounded-xl border-none shadow-sm focus:ring-2 focus:ring-blue-400 outline-none">
+            <i class="fa-solid fa-search absolute left-3 top-4 text-slate-300"></i>
+        </div>
+        <div class="flex gap-2">
+            <button @click="sortKey = 'totalYield'" class="flex-1 bg-orange-500 text-white rounded-xl py-2 font-bold hover:bg-orange-600">按殖利率排序</button>
+            <button @click="sortKey = 'pbr'" class="flex-1 bg-blue-600 text-white rounded-xl py-2 font-bold hover:bg-blue-700">按本淨比排序</button>
+        </div>
     </div>
 
-    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-        <table class="w-full text-left text-sm">
-            <thead class="bg-blue-900 text-white">
-                <tr>
-                    <th class="p-4">代碼</th>
-                    <th class="p-4">名稱</th>
-                    <th class="p-4">股價</th>
-                    <th class="p-4">本淨比</th>
-                    <th class="p-4">殖利率</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="s in filtered" :key="s.id" class="border-b hover:bg-gray-50">
-                    <td class="p-4 font-bold">{{ s.id }}</td>
-                    <td class="p-4">{{ s.name }}</td>
-                    <td class="p-4 text-blue-600">NT$ {{ s.price }}</td>
-                    <td class="p-4" :class="s.pbr < 1.2 ? 'text-green-600 font-bold' : ''">{{ s.pbr }}</td>
-                    <td class="p-4 text-red-600 font-bold">{{ s.totalYield }}%</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left">
+                <thead class="bg-slate-800 text-white text-sm uppercase">
+                    <tr>
+                        <th class="p-5">股票</th>
+                        <th class="p-5">收盤價</th>
+                        <th class="p-5">本淨比</th>
+                        <th class="p-5 text-orange-400">殖利率 (%)</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr v-for="s in filteredStocks" :key="s.id" class="hover:bg-slate-50 transition">
+                        <td class="p-5">
+                            <div class="font-bold text-slate-700">{{ s.name }}</div>
+                            <div class="text-xs text-slate-400 font-mono">{{ s.id }}</div>
+                        </td>
+                        <td class="p-5 text-slate-600 font-semibold">NT$ {{ s.price }}</td>
+                        <td class="p-5">
+                            <span :class="s.pbr < 1.2 ? 'bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold' : 'text-slate-500'">
+                                {{ s.pbr }}
+                            </span>
+                        </td>
+                        <td class="p-5 text-xl font-black text-orange-500">{{ s.totalYield }}<span class="text-xs">%</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -53,25 +73,25 @@
                 stocks: [],
                 loading: true,
                 search: '',
-                // 替換成你最新的 /exec 網址
-                gasUrl: 'https://script.google.com/macros/s/AKfycbxf4R8WQPsZo8Ga2u3QfM8G9OtRq0NR_vfqgQ9J7WBaMGnTsscQvsDDHeZI_XHpMnzK/exec'
+                sortKey: 'totalYield',
+                // 重要：請替換為您最新的 GAS /exec 網址
+                gasUrl: 'https://script.google.com/macros/s/AKfycbyK-xx0CO_ybrzR6FyY6rPgdYnPabSqC2fDbmFPe1RGLZ07tYusCRma3os35kRjb9Zz8A/exec'
             }
         },
         computed: {
-            filtered() {
-                return this.stocks.filter(s => 
-                    s.id.includes(this.search) || s.name.includes(this.search)
-                );
+            filteredStocks() {
+                let list = this.stocks.filter(s => s.id.includes(this.search) || s.name.includes(this.search));
+                return list.sort((a, b) => {
+                    return this.sortKey === 'totalYield' ? b.totalYield - a.totalYield : a.pbr - b.pbr;
+                });
             }
         },
         async mounted() {
             try {
                 const res = await fetch(this.gasUrl, { redirect: 'follow' });
-                const data = await res.json();
-                // 過濾掉帶有「錯誤」字眼的保底資料，只顯示正常股票
-                this.stocks = data.filter(item => item.id !== "錯誤");
+                this.stocks = await res.json();
             } catch (e) {
-                alert("目前所有數據源均在維護，請稍後再試");
+                console.error("載入失敗", e);
             } finally {
                 this.loading = false;
             }
