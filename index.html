@@ -3,91 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台股價值選股雷達 - Goodinfo 強化版</title>
+    <title>台股雷達 - 自動搜尋版</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-        .anim-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-        .table-container { max-height: 70vh; overflow-y: auto; }
-    </style>
 </head>
-<body class="bg-slate-50 min-h-screen">
-
-<div id="app" class="container mx-auto px-4 py-8">
-    <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-        <div>
-            <h1 class="text-3xl font-bold text-slate-800">
-                <i class="fa-solid fa-bolt text-yellow-500 mr-2"></i>台股價值選股雷達
-            </h1>
-            <p class="text-slate-500 mt-2">數據源：Goodinfo / 證交所 雙引擎切換</p>
-        </div>
-        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-            <span v-if="loading" class="text-orange-500 font-medium anim-pulse">
-                <i class="fa-solid fa-magnifying-glass fa-spin"></i> 正在爬取 Goodinfo 資料...
-            </span>
-            <span v-else class="text-green-600 font-medium">
-                <i class="fa-solid fa-check-double"></i> 資料載入成功 ({{ stocks.length }} 筆)
-            </span>
+<body class="bg-gray-100">
+<div id="app" class="container mx-auto p-6">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-blue-800">台股全自動選股雷達</h1>
+        <div v-if="loading" class="text-orange-500 font-bold animate-bounce">
+            🔍 正在自動尋找可用資料源...
         </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div class="relative">
-            <i class="fa-solid fa-search absolute left-3 top-3 text-slate-400"></i>
-            <input v-model="searchQuery" type="text" placeholder="搜尋代碼或名稱..." 
-                class="w-full pl-10 pr-4 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
-        </div>
-        <select v-model="filterPbr" class="bg-white px-4 py-2 rounded-lg border border-slate-200">
-            <option value="all">本淨比 (PBR) - 全部</option>
-            <option value="low">低本淨比 (< 1.2)</option>
-            <option value="safe">安全區 (1.2 - 2.0)</option>
-        </select>
-        <select v-model="filterYield" class="bg-white px-4 py-2 rounded-lg border border-slate-200">
-            <option value="all">殖利率 - 全部</option>
-            <option value="high">高殖利率 (> 5%)</option>
-            <option value="super">超高息 (> 8%)</option>
-        </select>
+    <div class="bg-white rounded-lg shadow p-4 mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input v-model="search" placeholder="搜尋股票代碼/名稱..." class="border p-2 rounded">
+        <div class="text-sm text-gray-500 self-center">目前載入：{{ stocks.length }} 檔股票</div>
     </div>
 
-    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
-        <div class="table-container">
-            <table class="w-full text-left border-collapse">
-                <thead class="bg-slate-800 text-white sticky top-0 z-10">
-                    <tr>
-                        <th class="px-6 py-4">代碼</th>
-                        <th class="px-6 py-4">名稱</th>
-                        <th class="px-6 py-4">收盤價</th>
-                        <th class="px-6 py-4">本淨比</th>
-                        <th class="px-6 py-4 text-orange-400">殖利率 (%)</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-100">
-                    <tr v-for="stock in filteredStocks" :key="stock.id" class="hover:bg-blue-50 transition-colors">
-                        <td class="px-6 py-4 font-mono font-bold text-slate-600">{{ stock.id }}</td>
-                        <td class="px-6 py-4 font-medium text-slate-800">{{ stock.name }}</td>
-                        <td class="px-6 py-4 text-slate-700">NT$ {{ stock.price }}</td>
-                        <td class="px-6 py-4">
-                            <span :class="stock.pbr < 1.2 ? 'text-green-600 font-bold' : 'text-slate-600'">
-                                {{ stock.pbr }}
-                            </span>
-                        </td>
-                        <td class="px-6 py-4 font-bold text-orange-600">{{ stock.totalYield }}%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <div v-if="loading" class="p-20 text-center">
-            <i class="fa-solid fa-spinner fa-spin text-blue-500 text-4xl mb-4"></i>
-            <p class="text-slate-500 text-lg">正在模擬瀏覽器存取 Goodinfo 資料庫...</p>
-        </div>
-
-        <div v-if="filteredStocks.length === 0 && !loading" class="p-20 text-center">
-            <i class="fa-solid fa-face-frown text-slate-200 text-6xl mb-4"></i>
-            <p class="text-slate-400 text-xl">找不到符合條件的股票，請重新搜尋</p>
-        </div>
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <table class="w-full text-left text-sm">
+            <thead class="bg-blue-900 text-white">
+                <tr>
+                    <th class="p-4">代碼</th>
+                    <th class="p-4">名稱</th>
+                    <th class="p-4">股價</th>
+                    <th class="p-4">本淨比</th>
+                    <th class="p-4">殖利率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="s in filtered" :key="s.id" class="border-b hover:bg-gray-50">
+                    <td class="p-4 font-bold">{{ s.id }}</td>
+                    <td class="p-4">{{ s.name }}</td>
+                    <td class="p-4 text-blue-600">NT$ {{ s.price }}</td>
+                    <td class="p-4" :class="s.pbr < 1.2 ? 'text-green-600 font-bold' : ''">{{ s.pbr }}</td>
+                    <td class="p-4 text-red-600 font-bold">{{ s.totalYield }}%</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -98,57 +52,29 @@
             return {
                 stocks: [],
                 loading: true,
-                searchQuery: '',
-                filterPbr: 'all',
-                filterYield: 'all',
-                // --- 重要：在此處貼上你「新增部署」後的 GAS URL ---
-                gasUrl: 'https://script.google.com/macros/s/AKfycbxHDr5NKc00EPa2RmX7vd7D6mdauz3PNzMLR33Us4rcU9k5bl9aUP2ROmME7FzHARZVKg/exec'
+                search: '',
+                // 替換成你最新的 /exec 網址
+                gasUrl: 'https://script.google.com/macros/s/你的ID/exec'
             }
         },
         computed: {
-            filteredStocks() {
-                return this.stocks.filter(s => {
-                    const matchSearch = s.id.includes(this.searchQuery) || s.name.includes(this.searchQuery);
-                    const matchPbr = this.filterPbr === 'all' || 
-                        (this.filterPbr === 'low' && s.pbr < 1.2) ||
-                        (this.filterPbr === 'safe' && s.pbr >= 1.2 && s.pbr <= 2.0);
-                    const matchYield = this.filterYield === 'all' || 
-                        (this.filterYield === 'high' && s.totalYield > 5) ||
-                        (this.filterYield === 'super' && s.totalYield > 8);
-                    return matchSearch && matchPbr && matchYield;
-                });
+            filtered() {
+                return this.stocks.filter(s => 
+                    s.id.includes(this.search) || s.name.includes(this.search)
+                );
             }
         },
-        methods: {
-            async fetchStocks() {
-                if (!this.gasUrl.includes('https')) return;
-                this.loading = true;
-                try {
-                    // 使用標準 fetch，依靠 GAS 端的重定向與 Header 偽裝
-                    const response = await fetch(this.gasUrl, {
-                        method: 'GET',
-                        redirect: 'follow'
-                    });
-                    
-                    if (!response.ok) throw new Error('連線異常');
-                    
-                    const data = await response.json();
-                    
-                    if (Array.isArray(data) && data.length > 0) {
-                        this.stocks = data;
-                    } else {
-                        throw new Error('資料解析為空，可能被 Goodinfo 暫時封鎖 IP');
-                    }
-                } catch (error) {
-                    console.error('Fetch Error:', error);
-                    alert('抓取失敗！Google 伺服器目前可能無法存取 Goodinfo。\n請稍後重新整理，或檢查 GAS 部署權限。');
-                } finally {
-                    this.loading = false;
-                }
+        async mounted() {
+            try {
+                const res = await fetch(this.gasUrl, { redirect: 'follow' });
+                const data = await res.json();
+                // 過濾掉帶有「錯誤」字眼的保底資料，只顯示正常股票
+                this.stocks = data.filter(item => item.id !== "錯誤");
+            } catch (e) {
+                alert("目前所有數據源均在維護，請稍後再試");
+            } finally {
+                this.loading = false;
             }
-        },
-        mounted() {
-            this.fetchStocks();
         }
     }).mount('#app');
 </script>
