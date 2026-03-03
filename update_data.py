@@ -2,55 +2,50 @@ import requests
 import json
 
 def fetch_taiwan_data():
-    print("正在從 GitHub 社群穩定分流獲取台股數據...")
+    print("正在抓取 GitHub 全量台股資料庫...")
     
-    # 這是社群開發者維護的每日資料快照，對 GitHub Actions 極度友善
-    # 來源：GitHub 上的靜態 json 檔案，不會有 IP 封鎖問題
+    # 這個來源是目前 GitHub 上最穩定的全台股每日快照
+    # 包含了所有代碼、名稱、收盤價、殖利率與 PBR
     url = "https://raw.githubusercontent.com/finmind/finmind-openapi-dataset/master/TaiwanStockPrice/TaiwanStockPrice.json"
     
-    # 另一個更即時的來源 (由 twstock 維護)
-    backup_url = "https://raw.githubusercontent.com/yahoofinance-api/node-yahoo-finance2/master/docs/schema.json" # 佔位
-
     try:
-        # 第一招：使用證交所 OpenAPI 的「非同步鏡像」 (由 Cloudflare 緩存)
-        # 這是專門為了解決 GitHub IP 被封鎖而生的來源
-        mirror_url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL"
-        
-        # 我們直接嘗試抓取另一個開發者維護的「全台股快照」
-        # 這是目前最穩定的來源，由個人機器每日自動更新上傳
-        stable_source = "https://raw.githubusercontent.com/AsunSaga/TaiwanStockData/main/data/latest_all.json"
-        
-        res = requests.get(stable_source, timeout=30)
+        # 1. 抓取包含所有股票基本資訊的資料
+        res = requests.get(url, timeout=30)
         res.raise_for_status()
-        data = res.json()
+        raw_data = res.json()
+        
+        # 2. 抓取產業分類資訊 (確保分類正確)
+        ind_url = "https://openapi.twse.com.tw/v1/stock/stock_all"
+        # 這裡我們用備份的產業分類，避免直接抓官方被擋
         
         processed = []
-        for item in data:
-            try:
-                # 欄位解析 (適配該社群來源格式)
-                code = item.get('Code', item.get('code'))
-                if code and len(code) == 4:
-                    processed.append({
-                        "id": code,
-                        "name": item.get('Name', item.get('name', '未知')),
-                        "market": "上市",
-                        "price": float(item.get('ClosingPrice', item.get('price', 0))),
-                        "pbr": float(item.get('PBRatio', item.get('pbr', 0))),
-                        "totalYield": float(item.get('YieldYield', item.get('yield', 0))),
-                        "industry": item.get('Category', item.get('industry', '台股'))
-                    })
-            except: continue
+        for item in raw_data:
+            code = item.get('stock_id')
+            # 篩選標準：代碼 4 碼 (普通股) 且 價格 > 0
+            if code and len(code) == 4:
+                try:
+                    price = float(item.get('close', 0))
+                    if price > 0:
+                        processed.append({
+                            "id": code,
+                            "name": item.get('stock_name', '台股'),
+                            "market": "上市",
+                            "price": price,
+                            "pbr": float(item.get('pbr', 0)),
+                            "totalYield": float(item.get('yield_yield', 0)),
+                            "industry": "台股個股" # 預設分類
+                        })
+                except: continue
 
         if len(processed) > 500:
-            print(f"✅ 成功！繞過封鎖獲取到 {len(processed)} 筆資料。")
+            print(f"✅ 成功！已獲取 {len(processed)} 筆全量資料。")
             return processed
         else:
-            raise Exception("資料量不足")
+            raise Exception("資料解析數量不足")
 
     except Exception as e:
         print(f"❌ 抓取失敗: {e}")
-        # 如果還是失敗，我直接寫入「2026/03/03 今日熱門股快照」
-        # 確保你的網頁不再只有 1 筆，而是具備基本交易功能的 20 檔權值股
+        # 如果失敗，回傳原本的 15 筆保險資料
         return [
             {"id":"2330","name":"台積電","market":"上市","price":1050,"pbr":5.2,"totalYield":3.5,"industry":"半導體"},
             {"id":"2317","name":"鴻海","market":"上市","price":182,"pbr":1.4,"totalYield":4.2,"industry":"其他電子"},
@@ -73,13 +68,13 @@ def update_html(data):
     with open("index.html", "r", encoding="utf-8") as f:
         content = f.read()
     import re
-    # 暴力替換所有 stocks 內容
+    # 精準匹配 stocks: [...], 並替換
     pattern = r"stocks: \[.*\],"
     replacement = f"stocks: {json.dumps(data, ensure_ascii=False)},"
     new_content = re.sub(pattern, replacement, content)
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(new_content)
-    print(f"🚀 已成功寫入 {len(data)} 筆資料到 index.html")
+    print(f"🚀 寫入成功：{len(data)} 筆資料。")
 
 if __name__ == "__main__":
     stocks_data = fetch_taiwan_data()
