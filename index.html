@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台股全方位戰情室</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>[x-cloak] { display: none !important; }</style>
+</head>
+<body class="bg-slate-50 text-slate-900" x-data="stockManager()">
+    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row gap-3 items-center justify-between">
+            <h1 class="text-xl font-bold text-indigo-600 tracking-tight">台股自動分析儀</h1>
+            <div class="flex gap-2 w-full md:w-auto">
+                <input type="text" x-model="searchQuery" placeholder="代碼/名稱..." class="flex-1 md:w-40 px-3 py-2 border rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                <select x-model="filterIndustry" class="px-3 py-2 border rounded-xl text-sm bg-white">
+                    <option value="">所有產業</option>
+                    <template x-for="ind in allIndustries" :key="ind"><option :value="ind" x-text="ind"></option></template>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-4 pb-20">
+        <template x-for="range in priceLevels" :key="range.label">
+            <div class="mb-10" x-show="getFilteredStocks(range.min, range.max).length > 0">
+                <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-indigo-600 rounded-full"></span>
+                    股價 <span x-text="range.label"></span> 元區間
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <template x-for="s in getFilteredStocks(range.min, range.max)" :key="s.id">
+                        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-4 hover:shadow-md transition-all">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-600" x-text="s.industry"></span>
+                                    <h3 class="text-lg font-bold mt-1" x-text="s.id + ' ' + s.name"></h3>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-black" x-text="s.price"></div>
+                                    <div class="text-[10px] text-slate-400" x-text="'PBR: ' + s.pbr"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4 grid grid-cols-3 gap-1 bg-slate-50 rounded-xl p-2 text-center">
+                                <div><div class="text-[10px] text-slate-500">現金</div><div class="text-sm font-bold text-emerald-600" x-text="s.cashYield + '%'"></div></div>
+                                <div class="border-x border-slate-200"><div class="text-[10px] text-slate-500">股票</div><div class="text-sm font-bold text-blue-600" x-text="s.stockYield + '%'"></div></div>
+                                <div><div class="text-[10px] text-indigo-600 font-bold">合計</div><div class="text-sm font-bold text-indigo-700" x-text="s.totalYield + '%'"></div></div>
+                            </div>
+                            <button @click="showChart(s.id)" class="mt-4 w-full py-2 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-indigo-600 transition-colors">查看線圖</button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </main>
+
+    <div x-show="isModalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-2">
+        <div class="bg-white w-full max-w-5xl h-[85vh] rounded-2xl relative overflow-hidden">
+            <button @click="isModalOpen = false" class="absolute top-4 right-4 z-[60] bg-white p-2 rounded-full shadow-lg">✕</button>
+            <div id="tv_chart" class="w-full h-full"></div>
+        </div>
+    </div>
+
+    <script>
+        function stockManager() {
+            return {
+                searchQuery: '', filterIndustry: '', isModalOpen: false,
+                priceLevels: [{label:'0-20',min:0,max:20},{label:'20-50',min:20,max:50},{label:'50-100',min:50,max:100},{label:'100-300',min:100,max:300},{label:'300+',min:300,max:9999}],
+                // DATA_START
+                stocks: [],
+                // DATA_END
+                get allIndustries() { return [...new Set(this.stocks.map(s => s.industry))].sort(); },
+                getFilteredStocks(min, max) {
+                    return this.stocks.filter(s => {
+                        const mSearch = s.id.includes(this.searchQuery) || s.name.includes(this.searchQuery);
+                        const mInd = this.filterIndustry === '' || s.industry === this.filterIndustry;
+                        const mPrice = s.price >= min && s.price < max;
+                        return mSearch && mInd && mPrice;
+                    }).sort((a, b) => b.totalYield - a.totalYield);
+                },
+                showChart(id) {
+                    this.isModalOpen = true;
+                    this.$nextTick(() => {
+                        new TradingView.widget({"autosize":true,"symbol":"TWSE:"+id,"interval":"D","timezone":"Asia/Taipei","theme":"light","style":"1","locale":"zh_TW","container_id":"tv_chart"});
+                    });
+                }
+            }
+        }
+    </script>
+    <script src="https://s3.tradingview.com/tv.js"></script>
+</body>
+</html>
