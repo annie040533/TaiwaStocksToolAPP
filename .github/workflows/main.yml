@@ -1,7 +1,5 @@
 name: AutoUpdate
 on:
-  schedule:
-    - cron: '0 9 * * 1-5'
   workflow_dispatch:
 jobs:
   build:
@@ -10,6 +8,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # 取得完整歷史以利合併
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -24,4 +24,5 @@ jobs:
           git config --global user.email "bot@github.com"
           git add index.html
           git commit -m "Auto update data" || exit 0
+          git pull --rebase origin main # 強制合併遠端變更
           git push
