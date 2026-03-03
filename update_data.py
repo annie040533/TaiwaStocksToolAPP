@@ -50,8 +50,10 @@ def update_html(data):
     with open("index.html", "r", encoding="utf-8") as f:
         content = f.read()
     
-    # 精準匹配 DATA 標記
+    # 這裡的字串必須跟 index.html 裡的註解一模一樣
     data_str = f"// DATA_START\n                stocks: {json.dumps(data, ensure_ascii=False)},\n                // DATA_END"
+    
+    # 使用正則表達式替換，不論中間原本是什麼都換掉
     new_content = re.sub(r"// DATA_START.*?// DATA_END", data_str, content, flags=re.DOTALL)
     
     with open("index.html", "w", encoding="utf-8") as f:
