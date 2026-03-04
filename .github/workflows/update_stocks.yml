@@ -24,57 +24,77 @@ jobs:
           python - <<EOF
           import requests
           import json
-          import datetime
+          import time
 
           def get_data():
-              # 使用 FinMind API：個股本益比與殖利率數據 (包含 PBR)
-              # 這個 API 來源穩定且對 GitHub Actions 友善
-              url = "https://api.finmindtrade.com/api/v4/data"
+              # 來源 A: 證交所 OpenAPI (最標準，更新最快)
+              # 來源 B: 證交所官網 JSON 接口 (備援)
+              urls = [
+                  "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL",
+                  "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=json"
+              ]
               
-              # 自動獲取最近一個工作日的日期
-              target_date = (datetime.datetime.now() - datetime.timedelta(days=0)).strftime('%Y-%m-%d')
-              
-              params = {
-                  "dataset": "TaiwanStockPestRatio",
-                  "date": target_date
+              headers = {
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                  'Accept': 'application/json'
               }
-              
-              try:
-                  print(f"📡 正在透過 FinMind API 獲取 {target_date} 數據...")
-                  resp = requests.get(url, params=params, timeout=30)
-                  data = resp.json()
-                  
-                  if data.get('msg') != 'success' or not data.get('data'):
-                      print("⚠️ 今日數據尚未更新，嘗試抓取前一日...")
-                      params['date'] = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
-                      resp = requests.get(url, params=params, timeout=30)
-                      data = resp.json()
 
-                  stocks = []
-                  for item in data.get('data', []):
-                      sid = item.get('stock_id')
-                      # 只抓取 4 位數的個股
-                      if len(sid) == 4 and sid.isdigit():
-                          stocks.append({
-                              "id": sid,
-                              "name": f"個股 {sid}", # FinMind 此接口不含名稱，需由前端代碼或資料庫補齊
-                              "price": float(item.get('dividend_yield', 0)), # 借用暫存，稍後前端校正
-                              "pbr": float(item.get('pb', 0)),
-                              "totalYield": float(item.get('dividend_yield', 0)),
-                              "category": "一般產業"
-                          })
-                  return stocks
-              except Exception as e:
-                  print(f"🔥 FinMind API 發生錯誤: {e}")
-                  return []
+              for url in urls:
+                  try:
+                      print(f"📡 嘗試連線至: {url}")
+                      resp = requests.get(url, headers=headers, timeout=30)
+                      
+                      if resp.status_code != 200:
+                          continue
+                          
+                      raw_data = resp.json()
+                      # OpenAPI 回傳是 List, 官網 JSON 回傳是 Dict
+                      items = raw_data if isinstance(raw_data, list) else raw_data.get('data', [])
+                      
+                      if not items:
+                          continue
 
-          res = get_data()
-          if len(res) > 300:
+                      stocks = []
+                      for row in items:
+                          # 兼容兩種格式：字典(OpenAPI) 或 列表(官網)
+                          is_d = isinstance(row, dict)
+                          sid = row.get('Code') if is_d else row[0]
+                          name = row.get('Name') if is_d else row[1]
+                          yield_ratio = row.get('YieldRatio') if is_d else row[2]
+                          pbr = row.get('PBRatio') if is_d else row[5]
+                          # 取得價格 (官網 JSON 在 index 8, OpenAPI 在 ClosingPrice)
+                          price = row.get('ClosingPrice') if is_d else row[8]
+
+                          if len(str(sid)) == 4:
+                              try:
+                                  def to_f(v):
+                                      s = str(v).replace(',', '').strip()
+                                      return float(s) if s not in ['', '-', 'N/A'] else 0.0
+                                  
+                                  stocks.append({
+                                      "id": str(sid),
+                                      "name": str(name),
+                                      "price": to_f(price),
+                                      "pbr": to_f(pbr),
+                                      "totalYield": to_f(yield_ratio),
+                                      "category": "一般產業"
+                                  })
+                              except: continue
+                      
+                      if len(stocks) > 500:
+                          return stocks
+                  except Exception as e:
+                      print(f"⚠️ 來源異常: {e}")
+                      continue
+              return []
+
+          final_list = get_data()
+          if final_list:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(res, f, ensure_ascii=False, indent=2)
-              print(f"🚀 成功！透過 FinMind 獲取 {len(res)} 筆完整資料。")
+                  json.dump(final_list, f, ensure_ascii=False, indent=2)
+              print(f"🚀 成功更新！獲得 {len(final_list)} 筆資料。")
           else:
-              print("❌ 資料抓取失敗，請確認 API 狀態。")
+              print("🛑 嘗試所有 API 均失敗，可能正處於證交所維護時段。")
               exit(1)
           EOF
 
@@ -83,4 +103,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "更換為 FinMind API 穩定源" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "更換至更穩定的 OpenAPI V1 接口" && git push)
