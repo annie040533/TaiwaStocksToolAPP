@@ -17,8 +17,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        # 核心修正：補上 html5lib 與 beautifulsoup4
-        run: pip install requests pandas lxml yfinance html5lib beautifulsoup4
+        run: pip install requests pandas
 
       - name: Fetch and Process Data
         run: |
@@ -26,68 +25,62 @@ jobs:
           import requests
           import pandas as pd
           import json
-          import time
-          import random
           import io
 
-          def fetch_goodinfo(url):
+          def fetch_twse_opendata():
+              # 參考 ARON HACK 推薦的 Open Data 連結：每日行情 (含所有個股)
+              url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
               headers = {
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                  'Referer': 'https://goodinfo.tw/tw/index.asp'
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
               }
-              try:
-                  print(f"📡 嘗試讀取 Goodinfo 表格...")
-                  time.sleep(random.uniform(5, 8))
-                  resp = requests.get(url, headers=headers, timeout=30)
-                  resp.encoding = 'utf-8'
-                  
-                  # 使用 StringIO 包裝 HTML 並指定解析器
-                  dfs = pd.read_html(io.StringIO(resp.text), flavor='bs4')
-                  for df in dfs:
-                      # 檢查關鍵字是否存在於 columns 或內容中
-                      col_text = str(df.columns.tolist())
-                      if '代號' in col_text or '名稱' in col_text:
-                          return df
-              except Exception as e:
-                  print(f"⚠️ 讀取失敗: {e}")
-              return None
-
-          stocks = {}
-          # 目標：低 PBR 排行榜 (資料較全面)
-          pbr_url = "https://goodinfo.tw/tw/StockList.asp?MARKET_CAT=%E7%86%B1%E9%96%80%E6%8E%92%E8%A1%8C&INDUSTRY_CAT=PBR%E6%9C%80%E4%BD%8E%40%40%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%28PBR%29%40%40PBR%E6%9C%80%E4%BD%8E&SHEET=%E4%BA%A4%E6%98%93%E7%8B%80%E6%B3%81&SHEET2=%E6%97%A5&RPT_TIME=%E6%9C%80%E6%96%B0%E8%B3%87%E6%96%99&RANK_RANGE=300"
-          
-          df_pbr = fetch_goodinfo(pbr_url)
-          if df_pbr is not None:
-              if isinstance(df_pbr.columns, pd.MultiIndex):
-                  df_pbr.columns = df_pbr.columns.get_level_values(-1)
               
-              for _, r in df_pbr.iterrows():
-                  sid = str(r.get('代號', ''))
-                  if len(sid) == 4 and sid.isdigit():
-                      try:
-                          stocks[sid] = {
-                              "id": sid, "name": str(r.get('名稱', '')),
-                              "price": float(r.get('收盤價', 0)),
-                              "pbr": float(r.get('PBR', 0)),
-                              "cashYield": 0.0, "stockYield": 0.0, "totalYield": 0.0,
-                              "market": "市"
-                          }
-                      except: continue
-
-          final_list = list(stocks.values())
-          
-          # 🚨 緊急保底：如果 Goodinfo 沒抓到，至少保留你上次成功的 Yahoo Finance 10 筆
-          if not final_list:
-              print("🚨 Goodinfo 失敗，嘗試讀取既有 data.json 作為基礎...")
               try:
-                  with open('data.json', 'r', encoding='utf-8') as f:
-                      final_list = json.load(f)
-              except: pass
+                  print("📡 正在從證交所 Open Data 獲取最新行情...")
+                  resp = requests.get(url, headers=headers, timeout=30)
+                  
+                  # 使用 pandas 直接讀取 CSV 內容
+                  # 證交所 Open Data 是標準 CSV 格式，不需要像 HTML 那樣手動解析
+                  df = pd.read_csv(io.StringIO(resp.text))
+                  
+                  # 清理欄位標題中的空格或引號
+                  df.columns = [c.strip().replace('"', '') for c in df.columns]
+                  
+                  stocks = []
+                  for _, row in df.iterrows():
+                      sid = str(row.get('證券代號', '')).strip().replace('"', '')
+                      # 只抓取標準 4 位數個股，排除權證、ETF (代碼較長或含字母)
+                      if len(sid) == 4 and sid.isdigit():
+                          try:
+                              # 數值轉換，處理 '-' 或千分位
+                              def clean_num(val):
+                                  s = str(val).replace(',', '').replace('"', '').strip()
+                                  return float(s) if s not in ['', '-', 'None'] else 0.0
 
-          if final_list:
+                              price = clean_num(row.get('收盤價', 0))
+                              if price > 0:
+                                  stocks.append({
+                                      "id": sid,
+                                      "name": str(row.get('證券名稱', '')).strip().replace('"', ''),
+                                      "market": "市",
+                                      "price": price,
+                                      "pbr": 0.0, # 每日行情表不含 PBR，若需 PBR 需串接另一個 API
+                                      "cashYield": 0.0,
+                                      "stockYield": 0.0,
+                                      "totalYield": 0.0
+                                  })
+                          except: continue
+                  return stocks
+              except Exception as e:
+                  print(f"❌ 錯誤: {e}")
+                  return []
+
+          data = fetch_twse_opendata()
+          if len(data) > 500:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(final_list, f, ensure_ascii=False, indent=2)
-              print(f"🚀 任務完成！共存入 {len(final_list)} 筆個股資料")
+                  json.dump(data, f, ensure_ascii=False, indent=2)
+              print(f"🚀 成功！已產出 {len(data)} 筆個股資料。")
+          else:
+              print(f"🛑 抓取資料過少 ({len(data)})，不執行寫入。")
           EOF
 
       - name: Commit and Push
@@ -95,5 +88,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          # 只有在 data.json 有變動時才 commit
           git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新股價數據" && git push)
