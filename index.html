@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台股價值選股雷達</title>
+    <title>台股價值選股雷達 - 摺疊分類版</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,64 +13,69 @@
 
 <div id="app" v-cloak>
     <header class="bg-[#2d336b] text-white py-6 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 max-w-6xl flex justify-between items-center">
+        <div class="container mx-auto px-4 max-w-6xl flex flex-wrap justify-between items-center gap-4">
             <h1 class="text-xl font-black italic tracking-tighter uppercase">
                 <i class="fa-solid fa-bolt text-yellow-400 mr-2"></i>台股雷達
             </h1>
-            <button @click="fetchData" class="text-xs bg-white/10 px-3 py-1.5 rounded-lg border border-white/20">
-                <i class="fa-solid fa-rotate mr-1"></i>重載數據
-            </button>
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-filter text-white/50 text-xs"></i>
+                <select v-model="selectedCategory" class="bg-white/10 text-white text-sm border border-white/20 rounded-lg px-3 py-1.5 outline-none focus:bg-white/20">
+                    <option value="" class="text-slate-800">所有產業類別</option>
+                    <option v-for="cat in categories" :value="cat" class="text-slate-800">{{ cat }}</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <main class="container mx-auto px-4 max-w-6xl mt-8">
-        <div class="mb-10">
+        <div class="mb-8">
             <input v-model="search" type="text" placeholder="搜尋代碼或名稱..." 
                 class="w-full px-6 py-4 rounded-2xl shadow-sm border-none focus:ring-2 focus:ring-indigo-500 outline-none text-lg text-slate-700">
         </div>
 
-        <div v-if="!loading" class="space-y-12">
-            <div v-for="group in categorizedData" :key="group.label" v-show="group.items.length > 0">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="h-8 w-1.5 bg-indigo-600 rounded-full"></div>
-                    <h2 class="text-2xl font-black text-slate-800">{{ group.label }}</h2>
-                    <span class="text-xs font-bold text-slate-400 bg-slate-200 px-2 py-0.5 rounded-md">{{ group.items.length }} 檔</span>
+        <div v-if="!loading" class="space-y-4">
+            <div v-for="group in categorizedData" :key="group.label">
+                <div @click="group.isOpen = !group.isOpen" 
+                    class="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm border border-slate-100 cursor-pointer hover:bg-slate-50 transition mb-2">
+                    <div class="flex items-center gap-3">
+                        <div class="h-6 w-1 bg-indigo-600 rounded-full"></div>
+                        <h2 class="text-lg font-bold text-slate-800">{{ group.label }}</h2>
+                        <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded">{{ group.items.length }} 檔</span>
+                    </div>
+                    <i :class="group.isOpen ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-slate-300 text-sm"></i>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div v-show="group.isOpen" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4">
                     <div v-for="s in group.items" :key="s.id" 
-                        class="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                        class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition">
                         
-                        <div class="flex justify-between items-start mb-6">
+                        <div class="flex justify-between items-start mb-4">
                             <div>
-                                <span class="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded font-bold">上市</span>
-                                <h3 class="text-xl font-black text-slate-800 mt-1">{{ s.id }} {{ s.name }}</h3>
+                                <span class="text-[9px] bg-indigo-50 text-indigo-500 px-2 py-0.5 rounded font-black uppercase">{{ s.category }}</span>
+                                <h3 class="text-lg font-black text-slate-800 mt-1">{{ s.id }} {{ s.name }}</h3>
                             </div>
                             <div class="text-right">
-                                <div class="text-2xl font-black text-slate-900 leading-none">{{ s.price }}</div>
-                                <div class="text-[10px] text-slate-400 font-bold mt-1 uppercase italic">PBR: {{ s.pbr }}</div>
+                                <div class="text-xl font-black text-slate-900 leading-none">${{ s.price }}</div>
+                                <div class="text-[10px] text-slate-400 font-bold mt-1 uppercase">PBR: {{ s.pbr }}</div>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-3 gap-2 bg-slate-50 p-4 rounded-2xl border border-slate-100 mb-6">
+                        <div class="bg-slate-50 p-4 rounded-2xl flex justify-around items-center border border-slate-100 mb-4">
                             <div class="text-center">
-                                <p class="text-[10px] text-slate-400 font-bold mb-1">現金</p>
-                                <p class="font-black text-slate-700 text-sm">{{ s.cashYield }}%</p>
-                            </div>
-                            <div class="text-center border-x border-slate-200">
-                                <p class="text-[10px] text-slate-400 font-bold mb-1">股票</p>
-                                <p class="font-black text-slate-700 text-sm">0%</p>
-                            </div>
-                            <div class="text-center">
-                                <p class="text-[10px] text-slate-400 font-bold mb-1">合計</p>
-                                <p :class="s.totalYield >= 5 ? 'text-emerald-600' : 'text-indigo-600'" class="font-black text-lg leading-none">
+                                <p class="text-[10px] text-slate-400 font-bold mb-1">殖利率</p>
+                                <p :class="s.totalYield >= 5 ? 'text-emerald-600' : 'text-slate-700'" class="font-black text-lg">
                                     {{ s.totalYield }}%
                                 </p>
+                            </div>
+                            <div class="w-px h-8 bg-slate-200"></div>
+                            <div class="text-center">
+                                <p class="text-[10px] text-slate-400 font-bold mb-1">本淨比</p>
+                                <p class="font-black text-slate-700 text-lg">{{ s.pbr }}</p>
                             </div>
                         </div>
 
                         <a :href="'https://www.wantgoo.com/stock/'+s.id+'/technical-chart'" target="_blank"
-                            class="w-full bg-slate-900 text-white py-3.5 rounded-xl font-bold text-sm block text-center hover:bg-indigo-600 transition">
+                            class="w-full bg-slate-800 text-white py-3 rounded-xl font-bold text-xs block text-center hover:bg-indigo-600 transition">
                             查看詳細線圖
                         </a>
                     </div>
@@ -79,8 +84,8 @@
         </div>
 
         <div v-else class="text-center py-20 text-slate-300">
-            <i class="fa-solid fa-spinner fa-spin fa-3x mb-4"></i>
-            <p class="font-bold">資料同步中，請稍候...</p>
+            <i class="fa-solid fa-circle-notch fa-spin fa-2x mb-4"></i>
+            <p class="font-bold">數據載入中...</p>
         </div>
     </main>
 </div>
@@ -88,20 +93,37 @@
 <script>
     const { createApp } = Vue;
     createApp({
-        data() { return { stocks: [], loading: true, search: '' } },
+        data() { 
+            return { 
+                stocks: [], 
+                loading: true, 
+                search: '', 
+                selectedCategory: '',
+                // 管理每個區間的摺疊狀態
+                openStates: { g1: true, g2: true, g3: false, g4: false, g5: false }
+            } 
+        },
         computed: {
+            categories() {
+                const cats = this.stocks.map(s => s.category);
+                return [...new Set(cats)].sort();
+            },
             filteredStocks() {
-                return this.stocks.filter(s => s.name.includes(this.search) || s.id.includes(this.search));
+                return this.stocks.filter(s => {
+                    const matchSearch = s.name.includes(this.search) || s.id.includes(this.search);
+                    const matchCat = this.selectedCategory === '' || s.category === this.selectedCategory;
+                    return matchSearch && matchCat;
+                });
             },
             categorizedData() {
                 const fs = this.filteredStocks;
                 const sortFunc = (arr) => arr.sort((a, b) => b.totalYield - a.totalYield);
                 return [
-                    { label: "股價 300+ 元區間", items: sortFunc(fs.filter(s => s.price >= 300)) },
-                    { label: "股價 100 - 300 元區間", items: sortFunc(fs.filter(s => s.price >= 100 && s.price < 300)) },
-                    { label: "股價 50 - 100 元區間", items: sortFunc(fs.filter(s => s.price >= 50 && s.price < 100)) },
-                    { label: "股價 20 - 50 元區間", items: sortFunc(fs.filter(s => s.price >= 20 && s.price < 50)) },
-                    { label: "股價 0 - 20 元區間", items: sortFunc(fs.filter(s => s.price < 20)) }
+                    { label: "💎 高價股 (300+)", items: sortFunc(fs.filter(s => s.price >= 300)), isOpen: this.openStates.g1 },
+                    { label: "📈 中高價 (100 - 300)", items: sortFunc(fs.filter(s => s.price >= 100 && s.price < 300)), isOpen: this.openStates.g2 },
+                    { label: "📊 中價股 (50 - 100)", items: sortFunc(fs.filter(s => s.price >= 50 && s.price < 100)), isOpen: this.openStates.g3 },
+                    { label: "🪙 普及股 (20 - 50)", items: sortFunc(fs.filter(s => s.price >= 20 && s.price < 50)), isOpen: this.openStates.g4 },
+                    { label: "🌱 低價股 (0 - 20)", items: sortFunc(fs.filter(s => s.price < 20)), isOpen: this.openStates.g5 }
                 ];
             }
         },
@@ -110,7 +132,7 @@
                 try {
                     const res = await fetch('./data.json?v=' + Date.now());
                     this.stocks = await res.json();
-                } catch (e) { console.error("Data error"); }
+                } catch (e) { console.error("Fetch error"); }
                 this.loading = false;
             }
         },
