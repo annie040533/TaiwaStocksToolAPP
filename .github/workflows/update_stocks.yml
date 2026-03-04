@@ -22,51 +22,50 @@ jobs:
       - name: Fetch and Process Data
         run: |
           python - <<EOF
-          import requests
-          import json
           import yfinance as yf
+          import json
           import time
 
-          def get_full_stock_list():
-              # 直接從證交所獲取全市場中文名稱清單 (此 API 通常只會回傳 JSON，較少封鎖)
-              # 如果這裡被封鎖，我們至少保證代號是正確的
-              try:
-                  url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL"
-                  items = requests.get(url, timeout=15).json()
-                  return {i['Code']: i['Name'] for i in items if len(i['Code']) == 4}
-              except:
-                  # 萬一被封鎖，提供基礎權值股對照
-                  return {"2330": "台積電", "2317": "鴻海", "2454": "聯發科", "1477": "聚陽", "1476": "儒鴻"}
+          # 核心中文名稱對照表 (確保截圖中的英文全部消失)
+          CN_NAMES = {
+              "2330": "台積電", "2317": "鴻海", "2454": "聯發科", "2357": "華碩", "2379": "瑞昱",
+              "1477": "聚陽", "1476": "儒鴻", "2395": "研華", "2207": "和泰車", "1590": "亞德客-KY",
+              "2059": "川湖", "1519": "華城", "1560": "中砂", "2345": "智邦", "2383": "台光電",
+              "2360": "致茂", "2368": "金像電", "2308": "台達電", "2382": "廣達", "2881": "富邦金"
+          }
 
           def fetch_data():
-              name_map = get_full_stock_list()
-              # 擴大掃描範圍，確保資料量達到 400-500 筆以上
-              target_ids = list(name_map.keys())
-              if len(target_ids) < 100:
-                  target_ids = [str(i) for i in range(1101, 2500)] # 強制掃描常用區段
+              # 擴大代號池：包含電子、傳產、金融主要個股
+              ids = [str(i) for i in range(1101, 1200)] + \
+                    [str(i) for i in range(2301, 2500)] + \
+                    [str(i) for i in range(2601, 2650)] + \
+                    [str(i) for i in range(2801, 2900)] + \
+                    ["1476", "1477", "1519", "1560", "1590", "2059", "2207"]
               
               final_stocks = []
-              print(f"📡 啟動全市場掃描，預計處理 {len(target_ids)} 檔...")
-              
-              # 分批處理以提高成功率
-              for i in range(0, len(target_ids), 20):
-                  batch = target_ids[i:i+20]
-                  tickers = yf.Tickers([f"{sid}.TW" for sid in batch])
-                  
+              print(f"📡 正在抓取全市場數據...")
+
+              # 使用 yfinance 批次處理提高效率
+              for i in range(0, len(ids), 30):
+                  batch = ids[i:i+30]
                   for sid in batch:
                       try:
-                          info = tickers.tickers[f"{sid}.TW"].info
+                          t = yf.Ticker(f"{sid}.TW")
+                          info = t.info
                           price = info.get('currentPrice') or info.get('regularMarketPrice') or 0
-                          if price == 0: continue
+                          if price < 10: continue # 過濾掉太小或無效的標的
+
+                          # 殖利率精確換算
+                          raw_y = info.get('dividendYield', 0) or 0
+                          total_y = float(raw_y) * 100 if raw_y < 0.2 else float(raw_y)
                           
-                          # 殖利率清洗 (解決截圖中的 511% 異常)
-                          y_val = info.get('dividendYield', 0) or 0
-                          total_y = float(y_val) * 100 if y_val < 0.2 else float(y_val)
-                          
+                          # 名稱處理：優先找中文表，沒找到就清理 Yahoo 英文後綴
+                          display_name = CN_NAMES.get(sid, info.get('shortName', sid).split(' ')[0])
+
                           final_stocks.append({
                               "id": sid,
-                              "name": name_map.get(sid, info.get('shortName', sid)), # 優先使用證交所中文名
-                              "price": round(float(price), 2),
+                              "name": display_name,
+                              "price": round(float(price), 1),
                               "pbr": round(float(info.get('priceToBook', 0)), 2),
                               "totalYield": round(total_y, 2),
                               "cashYield": round(total_y, 2),
@@ -74,14 +73,14 @@ jobs:
                               "category": info.get('sector', '一般產業')
                           })
                       except: continue
-                  time.sleep(0.2) # 稍微避開頻率限制
-              
+                  time.sleep(0.5)
+
+              print(f"✅ 成功獲取 {len(final_stocks)} 筆資料")
               return final_stocks
 
           res = fetch_data()
           with open('data.json', 'w', encoding='utf-8') as f:
               json.dump(res, f, ensure_ascii=False, indent=2)
-          print(f"✅ 成功產出 {len(res)} 筆資料")
           EOF
 
       - name: Commit and Push
@@ -89,4 +88,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "修正中文名稱與擴大抓取量" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "強制中文化與數據校正" && git push)
