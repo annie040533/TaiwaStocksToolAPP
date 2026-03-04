@@ -3,72 +3,72 @@
     "id": "0050",
     "name": "YUANTA SECURITIES INV TRUST CO ",
     "price": 75.6,
-    "pbr": 0,
-    "totalYield": 188.0,
-    "category": "一般產業"
+    "pbr": 0.0,
+    "totalYield": 1.88,
+    "category": "Other"
   },
   {
     "id": "0051",
     "name": "YUANTA SECURITIES INV TRUST CO ",
     "price": 103.7,
-    "pbr": 0,
-    "totalYield": 282.0,
-    "category": "一般產業"
+    "pbr": 0.0,
+    "totalYield": 2.82,
+    "category": "Other"
   },
   {
     "id": "0052",
     "name": "FUBON ASSET MANAGEMENT CO LTD F",
     "price": 44.74,
-    "pbr": 0,
-    "totalYield": 107.0,
-    "category": "一般產業"
+    "pbr": 0.0,
+    "totalYield": 1.07,
+    "category": "Other"
   },
   {
     "id": "0053",
     "name": "YUANTA SECURITIES INV TRUST CO ",
     "price": 164.95,
-    "pbr": 0,
-    "totalYield": 187.0,
-    "category": "一般產業"
+    "pbr": 0.0,
+    "totalYield": 1.87,
+    "category": "Other"
   },
   {
     "id": "0055",
     "name": "YUANTA SECURITIES INV TRUST CO ",
     "price": 32.58,
-    "pbr": 0,
-    "totalYield": 390.0,
-    "category": "一般產業"
+    "pbr": 0.0,
+    "totalYield": 3.9,
+    "category": "Other"
   },
   {
     "id": "0056",
     "name": "YUANTA SECURITIES INV TRUST CO ",
     "price": 37.74,
-    "pbr": 0,
-    "totalYield": 974.0,
-    "category": "一般產業"
+    "pbr": 0.0,
+    "totalYield": 9.74,
+    "category": "Other"
   },
   {
     "id": "0057",
     "name": "FUBON ASSET MANAGEMENT CO LTD F",
     "price": 221.2,
-    "pbr": 0,
-    "totalYield": 0,
-    "category": "一般產業"
+    "pbr": 0.0,
+    "totalYield": 0.0,
+    "category": "Other"
   },
   {
     "id": "0061",
     "name": "YUANTA SECURITIES INV TRUST CO ",
     "price": 23.1,
-    "pbr": 0,
-    "totalYield": 0,
-    "category": "一般產業"
+    "pbr": 0.0,
+    "totalYield": 0.0,
+    "category": "Other"
   },
   {
     "id": "1101",
     "name": "TCC GROUP HOLDINGS CO LTD",
     "price": 25.0,
     "pbr": 0.85,
-    "totalYield": 386.0,
+    "totalYield": 3.86,
     "category": "Basic Materials"
   },
   {
@@ -76,7 +76,7 @@
     "name": "ASIA CEMENT CORP",
     "price": 34.45,
     "pbr": 0.7,
-    "totalYield": 626.0,
+    "totalYield": 6.26,
     "category": "Basic Materials"
   },
   {
@@ -84,7 +84,7 @@
     "name": "CHIA HSIN CEMENT CORPORATION",
     "price": 13.5,
     "pbr": 0.49,
-    "totalYield": 394.0,
+    "totalYield": 3.94,
     "category": "Basic Materials"
   },
   {
@@ -92,7 +92,7 @@
     "name": "UNIVERSAL CEMENT CORPORATION",
     "price": 28.8,
     "pbr": 0.85,
-    "totalYield": 572.0,
+    "totalYield": 5.72,
     "category": "Basic Materials"
   },
   {
@@ -100,7 +100,7 @@
     "name": "LUCKY CEMENT CO.",
     "price": 14.95,
     "pbr": 1.06,
-    "totalYield": 493.0,
+    "totalYield": 4.93,
     "category": "Basic Materials"
   },
   {
@@ -108,7 +108,7 @@
     "name": "HSING TA CEMENT CO LTD",
     "price": 15.4,
     "pbr": 0.65,
-    "totalYield": 577.0,
+    "totalYield": 5.77,
     "category": "Basic Materials"
   },
   {
@@ -116,7 +116,7 @@
     "name": "SOUTH EAST CEMENT CO LTD.",
     "price": 15.5,
     "pbr": 0.94,
-    "totalYield": 187.0,
+    "totalYield": 1.87,
     "category": "Basic Materials"
   },
   {
@@ -124,7 +124,7 @@
     "name": "WEI CHUAN FOOD CORP",
     "price": 14.2,
     "pbr": 0.96,
-    "totalYield": 347.0,
+    "totalYield": 3.47,
     "category": "Consumer Defensive"
   },
   {
@@ -132,7 +132,7 @@
     "name": "VE WONG CORPORATION",
     "price": 39.9,
     "pbr": 1.55,
-    "totalYield": 293.0,
+    "totalYield": 2.93,
     "category": "Consumer Defensive"
   },
   {
@@ -140,7 +140,7 @@
     "name": "GREAT WALL ENTERPRISE",
     "price": 50.4,
     "pbr": 1.7,
-    "totalYield": 552.0,
+    "totalYield": 5.52,
     "category": "Consumer Defensive"
   },
   {
@@ -148,7 +148,7 @@
     "name": "OCEANIC BEVERAGES CO INC",
     "price": 9.5,
     "pbr": 0.81,
-    "totalYield": 351.0,
+    "totalYield": 3.51,
     "category": "Consumer Defensive"
   },
   {
@@ -156,7 +156,7 @@
     "name": "CHAROEN POKPHAND ENTERPRISES CO",
     "price": 156.5,
     "pbr": 3.97,
-    "totalYield": 449.0,
+    "totalYield": 4.49,
     "category": "Consumer Defensive"
   },
   {
@@ -164,7 +164,7 @@
     "name": "UNI-PRESIDENT ENTERPRISES CORP",
     "price": 71.6,
     "pbr": 3.19,
-    "totalYield": 406.0,
+    "totalYield": 4.06,
     "category": "Consumer Defensive"
   },
   {
@@ -172,7 +172,7 @@
     "name": "AGV PRODUCTS",
     "price": 10.2,
     "pbr": 0.67,
-    "totalYield": 356.0,
+    "totalYield": 3.56,
     "category": "Consumer Defensive"
   },
   {
@@ -180,7 +180,7 @@
     "name": "TAISUN ENTERPRISE CO. LTD.",
     "price": 17.85,
     "pbr": 0.68,
-    "totalYield": 746.0,
+    "totalYield": 7.46,
     "category": "Consumer Defensive"
   },
   {
@@ -188,7 +188,7 @@
     "name": "FWUSOW INDUSTRY CO LTD",
     "price": 13.4,
     "pbr": 1.01,
-    "totalYield": 369.0,
+    "totalYield": 3.69,
     "category": "Consumer Defensive"
   },
   {
@@ -196,7 +196,7 @@
     "name": "TAI ROUN PRODUCTS CO",
     "price": 12.9,
     "pbr": 0.97,
-    "totalYield": 534.0,
+    "totalYield": 5.34,
     "category": "Consumer Defensive"
   },
   {
@@ -204,7 +204,7 @@
     "name": "FORMOSA OILSEED PROCESSING",
     "price": 32.25,
     "pbr": 2.07,
-    "totalYield": 44.0,
+    "totalYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -212,7 +212,7 @@
     "name": "STANDARD FOODS CORPORATION",
     "price": 29.25,
     "pbr": 1.49,
-    "totalYield": 468.0,
+    "totalYield": 4.68,
     "category": "Consumer Defensive"
   },
   {
@@ -220,7 +220,7 @@
     "name": "LIEN HWA INDUSTRIAL HOLDINGS CO",
     "price": 43.65,
     "pbr": 1.37,
-    "totalYield": 293.0,
+    "totalYield": 2.93,
     "category": "Industrials"
   },
   {
@@ -228,7 +228,7 @@
     "name": "LIAN HWA FOODS CORP",
     "price": 82.7,
     "pbr": 3.65,
-    "totalYield": 187.0,
+    "totalYield": 1.87,
     "category": "Consumer Defensive"
   },
   {
@@ -236,7 +236,7 @@
     "name": "TTET UNION CORP",
     "price": 150.5,
     "pbr": 4.09,
-    "totalYield": 461.0,
+    "totalYield": 4.61,
     "category": "Consumer Defensive"
   },
   {
@@ -244,7 +244,7 @@
     "name": "TEN REN TEA CO",
     "price": 32.85,
     "pbr": 2.23,
-    "totalYield": 287.0,
+    "totalYield": 2.87,
     "category": "Consumer Defensive"
   },
   {
@@ -252,7 +252,7 @@
     "name": "HEY SONG",
     "price": 36.65,
     "pbr": 0.79,
-    "totalYield": 510.0,
+    "totalYield": 5.1,
     "category": "Consumer Defensive"
   },
   {
@@ -260,7 +260,7 @@
     "name": "SHIN TAI INDUSTRY CO",
     "price": 43.65,
     "pbr": 0.71,
-    "totalYield": 105.0,
+    "totalYield": 1.05,
     "category": "Consumer Defensive"
   },
   {
@@ -268,7 +268,7 @@
     "name": "HUNYA FOODS CO",
     "price": 27.9,
     "pbr": 0.92,
-    "totalYield": 216.0,
+    "totalYield": 2.16,
     "category": "Consumer Defensive"
   },
   {
@@ -276,7 +276,7 @@
     "name": "SUNJUICE HOLDINGS CO LIMITED",
     "price": 158.5,
     "pbr": 1.57,
-    "totalYield": 283.0,
+    "totalYield": 2.83,
     "category": "Consumer Defensive"
   },
   {
@@ -284,7 +284,7 @@
     "name": "FORMOSA PLASTIC",
     "price": 46.95,
     "pbr": 1.02,
-    "totalYield": 100.0,
+    "totalYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -292,7 +292,7 @@
     "name": "NAN YA PLASTIC",
     "price": 79.3,
     "pbr": 1.91,
-    "totalYield": 82.0,
+    "totalYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -300,7 +300,7 @@
     "name": "USI CORPORATION",
     "price": 12.3,
     "pbr": 0.73,
-    "totalYield": 157.0,
+    "totalYield": 1.57,
     "category": "Basic Materials"
   },
   {
@@ -308,7 +308,7 @@
     "name": "CHINA GENERAL PLASTICS CORP",
     "price": 12.3,
     "pbr": 0.91,
-    "totalYield": 116.0,
+    "totalYield": 1.16,
     "category": "Basic Materials"
   },
   {
@@ -316,7 +316,7 @@
     "name": "SAN FANG CHEMICAL",
     "price": 32.85,
     "pbr": 1.38,
-    "totalYield": 769.0,
+    "totalYield": 7.69,
     "category": "Consumer Cyclical"
   },
   {
@@ -324,7 +324,7 @@
     "name": "ASIA POLYMER",
     "price": 14.05,
     "pbr": 0.8,
-    "totalYield": 172.0,
+    "totalYield": 1.72,
     "category": "Basic Materials"
   },
   {
@@ -332,7 +332,7 @@
     "name": "TAITA CHEMICAL",
     "price": 12.8,
     "pbr": 0.9,
-    "totalYield": 150.0,
+    "totalYield": 1.5,
     "category": "Basic Materials"
   },
   {
@@ -340,7 +340,7 @@
     "name": "TAIWAN STYRENE MONOMER",
     "price": 9.62,
     "pbr": 0.75,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -348,7 +348,7 @@
     "name": "GRAND PACIFIC PETROCHEMICAL",
     "price": 12.7,
     "pbr": 0.5,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -356,7 +356,7 @@
     "name": "UPC TECHNOLOGY CO",
     "price": 12.8,
     "pbr": 0.56,
-    "totalYield": 119.0,
+    "totalYield": 1.19,
     "category": "Basic Materials"
   },
   {
@@ -364,7 +364,7 @@
     "name": "CHINA PETROCHEMICAL DEVELOPMENT",
     "price": 8.14,
     "pbr": 0.41,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -372,7 +372,7 @@
     "name": "TAHHSIN INDUSTRIAL CORP",
     "price": 63.6,
     "pbr": 0.65,
-    "totalYield": 692.0,
+    "totalYield": 6.92,
     "category": "Consumer Cyclical"
   },
   {
@@ -380,7 +380,7 @@
     "name": "SUN YAD CONSTRUCTION CO LTD",
     "price": 12.7,
     "pbr": 1.04,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Real Estate"
   },
   {
@@ -388,7 +388,7 @@
     "name": "TONG YANG INDUSTRY",
     "price": 92.0,
     "pbr": 2.04,
-    "totalYield": 558.0,
+    "totalYield": 5.58,
     "category": "Consumer Cyclical"
   },
   {
@@ -396,7 +396,7 @@
     "name": "OCEAN PLASTICS",
     "price": 33.3,
     "pbr": 1.26,
-    "totalYield": 112.0,
+    "totalYield": 1.12,
     "category": "Basic Materials"
   },
   {
@@ -404,7 +404,7 @@
     "name": "YONYU PLASTICS",
     "price": 18.65,
     "pbr": 0.69,
-    "totalYield": 486.0,
+    "totalYield": 4.86,
     "category": "Consumer Cyclical"
   },
   {
@@ -412,7 +412,7 @@
     "name": "GLOBE INDUSTRIES CORPORATION",
     "price": 10.4,
     "pbr": 0.87,
-    "totalYield": 190.0,
+    "totalYield": 1.9,
     "category": "Industrials"
   },
   {
@@ -420,7 +420,7 @@
     "name": "UNIVERSAL INC",
     "price": 27.2,
     "pbr": 0.9,
-    "totalYield": 105.0,
+    "totalYield": 1.05,
     "category": "Consumer Cyclical"
   },
   {
@@ -428,7 +428,7 @@
     "name": "FORMOSA CHEMICAL & FIBRE CO",
     "price": 43.55,
     "pbr": 0.91,
-    "totalYield": 107.0,
+    "totalYield": 1.07,
     "category": "Basic Materials"
   },
   {
@@ -436,7 +436,7 @@
     "name": "ASIA PLASTIC RECYCLING HOLDING ",
     "price": 5.23,
     "pbr": 0.39,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -444,7 +444,7 @@
     "name": "HIROCA HOLDINGS LTD",
     "price": 17.05,
     "pbr": 0.25,
-    "totalYield": 432.0,
+    "totalYield": 4.32,
     "category": "Consumer Cyclical"
   },
   {
@@ -452,7 +452,7 @@
     "name": "Y.C.C. PARTS MFG CO LTD",
     "price": 41.7,
     "pbr": 0.79,
-    "totalYield": 698.0,
+    "totalYield": 6.98,
     "category": "Consumer Cyclical"
   },
   {
@@ -460,7 +460,7 @@
     "name": "VICTORY NEW MATLS LTD CO",
     "price": 6.67,
     "pbr": 0.37,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -468,7 +468,7 @@
     "name": "FULIN PLASTIC INDUSTRY(CAYMAN) ",
     "price": 59.3,
     "pbr": 2.66,
-    "totalYield": 846.0,
+    "totalYield": 8.46,
     "category": "Consumer Cyclical"
   },
   {
@@ -476,7 +476,7 @@
     "name": "CATHAY CONSOLIDATED INC",
     "price": 96.1,
     "pbr": 3.13,
-    "totalYield": 600.0,
+    "totalYield": 6.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -484,7 +484,7 @@
     "name": "FAR EASTERN NEW CENTURY CORPORA",
     "price": 28.3,
     "pbr": 0.68,
-    "totalYield": 550.0,
+    "totalYield": 5.5,
     "category": "Consumer Cyclical"
   },
   {
@@ -492,7 +492,7 @@
     "name": "SHINKONG SYNTHETIC FIBER",
     "price": 14.5,
     "pbr": 0.59,
-    "totalYield": 396.0,
+    "totalYield": 3.96,
     "category": "Consumer Cyclical"
   },
   {
@@ -500,7 +500,7 @@
     "name": "NAN-YANG DYEING & FINISHING",
     "price": 33.3,
     "pbr": 1.98,
-    "totalYield": 153.0,
+    "totalYield": 1.53,
     "category": "Consumer Cyclical"
   },
   {
@@ -508,7 +508,7 @@
     "name": "HUNG CHOU FIBER IND. CO.  LTD",
     "price": 9.76,
     "pbr": 1.14,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -516,7 +516,7 @@
     "name": "TUNG HOTEXTILE CO. LTD.",
     "price": 20.05,
     "pbr": 1.28,
-    "totalYield": 127.0,
+    "totalYield": 1.27,
     "category": "Consumer Cyclical"
   },
   {
@@ -524,7 +524,7 @@
     "name": "KWONG FONG INDUSTRIES",
     "price": 11.55,
     "pbr": 0.51,
-    "totalYield": 479.0,
+    "totalYield": 4.79,
     "category": "Technology"
   },
   {
@@ -532,7 +532,7 @@
     "name": "CARNIVAL (TW)",
     "price": 8.53,
     "pbr": 0.69,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -540,7 +540,7 @@
     "name": "TONGHWA CORPORATION",
     "price": 19.1,
     "pbr": 0.88,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -548,7 +548,7 @@
     "name": "SHINKONG TEXTILE CO. LTD.",
     "price": 64.5,
     "pbr": 1.12,
-    "totalYield": 227.0,
+    "totalYield": 2.27,
     "category": "Consumer Cyclical"
   },
   {
@@ -556,7 +556,7 @@
     "name": "REWARD WOOL",
     "price": 38.0,
     "pbr": 0.96,
-    "totalYield": 211.0,
+    "totalYield": 2.11,
     "category": "Consumer Cyclical"
   },
   {
@@ -564,7 +564,7 @@
     "name": "TRK CORPORATION",
     "price": 17.45,
     "pbr": 1.94,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -572,7 +572,7 @@
     "name": "FORMOSA TAFFETA CO",
     "price": 17.15,
     "pbr": 0.77,
-    "totalYield": 448.0,
+    "totalYield": 4.48,
     "category": "Consumer Cyclical"
   },
   {
@@ -580,7 +580,7 @@
     "name": "CHUNG FU TEX-INTERNATIONAL CORP",
     "price": 21.05,
     "pbr": 2.62,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -588,7 +588,7 @@
     "name": "HUA YU LIEN DEVELOPMENT CO LTD",
     "price": 53.8,
     "pbr": 1.61,
-    "totalYield": 1374.0,
+    "totalYield": 13.74,
     "category": "Real Estate"
   },
   {
@@ -596,7 +596,7 @@
     "name": "GTM HOLDINGS CORPORATION",
     "price": 32.4,
     "pbr": 0.79,
-    "totalYield": 558.0,
+    "totalYield": 5.58,
     "category": "Real Estate"
   },
   {
@@ -604,7 +604,7 @@
     "name": "SANDI PROPERTIES CO LTD",
     "price": 31.3,
     "pbr": 1.22,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Real Estate"
   },
   {
@@ -612,7 +612,7 @@
     "name": "ASCENT DEVELOPMENT CO LTD",
     "price": 28.35,
     "pbr": 0.91,
-    "totalYield": 103.0,
+    "totalYield": 1.03,
     "category": "Consumer Cyclical"
   },
   {
@@ -620,7 +620,7 @@
     "name": "TAINAN SPINNING",
     "price": 12.65,
     "pbr": 0.76,
-    "totalYield": 230.0,
+    "totalYield": 2.3,
     "category": "Consumer Cyclical"
   },
   {
@@ -628,7 +628,7 @@
     "name": "TAH TONG TEXTILE",
     "price": 9.99,
     "pbr": 1.53,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -636,7 +636,7 @@
     "name": "ADVANCETEK ENTERPRICE",
     "price": 27.15,
     "pbr": 1.27,
-    "totalYield": 1604.0,
+    "totalYield": 16.04,
     "category": "Real Estate"
   },
   {
@@ -644,7 +644,7 @@
     "name": "LILY TEXTILE CO LTD",
     "price": 26.35,
     "pbr": 1.56,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -652,7 +652,7 @@
     "name": "LEALEA ENTERPRISE",
     "price": 6.07,
     "pbr": 0.62,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -660,7 +660,7 @@
     "name": "UNIVERSAL TEXTILE CO",
     "price": 13.25,
     "pbr": 0.76,
-    "totalYield": 351.0,
+    "totalYield": 3.51,
     "category": "Consumer Cyclical"
   },
   {
@@ -668,7 +668,7 @@
     "name": "HONG HO PRECISION TEXTILE CO",
     "price": 15.3,
     "pbr": 0.74,
-    "totalYield": 1250.0,
+    "totalYield": 12.5,
     "category": "Consumer Cyclical"
   },
   {
@@ -676,7 +676,7 @@
     "name": "LI PENG ENTERPRISE",
     "price": 5.35,
     "pbr": 0.57,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -684,7 +684,7 @@
     "name": "CHIA HER INDUSTRIAL CO",
     "price": 10.15,
     "pbr": 0.58,
-    "totalYield": 266.0,
+    "totalYield": 2.66,
     "category": "Consumer Cyclical"
   },
   {
@@ -692,7 +692,7 @@
     "name": "NIEN HSING TEXTILE",
     "price": 18.2,
     "pbr": 0.5,
-    "totalYield": 535.0,
+    "totalYield": 5.35,
     "category": "Consumer Cyclical"
   },
   {
@@ -700,7 +700,7 @@
     "name": "HONG YI FIBER IND",
     "price": 11.2,
     "pbr": 0.55,
-    "totalYield": 437.0,
+    "totalYield": 4.37,
     "category": "Consumer Cyclical"
   },
   {
@@ -708,7 +708,7 @@
     "name": "TA JIANG DEVELOPMENT CORP",
     "price": 12.15,
     "pbr": 0.95,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -716,7 +716,7 @@
     "name": "TAIWAN TAFFETA FABRIC",
     "price": 12.9,
     "pbr": 1.1,
-    "totalYield": 189.0,
+    "totalYield": 1.89,
     "category": "Consumer Cyclical"
   },
   {
@@ -724,7 +724,7 @@
     "name": "ZIG SHENG INDUSTRIAL CO",
     "price": 8.2,
     "pbr": 0.73,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -732,7 +732,7 @@
     "name": "I-HWA INDUSTRIAL",
     "price": 13.25,
     "pbr": 0.81,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Real Estate"
   },
   {
@@ -740,7 +740,7 @@
     "name": "YI JINN INDUSTRIAL CO",
     "price": 15.25,
     "pbr": 0.69,
-    "totalYield": 637.0,
+    "totalYield": 6.37,
     "category": "Consumer Cyclical"
   },
   {
@@ -748,7 +748,7 @@
     "name": "LAN FA TEXTILE",
     "price": 11.95,
     "pbr": 1.05,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -756,7 +756,7 @@
     "name": "EVEREST TEXTILE",
     "price": 6.81,
     "pbr": 0.84,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -764,7 +764,7 @@
     "name": "CS GROUP INVESTMENT HOLDING LTD",
     "price": 17.95,
     "pbr": 1.14,
-    "totalYield": 1173.0,
+    "totalYield": 11.73,
     "category": "Consumer Cyclical"
   },
   {
@@ -772,7 +772,7 @@
     "name": "DE LICACY INDUSTRIAL CO",
     "price": 10.65,
     "pbr": 0.92,
-    "totalYield": 459.0,
+    "totalYield": 4.59,
     "category": "Consumer Cyclical"
   },
   {
@@ -780,7 +780,7 @@
     "name": "WISHER INDUSTRIAL CO",
     "price": 12.35,
     "pbr": 0.82,
-    "totalYield": 482.0,
+    "totalYield": 4.82,
     "category": "Consumer Cyclical"
   },
   {
@@ -788,7 +788,7 @@
     "name": "ACELON CHEMICAL & FIBER CORPORA",
     "price": 17.65,
     "pbr": 1.26,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -796,7 +796,7 @@
     "name": "TEX-RAY INDUSTRIAL CO LTD",
     "price": 7.26,
     "pbr": 0.62,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -804,7 +804,7 @@
     "name": "CHANG-HO FIBRE CORP",
     "price": 13.1,
     "pbr": 1.56,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -812,7 +812,7 @@
     "name": "EVERTEX FABRINOLOGY LTD",
     "price": 23.25,
     "pbr": 2.05,
-    "totalYield": 428.0,
+    "totalYield": 4.28,
     "category": "Consumer Cyclical"
   },
   {
@@ -820,7 +820,7 @@
     "name": "SOLYTECH ENTERPRISE CORPORATION",
     "price": 12.4,
     "pbr": 1.31,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Technology"
   },
   {
@@ -828,7 +828,7 @@
     "name": "TRIOCEAN INDUSTRIAL CORPORATION",
     "price": 89.5,
     "pbr": 2.12,
-    "totalYield": 331.0,
+    "totalYield": 3.31,
     "category": "Industrials"
   },
   {
@@ -836,7 +836,7 @@
     "name": "TAINAN ENTERPRISES",
     "price": 24.4,
     "pbr": 0.95,
-    "totalYield": 813.0,
+    "totalYield": 8.13,
     "category": "Consumer Cyclical"
   },
   {
@@ -844,7 +844,7 @@
     "name": "HONMYUE ENTERPRISE CO LTD",
     "price": 10.15,
     "pbr": 0.63,
-    "totalYield": 390.0,
+    "totalYield": 3.9,
     "category": "Consumer Cyclical"
   },
   {
@@ -852,7 +852,7 @@
     "name": "BIG SUNSHINE CO LTD",
     "price": 29.3,
     "pbr": 1.32,
-    "totalYield": 1204.0,
+    "totalYield": 12.04,
     "category": "Consumer Cyclical"
   },
   {
@@ -860,7 +860,7 @@
     "name": "ECLAT TEXTILE CO",
     "price": 388.0,
     "pbr": 3.83,
-    "totalYield": 420.0,
+    "totalYield": 4.2,
     "category": "Consumer Cyclical"
   },
   {
@@ -868,7 +868,7 @@
     "name": "MAKALOT INDUSTRIAL CO",
     "price": 306.5,
     "pbr": 5.82,
-    "totalYield": 511.0,
+    "totalYield": 5.11,
     "category": "Consumer Cyclical"
   },
   {
@@ -876,7 +876,7 @@
     "name": "SHIHLIN ELEC & ENGINEERING",
     "price": 198.5,
     "pbr": 2.85,
-    "totalYield": 210.0,
+    "totalYield": 2.1,
     "category": "Industrials"
   },
   {
@@ -884,7 +884,7 @@
     "name": "TECO ELECTRIC & MACHINERY CO",
     "price": 70.8,
     "pbr": 1.89,
-    "totalYield": 288.0,
+    "totalYield": 2.88,
     "category": "Industrials"
   },
   {
@@ -892,7 +892,7 @@
     "name": "RIGHT WAY INDUSTRIAL",
     "price": 11.2,
     "pbr": 1.21,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -900,7 +900,7 @@
     "name": "JUI LI ENTERPRISE",
     "price": 7.22,
     "pbr": 1.16,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -908,7 +908,7 @@
     "name": "CHUNG HSIN ELECTRIC & MACHINERY",
     "price": 155.0,
     "pbr": 3.9,
-    "totalYield": 278.0,
+    "totalYield": 2.78,
     "category": "Industrials"
   },
   {
@@ -916,7 +916,7 @@
     "name": "ALLIS ELECTRIC CO LTD",
     "price": 113.0,
     "pbr": 5.1,
-    "totalYield": 139.0,
+    "totalYield": 1.39,
     "category": "Industrials"
   },
   {
@@ -924,7 +924,7 @@
     "name": "REXON INDUSTRIAL",
     "price": 24.95,
     "pbr": 1.21,
-    "totalYield": 378.0,
+    "totalYield": 3.78,
     "category": "Consumer Cyclical"
   },
   {
@@ -932,7 +932,7 @@
     "name": "FALCON POWER CO. LTD.",
     "price": 22.1,
     "pbr": 4.23,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Energy"
   },
   {
@@ -940,7 +940,7 @@
     "name": "LEE CHI ENTERPRISES CO",
     "price": 11.75,
     "pbr": 0.77,
-    "totalYield": 166.0,
+    "totalYield": 1.66,
     "category": "Industrials"
   },
   {
@@ -948,7 +948,7 @@
     "name": "FORTUNE ELECTRIC CO LTD",
     "price": 908.0,
     "pbr": 32.74,
-    "totalYield": 91.0,
+    "totalYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -956,7 +956,7 @@
     "name": "TA YIH INDUSTRIAL CO",
     "price": 25.4,
     "pbr": 1.07,
-    "totalYield": 385.0,
+    "totalYield": 3.85,
     "category": "Consumer Cyclical"
   },
   {
@@ -964,7 +964,7 @@
     "name": "TYC BROTHER INDUSTRIAL",
     "price": 40.9,
     "pbr": 1.37,
-    "totalYield": 703.0,
+    "totalYield": 7.03,
     "category": "Consumer Cyclical"
   },
   {
@@ -972,7 +972,7 @@
     "name": "GORDON AUTO BODY PARTS CO",
     "price": 28.2,
     "pbr": 1.61,
-    "totalYield": 789.0,
+    "totalYield": 7.89,
     "category": "Consumer Cyclical"
   },
   {
@@ -980,7 +980,7 @@
     "name": "KIANSHEN CORP",
     "price": 62.1,
     "pbr": 0.96,
-    "totalYield": 489.0,
+    "totalYield": 4.89,
     "category": "Consumer Cyclical"
   },
   {
@@ -988,7 +988,7 @@
     "name": "SUN RACE STURMEY-ARCHER INC",
     "price": 18.8,
     "pbr": 0.83,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -996,7 +996,7 @@
     "name": "BASSO INDUSTRY",
     "price": 32.75,
     "pbr": 0.96,
-    "totalYield": 660.0,
+    "totalYield": 6.6,
     "category": "Industrials"
   },
   {
@@ -1004,7 +1004,7 @@
     "name": "ANDERSON INDUSTRIAL CORP",
     "price": 21.85,
     "pbr": 1.95,
-    "totalYield": 43.0,
+    "totalYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1012,7 +1012,7 @@
     "name": "LUXE GREEN ENERGY TECHNOLOGY CO",
     "price": 23.9,
     "pbr": 2.04,
-    "totalYield": 79.0,
+    "totalYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1020,7 +1020,7 @@
     "name": "AWEA MECHANTRONIC CO",
     "price": 27.75,
     "pbr": 0.84,
-    "totalYield": 535.0,
+    "totalYield": 5.35,
     "category": "Industrials"
   },
   {
@@ -1028,7 +1028,7 @@
     "name": "KAULIN MANUFACTURING",
     "price": 11.65,
     "pbr": 0.6,
-    "totalYield": 333.0,
+    "totalYield": 3.33,
     "category": "Industrials"
   },
   {
@@ -1036,7 +1036,7 @@
     "name": "CHINA METAL PRODUCTS CO",
     "price": 23.1,
     "pbr": 0.67,
-    "totalYield": 722.0,
+    "totalYield": 7.22,
     "category": "Industrials"
   },
   {
@@ -1044,7 +1044,7 @@
     "name": "MOBILETRON ELECTRONICS",
     "price": 29.5,
     "pbr": 1.35,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1052,7 +1052,7 @@
     "name": "CHINA ECOTEK",
     "price": 49.6,
     "pbr": 1.61,
-    "totalYield": 592.0,
+    "totalYield": 5.92,
     "category": "Industrials"
   },
   {
@@ -1060,7 +1060,7 @@
     "name": "HOTA INDUSTRIAL MFG CO",
     "price": 55.0,
     "pbr": 1.93,
-    "totalYield": 136.0,
+    "totalYield": 1.36,
     "category": "Consumer Cyclical"
   },
   {
@@ -1068,7 +1068,7 @@
     "name": "KUNG LONG BATTERIE",
     "price": 123.0,
     "pbr": 2.44,
-    "totalYield": 847.0,
+    "totalYield": 8.47,
     "category": "Industrials"
   },
   {
@@ -1076,7 +1076,7 @@
     "name": "JENN FENG INDUSTRIAL TOOLS CO L",
     "price": 21.7,
     "pbr": 4.75,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1084,7 +1084,7 @@
     "name": "CHIU TING MACHINERY CO",
     "price": 17.25,
     "pbr": 0.72,
-    "totalYield": 480.0,
+    "totalYield": 4.8,
     "category": "Industrials"
   },
   {
@@ -1092,7 +1092,7 @@
     "name": "ROUNDTOP MACHINERY INDUSTRY",
     "price": 21.9,
     "pbr": 1.31,
-    "totalYield": 699.0,
+    "totalYield": 6.99,
     "category": "Industrials"
   },
   {
@@ -1100,7 +1100,7 @@
     "name": "CHANG TYPE INDUSTRIAL CO",
     "price": 24.0,
     "pbr": 0.93,
-    "totalYield": 206.0,
+    "totalYield": 2.06,
     "category": "Industrials"
   },
   {
@@ -1108,7 +1108,7 @@
     "name": "ZENG HSING INDUSTRIAL CO",
     "price": 95.0,
     "pbr": 1.23,
-    "totalYield": 619.0,
+    "totalYield": 6.19,
     "category": "Consumer Cyclical"
   },
   {
@@ -1116,7 +1116,7 @@
     "name": "KINIK CO",
     "price": 464.0,
     "pbr": 9.02,
-    "totalYield": 80.0,
+    "totalYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1124,7 +1124,7 @@
     "name": "SUPERALLOY INDUSTRIAL CO LTD",
     "price": 42.9,
     "pbr": 1.08,
-    "totalYield": 506.0,
+    "totalYield": 5.06,
     "category": "Consumer Cyclical"
   },
   {
@@ -1132,7 +1132,7 @@
     "name": "TSANG YOW INDUSTRIAL CO",
     "price": 21.25,
     "pbr": 1.19,
-    "totalYield": 542.0,
+    "totalYield": 5.42,
     "category": "Consumer Cyclical"
   },
   {
@@ -1140,7 +1140,7 @@
     "name": "SYNCMOLD ENTERPRISE CORP",
     "price": 81.4,
     "pbr": 1.61,
-    "totalYield": 718.0,
+    "totalYield": 7.18,
     "category": "Technology"
   },
   {
@@ -1148,7 +1148,7 @@
     "name": "GOODWAY MACHINE CORP.",
     "price": 46.85,
     "pbr": 0.94,
-    "totalYield": 626.0,
+    "totalYield": 6.26,
     "category": "Industrials"
   },
   {
@@ -1156,7 +1156,7 @@
     "name": "CRYOMAX COOLING SYSTEM CORP",
     "price": 38.85,
     "pbr": 2.09,
-    "totalYield": 120.0,
+    "totalYield": 1.2,
     "category": "Consumer Cyclical"
   },
   {
@@ -1164,7 +1164,7 @@
     "name": "YEONG GUAN ENERGY TECHNOLOGY GP",
     "price": 9.09,
     "pbr": 0.16,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1172,7 +1172,7 @@
     "name": "AIRTAC INTERNATIONAL GROUP",
     "price": 1105.0,
     "pbr": 4.62,
-    "totalYield": 169.0,
+    "totalYield": 1.69,
     "category": "Industrials"
   },
   {
@@ -1180,7 +1180,7 @@
     "name": "CHIEFTEK PRECISION CO LTD",
     "price": 72.3,
     "pbr": 2.62,
-    "totalYield": 91.0,
+    "totalYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1188,7 +1188,7 @@
     "name": "DYACO INTERNATIONAL INC",
     "price": 19.05,
     "pbr": 0.72,
-    "totalYield": 262.0,
+    "totalYield": 2.62,
     "category": "Consumer Cyclical"
   },
   {
@@ -1196,7 +1196,7 @@
     "name": "CHINA WIRE & CABLE",
     "price": 36.8,
     "pbr": 0.79,
-    "totalYield": 395.0,
+    "totalYield": 3.95,
     "category": "Technology"
   },
   {
@@ -1204,7 +1204,7 @@
     "name": "SAMPO CORP",
     "price": 24.05,
     "pbr": 1.06,
-    "totalYield": 617.0,
+    "totalYield": 6.17,
     "category": "Consumer Cyclical"
   },
   {
@@ -1212,7 +1212,7 @@
     "name": "WALSIN LIHWA CORP",
     "price": 32.15,
     "pbr": 0.71,
-    "totalYield": 140.0,
+    "totalYield": 1.4,
     "category": "Basic Materials"
   },
   {
@@ -1220,7 +1220,7 @@
     "name": "HUA ENGINEERING WIRE & CABLE",
     "price": 33.2,
     "pbr": 1.52,
-    "totalYield": 284.0,
+    "totalYield": 2.84,
     "category": "Industrials"
   },
   {
@@ -1228,7 +1228,7 @@
     "name": "TA YA ELECTRONIC WIRE & CABLE",
     "price": 37.65,
     "pbr": 1.77,
-    "totalYield": 188.0,
+    "totalYield": 1.88,
     "category": "Industrials"
   },
   {
@@ -1236,7 +1236,7 @@
     "name": "CHINA ELECTRIC MANUFACTURE",
     "price": 12.55,
     "pbr": 0.95,
-    "totalYield": 611.0,
+    "totalYield": 6.11,
     "category": "Consumer Cyclical"
   },
   {
@@ -1244,7 +1244,7 @@
     "name": "HONG TAI ELECTRONIC INDUSTRIAL",
     "price": 34.0,
     "pbr": 1.36,
-    "totalYield": 593.0,
+    "totalYield": 5.93,
     "category": "Industrials"
   },
   {
@@ -1252,7 +1252,7 @@
     "name": "SANYO ELECTRIC CO(TAIWAN)",
     "price": 33.8,
     "pbr": 1.56,
-    "totalYield": 168.0,
+    "totalYield": 1.68,
     "category": "Consumer Cyclical"
   },
   {
@@ -1260,7 +1260,7 @@
     "name": "DAH SAN ELECTRIC WIRE & CABLE C",
     "price": 46.1,
     "pbr": 2.33,
-    "totalYield": 418.0,
+    "totalYield": 4.18,
     "category": "Industrials"
   },
   {
@@ -1268,7 +1268,7 @@
     "name": "EVERTOP WIRE CABLE  CORP",
     "price": 27.1,
     "pbr": 2.28,
-    "totalYield": 635.0,
+    "totalYield": 6.35,
     "category": "Industrials"
   },
   {
@@ -1276,7 +1276,7 @@
     "name": "JUNG SHING WIRE CO",
     "price": 14.7,
     "pbr": 1.2,
-    "totalYield": 333.0,
+    "totalYield": 3.33,
     "category": "Industrials"
   },
   {
@@ -1284,7 +1284,7 @@
     "name": "HOLD-KEY ELECTRIC WIRE & CABLE ",
     "price": 42.85,
     "pbr": 1.32,
-    "totalYield": 332.0,
+    "totalYield": 3.32,
     "category": "Technology"
   },
   {
@@ -1292,7 +1292,7 @@
     "name": "TA TUN ELECTRIC WIRE CABLE CO L",
     "price": 204.5,
     "pbr": 4.55,
-    "totalYield": 299.0,
+    "totalYield": 2.99,
     "category": "Industrials"
   },
   {
@@ -1300,7 +1300,7 @@
     "name": "AIRMATE CAYMAN INTL CO",
     "price": 10.7,
     "pbr": 0.59,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1308,7 +1308,7 @@
     "name": "NAMCHOW HOLDINGS CO LTD",
     "price": 37.35,
     "pbr": 0.87,
-    "totalYield": 658.0,
+    "totalYield": 6.58,
     "category": "Consumer Defensive"
   },
   {
@@ -1316,7 +1316,7 @@
     "name": "GRAPE KING BIO LTD",
     "price": 119.5,
     "pbr": 1.74,
-    "totalYield": 527.0,
+    "totalYield": 5.27,
     "category": "Healthcare"
   },
   {
@@ -1324,7 +1324,7 @@
     "name": "SESODA CORPN",
     "price": 36.65,
     "pbr": 1.32,
-    "totalYield": 525.0,
+    "totalYield": 5.25,
     "category": "Basic Materials"
   },
   {
@@ -1332,7 +1332,7 @@
     "name": "FORMOSAN UNION CHEMICAL",
     "price": 16.4,
     "pbr": 0.89,
-    "totalYield": 475.0,
+    "totalYield": 4.75,
     "category": "Basic Materials"
   },
   {
@@ -1340,7 +1340,7 @@
     "name": "ORIENTAL UNION CHEMICAL CORP",
     "price": 12.5,
     "pbr": 1.1,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1348,7 +1348,7 @@
     "name": "EVERLIGHT CHEMICAL",
     "price": 26.25,
     "pbr": 1.76,
-    "totalYield": 103.0,
+    "totalYield": 1.03,
     "category": "Basic Materials"
   },
   {
@@ -1356,7 +1356,7 @@
     "name": "SINON CORP",
     "price": 46.8,
     "pbr": 2.3,
-    "totalYield": 535.0,
+    "totalYield": 5.35,
     "category": "Basic Materials"
   },
   {
@@ -1364,7 +1364,7 @@
     "name": "CATHAY CHEMICAL",
     "price": 45.65,
     "pbr": 1.91,
-    "totalYield": 1569.0,
+    "totalYield": 15.69,
     "category": "Basic Materials"
   },
   {
@@ -1372,7 +1372,7 @@
     "name": "HO TUNG CHEMICAL CORP",
     "price": 9.62,
     "pbr": 0.81,
-    "totalYield": 211.0,
+    "totalYield": 2.11,
     "category": "Basic Materials"
   },
   {
@@ -1380,7 +1380,7 @@
     "name": "ETERNAL MATERIALS CO LTD",
     "price": 59.4,
     "pbr": 2.68,
-    "totalYield": 184.0,
+    "totalYield": 1.84,
     "category": "Basic Materials"
   },
   {
@@ -1388,7 +1388,7 @@
     "name": "CHINA MANMADE FIBERS",
     "price": 6.96,
     "pbr": 0.42,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Financial Services"
   },
   {
@@ -1396,7 +1396,7 @@
     "name": "STANDARD CHEM & PHARM CO",
     "price": 64.0,
     "pbr": 1.87,
-    "totalYield": 440.0,
+    "totalYield": 4.4,
     "category": "Healthcare"
   },
   {
@@ -1404,7 +1404,7 @@
     "name": "SUNKO INK CO",
     "price": 16.7,
     "pbr": 1.77,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1412,7 +1412,7 @@
     "name": "TAIWAN FERTILIZER CO",
     "price": 46.2,
     "pbr": 0.84,
-    "totalYield": 424.0,
+    "totalYield": 4.24,
     "category": "Basic Materials"
   },
   {
@@ -1420,7 +1420,7 @@
     "name": "CHINA STEEL CHEMICAL CORP",
     "price": 69.1,
     "pbr": 2.06,
-    "totalYield": 627.0,
+    "totalYield": 6.27,
     "category": "Basic Materials"
   },
   {
@@ -1428,7 +1428,7 @@
     "name": "YUAN JEN ENTERPRISE",
     "price": 27.8,
     "pbr": 0.82,
-    "totalYield": 425.0,
+    "totalYield": 4.25,
     "category": "Basic Materials"
   },
   {
@@ -1436,7 +1436,7 @@
     "name": "YUNG CHI PAINT & VARNISH MFG CO",
     "price": 76.2,
     "pbr": 1.23,
-    "totalYield": 465.0,
+    "totalYield": 4.65,
     "category": "Basic Materials"
   },
   {
@@ -1444,7 +1444,7 @@
     "name": "CHUNG HWA CHEMICAL INDUSTRIAL W",
     "price": 46.5,
     "pbr": 2.79,
-    "totalYield": 101.0,
+    "totalYield": 1.01,
     "category": "Basic Materials"
   },
   {
@@ -1452,7 +1452,7 @@
     "name": "FARCENT ENTERPRISE",
     "price": 53.2,
     "pbr": 1.64,
-    "totalYield": 562.0,
+    "totalYield": 5.62,
     "category": "Consumer Defensive"
   },
   {
@@ -1460,7 +1460,7 @@
     "name": "MAYWUFA CO",
     "price": 21.85,
     "pbr": 1.35,
-    "totalYield": 543.0,
+    "totalYield": 5.43,
     "category": "Healthcare"
   },
   {
@@ -1468,7 +1468,7 @@
     "name": "MAO BAO CHEMICAL",
     "price": 26.1,
     "pbr": 2.27,
-    "totalYield": 184.0,
+    "totalYield": 1.84,
     "category": "Consumer Defensive"
   },
   {
@@ -1476,7 +1476,7 @@
     "name": "APEX BIOTECHNOLOGY CORP",
     "price": 28.95,
     "pbr": 1.6,
-    "totalYield": 401.0,
+    "totalYield": 4.01,
     "category": "Healthcare"
   },
   {
@@ -1484,7 +1484,7 @@
     "name": "SINPHAR PHARMACEUTICAL CO LTD",
     "price": 30.3,
     "pbr": 1.74,
-    "totalYield": 313.0,
+    "totalYield": 3.13,
     "category": "Healthcare"
   },
   {
@@ -1492,7 +1492,7 @@
     "name": "EVERMORE CHEMICAL INDUSRY CO",
     "price": 18.5,
     "pbr": 1.25,
-    "totalYield": 394.0,
+    "totalYield": 3.94,
     "category": "Basic Materials"
   },
   {
@@ -1500,7 +1500,7 @@
     "name": "JOHNSON HEALTH TECH",
     "price": 123.0,
     "pbr": 3.3,
-    "totalYield": 309.0,
+    "totalYield": 3.09,
     "category": "Consumer Cyclical"
   },
   {
@@ -1508,7 +1508,7 @@
     "name": "TAIYEN BIOTECH CO",
     "price": 31.45,
     "pbr": 0.95,
-    "totalYield": 409.0,
+    "totalYield": 4.09,
     "category": "Consumer Defensive"
   },
   {
@@ -1516,7 +1516,7 @@
     "name": "NANG KUANG PHARMACEUTICAL CO",
     "price": 36.65,
     "pbr": 1.49,
-    "totalYield": 432.0,
+    "totalYield": 4.32,
     "category": "Healthcare"
   },
   {
@@ -1524,7 +1524,7 @@
     "name": "PANION & BF BIOTECH INC",
     "price": 58.8,
     "pbr": 2.65,
-    "totalYield": 299.0,
+    "totalYield": 2.99,
     "category": "Healthcare"
   },
   {
@@ -1532,7 +1532,7 @@
     "name": "CHUNGHWA CHEMICAL SYNTHESIS BIO",
     "price": 26.55,
     "pbr": 0.64,
-    "totalYield": 70.0,
+    "totalYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1540,7 +1540,7 @@
     "name": "SHINY CHEMICAL INDUSTRIAL CO. L",
     "price": 145.5,
     "pbr": 4.13,
-    "totalYield": 161.0,
+    "totalYield": 1.61,
     "category": "Basic Materials"
   },
   {
@@ -1548,7 +1548,7 @@
     "name": "HEADWAY ADVANCED MATERIALS INC",
     "price": 14.85,
     "pbr": 1.08,
-    "totalYield": 526.0,
+    "totalYield": 5.26,
     "category": "Basic Materials"
   },
   {
@@ -1556,7 +1556,7 @@
     "name": "MAXIGEN BIOTECH INC",
     "price": 42.05,
     "pbr": 2.56,
-    "totalYield": 190.0,
+    "totalYield": 1.9,
     "category": "Healthcare"
   },
   {
@@ -1564,7 +1564,7 @@
     "name": "SCIVISION BIOTECH INC",
     "price": 67.6,
     "pbr": 2.54,
-    "totalYield": 450.0,
+    "totalYield": 4.5,
     "category": "Healthcare"
   },
   {
@@ -1572,7 +1572,7 @@
     "name": "SCINOPHARM TAIWAN LTD",
     "price": 20.05,
     "pbr": 1.44,
-    "totalYield": 167.0,
+    "totalYield": 1.67,
     "category": "Healthcare"
   },
   {
@@ -1580,7 +1580,7 @@
     "name": "LOTUS PHARMACEUTICAL CO",
     "price": 255.0,
     "pbr": 3.02,
-    "totalYield": 216.0,
+    "totalYield": 2.16,
     "category": "Healthcare"
   },
   {
@@ -1588,7 +1588,7 @@
     "name": "TAIWAN GLASS INDUSTRIAL CORPORA",
     "price": 57.4,
     "pbr": 3.73,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1596,7 +1596,7 @@
     "name": "BETTER LIFE GROUP CO LTD",
     "price": 11.0,
     "pbr": 0.92,
-    "totalYield": 0,
+    "totalYield": 0.0,
     "category": "Real Estate"
   }
 ]
