@@ -1,8 +1,8 @@
 name: Update Stock Data
 on:
   schedule:
-    - cron: '0 1,5,10 * * 1-5' # 台北時間週一至五自動更新
-  workflow_dispatch: # 支援手動觸發
+    - cron: '0 1,5,10 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -31,26 +31,25 @@ jobs:
           url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
           
           try:
-              print("📡 正在同步證交所數據...")
-              # 使用 GET 請求並設定 timeout 避免掛死
+              print("📡 嘗試連線證交所...")
               response = requests.get(url, timeout=30)
-              response.encoding = 'cp950' # 強制 Big5 編碼修正亂碼
+              response.encoding = 'cp950'
               
+              if response.status_code != 200 or len(response.text) < 100:
+                  raise Exception("證交所回傳資料異常")
+
               df = pd.read_csv(StringIO(response.text))
-              
-              # 欄位模糊校正 (確保抓到 證券代號, 證券名稱, 收盤價, 本淨比, 殖利率)
               df.columns = [c.strip() for c in df.columns]
               
+              # 清洗數據
               stocks = []
               for _, r in df.iterrows():
                   sid = str(r.get('證券代號', '')).strip()
-                  # 只篩選 4 位數的一般股票
                   if len(sid) == 4 and sid.isdigit():
                       price = pd.to_numeric(r.get('收盤價', 0), errors='coerce')
                       pbr = pd.to_numeric(r.get('本淨比', 0), errors='coerce')
                       yield_rate = pd.to_numeric(r.get('殖利率(%)', 0), errors='coerce')
                       
-                      # 排除缺一資料者 (成交價為 0 或 PBR 為 0)
                       if price > 0:
                           stocks.append({
                               "id": sid,
@@ -58,20 +57,18 @@ jobs:
                               "price": float(price),
                               "pbr": float(pbr),
                               "totalYield": float(yield_rate),
-                              "industry": "上市股票" # 後續可根據代碼範圍細分產業
+                              "industry": "上市股票"
                           })
               
-              # 預設按殖利率由高到低排序
-              stocks.sort(key=lambda x: x['totalYield'], reverse=True)
-
-              with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(stocks, f, ensure_ascii=False)
-              print(f"✅ 成功產出 {len(stocks)} 筆資料")
+              if len(stocks) > 0:
+                  with open('data.json', 'w', encoding='utf-8') as f:
+                      json.dump(stocks, f, ensure_ascii=False)
+                  print(f"✅ 成功產出 {len(stocks)} 筆資料")
+              else:
+                  print("⚠️ 抓到 0 筆有效資料，跳過存檔以保護舊數據")
 
           except Exception as e:
-              print(f"❌ 錯誤: {e}")
-              if not os.path.exists('data.json'):
-                  with open('data.json', 'w') as f: json.dump([], f)
+              print(f"❌ 執行錯誤: {e}")
           EOF
 
       - name: Commit and Push
@@ -79,4 +76,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto update data.json" && git push)
+          git commit -m "自動更新股價數據" || exit 0
+          git push
