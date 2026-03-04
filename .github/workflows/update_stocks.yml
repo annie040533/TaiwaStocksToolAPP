@@ -27,95 +27,85 @@ jobs:
           import json
           import io
           import time
-          import random
 
           def fetch_data():
-              # 使用證交所全市場每日收盤行情 (這是最穩定的靜態 API)
-              url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
+              # 換成這一個連結，這是證交所 Open Data 的原始 CSV 接口，通常不帶 Web 防護
+              url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=csv"
               
-              # 模擬真實瀏覽器，避免被 Ban
+              # 加強 Headers 偽裝，偽裝成是從官網來的請求
               headers = {
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                  'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7'
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0 Safari/537.36',
+                  'Referer': 'https://www.twse.com.tw/zh/page/trading/exchange/BWIBYK.html',
+                  'Accept': 'text/csv,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
               }
               
               stocks = []
               try:
-                  print("📡 正在等待 3-5 秒避免請求過快...")
-                  time.sleep(random.uniform(3, 5))
+                  print("📡 啟動低速請求模式...")
+                  time.sleep(5)
                   
-                  print("📡 正在存取證交所當日行情數據 (單一請求)...")
-                  resp = requests.get(url, headers=headers, timeout=30)
+                  resp = requests.get(url, headers=headers, timeout=60)
                   
-                  if resp.status_code != 200:
-                      print(f"❌ 請求失敗，狀態碼: {resp.status_code}")
-                      return []
+                  # 檢查是否又抓到 HTML
+                  if "<html" in resp.text.lower():
+                      print("❌ 警告：證交所回傳了 HTML 頁面而非 CSV 資料。嘗試備援方案...")
+                      # 備援：換一個更原始的 Open Data 連結
+                      url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL"
+                      resp = requests.get(url, headers=headers)
+                      # 這個備援連結回傳的是 JSON
+                      data = resp.json()
+                      for item in data:
+                          sid = item.get('Code', '')
+                          if len(sid) == 4 and sid.isdigit():
+                              stocks.append({
+                                  "id": sid,
+                                  "name": item.get('Name', ''),
+                                  "market": "市",
+                                  "price": float(item.get('ClosingPrice', 0)) if item.get('ClosingPrice') else 0,
+                                  "pbr": float(item.get('PBRatio', 0)) if item.get('PBRatio') else 0,
+                                  "cashYield": float(item.get('YieldRate', 0)) if item.get('YieldRate') else 0,
+                                  "stockYield": 0.0,
+                                  "totalYield": float(item.get('YieldRate', 0)) if item.get('YieldRate') else 0
+                              })
+                      return stocks
 
-                  # 處理證交所 CSV 的雜訊 (移除 BOM 或開頭空白)
-                  content = resp.content.decode('utf-8-sig')
+                  # 若正常收到 CSV，則執行原本的解析
+                  content = resp.content.decode('cp950', errors='ignore')
                   lines = content.splitlines()
-                  
-                  # 尋找真正包含「證券代號」的那一行作為標題
                   header_idx = -1
                   for i, line in enumerate(lines):
                       if "證券代號" in line:
                           header_idx = i
                           break
                   
-                  if header_idx == -1:
-                      print("❌ 找不到數據起始行，原始內容前100字:", content[:100])
-                      return []
-
-                  # 解析 CSV
-                  clean_csv = "\n".join(lines[header_idx:])
-                  df = pd.read_csv(io.StringIO(clean_csv))
-                  
-                  # 統一清理欄位名稱
-                  df.columns = [str(c).strip().replace('"', '') for c in df.columns]
-                  print(f"📊 成功辨識欄位: {list(df.columns)}")
-
-                  for _, row in df.iterrows():
-                      # 依照 twstock 邏輯：過濾 4 位數純數字代碼
-                      sid = str(row.get('證券代號', '')).strip().replace('"', '')
-                      if len(sid) == 4 and sid.isdigit():
-                          try:
-                              def to_num(v):
-                                  s = str(v).strip().replace(',', '').replace('"', '')
-                                  return float(s) if s not in ['', '-', 'None', 'NaN'] else 0.0
-
-                              # 這裡採用位置索引作為備援，防止欄位改名
-                              # 一般順序: 0代號, 1名稱, 2殖利率, 5本淨比, 8收盤價
-                              price = to_num(row.get('收盤價', row.iloc[8] if len(row) > 8 else 0))
-                              yld = to_num(row.get('殖利率(%)', row.iloc[2] if len(row) > 2 else 0))
-                              pbr = to_num(row.get('本淨比', row.iloc[5] if len(row) > 5 else 0))
-
-                              if price > 0:
+                  if header_idx != -1:
+                      df = pd.read_csv(io.StringIO("\n".join(lines[header_idx:])))
+                      df.columns = [c.strip().replace('"', '') for c in df.columns]
+                      for _, row in df.iterrows():
+                          sid = str(row.get('證券代號', '')).strip().replace('"', '')
+                          if len(sid) == 4 and sid.isdigit():
+                              try:
+                                  yld = float(str(row.get('殖利率(%)', 0)).replace(',', ''))
+                                  price = float(str(row.get('收盤價', 0)).replace(',', ''))
                                   stocks.append({
-                                      "id": sid,
-                                      "name": str(row.get('證券名稱', row.iloc[1])).strip().replace('"', ''),
-                                      "market": "市",
-                                      "price": price,
-                                      "pbr": pbr,
-                                      "cashYield": yld,
-                                      "stockYield": 0.0,
-                                      "totalYield": yld
+                                      "id": sid, "name": str(row.get('證券名稱', '')),
+                                      "market": "市", "price": price, "pbr": float(row.get('本淨比', 0)),
+                                      "cashYield": yld, "stockYield": 0.0, "totalYield": yld
                                   })
-                          except: continue
+                              except: continue
                   
-                  # 依照合計殖利率排序
-                  stocks.sort(key=lambda x: x['totalYield'], reverse=True)
-                  print(f"✅ 解析成功：{len(stocks)} 筆個股")
+                  return stocks
               except Exception as e:
-                  print(f"❌ 錯誤原因: {e}")
-              return stocks
+                  print(f"❌ 發生錯誤: {e}")
+                  return []
 
-          final_list = fetch_data()
-          if len(final_list) > 300:
+          final_data = fetch_data()
+          if len(final_data) > 300:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(final_list, f, ensure_ascii=False, indent=2)
-              print(f"🚀 data.json 更新完成，筆數: {len(final_list)}")
+                  json.dump(final_data, f, ensure_ascii=False, indent=2)
+              print(f"✅ 成功寫入 {len(final_data)} 筆資料！")
           else:
-              print(f"🛑 筆數不足 ({len(final_list)})，不執行寫入。")
+              print(f"🛑 資料量過低 ({len(final_data)})，不執行更新。")
           EOF
 
       - name: Commit and Push
