@@ -20,70 +20,70 @@ jobs:
         run: pip install pandas requests
 
       - name: Fetch and Process Data
-        # 使用 | 管道符號處理多行字串，避免語法解析錯誤
         run: |
           python - <<EOF
           import requests
           import pandas as pd
           import json
-          import os
           from io import StringIO
 
-          # 參考 twstock 邏輯：獲取證交所 CSV 並強制處理編碼
-          url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
-          
-          try:
-              print("📡 正在同步證交所數據...")
-              response = requests.get(url, timeout=30)
-              # 解決亂碼問題，確保資料抓取穩定
-              response.encoding = 'cp950'
+          def fetch_data():
+              all_stocks = []
               
-              if response.status_code != 200:
-                  raise Exception("TWSE API 無回應")
-
-              df = pd.read_csv(StringIO(response.text))
-              # 清理欄位空白字元
-              df.columns = [c.strip() for c in df.columns]
-              
-              stocks = []
-              for _, r in df.iterrows():
-                  sid = str(r.get('證券代號', '')).strip()
-                  # 僅處理 4 位數股票代碼
-                  if len(sid) == 4 and sid.isdigit():
+              # 1. 抓取上市資料 (TWSE)
+              try:
+                  t_url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
+                  t_res = requests.get(t_url, timeout=30)
+                  t_res.encoding = 'cp950'
+                  df_t = pd.read_csv(StringIO(t_res.text))
+                  df_t.columns = [c.strip() for c in df_t.columns]
+                  for _, r in df_t.iterrows():
+                      # 篩選 4 位數代碼，且確保 價格、PBR、殖利率 都不為空
+                      sid = str(r.get('證券代號', '')).strip()
                       price = pd.to_numeric(r.get('收盤價', 0), errors='coerce')
                       pbr = pd.to_numeric(r.get('本淨比', 0), errors='coerce')
-                      # 根據需求：現金、股票、合計殖利率處理
                       y_total = pd.to_numeric(r.get('殖利率(%)', 0), errors='coerce')
                       
-                      # 篩選邏輯：成交價、PBR、殖利率皆有資料者
-                      if price > 0 and pbr > 0 and not pd.isna(y_total):
-                          stocks.append({
-                              "id": sid,
-                              "name": str(r.get('證券名稱', '')).strip(),
-                              "market": "市",
-                              "price": float(price),
-                              "pbr": float(pbr),
-                              "cashYield": float(y_total), 
-                              "stockYield": 0.0,
-                              "totalYield": float(y_total)
+                      if len(sid) == 4 and price > 0 and pbr > 0 and not pd.isna(y_total):
+                          all_stocks.append({
+                              "id": sid, "name": str(r.get('證券名稱', '')).strip(),
+                              "market": "市", "price": float(price), "pbr": float(pbr),
+                              "cashYield": float(y_total), "stockYield": 0.0, "totalYield": float(y_total)
                           })
+              except Exception as e: print(f"TWSE Error: {e}")
+
+              # 2. 抓取上櫃資料 (TPEx)
+              try:
+                  o_url = "https://www.tpex.org.tw/web/stock/aftertrading/peratio_analysis/pera_result.php?l=zh-tw&o=csv"
+                  o_res = requests.get(o_url, timeout=30)
+                  df_o = pd.read_csv(StringIO(o_res.text), skiprows=3)
+                  df_o.columns = [c.strip() for c in df_o.columns]
+                  for _, r in df_o.iterrows():
+                      sid = str(r.get('股票代號', '')).strip()
+                      price = pd.to_numeric(r.get('收盤價', 0), errors='coerce')
+                      pbr = pd.to_numeric(r.get('股價淨值比', 0), errors='coerce')
+                      y_total = pd.to_numeric(r.get('殖利率(%)', 0), errors='coerce')
+                      
+                      if len(sid) == 4 and price > 0 and pbr > 0 and not pd.isna(y_total):
+                          all_stocks.append({
+                              "id": sid, "name": str(r.get('名稱', '')).strip(),
+                              "market": "櫃", "price": float(price), "pbr": float(pbr),
+                              "cashYield": float(y_total), "stockYield": 0.0, "totalYield": float(y_total)
+                          })
+              except Exception as e: print(f"TPEx Error: {e}")
               
-              # 依照合計殖利率排序
-              stocks.sort(key=lambda x: x['totalYield'], reverse=True)
+              return all_stocks
 
-              if len(stocks) > 0:
-                  with open('data.json', 'w', encoding='utf-8') as f:
-                      json.dump(stocks, f, ensure_ascii=False)
-                  print(f"✅ 成功產出 {len(stocks)} 筆資料")
-              else:
-                  print("⚠️ 抓取資料為空，不執行更新")
-
-          except Exception as e:
-              print(f"❌ 錯誤: {e}")
+          data = fetch_data()
+          if data:
+              with open('data.json', 'w', encoding='utf-8') as f:
+                  json.dump(data, f, ensure_ascii=False)
+              print(f"✅ 成功產出 {len(data)} 筆資料")
+          else:
+              print("❌ 抓取失敗，資料夾為空")
           EOF
 
       - name: Commit and Push
-        # 確保 Git 操作不因無變動而報錯
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
