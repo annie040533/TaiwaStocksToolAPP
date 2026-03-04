@@ -17,64 +17,67 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests pandas
 
       - name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
+          import pandas as pd
+          import io
           import json
-          import time
 
-          def fetch_data():
-              # 使用 OpenAPI BWIBYK_ALL 包含殖利率與 PBR
-              url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL"
+          def get_data():
+              # 使用 CSV 備用介面，這通常比 JSON OpenAPI 更不容易被 GitHub Actions 環境阻擋
+              url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
               headers = {
                   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
               }
               
-              for attempt in range(3): # 增加重試機制
-                  try:
-                      resp = requests.get(url, headers=headers, timeout=30)
-                      if resp.status_code != 200:
-                          print(f"HTTP Error: {resp.status_code}")
-                          time.sleep(5)
-                          continue
-                          
-                      raw_data = resp.json()
-                      stocks = []
-                      for item in raw_data:
-                          sid = item.get('Code', '').strip()
-                          # 篩選 4 位數個股
-                          if len(sid) == 4 and sid.isdigit():
-                              try:
-                                  p = float(item.get('ClosingPrice', 0))
-                                  y = float(item.get('YieldRatio', 0))
-                                  b = float(item.get('PBratio', 0))
-                                  if p > 0:
-                                      stocks.append({
-                                          "id": sid,
-                                          "name": item.get('Name', '').strip(),
-                                          "price": p,
-                                          "pbr": b,
-                                          "totalYield": y,
-                                          "category": item.get('Industry', '其他')
-                                      })
-                              except: continue
-                      return stocks
-                  except Exception as e:
-                      print(f"Attempt {attempt+1} failed: {e}")
-                      time.sleep(5)
-              return []
+              try:
+                  print("📡 嘗試從備用 CSV 連結抓取資料...")
+                  resp = requests.get(url, headers=headers, timeout=30)
+                  if resp.status_code != 200:
+                      return []
 
-          data = fetch_data()
-          if len(data) > 300:
+                  # 解析 CSV (證交所 Open Data 格式)
+                  df = pd.read_csv(io.StringIO(resp.text))
+                  # 修正欄位名稱中的引號與空格
+                  df.columns = [c.replace('"', '').strip() for c in df.columns]
+                  
+                  stocks = []
+                  for _, row in df.iterrows():
+                      sid = str(row.get('證券代號', '')).replace('"', '').strip()
+                      if len(sid) == 4 and sid.isdigit():
+                          try:
+                              # 轉換數值並處理可能的千分位
+                              p = float(str(row.get('收盤價', 0)).replace(',', ''))
+                              y = float(str(row.get('殖利率(%)', 0)).replace(',', ''))
+                              b = float(str(row.get('本淨比', 0)).replace(',', ''))
+                              
+                              if p > 0:
+                                  stocks.append({
+                                      "id": sid,
+                                      "name": str(row.get('證券名稱', '')).replace('"', '').strip(),
+                                      "price": p,
+                                      "pbr": b,
+                                      "totalYield": y,
+                                      "category": "一般產業" # CSV 沒提供產業，由前端分類
+                                  })
+                          except: continue
+                  return stocks
+              except Exception as e:
+                  print(f"🔥 錯誤: {e}")
+                  return []
+
+          final_data = get_data()
+          if len(final_data) > 300:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(data, f, ensure_ascii=False, indent=2)
-              print(f"Successfully updated {len(data)} stocks.")
+                  json.dump(final_data, f, ensure_ascii=False, indent=2)
+              print(f"🚀 成功！產出 {len(final_data)} 筆資料。")
           else:
-              print("Failed to fetch enough data.")
-              exit(1) # 讓 Workflow 顯示失敗以便追蹤
+              print("🛑 資料獲取失敗，請檢查證交所連結是否變動。")
+              exit(1)
           EOF
 
       - name: Commit and Push
@@ -82,4 +85,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "修正資料抓取與欄位問題" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "改用 CSV 備用源以解決解析錯誤" && git push)
