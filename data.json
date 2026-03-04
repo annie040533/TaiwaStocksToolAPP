@@ -3,2150 +3,1638 @@
     "id": "1101",
     "name": "TCC",
     "price": 25.0,
-    "pbr": 0.85,
     "totalYield": 3.86,
-    "cashYield": 3.86,
-    "stockYield": 0.0,
-    "category": "鋼鐵工業"
+    "category": "水泥工業"
   },
   {
     "id": "1102",
     "name": "ASIA",
     "price": 34.5,
-    "pbr": 0.7,
     "totalYield": 6.26,
-    "cashYield": 6.26,
-    "stockYield": 0.0,
-    "category": "鋼鐵工業"
+    "category": "水泥工業"
   },
   {
     "id": "1103",
     "name": "CHIA",
     "price": 13.5,
-    "pbr": 0.49,
     "totalYield": 3.94,
-    "cashYield": 3.94,
-    "stockYield": 0.0,
-    "category": "鋼鐵工業"
+    "category": "水泥工業"
   },
   {
     "id": "1104",
     "name": "UNIVERSAL",
     "price": 28.8,
-    "pbr": 0.85,
     "totalYield": 5.72,
-    "cashYield": 5.72,
-    "stockYield": 0.0,
-    "category": "鋼鐵工業"
+    "category": "水泥工業"
   },
   {
     "id": "1108",
     "name": "LUCKY",
     "price": 14.9,
-    "pbr": 1.06,
     "totalYield": 4.93,
-    "cashYield": 4.93,
-    "stockYield": 0.0,
-    "category": "鋼鐵工業"
+    "category": "水泥工業"
   },
   {
     "id": "1109",
     "name": "HSING",
     "price": 15.4,
-    "pbr": 0.65,
     "totalYield": 5.77,
-    "cashYield": 5.77,
-    "stockYield": 0.0,
-    "category": "鋼鐵工業"
+    "category": "水泥工業"
   },
   {
     "id": "1110",
     "name": "SOUTH",
     "price": 15.5,
-    "pbr": 0.94,
     "totalYield": 1.87,
-    "cashYield": 1.87,
-    "stockYield": 0.0,
-    "category": "鋼鐵工業"
+    "category": "水泥工業"
   },
   {
     "id": "1201",
     "name": "WEI",
     "price": 14.2,
-    "pbr": 0.96,
     "totalYield": 3.47,
-    "cashYield": 3.47,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1203",
     "name": "VE",
     "price": 39.9,
-    "pbr": 1.55,
     "totalYield": 2.93,
-    "cashYield": 2.93,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1210",
     "name": "GREAT",
     "price": 50.4,
-    "pbr": 1.7,
     "totalYield": 5.52,
-    "cashYield": 5.52,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1213",
     "name": "OCEANIC",
     "price": 9.5,
-    "pbr": 0.81,
     "totalYield": 3.51,
-    "cashYield": 3.51,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1215",
     "name": "卜蜂",
     "price": 156.5,
-    "pbr": 3.97,
     "totalYield": 4.49,
-    "cashYield": 4.49,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1216",
     "name": "UNI-PRESIDENT",
     "price": 71.6,
-    "pbr": 3.19,
     "totalYield": 4.06,
-    "cashYield": 4.06,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1217",
     "name": "AGV",
     "price": 10.2,
-    "pbr": 0.67,
     "totalYield": 3.56,
-    "cashYield": 3.56,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1218",
     "name": "泰山",
     "price": 17.9,
-    "pbr": 0.68,
     "totalYield": 7.46,
-    "cashYield": 7.46,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1219",
     "name": "FWUSOW",
     "price": 13.4,
-    "pbr": 1.01,
     "totalYield": 3.69,
-    "cashYield": 3.69,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1220",
     "name": "TAI",
     "price": 12.9,
-    "pbr": 0.97,
     "totalYield": 5.34,
-    "cashYield": 5.34,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1225",
     "name": "FORMOSA",
     "price": 32.2,
-    "pbr": 2.07,
     "totalYield": 0.44,
-    "cashYield": 0.44,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1227",
     "name": "STANDARD",
     "price": 29.2,
-    "pbr": 1.49,
     "totalYield": 4.68,
-    "cashYield": 4.68,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1229",
     "name": "LIEN",
     "price": 43.6,
-    "pbr": 1.37,
     "totalYield": 2.93,
-    "cashYield": 2.93,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "食品工業"
   },
   {
     "id": "1231",
     "name": "LIAN",
     "price": 82.7,
-    "pbr": 3.65,
     "totalYield": 1.87,
-    "cashYield": 1.87,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1232",
     "name": "大統益",
     "price": 150.5,
-    "pbr": 4.09,
     "totalYield": 4.61,
-    "cashYield": 4.61,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1233",
     "name": "TEN",
     "price": 32.9,
-    "pbr": 2.23,
     "totalYield": 2.87,
-    "cashYield": 2.87,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1234",
     "name": "HEY",
     "price": 36.6,
-    "pbr": 0.79,
     "totalYield": 5.1,
-    "cashYield": 5.1,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1235",
     "name": "SHIN",
     "price": 43.6,
-    "pbr": 0.71,
     "totalYield": 1.05,
-    "cashYield": 1.05,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1236",
     "name": "HUNYA",
     "price": 27.9,
-    "pbr": 0.92,
     "totalYield": 2.16,
-    "cashYield": 2.16,
-    "stockYield": 0.0,
     "category": "食品工業"
   },
   {
     "id": "1256",
     "name": "SUNJUICE",
     "price": 158.5,
-    "pbr": 1.57,
     "totalYield": 2.83,
-    "cashYield": 2.83,
-    "stockYield": 0.0,
     "category": "食品工業"
+  },
+  {
+    "id": "1301",
+    "name": "FORMOSA",
+    "price": 47.0,
+    "totalYield": 1.0,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1303",
+    "name": "NAN",
+    "price": 79.3,
+    "totalYield": 0.82,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1304",
+    "name": "USI",
+    "price": 12.3,
+    "totalYield": 1.57,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1305",
+    "name": "CHINA",
+    "price": 12.3,
+    "totalYield": 1.16,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1307",
+    "name": "SAN",
+    "price": 32.9,
+    "totalYield": 7.69,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1308",
+    "name": "ASIA",
+    "price": 14.1,
+    "totalYield": 1.72,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1309",
+    "name": "TAITA",
+    "price": 12.8,
+    "totalYield": 1.5,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1310",
+    "name": "TAIWAN",
+    "price": 9.6,
+    "totalYield": 0.0,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1312",
+    "name": "GRAND",
+    "price": 12.7,
+    "totalYield": 0.0,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1313",
+    "name": "UPC",
+    "price": 12.8,
+    "totalYield": 1.19,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1314",
+    "name": "CHINA",
+    "price": 8.1,
+    "totalYield": 0.0,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1315",
+    "name": "TAHHSIN",
+    "price": 63.6,
+    "totalYield": 6.92,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1316",
+    "name": "SUN",
+    "price": 12.7,
+    "totalYield": 0.0,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1319",
+    "name": "TONG",
+    "price": 92.0,
+    "totalYield": 5.58,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1321",
+    "name": "OCEAN",
+    "price": 33.3,
+    "totalYield": 1.12,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1323",
+    "name": "YONYU",
+    "price": 18.6,
+    "totalYield": 4.86,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1324",
+    "name": "GLOBE",
+    "price": 10.4,
+    "totalYield": 1.9,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1325",
+    "name": "UNIVERSAL",
+    "price": 27.2,
+    "totalYield": 1.05,
+    "category": "塑膠工業"
+  },
+  {
+    "id": "1326",
+    "name": "FORMOSA",
+    "price": 43.5,
+    "totalYield": 1.07,
+    "category": "塑膠工業"
   },
   {
     "id": "2301",
     "name": "光寶科",
     "price": 155.5,
-    "pbr": 3.93,
     "totalYield": 3.94,
-    "cashYield": 3.94,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2302",
     "name": "RECTRON",
     "price": 16.8,
-    "pbr": 1.56,
     "totalYield": 3.2,
-    "cashYield": 3.2,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2303",
     "name": "UNITED",
     "price": 60.0,
-    "pbr": 1.99,
     "totalYield": 4.55,
-    "cashYield": 4.55,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2305",
     "name": "MICROTEK",
     "price": 12.1,
-    "pbr": 1.12,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2308",
     "name": "台達電",
     "price": 1255.0,
-    "pbr": 12.16,
     "totalYield": 0.52,
-    "cashYield": 0.52,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2312",
     "name": "KINPO",
     "price": 22.4,
-    "pbr": 1.53,
     "totalYield": 2.5,
-    "cashYield": 2.5,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2313",
     "name": "COMPEQ",
     "price": 211.0,
-    "pbr": 5.68,
     "totalYield": 1.07,
-    "cashYield": 1.07,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2314",
     "name": "MICROELECTRONICS",
     "price": 19.4,
-    "pbr": 8.92,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2316",
     "name": "WUS",
     "price": 90.1,
-    "pbr": 1.4,
     "totalYield": 0.52,
-    "cashYield": 0.52,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2317",
     "name": "鴻海",
     "price": 217.0,
-    "pbr": 1.85,
     "totalYield": 2.53,
-    "cashYield": 2.53,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2321",
     "name": "TECOM",
     "price": 15.6,
-    "pbr": 5.33,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2323",
     "name": "CMC",
     "price": 10.2,
-    "pbr": 0.63,
     "totalYield": 2.74,
-    "cashYield": 2.74,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2324",
     "name": "COMPAL",
     "price": 29.4,
-    "pbr": 1.01,
     "totalYield": 3.62,
-    "cashYield": 3.62,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2327",
     "name": "YAGEO",
     "price": 259.0,
-    "pbr": 3.39,
     "totalYield": 1.78,
-    "cashYield": 1.78,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2328",
     "name": "PAN",
     "price": 46.1,
-    "pbr": 1.72,
     "totalYield": 2.22,
-    "cashYield": 2.22,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2329",
     "name": "ORIENT",
     "price": 49.4,
-    "pbr": 2.81,
     "totalYield": 1.87,
-    "cashYield": 1.87,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2330",
     "name": "台積電",
     "price": 1865.0,
-    "pbr": 8.92,
     "totalYield": 1.24,
-    "cashYield": 1.24,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2331",
     "name": "ELITEGROUP",
     "price": 23.5,
-    "pbr": 1.17,
     "totalYield": 0.81,
-    "cashYield": 0.81,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2332",
     "name": "D-LINK",
     "price": 14.4,
-    "pbr": 1.03,
     "totalYield": 0.65,
-    "cashYield": 0.65,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2337",
     "name": "MACRONIX",
     "price": 98.0,
-    "pbr": 3.95,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2338",
     "name": "TAIWAN",
     "price": 48.6,
-    "pbr": 2.96,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2340",
     "name": "TAIWAN-ASIA",
     "price": 24.2,
-    "pbr": 1.62,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2342",
     "name": "MOSEL",
     "price": 28.8,
-    "pbr": 1.91,
     "totalYield": 0.96,
-    "cashYield": 0.96,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2344",
     "name": "WINBOND",
     "price": 104.0,
-    "pbr": 4.34,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2345",
     "name": "智邦",
     "price": 1305.0,
-    "pbr": 14.71,
     "totalYield": 0.77,
-    "cashYield": 0.77,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2347",
     "name": "SYNNEX",
     "price": 67.5,
-    "pbr": 1.52,
     "totalYield": 5.76,
-    "cashYield": 5.76,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2348",
     "name": "HIYES",
     "price": 69.5,
-    "pbr": 1.4,
     "totalYield": 12.5,
-    "cashYield": 12.5,
-    "stockYield": 0.0,
-    "category": "建材營造"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2349",
     "name": "RITEK",
     "price": 12.7,
-    "pbr": 1.68,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2351",
     "name": "SDI",
     "price": 78.9,
-    "pbr": 2.13,
     "totalYield": 3.05,
-    "cashYield": 3.05,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2352",
     "name": "QISDA",
     "price": 23.3,
-    "pbr": 1.33,
     "totalYield": 14.37,
-    "cashYield": 14.37,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2353",
     "name": "ACER",
     "price": 25.9,
-    "pbr": 1.06,
     "totalYield": 6.37,
-    "cashYield": 6.37,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2354",
     "name": "FOXCONN",
     "price": 54.0,
-    "pbr": 0.74,
     "totalYield": 2.46,
-    "cashYield": 2.46,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2355",
     "name": "CHIN-POON",
     "price": 41.6,
-    "pbr": 1.01,
     "totalYield": 4.29,
-    "cashYield": 4.29,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2356",
     "name": "INVENTEC",
     "price": 40.2,
-    "pbr": 2.05,
     "totalYield": 3.97,
-    "cashYield": 3.97,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2357",
     "name": "華碩",
     "price": 500.0,
-    "pbr": 1.44,
     "totalYield": 6.53,
-    "cashYield": 6.53,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2359",
     "name": "SOLOMON",
     "price": 119.0,
-    "pbr": 3.67,
     "totalYield": 0.8,
-    "cashYield": 0.8,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2360",
     "name": "CHROMA",
     "price": 1340.0,
-    "pbr": 19.25,
     "totalYield": 0.65,
-    "cashYield": 0.65,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2362",
     "name": "CLEVO",
     "price": 36.6,
-    "pbr": 0.52,
     "totalYield": 6.59,
-    "cashYield": 6.59,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2363",
     "name": "SILICON",
     "price": 48.4,
-    "pbr": 1.44,
     "totalYield": 0.96,
-    "cashYield": 0.96,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2364",
     "name": "TWINHEAD",
     "price": 60.9,
-    "pbr": 4.08,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2365",
     "name": "KYE",
     "price": 33.1,
-    "pbr": 2.46,
     "totalYield": 1.71,
-    "cashYield": 1.71,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2367",
     "name": "UNITECH",
     "price": 71.0,
-    "pbr": 4.11,
     "totalYield": 0.97,
-    "cashYield": 0.97,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2368",
     "name": "金像電",
     "price": 709.0,
-    "pbr": 12.81,
     "totalYield": 0.78,
-    "cashYield": 0.78,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2369",
     "name": "LINGSEN",
     "price": 25.1,
-    "pbr": 1.97,
     "totalYield": 1.09,
-    "cashYield": 1.09,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2371",
     "name": "大同",
     "price": 32.2,
-    "pbr": 1.13,
     "totalYield": 8.91,
-    "cashYield": 8.91,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2373",
     "name": "AURORA",
     "price": 55.8,
-    "pbr": 1.82,
     "totalYield": 6.58,
-    "cashYield": 6.58,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2374",
     "name": "ABILITY",
     "price": 70.0,
-    "pbr": 2.94,
     "totalYield": 0.79,
-    "cashYield": 0.79,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2375",
     "name": "KAIMEI",
     "price": 82.8,
-    "pbr": 0.95,
     "totalYield": 1.68,
-    "cashYield": 1.68,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2376",
-    "name": "GIGA-BYTE",
+    "name": "技嘉",
     "price": 214.0,
-    "pbr": 2.58,
     "totalYield": 4.37,
-    "cashYield": 4.37,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2377",
     "name": "MICRO-STAR",
     "price": 93.8,
-    "pbr": 1.52,
     "totalYield": 5.21,
-    "cashYield": 5.21,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2379",
     "name": "瑞昱",
     "price": 445.0,
-    "pbr": 4.39,
     "totalYield": 5.51,
-    "cashYield": 5.51,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2380",
     "name": "AVISION",
     "price": 5.0,
-    "pbr": 2.56,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2382",
     "name": "廣達",
     "price": 281.0,
-    "pbr": 4.45,
     "totalYield": 4.41,
-    "cashYield": 4.41,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2383",
     "name": "ELITE",
     "price": 2190.0,
-    "pbr": 17.64,
     "totalYield": 0.71,
-    "cashYield": 0.71,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2385",
     "name": "群光",
     "price": 124.0,
-    "pbr": 2.19,
     "totalYield": 7.94,
-    "cashYield": 7.94,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2387",
     "name": "精元",
     "price": 41.7,
-    "pbr": 0.76,
     "totalYield": 9.32,
-    "cashYield": 9.32,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2388",
     "name": "VIA",
     "price": 44.5,
-    "pbr": 1.23,
     "totalYield": 0.42,
-    "cashYield": 0.42,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2390",
     "name": "EVERSPRING",
     "price": 9.7,
-    "pbr": 0.79,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2392",
     "name": "CHENG",
     "price": 36.0,
-    "pbr": 0.78,
     "totalYield": 6.66,
-    "cashYield": 6.66,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2393",
     "name": "億光",
     "price": 56.1,
-    "pbr": 1.31,
     "totalYield": 9.11,
-    "cashYield": 9.11,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2395",
-    "name": "研華",
+    "name": "ADVANTECH",
     "price": 311.5,
-    "pbr": 4.91,
     "totalYield": 2.54,
-    "cashYield": 2.54,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2397",
     "name": "DFI",
     "price": 56.9,
-    "pbr": 1.93,
     "totalYield": 5.6,
-    "cashYield": 5.6,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2399",
     "name": "BIOSTAR",
     "price": 22.8,
-    "pbr": 1.89,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "半導體/電腦設備"
   },
   {
     "id": "2401",
     "name": "SUNPLUS",
     "price": 20.5,
-    "pbr": 1.48,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2402",
     "name": "ICHIA",
     "price": 50.1,
-    "pbr": 2.3,
     "totalYield": 3.58,
-    "cashYield": 3.58,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2404",
     "name": "UNITED",
     "price": 1000.0,
-    "pbr": 12.04,
     "totalYield": 2.76,
-    "cashYield": 2.76,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2405",
     "name": "SHUTTLE",
     "price": 14.6,
-    "pbr": 1.44,
     "totalYield": 1.09,
-    "cashYield": 1.09,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2406",
     "name": "GIGASTORAGE",
     "price": 31.6,
-    "pbr": 3.09,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2408",
     "name": "NANYA",
     "price": 234.5,
-    "pbr": 4.62,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2409",
     "name": "友達",
     "price": 14.9,
-    "pbr": 0.76,
     "totalYield": 7.65,
-    "cashYield": 7.65,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2412",
     "name": "CHUNGHWA",
     "price": 135.5,
-    "pbr": 2.72,
     "totalYield": 3.62,
-    "cashYield": 3.62,
-    "stockYield": 0.0,
-    "category": "通信網路業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2413",
     "name": "UNIVERSAL",
     "price": 47.2,
-    "pbr": 3.2,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2414",
     "name": "UNITECH",
     "price": 41.2,
-    "pbr": 2.15,
     "totalYield": 5.95,
-    "cashYield": 5.95,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2415",
     "name": "CX",
     "price": 25.9,
-    "pbr": 1.48,
     "totalYield": 4.47,
-    "cashYield": 4.47,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2417",
     "name": "AVERMEDIA",
     "price": 33.8,
-    "pbr": 1.63,
     "totalYield": 0.56,
-    "cashYield": 0.56,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2419",
     "name": "HITRON",
     "price": 28.2,
-    "pbr": 1.97,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2420",
     "name": "ZIPPY",
     "price": 50.0,
-    "pbr": 2.03,
     "totalYield": 6.82,
-    "cashYield": 6.82,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2421",
     "name": "SUNONWEALTH",
     "price": 134.5,
-    "pbr": 4.52,
     "totalYield": 2.58,
-    "cashYield": 2.58,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2423",
     "name": "GOOD",
     "price": 47.2,
-    "pbr": 2.32,
     "totalYield": 4.11,
-    "cashYield": 4.11,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2424",
     "name": "LUNG",
     "price": 32.8,
-    "pbr": 6.54,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2425",
     "name": "CHAINTECH",
     "price": 26.0,
-    "pbr": 1.08,
     "totalYield": 0.54,
-    "cashYield": 0.54,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2426",
     "name": "TYNTEK",
     "price": 18.9,
-    "pbr": 1.51,
     "totalYield": 0.5,
-    "cashYield": 0.5,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2427",
     "name": "MERCURIES",
     "price": 24.9,
-    "pbr": 1.52,
     "totalYield": 2.66,
-    "cashYield": 2.66,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2428",
     "name": "THINKING",
     "price": 168.5,
-    "pbr": 2.07,
     "totalYield": 3.41,
-    "cashYield": 3.41,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2429",
     "name": "ABONMAX",
     "price": 51.5,
-    "pbr": 5.43,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2430",
     "name": "TSANN",
     "price": 23.0,
-    "pbr": 0.62,
     "totalYield": 6.52,
-    "cashYield": 6.52,
-    "stockYield": 0.0,
-    "category": "電腦/周邊設備"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2431",
     "name": "LIEN",
     "price": 13.5,
-    "pbr": 1.19,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2432",
     "name": "統振",
     "price": 23.4,
-    "pbr": 1.26,
     "totalYield": 7.05,
-    "cashYield": 7.05,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2433",
     "name": "HUXEN",
     "price": 46.7,
-    "pbr": 2.1,
     "totalYield": 6.4,
-    "cashYield": 6.4,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2434",
     "name": "MOSPEC",
     "price": 29.4,
-    "pbr": 2.26,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2436",
     "name": "WELTREND",
     "price": 54.7,
-    "pbr": 2.78,
     "totalYield": 2.6,
-    "cashYield": 2.6,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2438",
     "name": "ENLIGHT",
     "price": 20.7,
-    "pbr": 3.85,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2439",
     "name": "美律",
     "price": 82.7,
-    "pbr": 1.18,
     "totalYield": 8.3,
-    "cashYield": 8.3,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2440",
     "name": "SPACE",
     "price": 15.2,
-    "pbr": 1.79,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2441",
     "name": "GREATEK",
     "price": 84.6,
-    "pbr": 2.1,
     "totalYield": 3.33,
-    "cashYield": 3.33,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2442",
     "name": "JEAN",
     "price": 18.9,
-    "pbr": 1.04,
     "totalYield": 0.4,
-    "cashYield": 0.4,
-    "stockYield": 0.0,
-    "category": "建材營造"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2444",
     "name": "ABOCOM",
     "price": 13.4,
-    "pbr": 1.66,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2449",
     "name": "KING",
     "price": 278.0,
-    "pbr": 7.22,
     "totalYield": 1.31,
-    "cashYield": 1.31,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2450",
     "name": "SENAO",
     "price": 29.6,
-    "pbr": 1.18,
     "totalYield": 5.13,
-    "cashYield": 5.13,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2451",
     "name": "TRANSCEND",
     "price": 199.0,
-    "pbr": 4.37,
     "totalYield": 3.01,
-    "cashYield": 3.01,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2453",
     "name": "SYSCOM",
     "price": 50.6,
-    "pbr": 2.38,
     "totalYield": 4.98,
-    "cashYield": 4.98,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2454",
     "name": "聯發科",
     "price": 1720.0,
-    "pbr": 6.85,
     "totalYield": 2.95,
-    "cashYield": 2.95,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2455",
     "name": "VISUAL",
     "price": 226.5,
-    "pbr": 12.68,
     "totalYield": 1.28,
-    "cashYield": 1.28,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2457",
     "name": "PHIHONG",
     "price": 28.2,
-    "pbr": 1.33,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2458",
     "name": "義隆",
     "price": 127.0,
-    "pbr": 3.8,
     "totalYield": 5.21,
-    "cashYield": 5.21,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2459",
     "name": "AUDIX",
     "price": 65.5,
-    "pbr": 1.28,
     "totalYield": 5.95,
-    "cashYield": 5.95,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2460",
     "name": "GEM",
     "price": 25.1,
-    "pbr": 2.87,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2461",
     "name": "光群雷",
     "price": 15.7,
-    "pbr": 0.93,
     "totalYield": 10.39,
-    "cashYield": 10.39,
-    "stockYield": 0.0,
-    "category": "電腦/周邊設備"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2462",
     "name": "TAIWAN",
     "price": 23.1,
-    "pbr": 1.17,
     "totalYield": 3.29,
-    "cashYield": 3.29,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2464",
     "name": "MIRLE",
     "price": 66.9,
-    "pbr": 2.82,
     "totalYield": 0.49,
-    "cashYield": 0.49,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2465",
     "name": "LEADTEK",
     "price": 49.2,
-    "pbr": 7.12,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2466",
     "name": "COSMO",
     "price": 48.1,
-    "pbr": 4.09,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2467",
     "name": "C",
     "price": 365.0,
-    "pbr": 8.48,
     "totalYield": 1.29,
-    "cashYield": 1.29,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2468",
     "name": "FORTUNE",
     "price": 33.0,
-    "pbr": 1.86,
     "totalYield": 2.6,
-    "cashYield": 2.6,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2471",
     "name": "ARES",
     "price": 48.2,
-    "pbr": 2.68,
     "totalYield": 6.14,
-    "cashYield": 6.14,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2472",
     "name": "LELON",
     "price": 107.5,
-    "pbr": 2.2,
     "totalYield": 2.68,
-    "cashYield": 2.68,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2474",
     "name": "可成",
     "price": 185.5,
-    "pbr": 0.79,
     "totalYield": 6.09,
-    "cashYield": 6.09,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2476",
     "name": "G",
     "price": 75.9,
-    "pbr": 1.93,
     "totalYield": 4.35,
-    "cashYield": 4.35,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2477",
     "name": "MEILOON",
     "price": 23.2,
-    "pbr": 0.92,
     "totalYield": 5.39,
-    "cashYield": 5.39,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2478",
     "name": "TA-I",
     "price": 67.3,
-    "pbr": 1.45,
     "totalYield": 2.53,
-    "cashYield": 2.53,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2480",
     "name": "敦陽科",
     "price": 141.5,
-    "pbr": 4.28,
     "totalYield": 5.15,
-    "cashYield": 5.15,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2481",
     "name": "PAN",
     "price": 88.0,
-    "pbr": 2.42,
     "totalYield": 1.52,
-    "cashYield": 1.52,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2482",
     "name": "UNIFORM",
     "price": 16.8,
-    "pbr": 1.18,
     "totalYield": 3.47,
-    "cashYield": 3.47,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2483",
     "name": "EXCEL",
     "price": 22.0,
-    "pbr": 0.94,
     "totalYield": 1.27,
-    "cashYield": 1.27,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2484",
     "name": "SIWARD",
     "price": 26.8,
-    "pbr": 1.15,
     "totalYield": 2.46,
-    "cashYield": 2.46,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2485",
     "name": "ZINWELL",
     "price": 49.8,
-    "pbr": 3.2,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2486",
     "name": "I-CHIUN",
     "price": 125.0,
-    "pbr": 5.74,
     "totalYield": 0.37,
-    "cashYield": 0.37,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2488",
     "name": "HANPIN",
     "price": 46.2,
-    "pbr": 1.31,
     "totalYield": 6.77,
-    "cashYield": 6.77,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2489",
     "name": "AMTRAN",
     "price": 41.5,
-    "pbr": 1.97,
     "totalYield": 2.48,
-    "cashYield": 2.48,
-    "stockYield": 0.0,
-    "category": "航運業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2491",
     "name": "FORTUNE",
     "price": 15.9,
-    "pbr": 1.53,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "電腦/周邊設備"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2492",
     "name": "WALSIN",
     "price": 128.0,
-    "pbr": 1.2,
     "totalYield": 1.72,
-    "cashYield": 1.72,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2493",
     "name": "AMPOC",
     "price": 98.8,
-    "pbr": 4.07,
     "totalYield": 3.72,
-    "cashYield": 3.72,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2495",
     "name": "INFORTREND",
     "price": 28.8,
-    "pbr": 1.79,
     "totalYield": 4.25,
-    "cashYield": 4.25,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2496",
     "name": "卓越",
     "price": 67.7,
-    "pbr": 1.52,
     "totalYield": 10.48,
-    "cashYield": 10.48,
-    "stockYield": 0.0,
-    "category": "食品工業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2497",
     "name": "E-LEAD",
     "price": 42.0,
-    "pbr": 2.31,
     "totalYield": 4.49,
-    "cashYield": 4.49,
-    "stockYield": 0.0,
-    "category": "電腦/周邊設備"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2498",
     "name": "HTC",
     "price": 40.4,
-    "pbr": 1.26,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "半導體業"
+    "category": "電子零組件/通信"
   },
   {
     "id": "2601",
     "name": "FIRST",
     "price": 6.6,
-    "pbr": 0.72,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
-    "category": "電腦/周邊設備"
+    "category": "航運業"
   },
   {
     "id": "2603",
     "name": "長榮",
     "price": 209.5,
-    "pbr": 0.84,
     "totalYield": 15.01,
-    "cashYield": 15.01,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2605",
     "name": "SINCERE",
     "price": 35.0,
-    "pbr": 1.26,
     "totalYield": 3.43,
-    "cashYield": 3.43,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2606",
     "name": "U-MING",
     "price": 66.0,
-    "pbr": 1.57,
     "totalYield": 4.6,
-    "cashYield": 4.6,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2607",
     "name": "EVERGREEN",
     "price": 54.7,
-    "pbr": 0.99,
     "totalYield": 17.57,
-    "cashYield": 17.57,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2608",
     "name": "KERRY",
     "price": 31.2,
-    "pbr": 1.19,
     "totalYield": 5.21,
-    "cashYield": 5.21,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2609",
     "name": "YANG",
     "price": 63.6,
-    "pbr": 0.69,
     "totalYield": 11.36,
-    "cashYield": 11.36,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2610",
     "name": "CHINA",
     "price": 18.6,
-    "pbr": 1.2,
     "totalYield": 4.13,
-    "cashYield": 4.13,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2611",
     "name": "TZE",
     "price": 14.8,
-    "pbr": 1.05,
     "totalYield": 10.58,
-    "cashYield": 10.58,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2612",
     "name": "CHINESE",
     "price": 64.3,
-    "pbr": 0.99,
     "totalYield": 3.06,
-    "cashYield": 3.06,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2613",
     "name": "CHINA",
     "price": 26.1,
-    "pbr": 1.1,
     "totalYield": 3.6,
-    "cashYield": 3.6,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2614",
     "name": "EASTERN",
     "price": 20.3,
-    "pbr": 1.64,
     "totalYield": 1.2,
-    "cashYield": 1.2,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2615",
     "name": "WAN",
     "price": 81.5,
-    "pbr": 0.89,
     "totalYield": 4.02,
-    "cashYield": 4.02,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2616",
     "name": "SHAN",
     "price": 18.0,
-    "pbr": 0.83,
     "totalYield": 1.83,
-    "cashYield": 1.83,
-    "stockYield": 0.0,
-    "category": "電腦/周邊設備"
+    "category": "航運業"
   },
   {
     "id": "2617",
     "name": "TAIWAN",
     "price": 31.7,
-    "pbr": 0.78,
     "totalYield": 4.63,
-    "cashYield": 4.63,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2618",
     "name": "EVA",
     "price": 33.9,
-    "pbr": 1.39,
     "totalYield": 6.78,
-    "cashYield": 6.78,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2630",
     "name": "AIR",
     "price": 53.1,
-    "pbr": 3.16,
     "totalYield": 1.18,
-    "cashYield": 1.18,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2633",
     "name": "TAIWAN",
     "price": 26.6,
-    "pbr": 2.05,
     "totalYield": 3.91,
-    "cashYield": 3.91,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2634",
     "name": "AEROSPACE",
     "price": 53.5,
-    "pbr": 2.96,
     "totalYield": 2.51,
-    "cashYield": 2.51,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2636",
     "name": "台驊投控",
     "price": 65.2,
-    "pbr": 0.99,
     "totalYield": 8.81,
-    "cashYield": 8.81,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2637",
     "name": "WISDOM",
     "price": 71.7,
-    "pbr": 1.14,
     "totalYield": 6.59,
-    "cashYield": 6.59,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2642",
     "name": "TAIWAN",
     "price": 24.4,
-    "pbr": 1.07,
     "totalYield": 2.02,
-    "cashYield": 2.02,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2645",
     "name": "EVERGREEN",
     "price": 164.5,
-    "pbr": 4.7,
     "totalYield": 2.63,
-    "cashYield": 2.63,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2646",
     "name": "STARLUX",
     "price": 21.9,
-    "pbr": 2.04,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
     "category": "航運業"
   },
   {
     "id": "2801",
     "name": "CHANG",
     "price": 20.6,
-    "pbr": 1.1,
     "totalYield": 2.36,
-    "cashYield": 2.36,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2812",
     "name": "TAICHUNG",
     "price": 20.2,
-    "pbr": 1.36,
     "totalYield": 1.88,
-    "cashYield": 1.88,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2816",
     "name": "UNION",
     "price": 29.8,
-    "pbr": 0.88,
     "totalYield": 4.93,
-    "cashYield": 4.93,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2820",
     "name": "CHINA",
     "price": 16.8,
-    "pbr": 0.83,
     "totalYield": 4.55,
-    "cashYield": 4.55,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2832",
     "name": "TAIWAN",
     "price": 49.3,
-    "pbr": 1.08,
     "totalYield": 14.23,
-    "cashYield": 14.23,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2834",
     "name": "TAIWAN",
     "price": 15.3,
-    "pbr": 1.04,
     "totalYield": 1.27,
-    "cashYield": 1.27,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2836",
     "name": "BANK",
     "price": 12.4,
-    "pbr": 0.87,
     "totalYield": 2.36,
-    "cashYield": 2.36,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2838",
     "name": "UNION",
     "price": 19.3,
-    "pbr": 1.04,
     "totalYield": 1.74,
-    "cashYield": 1.74,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2845",
     "name": "FAR",
     "price": 12.3,
-    "pbr": 0.88,
     "totalYield": 3.94,
-    "cashYield": 3.94,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2849",
     "name": "EN",
     "price": 13.2,
-    "pbr": 0.73,
     "totalYield": 2.78,
-    "cashYield": 2.78,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2850",
     "name": "新產",
     "price": 116.0,
-    "pbr": 1.87,
     "totalYield": 5.98,
-    "cashYield": 5.98,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2851",
     "name": "CENTRAL",
     "price": 26.8,
-    "pbr": 1.04,
     "totalYield": 6.9,
-    "cashYield": 6.9,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2852",
     "name": "第一保",
     "price": 26.4,
-    "pbr": 0.9,
     "totalYield": 7.73,
-    "cashYield": 7.73,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2855",
     "name": "PRESIDENT",
     "price": 29.4,
-    "pbr": 1.2,
     "totalYield": 3.55,
-    "cashYield": 3.55,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2867",
     "name": "MERCURIES",
     "price": 8.0,
-    "pbr": 1.15,
     "totalYield": 0.0,
-    "cashYield": 0.0,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2880",
     "name": "HUA",
     "price": 35.0,
-    "pbr": 2.14,
     "totalYield": 3.42,
-    "cashYield": 3.42,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2881",
-    "name": "FUBON",
+    "name": "富邦金",
     "price": 89.8,
-    "pbr": 1.32,
     "totalYield": 4.45,
-    "cashYield": 4.45,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2882",
     "name": "CATHAY",
     "price": 73.2,
-    "pbr": 1.22,
     "totalYield": 4.51,
-    "cashYield": 4.51,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2883",
     "name": "KGI",
     "price": 19.9,
-    "pbr": 1.14,
     "totalYield": 3.94,
-    "cashYield": 3.94,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2884",
     "name": "E",
     "price": 33.6,
-    "pbr": 2.0,
     "totalYield": 3.44,
-    "cashYield": 3.44,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2885",
     "name": "YUANTA",
     "price": 45.0,
-    "pbr": 1.82,
     "totalYield": 3.18,
-    "cashYield": 3.18,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2886",
     "name": "MEGA",
     "price": 38.9,
-    "pbr": 1.51,
     "totalYield": 3.96,
-    "cashYield": 3.96,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2887",
     "name": "TS",
     "price": 24.1,
-    "pbr": 1.32,
     "totalYield": 3.56,
-    "cashYield": 3.56,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2889",
     "name": "IBF",
     "price": 16.2,
-    "pbr": 1.32,
     "totalYield": 1.8,
-    "cashYield": 1.8,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2890",
     "name": "SINOPAC",
     "price": 31.3,
-    "pbr": 1.89,
     "totalYield": 2.75,
-    "cashYield": 2.75,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2891",
     "name": "CTBC",
     "price": 50.5,
-    "pbr": 2.15,
     "totalYield": 4.3,
-    "cashYield": 4.3,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2892",
     "name": "FIRST",
     "price": 28.6,
-    "pbr": 1.46,
     "totalYield": 3.2,
-    "cashYield": 3.2,
-    "stockYield": 0.0,
     "category": "金融保險"
   },
   {
     "id": "2897",
     "name": "O-BANK",
     "price": 9.6,
-    "pbr": 0.65,
     "totalYield": 5.1,
-    "cashYield": 5.1,
-    "stockYield": 0.0,
     "category": "金融保險"
   }
 ]
