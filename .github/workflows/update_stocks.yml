@@ -1,0 +1,67 @@
+name: Update Stock Data
+on:
+  schedule:
+    - cron: '0 1,5,10 * * 1-5' # 台北時間週一至五早上 9點, 下午 1點, 6點 更新
+  workflow_dispatch: # 也可以手動點擊更新
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install pandas requests
+
+      - name: Fetch and Process Data
+        run: |
+          python <<EOF
+          import requests
+          import pandas as pd
+          import json
+
+          # 證交所 Open Data
+          url = "https://www.twse.com.tw/exchange_report/BWIBYK_ALL?response=open_data"
+          try:
+              res = requests.get(url)
+              res.encoding = 'ms950'
+              from io import StringIO
+              df = pd.read_csv(StringIO(res.text))
+              
+              # 欄位轉換與過濾 (排除缺一資料者)
+              df = df.dropna(subset=['收盤價', '殖利率(%)', '本淨比'])
+              df['收盤價'] = pd.to_numeric(df['收盤價'], errors='coerce')
+              df['殖利率(%)'] = pd.to_numeric(df['殖利率(%)'], errors='coerce')
+              df['本淨比'] = pd.to_numeric(df['本淨比'], errors='coerce')
+              df = df[df['收盤價'] > 0].dropna()
+
+              stocks = []
+              for _, r in df.iterrows():
+                  stocks.append({
+                      "id": str(r['證券代號']).strip(),
+                      "name": str(r['證券名稱']).strip(),
+                      "price": r['收盤價'],
+                      "pbr": r['本淨比'],
+                      "totalYield": r['殖利率(%)'],
+                      "industry": "上市股票" # 基礎資料來源無產業分類，預設為上市
+                  })
+              
+              with open('data.json', 'w', encoding='utf-8') as f:
+                  json.dump(stocks, f, ensure_ascii=False)
+          except Exception as e:
+              print(f"Error: {e}")
+          EOF
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "StockBot"
+          git config --global user.email "bot@github.com"
+          git add data.json
+          git commit -m "Auto update stock data" || exit 0
+          git push
