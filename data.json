@@ -7,7 +7,7 @@
     "totalYield": 3.86,
     "cashYield": 3.86,
     "stockYield": 0.0,
-    "category": "Basic Materials"
+    "category": "鋼鐵工業"
   },
   {
     "id": "1102",
@@ -17,7 +17,7 @@
     "totalYield": 6.26,
     "cashYield": 6.26,
     "stockYield": 0.0,
-    "category": "Basic Materials"
+    "category": "鋼鐵工業"
   },
   {
     "id": "1103",
@@ -27,7 +27,7 @@
     "totalYield": 3.94,
     "cashYield": 3.94,
     "stockYield": 0.0,
-    "category": "Basic Materials"
+    "category": "鋼鐵工業"
   },
   {
     "id": "1104",
@@ -37,7 +37,7 @@
     "totalYield": 5.72,
     "cashYield": 5.72,
     "stockYield": 0.0,
-    "category": "Basic Materials"
+    "category": "鋼鐵工業"
   },
   {
     "id": "1108",
@@ -47,7 +47,7 @@
     "totalYield": 4.93,
     "cashYield": 4.93,
     "stockYield": 0.0,
-    "category": "Basic Materials"
+    "category": "鋼鐵工業"
   },
   {
     "id": "1109",
@@ -57,7 +57,7 @@
     "totalYield": 5.77,
     "cashYield": 5.77,
     "stockYield": 0.0,
-    "category": "Basic Materials"
+    "category": "鋼鐵工業"
   },
   {
     "id": "1110",
@@ -67,7 +67,7 @@
     "totalYield": 1.87,
     "cashYield": 1.87,
     "stockYield": 0.0,
-    "category": "Basic Materials"
+    "category": "鋼鐵工業"
   },
   {
     "id": "1201",
@@ -77,7 +77,7 @@
     "totalYield": 3.47,
     "cashYield": 3.47,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1203",
@@ -87,7 +87,7 @@
     "totalYield": 2.93,
     "cashYield": 2.93,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1210",
@@ -97,17 +97,27 @@
     "totalYield": 5.52,
     "cashYield": 5.52,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
+  },
+  {
+    "id": "1213",
+    "name": "OCEANIC",
+    "price": 9.5,
+    "pbr": 0.81,
+    "totalYield": 3.51,
+    "cashYield": 3.51,
+    "stockYield": 0.0,
+    "category": "食品工業"
   },
   {
     "id": "1215",
-    "name": "CHAROEN",
+    "name": "卜蜂",
     "price": 156.5,
     "pbr": 3.97,
     "totalYield": 4.49,
     "cashYield": 4.49,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1216",
@@ -117,7 +127,7 @@
     "totalYield": 4.06,
     "cashYield": 4.06,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1217",
@@ -127,17 +137,17 @@
     "totalYield": 3.56,
     "cashYield": 3.56,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1218",
-    "name": "TAISUN",
+    "name": "泰山",
     "price": 17.9,
     "pbr": 0.68,
     "totalYield": 7.46,
     "cashYield": 7.46,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1219",
@@ -147,7 +157,7 @@
     "totalYield": 3.69,
     "cashYield": 3.69,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1220",
@@ -157,7 +167,7 @@
     "totalYield": 5.34,
     "cashYield": 5.34,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1225",
@@ -167,7 +177,7 @@
     "totalYield": 0.44,
     "cashYield": 0.44,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1227",
@@ -177,7 +187,7 @@
     "totalYield": 4.68,
     "cashYield": 4.68,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1229",
@@ -187,7 +197,7 @@
     "totalYield": 2.93,
     "cashYield": 2.93,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "1231",
@@ -197,17 +207,17 @@
     "totalYield": 1.87,
     "cashYield": 1.87,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1232",
-    "name": "TTET",
+    "name": "大統益",
     "price": 150.5,
     "pbr": 4.09,
     "totalYield": 4.61,
     "cashYield": 4.61,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1233",
@@ -217,7 +227,7 @@
     "totalYield": 2.87,
     "cashYield": 2.87,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1234",
@@ -227,7 +237,7 @@
     "totalYield": 5.1,
     "cashYield": 5.1,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1235",
@@ -237,7 +247,7 @@
     "totalYield": 1.05,
     "cashYield": 1.05,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1236",
@@ -247,7 +257,7 @@
     "totalYield": 2.16,
     "cashYield": 2.16,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "1256",
@@ -257,7 +267,7 @@
     "totalYield": 2.83,
     "cashYield": 2.83,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "2301",
@@ -267,7 +277,7 @@
     "totalYield": 3.94,
     "cashYield": 3.94,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2302",
@@ -277,17 +287,17 @@
     "totalYield": 3.2,
     "cashYield": 3.2,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2303",
-    "name": "聯電",
+    "name": "UNITED",
     "price": 60.0,
     "pbr": 1.99,
     "totalYield": 4.55,
     "cashYield": 4.55,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2305",
@@ -297,7 +307,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2308",
@@ -307,7 +317,7 @@
     "totalYield": 0.52,
     "cashYield": 0.52,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2312",
@@ -317,7 +327,7 @@
     "totalYield": 2.5,
     "cashYield": 2.5,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2313",
@@ -327,7 +337,7 @@
     "totalYield": 1.07,
     "cashYield": 1.07,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2314",
@@ -337,7 +347,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2316",
@@ -347,7 +357,7 @@
     "totalYield": 0.52,
     "cashYield": 0.52,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2317",
@@ -357,7 +367,7 @@
     "totalYield": 2.53,
     "cashYield": 2.53,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2321",
@@ -367,7 +377,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2323",
@@ -377,7 +387,7 @@
     "totalYield": 2.74,
     "cashYield": 2.74,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2324",
@@ -387,7 +397,7 @@
     "totalYield": 3.62,
     "cashYield": 3.62,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2327",
@@ -397,7 +407,7 @@
     "totalYield": 1.78,
     "cashYield": 1.78,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2328",
@@ -407,7 +417,7 @@
     "totalYield": 2.22,
     "cashYield": 2.22,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2329",
@@ -417,7 +427,7 @@
     "totalYield": 1.87,
     "cashYield": 1.87,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2330",
@@ -427,7 +437,7 @@
     "totalYield": 1.24,
     "cashYield": 1.24,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2331",
@@ -437,7 +447,7 @@
     "totalYield": 0.81,
     "cashYield": 0.81,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2332",
@@ -447,7 +457,7 @@
     "totalYield": 0.65,
     "cashYield": 0.65,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2337",
@@ -457,7 +467,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2338",
@@ -467,7 +477,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2340",
@@ -477,7 +487,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2342",
@@ -487,7 +497,7 @@
     "totalYield": 0.96,
     "cashYield": 0.96,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2344",
@@ -497,7 +507,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2345",
@@ -507,7 +517,7 @@
     "totalYield": 0.77,
     "cashYield": 0.77,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2347",
@@ -517,7 +527,7 @@
     "totalYield": 5.76,
     "cashYield": 5.76,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2348",
@@ -527,7 +537,7 @@
     "totalYield": 12.5,
     "cashYield": 12.5,
     "stockYield": 0.0,
-    "category": "Real Estate"
+    "category": "建材營造"
   },
   {
     "id": "2349",
@@ -537,7 +547,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2351",
@@ -547,7 +557,7 @@
     "totalYield": 3.05,
     "cashYield": 3.05,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2352",
@@ -557,7 +567,7 @@
     "totalYield": 14.37,
     "cashYield": 14.37,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2353",
@@ -567,7 +577,7 @@
     "totalYield": 6.37,
     "cashYield": 6.37,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2354",
@@ -577,7 +587,7 @@
     "totalYield": 2.46,
     "cashYield": 2.46,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2355",
@@ -587,7 +597,7 @@
     "totalYield": 4.29,
     "cashYield": 4.29,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2356",
@@ -597,7 +607,7 @@
     "totalYield": 3.97,
     "cashYield": 3.97,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2357",
@@ -607,7 +617,7 @@
     "totalYield": 6.53,
     "cashYield": 6.53,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2359",
@@ -617,7 +627,7 @@
     "totalYield": 0.8,
     "cashYield": 0.8,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2360",
@@ -627,7 +637,7 @@
     "totalYield": 0.65,
     "cashYield": 0.65,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2362",
@@ -637,7 +647,7 @@
     "totalYield": 6.59,
     "cashYield": 6.59,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2363",
@@ -647,7 +657,7 @@
     "totalYield": 0.96,
     "cashYield": 0.96,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2364",
@@ -657,7 +667,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2365",
@@ -667,7 +677,7 @@
     "totalYield": 1.71,
     "cashYield": 1.71,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2367",
@@ -677,17 +687,17 @@
     "totalYield": 0.97,
     "cashYield": 0.97,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2368",
-    "name": "GOLD",
+    "name": "金像電",
     "price": 709.0,
     "pbr": 12.81,
     "totalYield": 0.78,
     "cashYield": 0.78,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2369",
@@ -697,17 +707,17 @@
     "totalYield": 1.09,
     "cashYield": 1.09,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2371",
-    "name": "TATUNG",
+    "name": "大同",
     "price": 32.2,
     "pbr": 1.13,
     "totalYield": 8.91,
     "cashYield": 8.91,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2373",
@@ -717,7 +727,7 @@
     "totalYield": 6.58,
     "cashYield": 6.58,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2374",
@@ -727,7 +737,7 @@
     "totalYield": 0.79,
     "cashYield": 0.79,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2375",
@@ -737,17 +747,17 @@
     "totalYield": 1.68,
     "cashYield": 1.68,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2376",
-    "name": "技嘉",
+    "name": "GIGA-BYTE",
     "price": 214.0,
     "pbr": 2.58,
     "totalYield": 4.37,
     "cashYield": 4.37,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2377",
@@ -757,7 +767,7 @@
     "totalYield": 5.21,
     "cashYield": 5.21,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2379",
@@ -767,7 +777,17 @@
     "totalYield": 5.51,
     "cashYield": 5.51,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
+  },
+  {
+    "id": "2380",
+    "name": "AVISION",
+    "price": 5.0,
+    "pbr": 2.56,
+    "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "category": "半導體業"
   },
   {
     "id": "2382",
@@ -777,17 +797,17 @@
     "totalYield": 4.41,
     "cashYield": 4.41,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2383",
-    "name": "台光電",
+    "name": "ELITE",
     "price": 2190.0,
     "pbr": 17.64,
     "totalYield": 0.71,
     "cashYield": 0.71,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2385",
@@ -797,17 +817,17 @@
     "totalYield": 7.94,
     "cashYield": 7.94,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2387",
-    "name": "SUNREX",
+    "name": "精元",
     "price": 41.7,
     "pbr": 0.76,
     "totalYield": 9.32,
     "cashYield": 9.32,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2388",
@@ -817,7 +837,17 @@
     "totalYield": 0.42,
     "cashYield": 0.42,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
+  },
+  {
+    "id": "2390",
+    "name": "EVERSPRING",
+    "price": 9.7,
+    "pbr": 0.79,
+    "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "category": "航運業"
   },
   {
     "id": "2392",
@@ -827,17 +857,17 @@
     "totalYield": 6.66,
     "cashYield": 6.66,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2393",
-    "name": "EVERLIGHT",
+    "name": "億光",
     "price": 56.1,
     "pbr": 1.31,
     "totalYield": 9.11,
     "cashYield": 9.11,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2395",
@@ -847,7 +877,7 @@
     "totalYield": 2.54,
     "cashYield": 2.54,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2397",
@@ -857,7 +887,7 @@
     "totalYield": 5.6,
     "cashYield": 5.6,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2399",
@@ -867,7 +897,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2401",
@@ -877,7 +907,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2402",
@@ -887,7 +917,7 @@
     "totalYield": 3.58,
     "cashYield": 3.58,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2404",
@@ -897,7 +927,7 @@
     "totalYield": 2.76,
     "cashYield": 2.76,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2405",
@@ -907,7 +937,7 @@
     "totalYield": 1.09,
     "cashYield": 1.09,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2406",
@@ -917,7 +947,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2408",
@@ -927,17 +957,17 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2409",
-    "name": "AUO",
+    "name": "友達",
     "price": 14.9,
     "pbr": 0.76,
     "totalYield": 7.65,
     "cashYield": 7.65,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2412",
@@ -947,7 +977,7 @@
     "totalYield": 3.62,
     "cashYield": 3.62,
     "stockYield": 0.0,
-    "category": "Communication Services"
+    "category": "通信網路業"
   },
   {
     "id": "2413",
@@ -957,7 +987,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2414",
@@ -967,7 +997,7 @@
     "totalYield": 5.95,
     "cashYield": 5.95,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2415",
@@ -977,7 +1007,7 @@
     "totalYield": 4.47,
     "cashYield": 4.47,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2417",
@@ -987,7 +1017,7 @@
     "totalYield": 0.56,
     "cashYield": 0.56,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2419",
@@ -997,7 +1027,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2420",
@@ -1007,7 +1037,7 @@
     "totalYield": 6.82,
     "cashYield": 6.82,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2421",
@@ -1017,7 +1047,7 @@
     "totalYield": 2.58,
     "cashYield": 2.58,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2423",
@@ -1027,7 +1057,7 @@
     "totalYield": 4.11,
     "cashYield": 4.11,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2424",
@@ -1037,7 +1067,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2425",
@@ -1047,7 +1077,7 @@
     "totalYield": 0.54,
     "cashYield": 0.54,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2426",
@@ -1057,7 +1087,7 @@
     "totalYield": 0.5,
     "cashYield": 0.5,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2427",
@@ -1067,7 +1097,7 @@
     "totalYield": 2.66,
     "cashYield": 2.66,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2428",
@@ -1077,7 +1107,7 @@
     "totalYield": 3.41,
     "cashYield": 3.41,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2429",
@@ -1087,7 +1117,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2430",
@@ -1097,7 +1127,7 @@
     "totalYield": 6.52,
     "cashYield": 6.52,
     "stockYield": 0.0,
-    "category": "Consumer Cyclical"
+    "category": "電腦/周邊設備"
   },
   {
     "id": "2431",
@@ -1107,17 +1137,17 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2432",
-    "name": "ACER",
+    "name": "統振",
     "price": 23.4,
     "pbr": 1.26,
     "totalYield": 7.05,
     "cashYield": 7.05,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2433",
@@ -1127,7 +1157,7 @@
     "totalYield": 6.4,
     "cashYield": 6.4,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2434",
@@ -1137,7 +1167,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2436",
@@ -1147,7 +1177,7 @@
     "totalYield": 2.6,
     "cashYield": 2.6,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2438",
@@ -1157,17 +1187,17 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2439",
-    "name": "MERRY",
+    "name": "美律",
     "price": 82.7,
     "pbr": 1.18,
     "totalYield": 8.3,
     "cashYield": 8.3,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2440",
@@ -1177,7 +1207,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2441",
@@ -1187,7 +1217,7 @@
     "totalYield": 3.33,
     "cashYield": 3.33,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2442",
@@ -1197,7 +1227,7 @@
     "totalYield": 0.4,
     "cashYield": 0.4,
     "stockYield": 0.0,
-    "category": "Real Estate"
+    "category": "建材營造"
   },
   {
     "id": "2444",
@@ -1207,7 +1237,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2449",
@@ -1217,7 +1247,7 @@
     "totalYield": 1.31,
     "cashYield": 1.31,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2450",
@@ -1227,7 +1257,7 @@
     "totalYield": 5.13,
     "cashYield": 5.13,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2451",
@@ -1237,7 +1267,7 @@
     "totalYield": 3.01,
     "cashYield": 3.01,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2453",
@@ -1247,7 +1277,7 @@
     "totalYield": 4.98,
     "cashYield": 4.98,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2454",
@@ -1257,7 +1287,7 @@
     "totalYield": 2.95,
     "cashYield": 2.95,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2455",
@@ -1267,7 +1297,7 @@
     "totalYield": 1.28,
     "cashYield": 1.28,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2457",
@@ -1277,7 +1307,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2458",
@@ -1287,7 +1317,7 @@
     "totalYield": 5.21,
     "cashYield": 5.21,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2459",
@@ -1297,7 +1327,7 @@
     "totalYield": 5.95,
     "cashYield": 5.95,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2460",
@@ -1307,17 +1337,17 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2461",
-    "name": "K",
+    "name": "光群雷",
     "price": 15.7,
     "pbr": 0.93,
     "totalYield": 10.39,
     "cashYield": 10.39,
     "stockYield": 0.0,
-    "category": "Consumer Cyclical"
+    "category": "電腦/周邊設備"
   },
   {
     "id": "2462",
@@ -1327,7 +1357,7 @@
     "totalYield": 3.29,
     "cashYield": 3.29,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2464",
@@ -1337,7 +1367,7 @@
     "totalYield": 0.49,
     "cashYield": 0.49,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2465",
@@ -1347,7 +1377,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2466",
@@ -1357,7 +1387,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2467",
@@ -1367,7 +1397,7 @@
     "totalYield": 1.29,
     "cashYield": 1.29,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2468",
@@ -1377,7 +1407,7 @@
     "totalYield": 2.6,
     "cashYield": 2.6,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2471",
@@ -1387,7 +1417,7 @@
     "totalYield": 6.14,
     "cashYield": 6.14,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2472",
@@ -1397,7 +1427,7 @@
     "totalYield": 2.68,
     "cashYield": 2.68,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2474",
@@ -1407,7 +1437,7 @@
     "totalYield": 6.09,
     "cashYield": 6.09,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2476",
@@ -1417,7 +1447,7 @@
     "totalYield": 4.35,
     "cashYield": 4.35,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2477",
@@ -1427,7 +1457,7 @@
     "totalYield": 5.39,
     "cashYield": 5.39,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2478",
@@ -1437,7 +1467,7 @@
     "totalYield": 2.53,
     "cashYield": 2.53,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2480",
@@ -1447,7 +1477,7 @@
     "totalYield": 5.15,
     "cashYield": 5.15,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2481",
@@ -1457,7 +1487,7 @@
     "totalYield": 1.52,
     "cashYield": 1.52,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2482",
@@ -1467,7 +1497,7 @@
     "totalYield": 3.47,
     "cashYield": 3.47,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2483",
@@ -1477,7 +1507,7 @@
     "totalYield": 1.27,
     "cashYield": 1.27,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2484",
@@ -1487,7 +1517,7 @@
     "totalYield": 2.46,
     "cashYield": 2.46,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2485",
@@ -1497,7 +1527,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2486",
@@ -1507,7 +1537,7 @@
     "totalYield": 0.37,
     "cashYield": 0.37,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2488",
@@ -1517,7 +1547,7 @@
     "totalYield": 6.77,
     "cashYield": 6.77,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2489",
@@ -1527,7 +1557,7 @@
     "totalYield": 2.48,
     "cashYield": 2.48,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2491",
@@ -1537,7 +1567,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Consumer Cyclical"
+    "category": "電腦/周邊設備"
   },
   {
     "id": "2492",
@@ -1547,7 +1577,7 @@
     "totalYield": 1.72,
     "cashYield": 1.72,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2493",
@@ -1557,7 +1587,7 @@
     "totalYield": 3.72,
     "cashYield": 3.72,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2495",
@@ -1567,17 +1597,17 @@
     "totalYield": 4.25,
     "cashYield": 4.25,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
   },
   {
     "id": "2496",
-    "name": "SUCCESS",
+    "name": "卓越",
     "price": 67.7,
     "pbr": 1.52,
     "totalYield": 10.48,
     "cashYield": 10.48,
     "stockYield": 0.0,
-    "category": "Consumer Defensive"
+    "category": "食品工業"
   },
   {
     "id": "2497",
@@ -1587,7 +1617,7 @@
     "totalYield": 4.49,
     "cashYield": 4.49,
     "stockYield": 0.0,
-    "category": "Consumer Cyclical"
+    "category": "電腦/周邊設備"
   },
   {
     "id": "2498",
@@ -1597,7 +1627,17 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Technology"
+    "category": "半導體業"
+  },
+  {
+    "id": "2601",
+    "name": "FIRST",
+    "price": 6.6,
+    "pbr": 0.72,
+    "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "category": "電腦/周邊設備"
   },
   {
     "id": "2603",
@@ -1607,7 +1647,7 @@
     "totalYield": 15.01,
     "cashYield": 15.01,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2605",
@@ -1617,7 +1657,7 @@
     "totalYield": 3.43,
     "cashYield": 3.43,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2606",
@@ -1627,7 +1667,7 @@
     "totalYield": 4.6,
     "cashYield": 4.6,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2607",
@@ -1637,7 +1677,7 @@
     "totalYield": 17.57,
     "cashYield": 17.57,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2608",
@@ -1647,17 +1687,17 @@
     "totalYield": 5.21,
     "cashYield": 5.21,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2609",
-    "name": "陽明",
+    "name": "YANG",
     "price": 63.6,
     "pbr": 0.69,
     "totalYield": 11.36,
     "cashYield": 11.36,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2610",
@@ -1667,7 +1707,7 @@
     "totalYield": 4.13,
     "cashYield": 4.13,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2611",
@@ -1677,7 +1717,7 @@
     "totalYield": 10.58,
     "cashYield": 10.58,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2612",
@@ -1687,7 +1727,7 @@
     "totalYield": 3.06,
     "cashYield": 3.06,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2613",
@@ -1697,7 +1737,7 @@
     "totalYield": 3.6,
     "cashYield": 3.6,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2614",
@@ -1707,17 +1747,17 @@
     "totalYield": 1.2,
     "cashYield": 1.2,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2615",
-    "name": "萬海",
+    "name": "WAN",
     "price": 81.5,
     "pbr": 0.89,
     "totalYield": 4.02,
     "cashYield": 4.02,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2616",
@@ -1727,7 +1767,7 @@
     "totalYield": 1.83,
     "cashYield": 1.83,
     "stockYield": 0.0,
-    "category": "Consumer Cyclical"
+    "category": "電腦/周邊設備"
   },
   {
     "id": "2617",
@@ -1737,7 +1777,7 @@
     "totalYield": 4.63,
     "cashYield": 4.63,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2618",
@@ -1747,7 +1787,7 @@
     "totalYield": 6.78,
     "cashYield": 6.78,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2630",
@@ -1757,7 +1797,7 @@
     "totalYield": 1.18,
     "cashYield": 1.18,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2633",
@@ -1767,7 +1807,7 @@
     "totalYield": 3.91,
     "cashYield": 3.91,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2634",
@@ -1777,17 +1817,17 @@
     "totalYield": 2.51,
     "cashYield": 2.51,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2636",
-    "name": "T3EX",
+    "name": "台驊投控",
     "price": 65.2,
     "pbr": 0.99,
     "totalYield": 8.81,
     "cashYield": 8.81,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2637",
@@ -1797,7 +1837,7 @@
     "totalYield": 6.59,
     "cashYield": 6.59,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2642",
@@ -1807,7 +1847,7 @@
     "totalYield": 2.02,
     "cashYield": 2.02,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2645",
@@ -1817,7 +1857,7 @@
     "totalYield": 2.63,
     "cashYield": 2.63,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2646",
@@ -1827,7 +1867,7 @@
     "totalYield": 0.0,
     "cashYield": 0.0,
     "stockYield": 0.0,
-    "category": "Industrials"
+    "category": "航運業"
   },
   {
     "id": "2801",
@@ -1837,7 +1877,7 @@
     "totalYield": 2.36,
     "cashYield": 2.36,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2812",
@@ -1847,7 +1887,7 @@
     "totalYield": 1.88,
     "cashYield": 1.88,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2816",
@@ -1857,7 +1897,7 @@
     "totalYield": 4.93,
     "cashYield": 4.93,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2820",
@@ -1867,7 +1907,7 @@
     "totalYield": 4.55,
     "cashYield": 4.55,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2832",
@@ -1877,7 +1917,7 @@
     "totalYield": 14.23,
     "cashYield": 14.23,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2834",
@@ -1887,7 +1927,7 @@
     "totalYield": 1.27,
     "cashYield": 1.27,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2836",
@@ -1897,7 +1937,7 @@
     "totalYield": 2.36,
     "cashYield": 2.36,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2838",
@@ -1907,7 +1947,7 @@
     "totalYield": 1.74,
     "cashYield": 1.74,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2845",
@@ -1917,7 +1957,7 @@
     "totalYield": 3.94,
     "cashYield": 3.94,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2849",
@@ -1927,7 +1967,7 @@
     "totalYield": 2.78,
     "cashYield": 2.78,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2850",
@@ -1937,7 +1977,7 @@
     "totalYield": 5.98,
     "cashYield": 5.98,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2851",
@@ -1947,17 +1987,17 @@
     "totalYield": 6.9,
     "cashYield": 6.9,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2852",
-    "name": "FIRST",
+    "name": "第一保",
     "price": 26.4,
     "pbr": 0.9,
     "totalYield": 7.73,
     "cashYield": 7.73,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2855",
@@ -1967,7 +2007,17 @@
     "totalYield": 3.55,
     "cashYield": 3.55,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
+  },
+  {
+    "id": "2867",
+    "name": "MERCURIES",
+    "price": 8.0,
+    "pbr": 1.15,
+    "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "category": "金融保險"
   },
   {
     "id": "2880",
@@ -1977,27 +2027,27 @@
     "totalYield": 3.42,
     "cashYield": 3.42,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2881",
-    "name": "富邦金",
+    "name": "FUBON",
     "price": 89.8,
     "pbr": 1.32,
     "totalYield": 4.45,
     "cashYield": 4.45,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2882",
-    "name": "國泰金",
+    "name": "CATHAY",
     "price": 73.2,
     "pbr": 1.22,
     "totalYield": 4.51,
     "cashYield": 4.51,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2883",
@@ -2007,7 +2057,7 @@
     "totalYield": 3.94,
     "cashYield": 3.94,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2884",
@@ -2017,7 +2067,7 @@
     "totalYield": 3.44,
     "cashYield": 3.44,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2885",
@@ -2027,7 +2077,7 @@
     "totalYield": 3.18,
     "cashYield": 3.18,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2886",
@@ -2037,7 +2087,7 @@
     "totalYield": 3.96,
     "cashYield": 3.96,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2887",
@@ -2047,7 +2097,7 @@
     "totalYield": 3.56,
     "cashYield": 3.56,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2889",
@@ -2057,7 +2107,7 @@
     "totalYield": 1.8,
     "cashYield": 1.8,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2890",
@@ -2067,7 +2117,7 @@
     "totalYield": 2.75,
     "cashYield": 2.75,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2891",
@@ -2077,7 +2127,7 @@
     "totalYield": 4.3,
     "cashYield": 4.3,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
   },
   {
     "id": "2892",
@@ -2087,6 +2137,16 @@
     "totalYield": 3.2,
     "cashYield": 3.2,
     "stockYield": 0.0,
-    "category": "Financial Services"
+    "category": "金融保險"
+  },
+  {
+    "id": "2897",
+    "name": "O-BANK",
+    "price": 9.6,
+    "pbr": 0.65,
+    "totalYield": 5.1,
+    "cashYield": 5.1,
+    "stockYield": 0.0,
+    "category": "金融保險"
   }
 ]
