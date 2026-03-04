@@ -1,8 +1,8 @@
 name: Update Stock Data
 on:
   schedule:
-    - cron: '0 1,5,10 * * 1-5' # 台北時間週一至五早上 9點, 下午 1點, 6點 更新
-  workflow_dispatch: # 也可以手動點擊更新
+    - cron: '0 1,5,10 * * 1-5' # 台北時間週一至五
+  workflow_dispatch: # 讓你可以手動點擊 Run Workflow
 
 jobs:
   build:
@@ -25,43 +25,68 @@ jobs:
           import requests
           import pandas as pd
           import json
+          import os
 
-          # 證交所 Open Data
-          url = "https://www.twse.com.tw/exchange_report/BWIBYK_ALL?response=open_data"
+          # 證交所 Open Data 載點
+          url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
+          
           try:
-              res = requests.get(url)
+              print("正在抓取證交所資料...")
+              res = requests.get(url, timeout=30)
               res.encoding = 'ms950'
+              
               from io import StringIO
+              # 讀取 CSV，跳過可能存在的錯誤列
               df = pd.read_csv(StringIO(res.text))
               
-              # 欄位轉換與過濾 (排除缺一資料者)
-              df = df.dropna(subset=['收盤價', '殖利率(%)', '本淨比'])
+              # 欄位清理：轉換數字，處理無效值
+              cols = {
+                  '證券代號': 'id',
+                  '證券名稱': 'name',
+                  '收盤價': 'price',
+                  '殖利率(%)': 'yield',
+                  '本淨比': 'pbr'
+              }
+              
+              # 檢查欄位是否存在
+              available_cols = [c for c in cols.keys() if c in df.columns]
+              df = df[available_cols]
+              
+              # 轉型並排除空值 (缺一不可排除)
               df['收盤價'] = pd.to_numeric(df['收盤價'], errors='coerce')
               df['殖利率(%)'] = pd.to_numeric(df['殖利率(%)'], errors='coerce')
               df['本淨比'] = pd.to_numeric(df['本淨比'], errors='coerce')
-              df = df[df['收盤價'] > 0].dropna()
+              df = df.dropna()
 
               stocks = []
               for _, r in df.iterrows():
-                  stocks.append({
-                      "id": str(r['證券代號']).strip(),
-                      "name": str(r['證券名稱']).strip(),
-                      "price": r['收盤價'],
-                      "pbr": r['本淨比'],
-                      "totalYield": r['殖利率(%)'],
-                      "industry": "上市股票" # 基礎資料來源無產業分類，預設為上市
-                  })
+                  if r['收盤價'] > 0:
+                      stocks.append({
+                          "id": str(r['證券代號']).strip(),
+                          "name": str(r['證券名稱']).strip(),
+                          "price": float(r['收盤價']),
+                          "pbr": float(r['本淨比']),
+                          "totalYield": float(r['殖利率(%)']),
+                          "industry": "上市股票",
+                          "market": "市"
+                      })
               
               with open('data.json', 'w', encoding='utf-8') as f:
                   json.dump(stocks, f, ensure_ascii=False)
+              print(f"成功產出資料，共 {len(stocks)} 筆")
+
           except Exception as e:
-              print(f"Error: {e}")
+              print(f"發生錯誤: {e}")
+              # 如果失敗，建立一個空的 JSON 防止 Git 報錯
+              if not os.path.exists('data.json'):
+                  with open('data.json', 'w') as f:
+                      json.dump([], f)
           EOF
 
       - name: Commit and Push
         run: |
-          git config --global user.name "StockBot"
-          git config --global user.email "bot@github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git commit -m "Auto update stock data" || exit 0
-          git push
+          # 檢查是否有變動，避免無意義的 Commit
+          git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新股價數據" && git push)
