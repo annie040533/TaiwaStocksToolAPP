@@ -26,55 +26,96 @@ jobs:
           import pandas as pd
           import json
           import io
+          import time
+          import random
 
           def fetch_data():
+              # 使用證交所全市場每日收盤行情 (這是最穩定的靜態 API)
               url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
-              headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/91.0.4472.124'}
+              
+              # 模擬真實瀏覽器，避免被 Ban
+              headers = {
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                  'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7'
+              }
+              
               stocks = []
               try:
-                  print("📡 啟動連線...")
+                  print("📡 正在等待 3-5 秒避免請求過快...")
+                  time.sleep(random.uniform(3, 5))
+                  
+                  print("📡 正在存取證交所當日行情數據 (單一請求)...")
                   resp = requests.get(url, headers=headers, timeout=30)
-                  # 核心修正：手動尋找數據起始行，避開解析錯誤
-                  lines = resp.text.split('\n')
-                  start_line = 0
+                  
+                  if resp.status_code != 200:
+                      print(f"❌ 請求失敗，狀態碼: {resp.status_code}")
+                      return []
+
+                  # 處理證交所 CSV 的雜訊 (移除 BOM 或開頭空白)
+                  content = resp.content.decode('utf-8-sig')
+                  lines = content.splitlines()
+                  
+                  # 尋找真正包含「證券代號」的那一行作為標題
+                  header_idx = -1
                   for i, line in enumerate(lines):
                       if "證券代號" in line:
-                          start_line = i
+                          header_idx = i
                           break
                   
-                  clean_csv = "\n".join(lines[start_line:])
-                  df = pd.read_csv(io.StringIO(clean_csv), on_bad_lines='skip')
+                  if header_idx == -1:
+                      print("❌ 找不到數據起始行，原始內容前100字:", content[:100])
+                      return []
+
+                  # 解析 CSV
+                  clean_csv = "\n".join(lines[header_idx:])
+                  df = pd.read_csv(io.StringIO(clean_csv))
+                  
+                  # 統一清理欄位名稱
                   df.columns = [str(c).strip().replace('"', '') for c in df.columns]
+                  print(f"📊 成功辨識欄位: {list(df.columns)}")
 
                   for _, row in df.iterrows():
+                      # 依照 twstock 邏輯：過濾 4 位數純數字代碼
                       sid = str(row.get('證券代號', '')).strip().replace('"', '')
                       if len(sid) == 4 and sid.isdigit():
                           try:
-                              def clean_val(v):
+                              def to_num(v):
                                   s = str(v).strip().replace(',', '').replace('"', '')
-                                  return float(s) if s not in ['', '-', 'None'] else 0.0
+                                  return float(s) if s not in ['', '-', 'None', 'NaN'] else 0.0
 
-                              price = clean_val(row.get('收盤價', 0))
-                              yld = clean_val(row.get('殖利率(%)', 0))
-                              pbr = clean_val(row.get('本淨比', 0))
-                              
+                              # 這裡採用位置索引作為備援，防止欄位改名
+                              # 一般順序: 0代號, 1名稱, 2殖利率, 5本淨比, 8收盤價
+                              price = to_num(row.get('收盤價', row.iloc[8] if len(row) > 8 else 0))
+                              yld = to_num(row.get('殖利率(%)', row.iloc[2] if len(row) > 2 else 0))
+                              pbr = to_num(row.get('本淨比', row.iloc[5] if len(row) > 5 else 0))
+
                               if price > 0:
                                   stocks.append({
-                                      "id": sid, "name": str(row.get('證券名稱', '')).strip().replace('"', ''),
-                                      "market": "市", "price": price, "pbr": pbr,
-                                      "cashYield": yld, "stockYield": 0.0, "totalYield": yld
+                                      "id": sid,
+                                      "name": str(row.get('證券名稱', row.iloc[1])).strip().replace('"', ''),
+                                      "market": "市",
+                                      "price": price,
+                                      "pbr": pbr,
+                                      "cashYield": yld,
+                                      "stockYield": 0.0,
+                                      "totalYield": yld
                                   })
                           except: continue
+                  
+                  # 依照合計殖利率排序
+                  stocks.sort(key=lambda x: x['totalYield'], reverse=True)
                   print(f"✅ 解析成功：{len(stocks)} 筆個股")
               except Exception as e:
                   print(f"❌ 錯誤原因: {e}")
               return stocks
 
-          final_data = fetch_data()
-          if len(final_data) > 500:
+          final_list = fetch_data()
+          if len(final_list) > 300:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(final_data, f, ensure_ascii=False, indent=2)
-              print("🚀 data.json 已產出")
+                  json.dump(final_list, f, ensure_ascii=False, indent=2)
+              print(f"🚀 data.json 更新完成，筆數: {len(final_list)}")
+          else:
+              print(f"🛑 筆數不足 ({len(final_list)})，不執行寫入。")
           EOF
 
       - name: Commit and Push
