@@ -1,109 +1,74 @@
-name: Update Stock Data
-on:
-  schedule:
-    - cron: '0 1,5,10 * * 1-5'
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: pip install pandas requests
-
-      - name: Fetch and Process Data
+- name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
-          import json
           import pandas as pd
+          import json
+          import io
 
-          def fetch_stock_data():
-              results = []
-              # 1. 上市公司資料來源 (TWSE JSON API)
-              twse_url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=json"
-              try:
-                  print("📡 嘗試連線證交所 API...")
-                  r = requests.get(twse_url, timeout=30)
-                  data = r.json()
-                  if 'data' in data:
-                      # 欄位順序: 0代號, 1名稱, 2殖利率, 3年度, 4本益比, 5本淨比, 6年度
-                      for item in data['data']:
-                          try:
-                              sid = str(item[0]).strip()
-                              price_url = f"https://www.twse.com.tw/exchangeReport/STOCK_DAY_AVG?response=json&stockNo={sid}"
-                              # 過濾僅取 4 位數代碼
-                              if len(sid) == 4 and sid.isdigit():
-                                  yield_rate = float(item[2]) if item[2] != '-' else 0.0
-                                  pbr = float(item[5]) if item[5] != '-' else 0.0
-                                  
-                                  results.append({
-                                      "id": sid,
-                                      "name": str(item[1]).strip(),
-                                      "market": "市",
-                                      "price": 0.0, # 暫設0，稍後由前端或即時連結補充
-                                      "pbr": pbr,
-                                      "cashYield": yield_rate,
-                                      "stockYield": 0.0,
-                                      "totalYield": yield_rate
-                                  })
-                          except: continue
-                  print(f"✅ 上市資料處理完成: {len(results)} 筆")
-              except Exception as e:
-                  print(f"❌ 證交所 API 錯誤: {e}")
-
-              # 2. 上櫃公司資料來源 (TPEx JSON API)
-              tpex_url = "https://www.tpex.org.tw/web/stock/aftertrading/peratio_analysis/pera_result.php?l=zh-tw&o=json"
-              try:
-                  print("📡 嘗試連線櫃買中心 API...")
-                  r = requests.get(tpex_url, timeout=30)
-                  data = r.json()
-                  if 'aaData' in data:
-                      # 欄位順序: 0代號, 1名稱, 2本益比, 3現殖, 4年, 5本淨比
-                      for item in data['aaData']:
-                          try:
-                              sid = str(item[0]).strip()
-                              if len(sid) == 4 and sid.isdigit():
-                                  yield_rate = float(item[3]) if item[3] != '-' else 0.0
-                                  pbr = float(item[5]) if item[5] != '-' else 0.0
-                                  results.append({
-                                      "id": sid,
-                                      "name": str(item[1]).strip(),
-                                      "market": "櫃",
-                                      "price": 0.0,
-                                      "pbr": pbr,
-                                      "cashYield": yield_rate,
-                                      "stockYield": 0.0,
-                                      "totalYield": yield_rate
-                                  })
-                          except: continue
-                  print(f"✅ 總計(含上櫃)處理完成: {len(results)} 筆")
-              except Exception as e:
-                  print(f"❌ 櫃買 API 錯誤: {e}")
+          def fetch_data():
+              # 採用證交所每日行情 CSV 格式 (更穩定，不易報 0 char 錯誤)
+              twse_url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
+              tpex_url = "https://www.tpex.org.tw/web/stock/aftertrading/peratio_analysis/pera_result.php?l=zh-tw&o=csv"
               
-              return results
+              stocks = []
 
-          final_data = fetch_stock_data()
-          if final_data:
+              # 1. 處理上市股票 (TWSE)
+              try:
+                  print("📡 正在從證交所 Open Data 獲取資料...")
+                  resp = requests.get(twse_url, timeout=30)
+                  # 強制編碼轉為 utf-8 或 cp950 視來源而定
+                  df = pd.read_csv(io.StringIO(resp.text))
+                  # 參考 twstock 欄位邏輯處理
+                  for _, row in df.iterrows():
+                      sid = str(row['證券代號']).strip()
+                      if len(sid) == 4 and sid.isdigit():
+                          stocks.append({
+                              "id": sid,
+                              "name": str(row['證券名稱']).strip(),
+                              "market": "市",
+                              "price": float(row['收盤價']) if row['收盤價'] != '-' else 0,
+                              "pbr": float(row['本淨比']) if row['本淨比'] != '-' else 0,
+                              "totalYield": float(row['殖利率(%)']) if row['殖利率(%)'] != '-' else 0,
+                              "cashYield": float(row['殖利率(%)']) if row['殖利率(%)'] != '-' else 0,
+                              "stockYield": 0.0
+                          })
+                  print(f"✅ 上市處理完成: {len(stocks)} 筆")
+              except Exception as e:
+                  print(f"❌ 上市資料抓取失敗: {e}")
+
+              # 2. 處理上櫃股票 (TPEx)
+              try:
+                  print("📡 正在從櫃買中心獲取資料...")
+                  resp = requests.get(tpex_url, timeout=30)
+                  # 櫃買 CSV 通常前幾行是說明，需跳過
+                  df_tpex = pd.read_csv(io.StringIO(resp.text), skiprows=3)
+                  for _, row in df_tpex.iterrows():
+                      sid = str(row.iloc[0]).strip() # 股票代號
+                      if len(sid) == 4 and sid.isdigit():
+                          stocks.append({
+                              "id": sid,
+                              "name": str(row.iloc[1]).strip(),
+                              "market": "櫃",
+                              "price": float(row.iloc[2]) if row.iloc[2] != '-' else 0,
+                              "pbr": float(row.iloc[5]) if row.iloc[5] != '-' else 0,
+                              "totalYield": float(row.iloc[3]) if row.iloc[3] != '-' else 0,
+                              "cashYield": float(row.iloc[3]) if row.iloc[3] != '-' else 0,
+                              "stockYield": 0.0
+                          })
+              except Exception as e:
+                  print(f"❌ 上櫃資料抓取失敗: {e}")
+
+              return stocks
+
+          # 執行抓取
+          data = fetch_data()
+
+          # 安全檢查：若完全沒抓到資料，不覆蓋舊檔案，防止網頁變空白
+          if len(data) > 100:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(final_data, f, ensure_ascii=False)
-              print("🚀 data.json 已成功產出並存檔！")
+                  json.dump(data, f, ensure_ascii=False, indent=2)
+              print(f"🚀 成功產出 data.json，共 {len(data)} 筆資料")
           else:
-              print("🛑 警告：最終抓取資料量為 0，請檢查網路環境。")
+              print("🛑 抓取筆數異常過低，放棄更新 data.json 以保護現有數據")
           EOF
-
-      - name: Commit and Push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
-          git commit -m "自動更新股價數據" || exit 0
-          git push
