@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台股價值雷達 - Yahoo數據版</title>
+    <title>台股價值雷達</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,7 +15,7 @@
     <header class="bg-[#2d336b] text-white py-6 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 max-w-6xl flex justify-between items-center">
             <h1 class="text-xl font-black italic tracking-tighter uppercase">台股雷達</h1>
-            <select v-model="selectedCat" class="bg-white/10 text-white text-xs px-2 py-1.5 rounded-lg border border-white/20 outline-none">
+            <select v-model="selectedCat" class="bg-white/10 text-white text-xs px-3 py-2 rounded-lg border border-white/20 outline-none">
                 <option value="" class="text-slate-800">所有產業</option>
                 <option v-for="c in categories" :value="c" class="text-slate-800">{{ c }}</option>
             </select>
@@ -27,7 +27,7 @@
 
         <div v-if="!loading" class="space-y-4">
             <div v-for="group in categorizedData" :key="group.label">
-                <div @click="toggleGroup(group.label)" class="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm border border-slate-100 cursor-pointer hover:bg-slate-50 transition">
+                <div @click="toggleGroup(group.label)" class="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm border border-slate-100 cursor-pointer hover:bg-slate-50">
                     <div class="flex items-center gap-3">
                         <div class="h-6 w-1 bg-indigo-600 rounded-full"></div>
                         <h2 class="text-lg font-bold text-slate-800">{{ group.label }}</h2>
@@ -37,22 +37,22 @@
                 </div>
 
                 <div v-show="!isCollapsed(group.label)" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4">
-                    <div v-for="s in group.items" :key="s.id" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-xl transition">
+                    <div v-for="s in group.items" :key="s.id" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-lg transition">
                         <div class="flex justify-between items-start mb-4">
                             <div>
                                 <span class="text-[9px] bg-indigo-50 text-indigo-500 px-2 py-0.5 rounded font-black">{{ s.category }}</span>
-                                <h3 class="text-lg font-black text-slate-800 mt-1">{{ s.id }} {{ s.name }}</h3>
+                                <h3 class="text-lg font-black text-slate-800 mt-1">{{ s.id }} {{ s.chineseName }}</h3>
                             </div>
-                            <div class="text-xl font-black text-slate-900">${{ s.price }}</div>
+                            <div class="text-xl font-black text-slate-900 leading-none">${{ s.price }}</div>
                         </div>
                         <div class="bg-slate-50 p-4 rounded-2xl flex justify-around border border-slate-100">
                             <div class="text-center">
-                                <p class="text-[10px] text-slate-400 font-bold mb-1">殖利率</p>
+                                <p class="text-[10px] text-slate-400 font-bold mb-1 uppercase">殖利率</p>
                                 <p :class="s.totalYield >= 5 ? 'text-emerald-600' : 'text-slate-700'" class="font-black text-lg">{{ s.totalYield }}%</p>
                             </div>
                             <div class="w-px h-8 bg-slate-200"></div>
                             <div class="text-center">
-                                <p class="text-[10px] text-slate-400 font-bold mb-1">本淨比</p>
+                                <p class="text-[10px] text-slate-400 font-bold mb-1 uppercase">本淨比</p>
                                 <p class="font-black text-slate-700 text-lg">{{ s.pbr }}</p>
                             </div>
                         </div>
@@ -60,7 +60,6 @@
                 </div>
             </div>
         </div>
-        <div v-else class="text-center py-20 text-slate-400 italic">正在接收 Yahoo Finance 全球節點數據...</div>
     </main>
 </div>
 
@@ -73,29 +72,41 @@
                 loading: true,
                 search: '',
                 selectedCat: '',
-                collapsedGroups: ['股價 50 - 100 元區間', '股價 20 - 50 元區間', '股價 0 - 20 元區間']
+                collapsedGroups: ['股價 50 - 100 元區間', '股價 20 - 50 元區間', '股價 0 - 20 元區間'],
+                // 產業對照表
+                catMap: {
+                    'Technology': '資訊科技',
+                    'Financial Services': '金融保險',
+                    'Communication Services': '通訊網路',
+                    'Consumer Cyclical': '消費性電子',
+                    'Industrials': '航運/工業',
+                    'Consumer Defensive': '民生必需',
+                    'Healthcare': '醫療保健',
+                    'Real Estate': '不動產',
+                    'Basic Materials': '基礎材料',
+                    'Energy': '能源',
+                    'Utilities': '公用事業'
+                }
             }
         },
         computed: {
-            categories() { 
-                return [...new Set(this.stocks.map(s => s.category))].sort(); 
-            },
+            categories() { return [...new Set(this.stocks.map(s => s.category))].sort(); },
             filtered() {
                 return this.stocks.filter(s => {
-                    const matchSearch = s.name.includes(this.search) || s.id.includes(this.search);
-                    const matchCat = this.selectedCat === '' || s.category === this.selectedCat;
-                    return matchSearch && matchCat;
+                    const match = s.chineseName.includes(this.search) || s.id.includes(this.search);
+                    const cat = this.selectedCat === '' || s.category === this.selectedCat;
+                    return match && cat;
                 });
             },
             categorizedData() {
                 const fs = this.filtered;
-                const sortFunc = (arr) => arr.sort((a, b) => b.totalYield - a.totalYield);
+                const sort = (arr) => arr.sort((a, b) => b.totalYield - a.totalYield);
                 return [
-                    { label: "股價 300+ 元區間", items: sortFunc(fs.filter(s => s.price >= 300)) },
-                    { label: "股價 100 - 300 元區間", items: sortFunc(fs.filter(s => s.price >= 100 && s.price < 300)) },
-                    { label: "股價 50 - 100 元區間", items: sortFunc(fs.filter(s => s.price >= 50 && s.price < 100)) },
-                    { label: "股價 20 - 50 元區間", items: sortFunc(fs.filter(s => s.price >= 20 && s.price < 50)) },
-                    { label: "股價 0 - 20 元區間", items: sortFunc(fs.filter(s => s.price < 20)) }
+                    { label: "股價 300+ 元區間", items: sort(fs.filter(s => s.price >= 300)) },
+                    { label: "股價 100 - 300 元區間", items: sort(fs.filter(s => s.price >= 100 && s.price < 300)) },
+                    { label: "股價 50 - 100 元區間", items: sort(fs.filter(s => s.price >= 50 && s.price < 100)) },
+                    { label: "股價 20 - 50 元區間", items: sort(fs.filter(s => s.price >= 20 && s.price < 50)) },
+                    { label: "股價 0 - 20 元區間", items: sort(fs.filter(s => s.price < 20)) }
                 ];
             }
         },
@@ -105,24 +116,23 @@
                     const res = await fetch('./data.json?v=' + Date.now());
                     const data = await res.json();
                     
-                    // 產業名稱中文化對照
-                    const catMap = {
-                        'Technology': '資訊科技',
-                        'Financial Services': '金融保險',
-                        'Communication Services': '通訊網路',
-                        'Consumer Cyclical': '消費性電子',
-                        'Industrials': '航運/工業'
-                    };
+                    this.stocks = data.map(s => {
+                        // 如果 Yahoo 給的名稱太長或全英文，嘗試處理成較短的顯示
+                        let cName = s.name.split(' ')[0].replace('CO.,LTD.', '').replace('CORP.', '');
+                        // 針對已知大股手動修正
+                        if(s.id === '2330') cName = '台積電';
+                        if(s.id === '1476') cName = '儒鴻';
+                        if(s.id === '1477') cName = '聚陽';
+                        if(s.id === '1519') cName = '華城';
+                        if(s.id === '1560') cName = '中砂';
 
-                    this.stocks = data.map(s => ({
-                        ...s,
-                        category: catMap[s.category] || s.category || '一般產業'
-                    }));
-                } catch (e) {
-                    console.error("Load failed");
-                } finally {
-                    this.loading = false;
-                }
+                        return {
+                            ...s,
+                            chineseName: cName,
+                            category: this.catMap[s.category] || '一般產業'
+                        };
+                    });
+                } finally { this.loading = false; }
             },
             toggleGroup(label) {
                 const i = this.collapsedGroups.indexOf(label);
