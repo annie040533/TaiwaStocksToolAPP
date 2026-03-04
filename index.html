@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台股價值雷達 - 摺疊分類版</title>
+    <title>台股價值選股雷達</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>[v-cloak] { display: none; }</style>
+    <style>
+        [v-cloak] { display: none; }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+    </style>
 </head>
 <body class="bg-slate-50 min-h-screen pb-20">
 
@@ -17,88 +20,109 @@
             <h1 class="text-xl font-black italic tracking-tighter uppercase">
                 <i class="fa-solid fa-bolt text-yellow-400 mr-2"></i>台股雷達
             </h1>
-            <select v-model="selectedCategory" class="bg-white/10 text-white text-xs px-3 py-1.5 rounded-lg border border-white/20 outline-none">
-                <option value="" class="text-slate-800">所有產業</option>
-                <option v-for="cat in categories" :value="cat" class="text-slate-800">{{ cat }}</option>
-            </select>
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-filter text-xs text-white/50"></i>
+                <select v-model="selectedCat" class="bg-white/10 text-white text-xs px-3 py-2 rounded-lg border border-white/20 outline-none focus:bg-white/20">
+                    <option value="" class="text-slate-800">所有產業</option>
+                    <option v-for="c in categories" :value="c" class="text-slate-800">{{ c }}</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <main class="container mx-auto px-4 max-w-6xl mt-8">
-        <div class="mb-8">
+        <div class="relative mb-8">
+            <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"></i>
             <input v-model="search" type="text" placeholder="搜尋代碼或名稱..." 
-                class="w-full px-6 py-4 rounded-2xl shadow-sm border-none focus:ring-2 focus:ring-indigo-500 outline-none text-lg text-slate-700 shadow-inner">
+                class="w-full pl-14 pr-6 py-4 rounded-2xl shadow-sm border-none focus:ring-2 focus:ring-indigo-500 outline-none text-lg text-slate-700">
         </div>
 
         <div v-if="!loading" class="space-y-4">
-            <div v-for="group in categorizedData" :key="group.label" class="mb-4">
+            <div v-for="group in categorizedData" :key="group.label">
                 <div @click="toggleGroup(group.label)" 
-                    class="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm border border-slate-100 cursor-pointer hover:bg-slate-50 transition">
+                    class="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm border border-slate-100 cursor-pointer hover:bg-indigo-50 transition group">
                     <div class="flex items-center gap-3">
                         <div class="h-6 w-1 bg-indigo-600 rounded-full"></div>
-                        <h2 class="text-lg font-bold text-slate-700">{{ group.label }}</h2>
-                        <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded">{{ group.items.length }} 檔</span>
+                        <h2 class="text-lg font-bold text-slate-800">{{ group.label }}</h2>
+                        <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded group-hover:bg-indigo-100 group-hover:text-indigo-600">
+                            {{ group.items.length }} 檔
+                        </span>
                     </div>
-                    <i :class="isCollapsed(group.label) ? 'fa-chevron-down text-blue-500' : 'fa-chevron-up text-slate-300'" class="fa-solid"></i>
+                    <i :class="isCollapsed(group.label) ? 'fa-chevron-down text-indigo-500' : 'fa-chevron-up text-slate-300'" class="fa-solid transition-transform"></i>
                 </div>
 
-                <div v-show="!isCollapsed(group.label)" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4 transition-all">
-                    <div v-for="s in group.items" :key="s.id" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition">
+                <div v-show="!isCollapsed(group.label)" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4 mb-6">
+                    <div v-for="s in group.items" :key="s.id" 
+                        class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 card-hover">
                         <div class="flex justify-between items-start mb-4">
                             <div>
-                                <span class="text-[9px] bg-indigo-50 text-indigo-500 px-2 py-0.5 rounded font-black uppercase">{{ s.category }}</span>
+                                <span class="text-[9px] bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded font-black uppercase">{{ s.category }}</span>
                                 <h3 class="text-lg font-black text-slate-800 mt-1">{{ s.id }} {{ s.name }}</h3>
                             </div>
                             <div class="text-right">
-                                <div class="text-xl font-black text-slate-900 leading-none">${{ s.price }}</div>
-                                <div class="text-[10px] text-slate-400 font-bold mt-1">PBR: {{ s.pbr }}</div>
+                                <div class="text-xl font-black text-slate-900 leading-none">${{ s.price > 100 ? s.price : '---' }}</div>
+                                <div class="text-[10px] text-slate-400 mt-1 font-bold italic">PBR: {{ s.pbr }}</div>
                             </div>
                         </div>
-
-                        <div class="bg-slate-50 p-4 rounded-2xl flex justify-around items-center border border-slate-100 mb-4">
+                        
+                        <div class="bg-slate-50 p-4 rounded-2xl flex justify-around border border-slate-100 mb-4">
                             <div class="text-center">
-                                <p class="text-[10px] text-slate-400 font-bold mb-1">合計殖利率</p>
-                                <p :class="s.totalYield >= 5 ? 'text-emerald-600' : 'text-slate-700'" class="font-black text-lg">{{ s.totalYield }}%</p>
+                                <p class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-wider">殖利率</p>
+                                <p :class="s.totalYield >= 5 ? 'text-emerald-600' : 'text-slate-700'" class="font-black text-lg">
+                                    {{ s.totalYield }}%
+                                </p>
                             </div>
                             <div class="w-px h-8 bg-slate-200"></div>
                             <div class="text-center">
-                                <p class="text-[10px] text-slate-400 font-bold mb-1">本淨比</p>
+                                <p class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-wider">本淨比</p>
                                 <p class="font-black text-slate-700 text-lg">{{ s.pbr }}</p>
                             </div>
                         </div>
-                        <a :href="'https://www.wantgoo.com/stock/'+s.id+'/technical-chart'" target="_blank" class="w-full bg-slate-800 text-white py-3 rounded-xl font-bold text-xs block text-center hover:bg-indigo-600 transition">查看詳細線圖</a>
+                        
+                        <a :href="'https://www.wantgoo.com/stock/'+s.id+'/technical-chart'" target="_blank"
+                            class="w-full bg-slate-800 text-white py-3 rounded-xl font-bold text-xs block text-center hover:bg-indigo-600 transition">
+                            查看技術線圖 <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div v-else class="text-center py-20 text-slate-300 font-bold italic">數據正在與證交所同步中...</div>
+        
+        <div v-else class="text-center py-20">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-indigo-500 border-t-transparent mb-4"></div>
+            <p class="text-slate-400 font-bold italic">正在讀取最新價值數據...</p>
+        </div>
     </main>
 </div>
 
 <script>
     const { createApp } = Vue;
     createApp({
-        data() { 
-            return { 
-                stocks: [], 
-                loading: true, 
-                search: '', 
-                selectedCategory: '',
+        data() {
+            return {
+                stocks: [],
+                loading: true,
+                search: '',
+                selectedCat: '',
+                // 預設摺疊部分區塊，讓視覺更乾淨
                 collapsedGroups: ['股價 50 - 100 元區間', '股價 20 - 50 元區間', '股價 0 - 20 元區間']
-            } 
+            }
         },
         computed: {
+            // 自動提取所有出現過的產業類別
             categories() {
                 const cats = this.stocks.map(s => s.category);
                 return [...new Set(cats)].sort();
             },
+            // 搜尋與下拉選單過濾
             filteredStocks() {
                 return this.stocks.filter(s => {
                     const matchSearch = s.name.includes(this.search) || s.id.includes(this.search);
-                    const matchCat = this.selectedCategory === '' || s.category === this.selectedCategory;
+                    const matchCat = this.selectedCat === '' || s.category === this.selectedCat;
                     return matchSearch && matchCat;
                 });
             },
+            // 將資料按股價分組
             categorizedData() {
                 const fs = this.filteredStocks;
                 const sortFunc = (arr) => arr.sort((a, b) => b.totalYield - a.totalYield);
@@ -112,32 +136,50 @@
             }
         },
         methods: {
-            async fetchData() {
+            async loadData() {
                 try {
+                    // 加入 timestamp 避免瀏覽器快取舊資料
                     const res = await fetch('./data.json?v=' + Date.now());
                     const data = await res.json();
-                    // 根據代號初步分配產業分類
+                    
+                    // 根據代號自動分配簡單分類 (因 FinMind 輕量接口不含產業)
                     this.stocks = data.map(s => {
-                        let cat = "其他業";
-                        if (s.id.startsWith('23') || s.id.startsWith('24')) cat = "電子/半導體";
+                        let cat = "一般產業";
+                        if (s.id.startsWith('23')) cat = "半導體";
+                        else if (s.id.startsWith('24')) cat = "電腦週邊";
                         else if (s.id.startsWith('28')) cat = "金融保險";
-                        else if (s.id.startsWith('26')) cat = "航運運輸";
-                        else if (s.id.startsWith('20')) cat = "鋼鐵工業";
-                        return { ...s, category: cat };
+                        else if (s.id.startsWith('26')) cat = "航運業";
+                        else if (s.id.startsWith('20')) cat = "鋼鐵業";
+                        
+                        return { 
+                            ...s, 
+                            category: cat,
+                            // 修正名稱顯示 (如果 API 只給了代號)
+                            name: (s.name === `個股 ${s.id}` || !s.name) ? `台股 ${s.id}` : s.name
+                        };
                     });
-                } catch (e) { console.error("Load error"); }
-                this.loading = false;
+                } catch (e) {
+                    console.error("資料載入失敗:", e);
+                } finally {
+                    this.loading = false;
+                }
             },
+            // 處理摺疊切換
             toggleGroup(label) {
                 const index = this.collapsedGroups.indexOf(label);
-                if (index > -1) this.collapsedGroups.splice(index, 1);
-                else this.collapsedGroups.push(label);
+                if (index > -1) {
+                    this.collapsedGroups.splice(index, 1);
+                } else {
+                    this.collapsedGroups.push(label);
+                }
             },
             isCollapsed(label) {
                 return this.collapsedGroups.includes(label);
             }
         },
-        mounted() { this.fetchData(); }
+        mounted() {
+            this.loadData();
+        }
     }).mount('#app');
 </script>
 </body>
