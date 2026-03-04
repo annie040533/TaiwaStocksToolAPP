@@ -1,4 +1,25 @@
-- name: Fetch and Process Data
+name: Update Stock Data
+on:
+  schedule:
+    - cron: '0 9 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install requests pandas
+
+      - name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
@@ -6,55 +27,60 @@
           import json
           import io
 
-          def fetch_full_data():
-              # 使用證交所最完整的個股統計表 (包含 PBR, 殖利率)
+          def fetch_data():
+              # 證交所精華：包含代碼、名稱、收盤價、殖利率、PBR
               url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
               try:
                   resp = requests.get(url, timeout=30)
                   df = pd.read_csv(io.StringIO(resp.text))
                   df.columns = [c.strip().replace('"', '') for c in df.columns]
                   
+                  # 嘗試抓取含產業類別的表格來合併 (如果 BWIBYK 沒產業)
+                  ind_url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL"
+                  ind_resp = requests.get(ind_url, timeout=20).json()
+                  ind_map = {i['Code']: i.get('Industry', '其他') for i in ind_resp}
+
                   stocks = []
                   for _, row in df.iterrows():
-                      try:
-                          # 1. 基礎資料清洗
-                          sid = str(row['證券代號']).strip()
-                          name = str(row['證券名稱']).strip()
-                          
-                          # 2. 數值轉換 (若為 '-' 或空值則會變成 NaN)
-                          price = pd.to_numeric(row['收盤價'], errors='coerce')
-                          pbr = pd.to_numeric(row['本淨比'], errors='coerce')
-                          # BWIBYK 的殖利率欄位通常是合計值
-                          total_yield = pd.to_numeric(row['殖利率(%)'], errors='coerce')
-                          
-                          # 3. 排除缺失資料 (缺一不可)
-                          if pd.isna(price) or pd.isna(pbr) or pd.isna(total_yield) or price <= 0:
-                              continue
-                          
-                          # 4. 產業類別 (BWIBYK 沒產業，我們根據代碼區間做基本分類，或從另一個 API 補)
-                          # 註：這裡先用佔位符，網頁端會提供更細的分類
-                          industry = "一般產業" 
-                          
-                          stocks.append({
-                              "id": sid,
-                              "name": name,
-                              "market": "市",
-                              "price": float(price),
-                              "pbr": float(pbr),
-                              "cashYield": float(total_yield), # 簡化邏輯：假設為現金為主
-                              "stockYield": 0.0,
-                              "totalYield": float(total_yield),
-                              "category": industry
-                          })
-                      except: continue
+                      sid = str(row['證券代號']).strip()
+                      # 條件過濾：只要 4 位數個股，且排除資料不全者
+                      if len(sid) == 4 and sid.isdigit():
+                          try:
+                              p = float(str(row['收盤價']).replace(',', ''))
+                              y = float(str(row['殖利率(%)']).replace(',', ''))
+                              b = float(str(row['本淨比']).replace(',', ''))
+                              
+                              # 確保數值大於 0 (排除缺一資料者)
+                              if p > 0 and y >= 0 and b > 0:
+                                  stocks.append({
+                                      "id": sid,
+                                      "name": str(row['證券名稱']).strip(),
+                                      "market": "市",
+                                      "price": p,
+                                      "pbr": b,
+                                      "cashYield": y, # 證交所此表為合計殖利率
+                                      "stockYield": 0.0,
+                                      "totalYield": y,
+                                      "category": ind_map.get(sid, "其他業")
+                                  })
+                          except: continue
                   return stocks
               except Exception as e:
                   print(f"Error: {e}")
                   return []
 
-          data = fetch_full_data()
-          if data:
+          final_list = fetch_data()
+          if final_list:
+              # 依價格排序
+              final_list.sort(key=lambda x: x['price'], reverse=True)
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(data, f, ensure_ascii=False, indent=2)
-              print(f"🚀 成功！產出 {len(data)} 筆完整資料")
+                  json.dump(final_list, f, ensure_ascii=False, indent=2)
+              print(f"✅ 成功產出 {len(final_list)} 筆完整資料")
           EOF
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新股價與產業數據" && git push)
