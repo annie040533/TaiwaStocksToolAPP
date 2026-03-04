@@ -1,8 +1,8 @@
 name: Update Stock Data
 on:
   schedule:
-    - cron: '0 1,5,10 * * 1-5' # 台北時間週一至五
-  workflow_dispatch: # 讓你可以手動點擊 Run Workflow
+    - cron: '0 1,5,10 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -20,66 +20,73 @@ jobs:
         run: pip install pandas requests
 
       - name: Fetch and Process Data
+        # 使用 | 符號可以確保 Python 程式碼不會出現紅色波浪底線
         run: |
-          python <<EOF
+          python - <<EOF
           import requests
           import pandas as pd
           import json
           import os
+          from io import StringIO
 
-          # 證交所 Open Data 載點
           url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
           
           try:
-              print("正在抓取證交所資料...")
-              res = requests.get(url, timeout=30)
-              res.encoding = 'ms950'
+              print("📡 正在同步證交所數據...")
+              response = requests.get(url, timeout=30)
+              # 強制編碼修正，避免亂碼導致抓不到資料
+              csv_content = response.content.decode('cp950')
               
-              from io import StringIO
-              # 讀取 CSV，跳過可能存在的錯誤列
-              df = pd.read_csv(StringIO(res.text))
+              df = pd.read_csv(StringIO(csv_content))
               
-              # 欄位清理：轉換數字，處理無效值
+              # 欄位模糊對應，解決證交所欄位名稱變動問題
               cols = {
-                  '證券代號': 'id',
-                  '證券名稱': 'name',
-                  '收盤價': 'price',
-                  '殖利率(%)': 'yield',
-                  '本淨比': 'pbr'
+                  'id': ['代號', '代碼'],
+                  'name': ['名稱'],
+                  'price': ['收盤價'],
+                  'pbr': ['本淨比'],
+                  'yield': ['殖利率']
               }
               
-              # 檢查欄位是否存在
-              available_cols = [c for c in cols.keys() if c in df.columns]
-              df = df[available_cols]
-              
-              # 轉型並排除空值 (缺一不可排除)
-              df['收盤價'] = pd.to_numeric(df['收盤價'], errors='coerce')
-              df['殖利率(%)'] = pd.to_numeric(df['殖利率(%)'], errors='coerce')
-              df['本淨比'] = pd.to_numeric(df['本淨比'], errors='coerce')
-              df = df.dropna()
+              id_c = next((c for c in df.columns if any(k in c for k in cols['id'])), None)
+              name_c = next((c for c in df.columns if any(k in c for k in cols['name'])), None)
+              price_c = next((c for c in df.columns if any(k in c for k in cols['price'])), None)
+              pbr_c = next((c for c in df.columns if any(k in c for k in cols['pbr'])), None)
+              yield_c = next((c for c in df.columns if any(k in c for k in cols['yield'])), None)
+
+              if not all([id_c, name_c, price_c, pbr_c, yield_c]):
+                  raise Exception("找不到必要欄位")
+
+              # 資料型態轉換
+              df[price_c] = pd.to_numeric(df[price_c], errors='coerce')
+              df[pbr_c] = pd.to_numeric(df[pbr_c], errors='coerce')
+              df[yield_c] = pd.to_numeric(df[yield_c], errors='coerce')
+              df = df.dropna(subset=[price_c, pbr_c, yield_c])
 
               stocks = []
               for _, r in df.iterrows():
-                  if r['收盤價'] > 0:
+                  sid = str(r[id_c]).strip()
+                  if len(sid) == 4 and sid.isdigit():
                       stocks.append({
-                          "id": str(r['證券代號']).strip(),
-                          "name": str(r['證券名稱']).strip(),
-                          "price": float(r['收盤價']),
-                          "pbr": float(r['本淨比']),
-                          "totalYield": float(r['殖利率(%)']),
-                          "industry": "上市股票",
-                          "market": "市"
+                          "id": sid,
+                          "name": str(r[name_c]).strip(),
+                          "price": float(r[price_c]),
+                          "pbr": float(r[pbr_c]),
+                          "totalYield": float(r[yield_c]),
+                          "industry": "上市股票"
                       })
               
+              # 依照殖利率由高到低排序
+              stocks.sort(key=lambda x: x['totalYield'], reverse=True)
+
               with open('data.json', 'w', encoding='utf-8') as f:
                   json.dump(stocks, f, ensure_ascii=False)
-              print(f"成功產出資料，共 {len(stocks)} 筆")
+              print(f"成功更新 {len(stocks)} 筆資料")
 
           except Exception as e:
-              print(f"發生錯誤: {e}")
-              # 如果失敗，建立一個空的 JSON 防止 Git 報錯
+              print(f"ERROR: {e}")
               if not os.path.exists('data.json'):
-                  with open('data.json', 'w') as f:
+                  with open('data.json', 'w', encoding='utf-8') as f:
                       json.dump([], f)
           EOF
 
@@ -88,5 +95,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          # 檢查是否有變動，避免無意義的 Commit
           git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新股價數據" && git push)
