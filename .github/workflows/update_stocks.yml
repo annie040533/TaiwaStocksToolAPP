@@ -27,48 +27,69 @@ jobs:
           import json
           import io
 
-          def get_data():
-              # 使用證交所 OpenAPI 獲取個股日本益比、殖利率及淨值比 (最穩定)
-              url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL"
+          def get_stock_data():
+              # 使用證交所每日個股行情 (包含收盤、殖利率、PBR)
+              # 這是 CSV 格式，最不容易被 API 防火牆阻擋
+              url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
+              headers = {
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+              }
+              
               try:
-                  resp = requests.get(url, timeout=30)
-                  raw_data = resp.json()
+                  print("📡 正在從證交所下載 Open Data CSV...")
+                  resp = requests.get(url, headers=headers, timeout=30)
+                  if resp.status_code != 200:
+                      print(f"❌ 錯誤碼: {resp.status_code}")
+                      return []
+                  
+                  # 處理 CSV 格式
+                  df = pd.read_csv(io.StringIO(resp.text))
+                  df.columns = [c.strip().replace('"', '') for c in df.columns]
                   
                   stocks = []
-                  for item in raw_data:
-                      sid = item.get('Code', '').strip()
-                      # 只抓取 4 位數個股
+                  for _, row in df.iterrows():
+                      sid = str(row.get('證券代號', '')).strip().replace('"', '')
+                      
+                      # 篩選標準個股 (4位數)
                       if len(sid) == 4 and sid.isdigit():
                           try:
-                              # 關鍵數值清洗，若為空或無意義字串則排除
-                              price = float(item.get('ClosingPrice', 0))
-                              yield_val = float(item.get('YieldRatio', 0))
-                              pbr = float(item.get('PBratio', 0))
+                              # 清洗並轉換數值，若有千分位符號則移除
+                              def clean(val):
+                                  s = str(val).replace(',', '').replace('"', '').strip()
+                                  return float(s) if s not in ['', '-', 'None', 'NaN'] else 0.0
+
+                              price = clean(row.get('收盤價', 0))
+                              y_ratio = clean(row.get('殖利率(%)', 0))
+                              p_ratio = clean(row.get('本淨比', 0))
                               
-                              # 排除資料不全者 (依照您的要求：缺一不可)
-                              if price > 0 and yield_val > 0 and pbr > 0:
+                              # 【核心要求】：三者缺一不可 (數值必須 > 0)
+                              if price > 0 and y_ratio > 0 and p_ratio > 0:
                                   stocks.append({
                                       "id": sid,
-                                      "name": item.get('Name', '').strip(),
+                                      "name": str(row.get('證券名稱', '')).strip().replace('"', ''),
                                       "market": "市",
                                       "price": price,
-                                      "pbr": pbr,
-                                      "cashYield": yield_val,
+                                      "pbr": p_ratio,
+                                      "cashYield": y_ratio,
                                       "stockYield": 0.0,
-                                      "totalYield": yield_val,
-                                      "category": item.get('Industry', '其他')
+                                      "totalYield": y_ratio,
+                                      "category": "一般產業" # 預設分類
                                   })
                           except: continue
+                  
+                  print(f"✅ 成功清洗出 {len(stocks)} 筆完整個股資料")
                   return stocks
               except Exception as e:
-                  print(f"Error: {e}")
+                  print(f"🔥 發生致命錯誤: {e}")
                   return []
 
-          final_data = get_data()
-          if final_data:
+          final_results = get_stock_data()
+          if len(final_results) > 100:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(final_data, f, ensure_ascii=False, indent=2)
-              print(f"🚀 成功產出 {len(final_data)} 筆完整資料")
+                  json.dump(final_results, f, ensure_ascii=False, indent=2)
+              print("🚀 data.json 已更新")
+          else:
+              print("🛑 資料獲取異常，取消寫入以保護舊資料。")
           EOF
 
       - name: Commit and Push
@@ -76,4 +97,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "修正資料抓取邏輯" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "修正資料欄位全為0的問題" && git push)
