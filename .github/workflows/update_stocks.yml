@@ -17,66 +17,84 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install requests pandas
+        run: pip install requests
 
       - name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
-          import pandas as pd
-          import io
+          import csv
           import json
+          import io
 
           def get_data():
-              # 使用 CSV 備用介面，這通常比 JSON OpenAPI 更不容易被 GitHub Actions 環境阻擋
+              # 使用證交所 Open Data 連結 (本淨比、殖利率、PE)
               url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
               headers = {
                   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
               }
               
               try:
-                  print("📡 嘗試從備用 CSV 連結抓取資料...")
+                  print("📡 正在讀取證交所資料庫...")
                   resp = requests.get(url, headers=headers, timeout=30)
+                  resp.encoding = 'utf-8' # 強制編碼避免亂碼
+                  
                   if resp.status_code != 200:
+                      print(f"❌ HTTP 錯誤: {resp.status_code}")
                       return []
 
-                  # 解析 CSV (證交所 Open Data 格式)
-                  df = pd.read_csv(io.StringIO(resp.text))
-                  # 修正欄位名稱中的引號與空格
-                  df.columns = [c.replace('"', '').strip() for c in df.columns]
+                  # 使用 csv 模組手動解析，避免 Pandas 結構報錯
+                  f = io.StringIO(resp.text)
+                  reader = csv.reader(f)
                   
                   stocks = []
-                  for _, row in df.iterrows():
-                      sid = str(row.get('證券代號', '')).replace('"', '').strip()
-                      if len(sid) == 4 and sid.isdigit():
-                          try:
-                              # 轉換數值並處理可能的千分位
-                              p = float(str(row.get('收盤價', 0)).replace(',', ''))
-                              y = float(str(row.get('殖利率(%)', 0)).replace(',', ''))
-                              b = float(str(row.get('本淨比', 0)).replace(',', ''))
-                              
-                              if p > 0:
-                                  stocks.append({
-                                      "id": sid,
-                                      "name": str(row.get('證券名稱', '')).replace('"', '').strip(),
-                                      "price": p,
-                                      "pbr": b,
-                                      "totalYield": y,
-                                      "category": "一般產業" # CSV 沒提供產業，由前端分類
-                                  })
-                          except: continue
+                  header = []
+                  
+                  for row in reader:
+                      # 尋找包含「證券代號」的那一行作為表頭
+                      if "證券代號" in row:
+                          header = [c.replace('"', '').strip() for c in row]
+                          continue
+                      
+                      if header and len(row) >= len(header):
+                          data_dict = dict(zip(header, row))
+                          sid = data_dict.get('證券代號', '').replace('"', '').strip()
+                          
+                          # 篩選 4 位數個股
+                          if len(sid) == 4 and sid.isdigit():
+                              try:
+                                  # 清洗數據：移除引號與千分位逗號
+                                  def clean_num(val):
+                                      s = str(val).replace('"', '').replace(',', '').strip()
+                                      return float(s) if s not in ['', '-', 'None'] else 0.0
+
+                                  price = clean_num(data_dict.get('收盤價', 0))
+                                  y_ratio = clean_num(data_dict.get('殖利率(%)', 0))
+                                  p_ratio = clean_num(data_dict.get('本淨比', 0))
+                                  
+                                  # 核心過濾：只存入價格大於 0 的有效資料
+                                  if price > 0:
+                                      stocks.append({
+                                          "id": sid,
+                                          "name": data_dict.get('證券名稱', '').replace('"', '').strip(),
+                                          "price": price,
+                                          "pbr": p_ratio,
+                                          "totalYield": y_ratio,
+                                          "category": "一般產業" # 稍後由前端自動補完分類
+                                      })
+                              except: continue
                   return stocks
               except Exception as e:
-                  print(f"🔥 錯誤: {e}")
+                  print(f"🔥 發生致命錯誤: {e}")
                   return []
 
-          final_data = get_data()
-          if len(final_data) > 300:
+          final_results = get_data()
+          if len(final_results) > 300:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(final_data, f, ensure_ascii=False, indent=2)
-              print(f"🚀 成功！產出 {len(final_data)} 筆資料。")
+                  json.dump(final_results, f, ensure_ascii=False, indent=2)
+              print(f"🚀 成功！已存入 {len(final_results)} 筆完整 PBR 與殖利率資料。")
           else:
-              print("🛑 資料獲取失敗，請檢查證交所連結是否變動。")
+              print(f"🛑 抓取筆數不足 ({len(final_results)})，請確認來源連結。")
               exit(1)
           EOF
 
@@ -85,4 +103,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "改用 CSV 備用源以解決解析錯誤" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "修正 CSV 解析並補齊 PBR 資料" && git push)
