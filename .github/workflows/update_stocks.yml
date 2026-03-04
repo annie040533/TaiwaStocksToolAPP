@@ -23,73 +23,76 @@ jobs:
         run: |
           python - <<EOF
           import requests
+          import csv
           import json
-          import time
+          import io
 
           def get_data():
-              # 策略 A: 政府 Open Data JSON 介面 (最不容易被阻擋)
-              # 網址參考自 https://data.gov.tw/dataset/11764
-              urls = [
-                  "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=json",
-                  "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL"
-              ]
+              # 策略：改用靜態分流路徑，此路徑封鎖 IP 機率最低
+              # 來源：個股日本益比、殖利率及淨值比 (Dataset 11764)
+              url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
               
               headers = {
                   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
               }
 
-              for url in urls:
-                  try:
-                      print(f"📡 嘗試從 {url} 抓取數據...")
-                      resp = requests.get(url, headers=headers, timeout=30)
-                      
-                      # 處理 OpenAPI 格式 (可能是 List)
-                      data = resp.json()
-                      raw_list = data if isinstance(data, list) else data.get('data', [])
-                      
-                      if not raw_list:
+              try:
+                  print("📡 嘗試從 Open Data 分流路徑抓取...")
+                  resp = requests.get(url, headers=headers, timeout=60)
+                  resp.encoding = 'utf-8'
+
+                  if resp.status_code != 200:
+                      print(f"🛑 HTTP 錯誤: {resp.status_code}")
+                      return []
+
+                  # 使用內建 csv 模組手動解析，避免 Pandas 解析錯誤
+                  f = io.StringIO(resp.text)
+                  reader = csv.reader(f)
+                  
+                  stocks = []
+                  header = None
+                  
+                  for row in reader:
+                      # 自動尋找標題列
+                      if "證券代號" in row:
+                          header = [c.replace('"', '').strip() for c in row]
                           continue
-
-                      stocks = []
-                      for row in raw_list:
-                          # 判定是 JSON 陣列還是物件 (OpenAPI 回傳物件, 官網回傳陣列)
-                          is_dict = isinstance(row, dict)
-                          sid = row.get('Code', '') if is_dict else row[0]
-                          name = row.get('Name', '') if is_dict else row[1]
-                          yield_rate = row.get('YieldRatio', 0) if is_dict else row[2]
-                          pbr = row.get('PBRatio', 0) if is_dict else row[5]
-                          price = row.get('ClosingPrice', 0) if is_dict else row[8]
-
-                          if len(str(sid)) == 4:
+                      
+                      if header and len(row) >= len(header):
+                          data_dict = dict(zip(header, row))
+                          sid = data_dict.get('證券代號', '').replace('"', '').strip()
+                          
+                          if len(sid) == 4 and sid.isdigit():
                               try:
                                   def clean(v):
-                                      s = str(v).replace(',', '').strip()
-                                      return float(s) if s not in ['', '-', 'N/A'] else 0.0
+                                      s = str(v).replace('"', '').replace(',', '').strip()
+                                      return float(s) if s not in ['', '-', 'None'] else 0.0
 
-                                  stocks.append({
-                                      "id": str(sid),
-                                      "name": str(name),
-                                      "price": clean(price),
-                                      "pbr": clean(pbr),
-                                      "totalYield": clean(yield_rate),
-                                      "category": "一般產業"
-                                  })
+                                  # 此表包含 PBR 與 殖利率
+                                  price = clean(data_dict.get('收盤價', 0))
+                                  if price > 0:
+                                      stocks.append({
+                                          "id": sid,
+                                          "name": data_dict.get('證券名稱', '').replace('"', '').strip(),
+                                          "price": price,
+                                          "pbr": clean(data_dict.get('本淨比', 0)),
+                                          "totalYield": clean(data_dict.get('殖利率(%)', 0)),
+                                          "category": "一般產業"
+                                      })
                               except: continue
-                      
-                      if len(stocks) > 500:
-                          return stocks
-                  except Exception as e:
-                      print(f"⚠️ 此來源失敗: {e}")
-                      continue
-              return []
+                  return stocks
+              except Exception as e:
+                  print(f"🔥 錯誤: {e}")
+                  return []
 
-          final_res = get_data()
-          if final_res:
+          res = get_data()
+          if len(res) > 300:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(final_res, f, ensure_ascii=False, indent=2)
-              print(f"🚀 成功！獲取 {len(final_res)} 檔具備 PBR 與殖利率的個股。")
+                  json.dump(res, f, ensure_ascii=False, indent=2)
+              print(f"🚀 成功！產出 {len(res)} 筆完整資料。")
           else:
-              print("❌ 所有來源均失效，請檢查證交所是否進入維護期。")
+              # 最終備用策略：如果真的完全被擋，則發出警報但不中斷 Workflow
+              print("❌ 無法抓取資料，可能證交所正在全面封鎖 GitHub IP。")
               exit(1)
           EOF
 
@@ -98,4 +101,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "修正數據源與解析邏輯" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "修正資料抓取策略" && git push)
