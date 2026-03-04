@@ -1,25 +1,4 @@
-name: Update Stock Data
-on:
-  schedule:
-    - cron: '0 1,5,10 * * 1-5'
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: pip install pandas requests
-
-      - name: Fetch and Process Data
+- name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
@@ -28,51 +7,52 @@ jobs:
           import io
 
           def fetch_data():
-              # 使用證交所 Open Data (CSV)，避開 JSON Char 0 錯誤
-              twse_url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
+              # 採用證交所每日行情 (BWIBYK) CSV 數據
+              url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
               stocks = []
               try:
-                  print("📡 正在獲取證交所 Open Data...")
-                  resp = requests.get(twse_url, timeout=30)
-                  # 處理可能的編碼問題
-                  df = pd.read_csv(io.StringIO(resp.text))
-                  df.columns = [c.strip() for c in df.columns]
+                  print("📡 正在獲取證交所資料...")
+                  resp = requests.get(url, timeout=30)
+                  # 關鍵修正：證交所 CSV 可能包含 BOM 或特殊標頭，先手動處理文本
+                  content = resp.text.strip()
                   
+                  # 使用 StringIO 包裝後，先讀取前幾行偵錯或直接交給 pandas
+                  # 用 try-except 包裹每一行解析，確保單一錯誤不影響全局
+                  df = pd.read_csv(io.StringIO(content))
+                  df.columns = [c.strip() for c in df.columns]
+
                   for _, row in df.iterrows():
-                      sid = str(row['證券代號']).strip()
-                      # 過濾出 4 位數股票，排除 ETF 與權證
+                      sid = str(row.get('證券代號', '')).strip()
+                      # 過濾出 4 位數標準個股
                       if len(sid) == 4 and sid.isdigit():
-                          # 根據你的需求：收盤價、PBR、合計殖利率
-                          price = pd.to_numeric(row['收盤價'], errors='coerce')
-                          pbr = pd.to_numeric(row['本淨比'], errors='coerce')
-                          yield_rate = pd.to_numeric(row['殖利率(%)'], errors='coerce')
-                          
-                          if price > 0 and not pd.isna(yield_rate):
-                              stocks.append({
-                                  "id": sid,
-                                  "name": str(row['證券名稱']).strip(),
-                                  "market": "市",
-                                  "price": float(price),
-                                  "pbr": float(pbr) if not pd.isna(pbr) else 0,
-                                  "cashYield": float(yield_rate),
-                                  "stockYield": 0.0,
-                                  "totalYield": float(yield_rate)
-                              })
+                          try:
+                              price = pd.to_numeric(row.get('收盤價', 0), errors='coerce')
+                              pbr = pd.to_numeric(row.get('本淨比', 0), errors='coerce')
+                              yld = pd.to_numeric(row.get('殖利率(%)', 0), errors='coerce')
+                              
+                              if not pd.isna(price) and price > 0:
+                                  stocks.append({
+                                      "id": sid,
+                                      "name": str(row.get('證券名稱', '')).strip(),
+                                      "market": "市",
+                                      "price": float(price),
+                                      "pbr": float(pbr) if not pd.isna(pbr) else 0,
+                                      "cashYield": float(yld) if not pd.isna(yld) else 0,
+                                      "stockYield": 0.0,
+                                      "totalYield": float(yld) if not pd.isna(yld) else 0
+                                  })
+                          except: continue
                   print(f"✅ 上市處理完成: {len(stocks)} 筆")
               except Exception as e:
-                  print(f"❌ 錯誤: {e}")
+                  print(f"❌ 嚴重錯誤: {e}")
               return stocks
 
           data = fetch_data()
-          if len(data) > 0:
+          # 只有抓到資料才寫入，避免 [ ] 覆蓋舊資料
+          if len(data) > 100:
               with open('data.json', 'w', encoding='utf-8') as f:
                   json.dump(data, f, ensure_ascii=False, indent=2)
-              print("🚀 data.json 產出成功！")
+              print(f"🚀 data.json 成功產出 {len(data)} 筆！")
+          else:
+              print("🛑 抓取量過低 (可能是 API 暫時阻擋)，不更新 data.json")
           EOF
-
-      - name: Commit and Push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新股價數據" && git push)
