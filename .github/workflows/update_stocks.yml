@@ -1,4 +1,25 @@
-- name: Fetch and Process Data
+name: Update Stock Data
+on:
+  schedule:
+    - cron: '0 1,5,10 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install requests pandas
+
+      - name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
@@ -9,64 +30,56 @@
           def fetch_data():
               url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
               headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/91.0.4472.124'}
-              
               stocks = []
               try:
-                  print("📡 正在存取證交所資料...")
+                  print("📡 啟動連線...")
                   resp = requests.get(url, headers=headers, timeout=30)
-                  
-                  # 核心修正：證交所 CSV 前面可能有說明文字。
-                  # 我們改用更暴力但有效的方式：先讀取所有文字，過濾出含有「證券代號」的那一行作為開始。
-                  raw_text = resp.text
-                  lines = raw_text.split('\n')
-                  data_start_idx = 0
+                  # 核心修正：手動尋找數據起始行，避開解析錯誤
+                  lines = resp.text.split('\n')
+                  start_line = 0
                   for i, line in enumerate(lines):
                       if "證券代號" in line:
-                          data_start_idx = i
+                          start_line = i
                           break
                   
-                  # 重新封裝成 DataFrame，從標題行開始讀取
-                  clean_csv = "\n".join(lines[data_start_idx:])
+                  clean_csv = "\n".join(lines[start_line:])
                   df = pd.read_csv(io.StringIO(clean_csv), on_bad_lines='skip')
-                  df.columns = [c.strip().replace('"', '') for c in df.columns]
-                  
-                  print(f"📊 成功定位數據起始點，欄位包含: {list(df.columns)}")
+                  df.columns = [str(c).strip().replace('"', '') for c in df.columns]
 
                   for _, row in df.iterrows():
-                      # 確保移除引號並清理空格
                       sid = str(row.get('證券代號', '')).strip().replace('"', '')
                       if len(sid) == 4 and sid.isdigit():
                           try:
-                              def clean(v):
+                              def clean_val(v):
                                   s = str(v).strip().replace(',', '').replace('"', '')
                                   return float(s) if s not in ['', '-', 'None'] else 0.0
 
-                              price = clean(row.get('收盤價', 0))
-                              yield_rate = clean(row.get('殖利率(%)', 0))
-                              pbr = clean(row.get('本淨比', 0))
-
+                              price = clean_val(row.get('收盤價', 0))
+                              yld = clean_val(row.get('殖利率(%)', 0))
+                              pbr = clean_val(row.get('本淨比', 0))
+                              
                               if price > 0:
                                   stocks.append({
-                                      "id": sid,
-                                      "name": str(row.get('證券名稱', '')).strip().replace('"', ''),
-                                      "market": "市",
-                                      "price": price,
-                                      "pbr": pbr,
-                                      "cashYield": yield_rate,
-                                      "stockYield": 0.0,
-                                      "totalYield": yield_rate
+                                      "id": sid, "name": str(row.get('證券名稱', '')).strip().replace('"', ''),
+                                      "market": "市", "price": price, "pbr": pbr,
+                                      "cashYield": yld, "stockYield": 0.0, "totalYield": yld
                                   })
                           except: continue
-                  print(f"✅ 解析完成，有效個股: {len(stocks)} 筆")
+                  print(f"✅ 解析成功：{len(stocks)} 筆個股")
               except Exception as e:
-                  print(f"❌ 解析失敗: {e}")
+                  print(f"❌ 錯誤原因: {e}")
               return stocks
 
-          data = fetch_data()
-          if len(data) > 500:
+          final_data = fetch_data()
+          if len(final_data) > 500:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(data, f, ensure_ascii=False, indent=2)
-              print(f"🚀 data.json 更新成功！共 {len(data)} 筆資料")
-          else:
-              print(f"🛑 資料筆數 ({len(data)}) 低於門檻，不更新檔案。")
+                  json.dump(final_data, f, ensure_ascii=False, indent=2)
+              print("🚀 data.json 已產出")
           EOF
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新股價數據" && git push)
