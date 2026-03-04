@@ -1,47 +1,61 @@
-- name: Fetch and Process Data
+name: Update Stock Data
+on:
+  schedule:
+    - cron: '0 1,5,10 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install requests pandas
+
+      - name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
+          import pandas as pd
           import json
           import io
-          import pandas as pd
 
-          def fetch_twse():
-              # 使用證交所 Open Data 連結，此連結較不易觸發 403 禁止訪問
+          def fetch_data():
+              # 使用證交所 Open Data 連結，此連結較不易被 GitHub Actions 的 IP 封鎖
               url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
-              headers = {
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-              }
+              headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/91.0.4472.124'}
               
+              stocks = []
               try:
-                  print("📡 正在存取證交所 Open Data...")
+                  print("📡 正在從證交所獲取最新數據...")
                   resp = requests.get(url, headers=headers, timeout=30)
-                  if resp.status_code != 200:
-                      print(f"❌ 連線失敗，狀態碼: {resp.status_code}")
-                      return []
-
-                  # 使用 pandas 自動處理 CSV 欄位對齊，避開手動 split 的偏移問題
-                  # 證交所 Open Data 通常編碼為 utf-8 或 cp950
-                  df = pd.read_csv(io.StringIO(resp.text))
                   
-                  # 清理欄位名稱中的空白
-                  df.columns = [c.strip() for c in df.columns]
+                  # 使用 Pandas 自動解析，解決 CSV 欄位偏移問題
+                  # 證交所 Open Data 為 UTF-8 或 CP950，Pandas 通常能自動識別
+                  df = pd.read_csv(io.StringIO(resp.text))
+                  df.columns = [c.strip() for c in df.columns] # 清理標題空格
                   print(f"📊 偵測到欄位: {list(df.columns)}")
 
-                  stocks = []
                   for _, row in df.iterrows():
                       sid = str(row.get('證券代號', '')).strip().replace('"', '')
-                      # 僅抓取 4 位數的普通股
+                      # 過濾標準 4 位數個股
                       if len(sid) == 4 and sid.isdigit():
                           try:
-                              # 轉換數值，若為 '-' 則轉為 0
-                              def clean_num(val):
-                                  if pd.isna(val) or str(val).strip() == '-': return 0.0
-                                  return float(str(val).replace(',', ''))
+                              # 轉換函數，處理 '-' 或千分位逗號
+                              def clean(v):
+                                  s = str(v).strip().replace(',', '')
+                                  return float(s) if s not in ['', '-'] else 0.0
 
-                              price = clean_num(row.get('收盤價', 0))
-                              yield_rate = clean_num(row.get('殖利率(%)', 0))
-                              pbr = clean_num(row.get('本淨比', 0))
+                              price = clean(row.get('收盤價', 0))
+                              yield_rate = clean(row.get('殖利率(%)', 0))
+                              pbr = clean(row.get('本淨比', 0))
 
                               if price > 0:
                                   stocks.append({
@@ -55,19 +69,24 @@
                                       "totalYield": yield_rate
                                   })
                           except: continue
-                  return stocks
+                  print(f"✅ 上市個股處理完成: {len(stocks)} 筆")
               except Exception as e:
-                  print(f"❌ 發生異常: {e}")
-                  return []
+                  print(f"❌ 嚴重錯誤: {e}")
+              return stocks
 
-          # 執行抓取
-          stock_data = fetch_twse()
-
-          # 防禦性檢查：確保資料量正常才寫入檔案
-          if len(stock_data) > 500:
+          data = fetch_data()
+          # 只有抓到資料才寫入，避免 [ ] 覆蓋舊資料
+          if len(data) > 500:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(stock_data, f, ensure_ascii=False, indent=2)
-              print(f"🚀 成功！已寫入 {len(stock_data)} 筆資料至 data.json")
+                  json.dump(data, f, ensure_ascii=False, indent=2)
+              print(f"🚀 data.json 成功產出 {len(data)} 筆！")
           else:
-              print(f"🛑 抓取數量不足 ({len(stock_data)} 筆)，為保護原始資料，本次不進行更新。")
+              print("🛑 抓取量過低，本次不更新 data.json 以保護現有數據")
           EOF
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新股價數據" && git push)
