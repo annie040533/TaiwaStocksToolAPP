@@ -1,58 +1,77 @@
-- name: Fetch and Process Data
+name: Update Stock Data
+on:
+  schedule:
+    - cron: '0 1,5,10 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install requests pandas
+
+      - name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
-          import pandas as pd
           import json
-          import io
 
-          def fetch_data():
-              # 採用證交所每日行情 (BWIBYK) CSV 數據
+          def get_data():
+              # 直接抓取證交所的統計資料連結
               url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
               stocks = []
               try:
-                  print("📡 正在獲取證交所資料...")
-                  resp = requests.get(url, timeout=30)
-                  # 關鍵修正：證交所 CSV 可能包含 BOM 或特殊標頭，先手動處理文本
-                  content = resp.text.strip()
-                  
-                  # 使用 StringIO 包裝後，先讀取前幾行偵錯或直接交給 pandas
-                  # 用 try-except 包裹每一行解析，確保單一錯誤不影響全局
-                  df = pd.read_csv(io.StringIO(content))
-                  df.columns = [c.strip() for c in df.columns]
+                  print("📡 啟動連線...")
+                  r = requests.get(url, timeout=30)
+                  # 處理可能的編碼問題
+                  lines = r.text.split('\n')
+                  print(f"取得原始數據，共 {len(lines)} 行")
 
-                  for _, row in df.iterrows():
-                      sid = str(row.get('證券代號', '')).strip()
-                      # 過濾出 4 位數標準個股
-                      if len(sid) == 4 and sid.isdigit():
-                          try:
-                              price = pd.to_numeric(row.get('收盤價', 0), errors='coerce')
-                              pbr = pd.to_numeric(row.get('本淨比', 0), errors='coerce')
-                              yld = pd.to_numeric(row.get('殖利率(%)', 0), errors='coerce')
-                              
-                              if not pd.isna(price) and price > 0:
+                  for line in lines:
+                      parts = line.replace('"', '').split(',')
+                      # 證交所資料格式：代號(0), 名稱(1), 殖利率(2), 本淨比(5), 收盤價(8)
+                      if len(parts) >= 9:
+                          sid = parts[0].strip()
+                          if len(sid) == 4 and sid.isdigit():
+                              try:
                                   stocks.append({
                                       "id": sid,
-                                      "name": str(row.get('證券名稱', '')).strip(),
+                                      "name": parts[1].strip(),
                                       "market": "市",
-                                      "price": float(price),
-                                      "pbr": float(pbr) if not pd.isna(pbr) else 0,
-                                      "cashYield": float(yld) if not pd.isna(yld) else 0,
+                                      "price": float(parts[8]) if parts[8] != '-' else 0,
+                                      "pbr": float(parts[5]) if parts[5] != '-' else 0,
+                                      "cashYield": float(parts[2]) if parts[2] != '-' else 0,
                                       "stockYield": 0.0,
-                                      "totalYield": float(yld) if not pd.isna(yld) else 0
+                                      "totalYield": float(parts[2]) if parts[2] != '-' else 0
                                   })
-                          except: continue
-                  print(f"✅ 上市處理完成: {len(stocks)} 筆")
+                              except: continue
+                  print(f"✅ 解析成功：{len(stocks)} 筆個股")
               except Exception as e:
-                  print(f"❌ 嚴重錯誤: {e}")
+                  print(f"❌ 錯誤原因: {e}")
               return stocks
 
-          data = fetch_data()
-          # 只有抓到資料才寫入，避免 [ ] 覆蓋舊資料
-          if len(data) > 100:
+          final_list = get_data()
+          if len(final_list) > 500:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(data, f, ensure_ascii=False, indent=2)
-              print(f"🚀 data.json 成功產出 {len(data)} 筆！")
+                  json.dump(final_list, f, ensure_ascii=False, indent=2)
+              print("🚀 data.json 已寫入！")
           else:
-              print("🛑 抓取量過低 (可能是 API 暫時阻擋)，不更新 data.json")
+              print("🛑 資料量不足，請檢查 API 是否被擋。")
           EOF
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "自動更新股價數據" || exit 0
+          git push
