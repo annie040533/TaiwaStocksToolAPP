@@ -1,1507 +1,1073 @@
 [
   {
-    "id": "1101",
-    "name": "TCC",
-    "price": 25.0,
-    "totalYield": 3.86,
-    "category": "水泥工業"
-  },
-  {
-    "id": "1102",
-    "name": "ASIA",
-    "price": 34.45,
-    "totalYield": 6.26,
-    "category": "水泥工業"
-  },
-  {
-    "id": "1103",
-    "name": "CHIA",
-    "price": 13.5,
-    "totalYield": 3.94,
-    "category": "水泥工業"
-  },
-  {
-    "id": "1104",
-    "name": "UNIVERSAL",
-    "price": 28.8,
-    "totalYield": 5.72,
-    "category": "水泥工業"
-  },
-  {
-    "id": "1108",
-    "name": "LUCKY",
-    "price": 14.95,
-    "totalYield": 4.93,
-    "category": "水泥工業"
-  },
-  {
-    "id": "1109",
-    "name": "HSING",
-    "price": 15.4,
-    "totalYield": 5.77,
-    "category": "水泥工業"
-  },
-  {
-    "id": "1110",
-    "name": "SOUTH",
-    "price": 15.5,
-    "totalYield": 1.87,
-    "category": "水泥工業"
-  },
-  {
-    "id": "1201",
-    "name": "WEI",
-    "price": 14.2,
-    "totalYield": 3.47,
-    "category": "食品工業"
-  },
-  {
-    "id": "1203",
-    "name": "VE",
-    "price": 39.9,
-    "totalYield": 2.93,
-    "category": "食品工業"
-  },
-  {
-    "id": "1210",
-    "name": "GREAT",
-    "price": 50.4,
-    "totalYield": 5.52,
-    "category": "食品工業"
-  },
-  {
-    "id": "1213",
-    "name": "OCEANIC",
-    "price": 9.5,
-    "totalYield": 3.51,
-    "category": "食品工業"
-  },
-  {
-    "id": "1215",
-    "name": "CHAROEN",
-    "price": 156.5,
-    "totalYield": 4.49,
-    "category": "食品工業"
-  },
-  {
-    "id": "1216",
-    "name": "UNI-PRESIDENT",
-    "price": 71.6,
-    "totalYield": 4.06,
-    "category": "食品工業"
-  },
-  {
-    "id": "1217",
-    "name": "AGV",
-    "price": 10.2,
-    "totalYield": 3.56,
-    "category": "食品工業"
-  },
-  {
-    "id": "1218",
-    "name": "TAISUN",
-    "price": 17.85,
-    "totalYield": 7.46,
-    "category": "食品工業"
-  },
-  {
-    "id": "1219",
-    "name": "FWUSOW",
-    "price": 13.4,
-    "totalYield": 3.69,
-    "category": "食品工業"
-  },
-  {
-    "id": "1220",
-    "name": "TAI",
-    "price": 12.9,
-    "totalYield": 5.34,
-    "category": "食品工業"
-  },
-  {
-    "id": "1225",
-    "name": "FORMOSA",
-    "price": 32.25,
-    "totalYield": 44.0,
-    "category": "食品工業"
-  },
-  {
-    "id": "1227",
-    "name": "STANDARD",
-    "price": 29.25,
-    "totalYield": 4.68,
-    "category": "食品工業"
-  },
-  {
-    "id": "1229",
-    "name": "LIEN",
-    "price": 43.65,
-    "totalYield": 2.93,
-    "category": "食品工業"
-  },
-  {
-    "id": "1231",
-    "name": "LIAN",
-    "price": 82.7,
-    "totalYield": 1.87,
-    "category": "食品工業"
-  },
-  {
-    "id": "1232",
-    "name": "TTET",
-    "price": 150.5,
-    "totalYield": 4.61,
-    "category": "食品工業"
-  },
-  {
-    "id": "1233",
-    "name": "TEN",
-    "price": 32.85,
-    "totalYield": 2.87,
-    "category": "食品工業"
-  },
-  {
-    "id": "1234",
-    "name": "HEY",
-    "price": 36.65,
-    "totalYield": 5.1,
-    "category": "食品工業"
-  },
-  {
-    "id": "1235",
-    "name": "SHIN",
-    "price": 43.65,
-    "totalYield": 1.05,
-    "category": "食品工業"
-  },
-  {
-    "id": "1236",
-    "name": "HUNYA",
-    "price": 27.9,
-    "totalYield": 2.16,
-    "category": "食品工業"
-  },
-  {
-    "id": "1256",
-    "name": "SUNJUICE",
-    "price": 158.5,
-    "totalYield": 2.83,
-    "category": "食品工業"
-  },
-  {
-    "id": "2301",
-    "name": "光寶科",
-    "price": 155.5,
-    "totalYield": 3.94,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2302",
-    "name": "RECTRON",
-    "price": 16.8,
-    "totalYield": 3.2,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2303",
-    "name": "聯電",
-    "price": 60.0,
-    "totalYield": 4.55,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2305",
-    "name": "MICROTEK",
-    "price": 12.1,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2308",
-    "name": "台達電",
-    "price": 1255.0,
-    "totalYield": 0.52,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2312",
-    "name": "KINPO",
-    "price": 22.4,
-    "totalYield": 2.5,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2313",
-    "name": "COMPEQ",
-    "price": 211.0,
-    "totalYield": 1.07,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2314",
-    "name": "MICROELECTRONICS",
-    "price": 19.35,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2316",
-    "name": "WUS",
-    "price": 90.1,
-    "totalYield": 0.52,
-    "category": "半導體/電腦設備"
+    "id": "2330",
+    "name": "台積電",
+    "price": 1865.0,
+    "totalYield": 124.0,
+    "category": "半導體"
   },
   {
     "id": "2317",
     "name": "鴻海",
     "price": 217.0,
-    "totalYield": 2.53,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2321",
-    "name": "TECOM",
-    "price": 15.6,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2323",
-    "name": "CMC",
-    "price": 10.2,
-    "totalYield": 2.74,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2324",
-    "name": "仁寶",
-    "price": 29.4,
-    "totalYield": 3.62,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2327",
-    "name": "YAGEO",
-    "price": 259.0,
-    "totalYield": 1.78,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2328",
-    "name": "PAN",
-    "price": 46.1,
-    "totalYield": 2.22,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2329",
-    "name": "ORIENT",
-    "price": 49.35,
-    "totalYield": 1.87,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2330",
-    "name": "台積電",
-    "price": 1865.0,
-    "totalYield": 1.24,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2331",
-    "name": "ELITEGROUP",
-    "price": 23.5,
-    "totalYield": 0.81,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2332",
-    "name": "D-LINK",
-    "price": 14.45,
-    "totalYield": 0.65,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2337",
-    "name": "MACRONIX",
-    "price": 98.0,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2338",
-    "name": "TAIWAN",
-    "price": 48.65,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2340",
-    "name": "TAIWAN-ASIA",
-    "price": 24.25,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2342",
-    "name": "MOSEL",
-    "price": 28.8,
-    "totalYield": 0.96,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2344",
-    "name": "WINBOND",
-    "price": 104.0,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2345",
-    "name": "ACCTON",
-    "price": 1305.0,
-    "totalYield": 0.77,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2347",
-    "name": "SYNNEX",
-    "price": 67.5,
-    "totalYield": 5.76,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2348",
-    "name": "HIYES",
-    "price": 69.5,
-    "totalYield": 12.5,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2349",
-    "name": "RITEK",
-    "price": 12.65,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2351",
-    "name": "SDI",
-    "price": 78.9,
-    "totalYield": 3.05,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2352",
-    "name": "QISDA",
-    "price": 23.3,
-    "totalYield": 14.37,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2353",
-    "name": "宏碁",
-    "price": 25.85,
-    "totalYield": 6.37,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2354",
-    "name": "FOXCONN",
-    "price": 54.0,
-    "totalYield": 2.46,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2355",
-    "name": "CHIN-POON",
-    "price": 41.6,
-    "totalYield": 4.29,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2356",
-    "name": "INVENTEC",
-    "price": 40.25,
-    "totalYield": 3.97,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2357",
-    "name": "華碩",
-    "price": 500.0,
-    "totalYield": 6.53,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2359",
-    "name": "SOLOMON",
-    "price": 119.0,
-    "totalYield": 0.8,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2360",
-    "name": "CHROMA",
-    "price": 1340.0,
-    "totalYield": 0.65,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2362",
-    "name": "CLEVO",
-    "price": 36.65,
-    "totalYield": 6.59,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2363",
-    "name": "SILICON",
-    "price": 48.4,
-    "totalYield": 0.96,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2364",
-    "name": "TWINHEAD",
-    "price": 60.9,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2365",
-    "name": "KYE",
-    "price": 33.1,
-    "totalYield": 1.71,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2367",
-    "name": "UNITECH",
-    "price": 71.0,
-    "totalYield": 0.97,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2368",
-    "name": "GOLD",
-    "price": 709.0,
-    "totalYield": 0.78,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2369",
-    "name": "LINGSEN",
-    "price": 25.1,
-    "totalYield": 1.09,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2371",
-    "name": "TATUNG",
-    "price": 32.2,
-    "totalYield": 8.91,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2373",
-    "name": "AURORA",
-    "price": 55.8,
-    "totalYield": 6.58,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2374",
-    "name": "ABILITY",
-    "price": 70.0,
-    "totalYield": 0.79,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2375",
-    "name": "KAIMEI",
-    "price": 82.8,
-    "totalYield": 1.68,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2376",
-    "name": "GIGA-BYTE",
-    "price": 214.0,
-    "totalYield": 4.37,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2377",
-    "name": "MICRO-STAR",
-    "price": 93.8,
-    "totalYield": 5.21,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2379",
-    "name": "瑞昱",
-    "price": 445.0,
-    "totalYield": 5.51,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2380",
-    "name": "AVISION",
-    "price": 5.0,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2382",
-    "name": "廣達",
-    "price": 281.0,
-    "totalYield": 4.41,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2383",
-    "name": "ELITE",
-    "price": 2190.0,
-    "totalYield": 0.71,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2385",
-    "name": "CHICONY",
-    "price": 124.0,
-    "totalYield": 7.94,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2387",
-    "name": "精元",
-    "price": 41.7,
-    "totalYield": 9.32,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2388",
-    "name": "VIA",
-    "price": 44.5,
-    "totalYield": 42.0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2390",
-    "name": "EVERSPRING",
-    "price": 9.66,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2392",
-    "name": "CHENG",
-    "price": 36.0,
-    "totalYield": 6.66,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2393",
-    "name": "億光",
-    "price": 56.1,
-    "totalYield": 9.11,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2395",
-    "name": "ADVANTECH",
-    "price": 311.5,
-    "totalYield": 2.54,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2397",
-    "name": "DFI",
-    "price": 56.9,
-    "totalYield": 5.6,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2399",
-    "name": "BIOSTAR",
-    "price": 22.8,
-    "totalYield": 0,
-    "category": "半導體/電腦設備"
-  },
-  {
-    "id": "2401",
-    "name": "SUNPLUS",
-    "price": 20.5,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2402",
-    "name": "ICHIA",
-    "price": 50.1,
-    "totalYield": 3.58,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2404",
-    "name": "UNITED",
-    "price": 1000.0,
-    "totalYield": 2.76,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2405",
-    "name": "SHUTTLE",
-    "price": 14.6,
-    "totalYield": 1.09,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2406",
-    "name": "GIGASTORAGE",
-    "price": 31.65,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2408",
-    "name": "NANYA",
-    "price": 234.5,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2409",
-    "name": "友達",
-    "price": 14.95,
-    "totalYield": 7.65,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2412",
-    "name": "CHUNGHWA",
-    "price": 135.5,
-    "totalYield": 3.62,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2413",
-    "name": "UNIVERSAL",
-    "price": 47.2,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2414",
-    "name": "UNITECH",
-    "price": 41.2,
-    "totalYield": 5.95,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2415",
-    "name": "CX",
-    "price": 25.9,
-    "totalYield": 4.47,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2417",
-    "name": "AVERMEDIA",
-    "price": 33.8,
-    "totalYield": 0.56,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2419",
-    "name": "HITRON",
-    "price": 28.2,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2420",
-    "name": "ZIPPY",
-    "price": 50.0,
-    "totalYield": 6.82,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2421",
-    "name": "SUNONWEALTH",
-    "price": 134.5,
-    "totalYield": 2.58,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2423",
-    "name": "GOOD",
-    "price": 47.25,
-    "totalYield": 4.11,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2424",
-    "name": "LUNG",
-    "price": 32.8,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2425",
-    "name": "CHAINTECH",
-    "price": 26.0,
-    "totalYield": 0.54,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2426",
-    "name": "TYNTEK",
-    "price": 18.9,
-    "totalYield": 0.5,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2427",
-    "name": "MERCURIES",
-    "price": 24.85,
-    "totalYield": 2.66,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2428",
-    "name": "THINKING",
-    "price": 168.5,
-    "totalYield": 3.41,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2429",
-    "name": "ABONMAX",
-    "price": 51.5,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2430",
-    "name": "TSANN",
-    "price": 23.0,
-    "totalYield": 6.52,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2431",
-    "name": "LIEN",
-    "price": 13.5,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2432",
-    "name": "ACER",
-    "price": 23.45,
-    "totalYield": 7.05,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2433",
-    "name": "HUXEN",
-    "price": 46.7,
-    "totalYield": 6.4,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2434",
-    "name": "MOSPEC",
-    "price": 29.35,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2436",
-    "name": "WELTREND",
-    "price": 54.7,
-    "totalYield": 2.6,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2438",
-    "name": "ENLIGHT",
-    "price": 20.7,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2439",
-    "name": "MERRY",
-    "price": 82.7,
-    "totalYield": 8.3,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2440",
-    "name": "SPACE",
-    "price": 15.2,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2441",
-    "name": "GREATEK",
-    "price": 84.6,
-    "totalYield": 3.33,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2442",
-    "name": "JEAN",
-    "price": 18.9,
-    "totalYield": 40.0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2444",
-    "name": "ABOCOM",
-    "price": 13.4,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2449",
-    "name": "KING",
-    "price": 278.0,
-    "totalYield": 1.31,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2450",
-    "name": "SENAO",
-    "price": 29.55,
-    "totalYield": 5.13,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2451",
-    "name": "TRANSCEND",
-    "price": 199.0,
-    "totalYield": 3.01,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2453",
-    "name": "SYSCOM",
-    "price": 50.6,
-    "totalYield": 4.98,
-    "category": "電子零組件/通信"
+    "totalYield": 253.0,
+    "category": "電腦設備"
   },
   {
     "id": "2454",
     "name": "聯發科",
     "price": 1720.0,
-    "totalYield": 2.95,
-    "category": "電子零組件/通信"
+    "totalYield": 295.0,
+    "category": "半導體"
   },
   {
-    "id": "2455",
-    "name": "VISUAL",
-    "price": 226.5,
-    "totalYield": 1.28,
-    "category": "電子零組件/通信"
+    "id": "2382",
+    "name": "廣達",
+    "price": 281.0,
+    "totalYield": 441.0,
+    "category": "電腦設備"
   },
   {
-    "id": "2457",
-    "name": "PHIHONG",
-    "price": 28.25,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
+    "id": "2303",
+    "name": "聯電",
+    "price": 60.0,
+    "totalYield": 455.0,
+    "category": "半導體"
   },
   {
-    "id": "2458",
-    "name": "ELAN",
-    "price": 127.0,
-    "totalYield": 5.21,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2459",
-    "name": "AUDIX",
-    "price": 65.5,
-    "totalYield": 5.95,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2460",
-    "name": "GEM",
-    "price": 25.1,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2461",
-    "name": "光群雷",
-    "price": 15.65,
-    "totalYield": 10.39,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2462",
-    "name": "TAIWAN",
-    "price": 23.05,
-    "totalYield": 3.29,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2464",
-    "name": "MIRLE",
-    "price": 66.9,
-    "totalYield": 49.0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2465",
-    "name": "LEADTEK",
-    "price": 49.25,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2466",
-    "name": "COSMO",
-    "price": 48.1,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2467",
-    "name": "C",
-    "price": 365.0,
-    "totalYield": 1.29,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2468",
-    "name": "FORTUNE",
-    "price": 33.0,
-    "totalYield": 2.6,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2471",
-    "name": "ARES",
-    "price": 48.2,
-    "totalYield": 6.14,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2472",
-    "name": "LELON",
-    "price": 107.5,
-    "totalYield": 2.68,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2474",
-    "name": "CATCHER",
-    "price": 185.5,
-    "totalYield": 6.09,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2476",
-    "name": "G",
-    "price": 75.9,
-    "totalYield": 4.35,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2477",
-    "name": "MEILOON",
-    "price": 23.2,
-    "totalYield": 5.39,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2478",
-    "name": "TA-I",
-    "price": 67.3,
-    "totalYield": 2.53,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2480",
-    "name": "STARK",
-    "price": 141.5,
-    "totalYield": 5.15,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2481",
-    "name": "PAN",
-    "price": 88.0,
-    "totalYield": 1.52,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2482",
-    "name": "UNIFORM",
-    "price": 16.8,
-    "totalYield": 3.47,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2483",
-    "name": "EXCEL",
-    "price": 22.0,
-    "totalYield": 1.27,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2484",
-    "name": "SIWARD",
-    "price": 26.8,
-    "totalYield": 2.46,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2485",
-    "name": "ZINWELL",
-    "price": 49.8,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2486",
-    "name": "I-CHIUN",
-    "price": 125.0,
-    "totalYield": 37.0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2488",
-    "name": "HANPIN",
-    "price": 46.2,
-    "totalYield": 6.77,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2489",
-    "name": "AMTRAN",
-    "price": 41.5,
-    "totalYield": 2.48,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2491",
-    "name": "FORTUNE",
-    "price": 15.9,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2492",
-    "name": "WALSIN",
-    "price": 128.0,
-    "totalYield": 1.72,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2493",
-    "name": "AMPOC",
-    "price": 98.8,
-    "totalYield": 3.72,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2495",
-    "name": "INFORTREND",
-    "price": 28.75,
-    "totalYield": 4.25,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2496",
-    "name": "卓越",
-    "price": 67.7,
-    "totalYield": 10.48,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2497",
-    "name": "E-LEAD",
-    "price": 42.0,
-    "totalYield": 4.49,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2498",
-    "name": "HTC",
-    "price": 40.4,
-    "totalYield": 0,
-    "category": "電子零組件/通信"
-  },
-  {
-    "id": "2601",
-    "name": "FIRST",
-    "price": 6.57,
-    "totalYield": 0,
-    "category": "航運業"
-  },
-  {
-    "id": "2603",
-    "name": "長榮",
-    "price": 209.5,
-    "totalYield": 15.01,
-    "category": "航運業"
-  },
-  {
-    "id": "2605",
-    "name": "SINCERE",
-    "price": 35.0,
-    "totalYield": 3.43,
-    "category": "航運業"
-  },
-  {
-    "id": "2606",
-    "name": "U-MING",
-    "price": 66.0,
-    "totalYield": 4.6,
-    "category": "航運業"
-  },
-  {
-    "id": "2607",
-    "name": "EVERGREEN",
-    "price": 54.7,
-    "totalYield": 17.57,
-    "category": "航運業"
-  },
-  {
-    "id": "2608",
-    "name": "KERRY",
-    "price": 31.2,
-    "totalYield": 5.21,
-    "category": "航運業"
-  },
-  {
-    "id": "2609",
-    "name": "陽明",
-    "price": 63.6,
-    "totalYield": 11.36,
-    "category": "航運業"
-  },
-  {
-    "id": "2610",
-    "name": "CHINA",
-    "price": 18.6,
-    "totalYield": 4.13,
-    "category": "航運業"
-  },
-  {
-    "id": "2611",
-    "name": "TZE",
-    "price": 14.85,
-    "totalYield": 10.58,
-    "category": "航運業"
-  },
-  {
-    "id": "2612",
-    "name": "CHINESE",
-    "price": 64.3,
-    "totalYield": 3.06,
-    "category": "航運業"
-  },
-  {
-    "id": "2613",
-    "name": "CHINA",
-    "price": 26.1,
-    "totalYield": 3.6,
-    "category": "航運業"
-  },
-  {
-    "id": "2614",
-    "name": "EASTERN",
-    "price": 20.3,
-    "totalYield": 1.2,
-    "category": "航運業"
-  },
-  {
-    "id": "2615",
-    "name": "WAN",
-    "price": 81.5,
-    "totalYield": 4.02,
-    "category": "航運業"
-  },
-  {
-    "id": "2616",
-    "name": "SHAN",
-    "price": 18.0,
-    "totalYield": 1.83,
-    "category": "航運業"
-  },
-  {
-    "id": "2617",
-    "name": "TAIWAN",
-    "price": 31.7,
-    "totalYield": 4.63,
-    "category": "航運業"
-  },
-  {
-    "id": "2618",
-    "name": "EVA",
-    "price": 33.85,
-    "totalYield": 6.78,
-    "category": "航運業"
-  },
-  {
-    "id": "2630",
-    "name": "AIR",
-    "price": 53.1,
-    "totalYield": 1.18,
-    "category": "航運業"
-  },
-  {
-    "id": "2633",
-    "name": "TAIWAN",
-    "price": 26.55,
-    "totalYield": 3.91,
-    "category": "航運業"
-  },
-  {
-    "id": "2634",
-    "name": "AEROSPACE",
-    "price": 53.5,
-    "totalYield": 2.51,
-    "category": "航運業"
-  },
-  {
-    "id": "2636",
-    "name": "T3EX",
-    "price": 65.2,
-    "totalYield": 8.81,
-    "category": "航運業"
-  },
-  {
-    "id": "2637",
-    "name": "WISDOM",
-    "price": 71.7,
-    "totalYield": 6.59,
-    "category": "航運業"
-  },
-  {
-    "id": "2642",
-    "name": "TAIWAN",
-    "price": 24.35,
-    "totalYield": 2.02,
-    "category": "航運業"
-  },
-  {
-    "id": "2645",
-    "name": "EVERGREEN",
-    "price": 164.5,
-    "totalYield": 2.63,
-    "category": "航運業"
-  },
-  {
-    "id": "2646",
-    "name": "STARLUX",
-    "price": 21.9,
-    "totalYield": 0,
-    "category": "航運業"
-  },
-  {
-    "id": "2801",
-    "name": "CHANG",
-    "price": 20.55,
-    "totalYield": 2.36,
-    "category": "金融保險"
-  },
-  {
-    "id": "2812",
-    "name": "TAICHUNG",
-    "price": 20.2,
-    "totalYield": 1.88,
-    "category": "金融保險"
-  },
-  {
-    "id": "2816",
-    "name": "UNION",
-    "price": 29.8,
-    "totalYield": 4.93,
-    "category": "金融保險"
-  },
-  {
-    "id": "2820",
-    "name": "CHINA",
-    "price": 16.8,
-    "totalYield": 4.55,
-    "category": "金融保險"
-  },
-  {
-    "id": "2832",
-    "name": "TAIWAN",
-    "price": 49.3,
-    "totalYield": 14.23,
-    "category": "金融保險"
-  },
-  {
-    "id": "2834",
-    "name": "TAIWAN",
-    "price": 15.35,
-    "totalYield": 1.27,
-    "category": "金融保險"
-  },
-  {
-    "id": "2836",
-    "name": "BANK",
-    "price": 12.4,
-    "totalYield": 2.36,
-    "category": "金融保險"
-  },
-  {
-    "id": "2838",
-    "name": "UNION",
-    "price": 19.3,
-    "totalYield": 1.74,
-    "category": "金融保險"
-  },
-  {
-    "id": "2845",
-    "name": "FAR",
-    "price": 12.35,
-    "totalYield": 3.94,
-    "category": "金融保險"
-  },
-  {
-    "id": "2849",
-    "name": "EN",
-    "price": 13.25,
-    "totalYield": 2.78,
-    "category": "金融保險"
-  },
-  {
-    "id": "2850",
-    "name": "SHINKONG",
-    "price": 116.0,
-    "totalYield": 5.98,
-    "category": "金融保險"
-  },
-  {
-    "id": "2851",
-    "name": "CENTRAL",
-    "price": 26.75,
-    "totalYield": 6.9,
-    "category": "金融保險"
-  },
-  {
-    "id": "2852",
-    "name": "FIRST",
-    "price": 26.4,
-    "totalYield": 7.73,
-    "category": "金融保險"
-  },
-  {
-    "id": "2855",
-    "name": "PRESIDENT",
-    "price": 29.4,
-    "totalYield": 3.55,
-    "category": "金融保險"
-  },
-  {
-    "id": "2867",
-    "name": "MERCURIES",
-    "price": 7.96,
-    "totalYield": 0,
-    "category": "金融保險"
-  },
-  {
-    "id": "2880",
-    "name": "HUA",
-    "price": 35.0,
-    "totalYield": 3.42,
-    "category": "金融保險"
+    "id": "2308",
+    "name": "台達電",
+    "price": 1255.0,
+    "totalYield": 52.0,
+    "category": "電子零組件"
   },
   {
     "id": "2881",
     "name": "富邦金",
     "price": 89.8,
-    "totalYield": 4.45,
+    "totalYield": 445.0,
     "category": "金融保險"
   },
   {
     "id": "2882",
     "name": "國泰金",
     "price": 73.2,
-    "totalYield": 4.51,
-    "category": "金融保險"
-  },
-  {
-    "id": "2883",
-    "name": "KGI",
-    "price": 19.9,
-    "totalYield": 3.94,
-    "category": "金融保險"
-  },
-  {
-    "id": "2884",
-    "name": "玉山金",
-    "price": 33.65,
-    "totalYield": 3.44,
-    "category": "金融保險"
-  },
-  {
-    "id": "2885",
-    "name": "YUANTA",
-    "price": 45.0,
-    "totalYield": 3.18,
+    "totalYield": 451.0,
     "category": "金融保險"
   },
   {
     "id": "2886",
     "name": "兆豐金",
     "price": 38.9,
-    "totalYield": 3.96,
+    "totalYield": 396.0,
     "category": "金融保險"
   },
   {
-    "id": "2887",
-    "name": "TS",
-    "price": 24.15,
-    "totalYield": 3.56,
-    "category": "金融保險"
+    "id": "2603",
+    "name": "長榮",
+    "price": 209.5,
+    "totalYield": 1501.0,
+    "category": "航運業"
   },
   {
-    "id": "2889",
-    "name": "IBF",
-    "price": 16.25,
-    "totalYield": 1.8,
-    "category": "金融保險"
+    "id": "2609",
+    "name": "陽明",
+    "price": 63.6,
+    "totalYield": 1136.0,
+    "category": "航運業"
   },
   {
-    "id": "2890",
-    "name": "SINOPAC",
-    "price": 31.3,
-    "totalYield": 2.75,
-    "category": "金融保險"
+    "id": "2615",
+    "name": "萬海",
+    "price": 81.5,
+    "totalYield": 402.0,
+    "category": "航運業"
+  },
+  {
+    "id": "1101",
+    "name": "台泥",
+    "price": 25.0,
+    "totalYield": 386.0,
+    "category": "水泥工業"
+  },
+  {
+    "id": "1102",
+    "name": "亞泥",
+    "price": 34.45,
+    "totalYield": 626.0,
+    "category": "水泥工業"
+  },
+  {
+    "id": "1216",
+    "name": "統一",
+    "price": 71.6,
+    "totalYield": 406.0,
+    "category": "食品工業"
+  },
+  {
+    "id": "2357",
+    "name": "華碩",
+    "price": 500.0,
+    "totalYield": 653.0,
+    "category": "電腦設備"
+  },
+  {
+    "id": "2353",
+    "name": "宏碁",
+    "price": 25.85,
+    "totalYield": 637.0,
+    "category": "電腦設備"
+  },
+  {
+    "id": "2409",
+    "name": "友達",
+    "price": 14.95,
+    "totalYield": 765.0,
+    "category": "光電業"
+  },
+  {
+    "id": "3481",
+    "name": "群創",
+    "price": 24.75,
+    "totalYield": 385.0,
+    "category": "光電業"
   },
   {
     "id": "2891",
     "name": "中信金",
     "price": 50.5,
-    "totalYield": 4.3,
+    "totalYield": 430.0,
+    "category": "金融保險"
+  },
+  {
+    "id": "5880",
+    "name": "合庫金",
+    "price": 23.45,
+    "totalYield": 292.0,
+    "category": "金融保險"
+  },
+  {
+    "id": "2884",
+    "name": "玉山金",
+    "price": 33.65,
+    "totalYield": 344.0,
     "category": "金融保險"
   },
   {
     "id": "2892",
     "name": "第一金",
     "price": 28.6,
-    "totalYield": 3.2,
+    "totalYield": 320.0,
     "category": "金融保險"
   },
   {
-    "id": "2897",
-    "name": "O-BANK",
-    "price": 9.63,
-    "totalYield": 5.1,
+    "id": "2880",
+    "name": "華南金",
+    "price": 35.0,
+    "totalYield": 342.0,
     "category": "金融保險"
+  },
+  {
+    "id": "2301",
+    "name": "-",
+    "price": 155.5,
+    "totalYield": 394.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2302",
+    "name": "2302",
+    "price": 16.8,
+    "totalYield": 320.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2305",
+    "name": "2305",
+    "price": 12.1,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2312",
+    "name": "2312",
+    "price": 22.4,
+    "totalYield": 250.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2313",
+    "name": "2313",
+    "price": 211.0,
+    "totalYield": 107.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2314",
+    "name": "2314",
+    "price": 19.35,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2316",
+    "name": "2316",
+    "price": 90.1,
+    "totalYield": 52.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2321",
+    "name": "2321",
+    "price": 15.6,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2323",
+    "name": "2323",
+    "price": 10.2,
+    "totalYield": 274.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2324",
+    "name": "2324",
+    "price": 29.4,
+    "totalYield": 362.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2327",
+    "name": "2327",
+    "price": 259.0,
+    "totalYield": 178.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2328",
+    "name": "2328",
+    "price": 46.1,
+    "totalYield": 222.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2329",
+    "name": "2329",
+    "price": 49.35,
+    "totalYield": 187.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2331",
+    "name": "2331",
+    "price": 23.5,
+    "totalYield": 81.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2332",
+    "name": "-",
+    "price": 14.45,
+    "totalYield": 65.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2337",
+    "name": "2337",
+    "price": 98.0,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2338",
+    "name": "2338",
+    "price": 48.65,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2340",
+    "name": "-",
+    "price": 24.25,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2342",
+    "name": "2342",
+    "price": 28.8,
+    "totalYield": 96.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2344",
+    "name": "2344",
+    "price": 104.0,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2345",
+    "name": "2345",
+    "price": 1305.0,
+    "totalYield": 77.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2347",
+    "name": "2347",
+    "price": 67.5,
+    "totalYield": 576.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2348",
+    "name": "2348",
+    "price": 69.5,
+    "totalYield": 1250.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2349",
+    "name": "2349",
+    "price": 12.65,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2351",
+    "name": "2351",
+    "price": 78.9,
+    "totalYield": 305.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2352",
+    "name": "2352",
+    "price": 23.3,
+    "totalYield": 1437.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2354",
+    "name": "2354",
+    "price": 54.0,
+    "totalYield": 246.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2355",
+    "name": "-",
+    "price": 41.6,
+    "totalYield": 429.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2356",
+    "name": "2356",
+    "price": 40.25,
+    "totalYield": 397.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2358",
+    "name": "2358,00000,0",
+    "price": 4.56,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2359",
+    "name": "2359",
+    "price": 119.0,
+    "totalYield": 80.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2360",
+    "name": "2360",
+    "price": 1340.0,
+    "totalYield": 65.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2362",
+    "name": "2362",
+    "price": 36.65,
+    "totalYield": 659.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2363",
+    "name": "2363",
+    "price": 48.4,
+    "totalYield": 96.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2364",
+    "name": "2364",
+    "price": 60.9,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2365",
+    "name": "2365",
+    "price": 33.1,
+    "totalYield": 171.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2367",
+    "name": "2367",
+    "price": 71.0,
+    "totalYield": 97.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2368",
+    "name": "2368",
+    "price": 709.0,
+    "totalYield": 78.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2369",
+    "name": "2369",
+    "price": 25.1,
+    "totalYield": 109.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2371",
+    "name": "2371",
+    "price": 32.2,
+    "totalYield": 891.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2373",
+    "name": "2373",
+    "price": 55.8,
+    "totalYield": 658.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2374",
+    "name": "2374",
+    "price": 70.0,
+    "totalYield": 79.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2375",
+    "name": "2375",
+    "price": 82.8,
+    "totalYield": 168.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2376",
+    "name": "-",
+    "price": 214.0,
+    "totalYield": 437.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2377",
+    "name": "-",
+    "price": 93.8,
+    "totalYield": 521.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2379",
+    "name": "2379",
+    "price": 445.0,
+    "totalYield": 551.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2380",
+    "name": "2380",
+    "price": 5.0,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2383",
+    "name": "2383",
+    "price": 2190.0,
+    "totalYield": 71.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2385",
+    "name": "2385",
+    "price": 124.0,
+    "totalYield": 794.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2387",
+    "name": "2387",
+    "price": 41.7,
+    "totalYield": 932.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2388",
+    "name": "2388",
+    "price": 44.5,
+    "totalYield": 42.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2390",
+    "name": "2390",
+    "price": 9.66,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2392",
+    "name": "2392",
+    "price": 36.0,
+    "totalYield": 666.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2393",
+    "name": "2393",
+    "price": 56.1,
+    "totalYield": 911.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2395",
+    "name": "2395",
+    "price": 311.5,
+    "totalYield": 254.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2397",
+    "name": "2397",
+    "price": 56.9,
+    "totalYield": 560.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2399",
+    "name": "2399",
+    "price": 22.8,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2401",
+    "name": "2401",
+    "price": 20.5,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2402",
+    "name": "2402",
+    "price": 50.1,
+    "totalYield": 358.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2404",
+    "name": "2404",
+    "price": 1000.0,
+    "totalYield": 276.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2405",
+    "name": "2405",
+    "price": 14.6,
+    "totalYield": 109.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2406",
+    "name": "2406",
+    "price": 31.65,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2408",
+    "name": "2408",
+    "price": 234.5,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2412",
+    "name": "2412",
+    "price": 135.5,
+    "totalYield": 362.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2413",
+    "name": "2413",
+    "price": 47.2,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2414",
+    "name": "2414",
+    "price": 41.2,
+    "totalYield": 595.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2415",
+    "name": "2415",
+    "price": 25.9,
+    "totalYield": 447.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2417",
+    "name": "2417",
+    "price": 33.8,
+    "totalYield": 56.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2419",
+    "name": "2419",
+    "price": 28.2,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2420",
+    "name": "2420",
+    "price": 50.0,
+    "totalYield": 682.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2421",
+    "name": "2421",
+    "price": 134.5,
+    "totalYield": 258.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2423",
+    "name": "2423",
+    "price": 47.25,
+    "totalYield": 411.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2424",
+    "name": "2424",
+    "price": 32.8,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2425",
+    "name": "2425",
+    "price": 26.0,
+    "totalYield": 54.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2426",
+    "name": "2426",
+    "price": 18.9,
+    "totalYield": 50.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2427",
+    "name": "2427",
+    "price": 24.85,
+    "totalYield": 266.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2428",
+    "name": "2428",
+    "price": 168.5,
+    "totalYield": 341.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2429",
+    "name": "2429",
+    "price": 51.5,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2430",
+    "name": "2430",
+    "price": 23.0,
+    "totalYield": 652.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2431",
+    "name": "2431",
+    "price": 13.5,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2432",
+    "name": "2432",
+    "price": 23.45,
+    "totalYield": 705.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2433",
+    "name": "2433",
+    "price": 46.7,
+    "totalYield": 640.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2434",
+    "name": "2434",
+    "price": 29.35,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2436",
+    "name": "-",
+    "price": 54.7,
+    "totalYield": 260.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2438",
+    "name": "2438",
+    "price": 20.7,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2439",
+    "name": "2439",
+    "price": 82.7,
+    "totalYield": 830.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2440",
+    "name": "-",
+    "price": 15.2,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2441",
+    "name": "2441",
+    "price": 84.6,
+    "totalYield": 333.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2442",
+    "name": "2442",
+    "price": 18.9,
+    "totalYield": 40.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2443",
+    "name": "2443,000009,0",
+    "price": 3.57,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2444",
+    "name": "2444",
+    "price": 13.4,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2449",
+    "name": "2449",
+    "price": 278.0,
+    "totalYield": 131.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2450",
+    "name": "2450",
+    "price": 29.55,
+    "totalYield": 513.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2451",
+    "name": "2451",
+    "price": 199.0,
+    "totalYield": 301.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2453",
+    "name": "2453",
+    "price": 50.6,
+    "totalYield": 498.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2455",
+    "name": "2455",
+    "price": 226.5,
+    "totalYield": 128.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2457",
+    "name": "2457",
+    "price": 28.25,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2458",
+    "name": "2458",
+    "price": 127.0,
+    "totalYield": 521.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2459",
+    "name": "2459",
+    "price": 65.5,
+    "totalYield": 595.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2460",
+    "name": "2460",
+    "price": 25.1,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2461",
+    "name": "2461",
+    "price": 15.65,
+    "totalYield": 1039.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2462",
+    "name": "2462",
+    "price": 23.05,
+    "totalYield": 329.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2464",
+    "name": "2464",
+    "price": 66.9,
+    "totalYield": 49.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2465",
+    "name": "2465",
+    "price": 49.25,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2466",
+    "name": "2466",
+    "price": 48.1,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2467",
+    "name": "2467",
+    "price": 365.0,
+    "totalYield": 129.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2468",
+    "name": "2468",
+    "price": 33.0,
+    "totalYield": 260.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2471",
+    "name": "()",
+    "price": 48.2,
+    "totalYield": 614.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2472",
+    "name": "2472",
+    "price": 107.5,
+    "totalYield": 268.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2474",
+    "name": "2474",
+    "price": 185.5,
+    "totalYield": 609.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2476",
+    "name": "2476",
+    "price": 75.9,
+    "totalYield": 435.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2477",
+    "name": "2477",
+    "price": 23.2,
+    "totalYield": 539.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2478",
+    "name": "-",
+    "price": 67.3,
+    "totalYield": 253.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2480",
+    "name": "2480",
+    "price": 141.5,
+    "totalYield": 515.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2481",
+    "name": "2481",
+    "price": 88.0,
+    "totalYield": 152.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2482",
+    "name": "2482",
+    "price": 16.8,
+    "totalYield": 347.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2483",
+    "name": "2483",
+    "price": 22.0,
+    "totalYield": 127.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2484",
+    "name": "2484",
+    "price": 26.8,
+    "totalYield": 246.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2485",
+    "name": "2485",
+    "price": 49.8,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2486",
+    "name": "-",
+    "price": 125.0,
+    "totalYield": 37.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2488",
+    "name": "2488",
+    "price": 46.2,
+    "totalYield": 677.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2489",
+    "name": "2489",
+    "price": 41.5,
+    "totalYield": 248.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2491",
+    "name": "2491",
+    "price": 15.9,
+    "totalYield": 0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2492",
+    "name": "2492",
+    "price": 128.0,
+    "totalYield": 172.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2493",
+    "name": "2493",
+    "price": 98.8,
+    "totalYield": 372.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2495",
+    "name": "2495",
+    "price": 28.75,
+    "totalYield": 425.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2496",
+    "name": "2496",
+    "price": 67.7,
+    "totalYield": 1048.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2497",
+    "name": "-",
+    "price": 42.0,
+    "totalYield": 449.0,
+    "category": "其他電子"
+  },
+  {
+    "id": "2498",
+    "name": "2498",
+    "price": 40.4,
+    "totalYield": 0,
+    "category": "其他電子"
   }
 ]
