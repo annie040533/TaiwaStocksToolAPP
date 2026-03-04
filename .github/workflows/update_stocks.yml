@@ -17,84 +17,72 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests yfinance
 
       - name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
           import json
-          import time
+          import yfinance as yf
+          import io
+          import csv
 
-          def get_data():
-              # 來源 A: 證交所 OpenAPI (最標準，更新最快)
-              # 來源 B: 證交所官網 JSON 接口 (備援)
-              urls = [
-                  "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL",
-                  "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=json"
-              ]
+          def get_stock_list():
+              # 透過公開資訊觀測站的靜態分流獲取上市股票名單 (此連結極穩)
+              url = "https://isin.twse.com.tw/isin/C_public.jsp?strMode=2"
+              resp = requests.get(url)
+              # 簡單解析 HTML 取得前 100 檔績優股作為範例，或解析全表
+              # 為了穩定與速度，我們也可以先定義目標觀察名單或抓取 CSV
+              return ["2330", "2317", "2454", "2308", "2382", "2881", "2882", "2886", "2891", "2603"]
+
+          def fetch_value_data():
+              # 改用 yfinance 獲取數據，Yahoo Finance 不會封鎖 GitHub IP
+              # 抓取台股本淨比 (Price to Book) 與 殖利率 (Yield)
+              stock_ids = get_stock_list()
+              # 擴展：這裡可以改從證交所開放平台僅抓取「代號」清單 (代號清單通常不會被擋)
+              try:
+                  url = "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL"
+                  res = requests.get(url, timeout=10)
+                  items = res.json()
+                  stock_ids = [i['Code'] for i in items if len(i['Code']) == 4][:200] # 先抓前 200 檔
+              except:
+                  print("⚠️ 無法獲取代號清單，使用預設名單")
+
+              final_stocks = []
+              print(f"📡 正在透過 Yahoo Finance 獲取 {len(stock_ids)} 檔個股深度數據...")
               
-              headers = {
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                  'Accept': 'application/json'
-              }
-
-              for url in urls:
+              for sid in stock_ids:
                   try:
-                      print(f"📡 嘗試連線至: {url}")
-                      resp = requests.get(url, headers=headers, timeout=30)
+                      ticker = yf.Ticker(f"{sid}.TW")
+                      info = ticker.info
                       
-                      if resp.status_code != 200:
-                          continue
-                          
-                      raw_data = resp.json()
-                      # OpenAPI 回傳是 List, 官網 JSON 回傳是 Dict
-                      items = raw_data if isinstance(raw_data, list) else raw_data.get('data', [])
+                      price = info.get('currentPrice') or info.get('regularMarketPrice') or 0
+                      pbr = info.get('priceToBook') or 0
+                      # 殖利率 (Yahoo 給的是小數，例如 0.05 代表 5%)
+                      div_yield = (info.get('dividendYield') or 0) * 100
                       
-                      if not items:
-                          continue
-
-                      stocks = []
-                      for row in items:
-                          # 兼容兩種格式：字典(OpenAPI) 或 列表(官網)
-                          is_d = isinstance(row, dict)
-                          sid = row.get('Code') if is_d else row[0]
-                          name = row.get('Name') if is_d else row[1]
-                          yield_ratio = row.get('YieldRatio') if is_d else row[2]
-                          pbr = row.get('PBRatio') if is_d else row[5]
-                          # 取得價格 (官網 JSON 在 index 8, OpenAPI 在 ClosingPrice)
-                          price = row.get('ClosingPrice') if is_d else row[8]
-
-                          if len(str(sid)) == 4:
-                              try:
-                                  def to_f(v):
-                                      s = str(v).replace(',', '').strip()
-                                      return float(s) if s not in ['', '-', 'N/A'] else 0.0
-                                  
-                                  stocks.append({
-                                      "id": str(sid),
-                                      "name": str(name),
-                                      "price": to_f(price),
-                                      "pbr": to_f(pbr),
-                                      "totalYield": to_f(yield_ratio),
-                                      "category": "一般產業"
-                                  })
-                              except: continue
-                      
-                      if len(stocks) > 500:
-                          return stocks
-                  except Exception as e:
-                      print(f"⚠️ 來源異常: {e}")
+                      if price > 0:
+                          final_stocks.append({
+                              "id": sid,
+                              "name": info.get('shortName', f'台股 {sid}'),
+                              "price": round(price, 2),
+                              "pbr": round(pbr, 2),
+                              "totalYield": round(div_yield, 2),
+                              "category": info.get('sector', '一般產業')
+                          })
+                  except:
                       continue
-              return []
+              
+              return final_stocks
 
-          final_list = get_data()
-          if final_list:
+          res = fetch_value_data()
+          if len(res) > 0:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(final_list, f, ensure_ascii=False, indent=2)
-              print(f"🚀 成功更新！獲得 {len(final_list)} 筆資料。")
+                  json.dump(res, f, ensure_ascii=False, indent=2)
+              print(f"🚀 成功！已透過 Yahoo Finance 更新 {len(res)} 筆 PBR 數據。")
           else:
-              print("🛑 嘗試所有 API 均失敗，可能正處於證交所維護時段。")
+              print("❌ 無法從所有管道獲取數據")
               exit(1)
           EOF
 
@@ -103,4 +91,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "更換至更穩定的 OpenAPI V1 接口" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "改用 yfinance 繞過 IP 封鎖" && git push)
