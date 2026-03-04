@@ -17,70 +17,90 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        # 增加 yfinance 庫，這是目前抓取全球/台股最穩定的保底手段
-        run: pip install requests pandas yfinance
+        run: pip install requests pandas lxml yfinance
 
       - name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
-          import json
           import pandas as pd
-          import yfinance as yf
+          import json
           import time
+          import random
 
-          def fetch_fallback():
-              """當官方 API 全掛時，改用 Yahoo Finance 抓取權值股或熱門股"""
-              print("🚀 啟動 Yahoo Finance 保底抓取機制...")
-              # 這裡定義一份你想優先追蹤的股票清單 (例如前 50 大或熱門股)
-              sample_ids = ['2330','2317','2454','2308','2382','3231','2881','2882','2412','2886']
-              stocks = []
-              for sid in sample_ids:
-                  try:
-                      ticker = yf.Ticker(f"{sid}.TW")
-                      info = ticker.fast_info
-                      stocks.append({
-                          "id": sid,
-                          "name": f"個股 {sid}", # yfinance 抓中文名較慢，先用代碼
-                          "market": "市",
-                          "price": round(info['last_price'], 2),
-                          "pbr": 0.0,
-                          "cashYield": 0.0,
-                          "stockYield": 0.0,
-                          "totalYield": 0.0
-                      })
-                      time.sleep(1) # 緩衝
-                  except: continue
-              return stocks
-
-          def fetch_data():
-              # 策略 1: 嘗試 OpenAPI
-              headers = {'User-Agent': 'Mozilla/5.0'}
+          def fetch_goodinfo(url):
+              headers = {
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                  'Referer': 'https://goodinfo.tw/tw/index.asp'
+              }
               try:
-                  print("📡 嘗試連線 OpenAPI...")
-                  r = requests.get("https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL", headers=headers, timeout=10)
-                  if r.status_code == 200 and len(r.json()) > 100:
-                      data = r.json()
-                      return [{
-                          "id": i['Code'], "name": i['Name'], "market": "市",
-                          "price": float(i['ClosingPrice']) if i['ClosingPrice'] else 0,
-                          "pbr": float(i['PBRatio']) if i['PBRatio'] else 0,
-                          "totalYield": float(i['YieldRate']) if i['YieldRate'] else 0,
-                          "cashYield": float(i['YieldRate']), "stockYield": 0.0
-                      } for i in data if len(i['Code']) == 4]
-              except:
-                  print("⚠️ 官方 API 失敗")
+                  print(f"📡 嘗試讀取 Goodinfo: {url[:60]}...")
+                  # 隨機延遲避免被 Ban
+                  time.sleep(random.uniform(5, 8))
+                  resp = requests.get(url, headers=headers, timeout=30)
+                  resp.encoding = 'utf-8'
+                  
+                  # 使用 pandas 抓取表格
+                  dfs = pd.read_html(resp.text)
+                  # 尋找包含「代號」或「名稱」的那個表格
+                  for df in dfs:
+                      if '代號' in df.columns.get_level_values(0) or '代號' in df.columns:
+                          return df
+              except Exception as e:
+                  print(f"⚠️ Goodinfo 讀取失敗: {e}")
+              return None
 
-              # 策略 2: 嘗試抓取證交所 CSV 的鏡像備份或直接進入 Fallback
-              return fetch_fallback()
+          # 1. 抓取殖利率榜單 (合計殖利率)
+          yield_url = "https://goodinfo.tw/tw/StockList.asp?RPT_TIME=&MARKET_CAT=%E7%86%B1%E9%96%80%E6%8E%92%E8%A1%8C&INDUSTRY_CAT=%E9%99%A4%E6%AC%8A%2F%E6%81%AF%E5%83%B9%E5%90%88%E8%A8%88%E6%AE%96%E5%88%A9%E7%8E%87%E2%80%93%E6%9C%80%E6%96%B0%E5%B9%B4%E5%BA%A6%40%40%E5%90%88%E8%A8%88%E6%AE%96%E5%88%A9%E7%8E%87%40%40%E9%99%A4%E6%AC%8A%2F%E6%81%AF%E5%83%B9%E6%AE%96%E5%88%A9%E7%8E%87%E2%80%93%E6%9C%80%E6%96%B0%E5%B9%B4%E5%BA%A6"
+          
+          # 2. 抓取 PBR 榜單 (低PBR)
+          pbr_url = "https://goodinfo.tw/tw/StockList.asp?MARKET_CAT=%E7%86%B1%E9%96%80%E6%8E%92%E8%A1%8C&INDUSTRY_CAT=PBR%E6%9C%80%E4%BD%8E%40%40%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%28PBR%29%40%40PBR%E6%9C%80%E4%BD%8E&SHEET=%E4%BA%A4%E6%98%93%E7%8B%80%E6%B3%81&SHEET2=%E6%97%A5&RPT_TIME=%E6%9C%80%E6%96%B0%E8%B3%87%E6%96%99&RANK_RANGE=300"
 
-          final_data = fetch_data()
-          if final_data:
+          stocks = {}
+
+          # 處理殖利率表格
+          df_yield = fetch_goodinfo(yield_url)
+          if df_yield is not None:
+              # 扁平化多層欄位
+              if isinstance(df_yield.columns, pd.MultiIndex):
+                  df_yield.columns = df_yield.columns.get_level_values(-1)
+              
+              for _, r in df_yield.iterrows():
+                  sid = str(r.get('代號', ''))
+                  if len(sid) == 4 and sid.isdigit():
+                      stocks[sid] = {
+                          "id": sid, "name": str(r.get('名稱', '')),
+                          "price": float(r.get('收盤價', 0)),
+                          "totalYield": float(r.get('合計', 0)),
+                          "pbr": 0.0, "market": "市"
+                      }
+
+          # 處理 PBR 表格並合併
+          df_pbr = fetch_goodinfo(pbr_url)
+          if df_pbr is not None:
+              if isinstance(df_pbr.columns, pd.MultiIndex):
+                  df_pbr.columns = df_pbr.columns.get_level_values(-1)
+              
+              for _, r in df_pbr.iterrows():
+                  sid = str(r.get('代號', ''))
+                  if len(sid) == 4 and sid.isdigit():
+                      pbr_val = float(r.get('PBR', 0))
+                      if sid in stocks:
+                          stocks[sid]["pbr"] = pbr_val
+                      else:
+                          stocks[sid] = {
+                              "id": sid, "name": str(r.get('名稱', '')),
+                              "price": float(r.get('收盤價', 0)),
+                              "totalYield": 0.0, "pbr": pbr_val, "market": "市"
+                          }
+
+          final_list = list(stocks.values())
+          if len(final_list) > 10:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(final_data, f, ensure_ascii=False, indent=2)
-              print(f"✅ 成功！獲取到 {len(final_data)} 筆資料")
+                  json.dump(final_list, f, ensure_ascii=False, indent=2)
+              print(f"🚀 Goodinfo 抓取成功，共 {len(final_list)} 筆")
           else:
-              print("❌ 全部失敗")
+              print("❌ Goodinfo 抓取失敗或被阻擋，請檢查 Actions IP 狀態")
           EOF
 
       - name: Commit and Push
