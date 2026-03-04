@@ -2,48 +2,73 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>台股深度價值雷達 - 嚴格中文化版</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台股深度價值雷達 - 專業版</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        [v-cloak] { display: none; }
+        .stock-card:hover { transform: translateY(-4px); transition: all 0.3s ease; }
+    </style>
 </head>
-<body class="bg-gray-100 min-h-screen pb-20">
+<body class="bg-slate-50 min-h-screen pb-20 font-sans">
 
-<div id="app" v-cloak class="p-6 max-w-7xl mx-auto">
-    <header class="mb-10 flex flex-col md:flex-row justify-between items-center bg-white p-6 rounded-3xl shadow-md">
-        <h1 class="text-3xl font-black text-gray-800">台股深度價值雷達</h1>
-        <div class="flex gap-4">
-            <input v-model="search" type="text" placeholder="搜尋代碼..." class="px-4 py-2 border rounded-xl font-bold">
-            <select v-model="selectedCat" class="bg-indigo-600 text-white rounded-xl px-4 py-2 font-bold">
-                <option value="">所有產業</option>
+<div id="app" v-cloak class="p-4 max-w-7xl mx-auto">
+    <header class="mb-8 flex flex-col md:flex-row justify-between items-center bg-white p-6 rounded-3xl shadow-sm border-b-4 border-indigo-600">
+        <div class="mb-4 md:mb-0">
+            <h1 class="text-3xl font-black text-slate-800 tracking-tight">台股深度價值雷達</h1>
+            <p class="text-slate-400 font-bold text-sm">數據同步 PChome 產業分類 | 全中文化顯示</p>
+        </div>
+        
+        <div class="flex flex-wrap gap-3 w-full md:w-auto">
+            <input v-model="search" type="text" placeholder="搜尋代碼或名稱..." 
+                   class="px-5 py-3 rounded-2xl border-none bg-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none flex-grow md:w-64 font-bold">
+            
+            <select v-model="selectedCat" class="bg-slate-800 text-white rounded-2xl px-6 py-3 font-bold text-sm cursor-pointer hover:bg-slate-700 transition-colors">
+                <option value="">所有產業 (PChome 分類)</option>
                 <option v-for="c in categories" :value="c">{{ c }}</option>
             </select>
         </div>
     </header>
 
     <div v-for="pg in nestedData" :key="pg.range" class="mb-12">
-        <div class="bg-white p-6 rounded-2xl shadow-sm border-l-8 border-indigo-600 mb-6">
-            <h2 class="text-2xl font-black text-gray-700">{{ pg.range }} ({{ pg.totalCount }} 檔)</h2>
+        <div @click="togglePrice(pg.range)" 
+             class="flex justify-between items-center bg-white p-6 rounded-3xl shadow-sm cursor-pointer border border-slate-100 hover:bg-slate-50 transition-all mb-6">
+            <div class="flex items-center gap-4">
+                <h2 class="text-2xl font-black text-slate-800">{{ pg.range }}</h2>
+                <span class="bg-indigo-100 text-indigo-600 text-xs px-3 py-1 rounded-full font-black">{{ pg.totalCount }} 檔符合</span>
+            </div>
+            <i :class="isPriceCollapsed(pg.range) ? 'fa-chevron-down' : 'fa-chevron-up'" class="fa-solid text-slate-300"></i>
         </div>
 
-        <div class="space-y-12 pl-4">
+        <div v-show="!isPriceCollapsed(pg.range)" class="ml-4 space-y-12">
             <div v-for="yg in pg.yieldGroups" :key="yg.label" v-show="yg.items.length > 0">
-                <div class="flex items-center gap-3 mb-6">
-                    <div :class="yg.color" class="w-4 h-4 rounded-full"></div>
-                    <h3 class="font-black text-gray-500 uppercase">{{ yg.label }}</h3>
+                <div class="flex items-center gap-3 mb-6 border-b-2 border-slate-100 pb-2">
+                    <div :class="yg.color" class="w-4 h-4 rounded-full shadow-sm"></div>
+                    <h3 class="font-black text-slate-600 text-lg tracking-tight">{{ yg.label }}</h3>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div v-for="s in yg.items" :key="s.id" class="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100">
-                        <div class="flex justify-between items-start mb-4">
+                    <div v-for="s in yg.items" :key="s.id" 
+                         class="stock-card bg-white p-6 rounded-[2.5rem] shadow-sm border border-slate-100 relative overflow-hidden">
+                        
+                        <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="text-[10px] bg-gray-100 text-gray-500 px-3 py-1 rounded-full font-bold">{{ s.category }}</span>
-                                <h4 class="text-lg font-black text-gray-800 mt-2">{{ s.id }} {{ s.name }}</h4>
+                                <span class="text-[10px] bg-slate-100 text-slate-500 px-3 py-1 rounded-full font-black mb-2 inline-block">{{ s.category }}</span>
+                                <h4 class="text-xl font-black text-slate-800">{{ s.id }} {{ s.name }}</h4>
                             </div>
-                            <div class="text-xl font-black text-gray-900">${{ s.price }}</div>
+                            <div class="text-2xl font-black text-slate-900 tracking-tighter">${{ s.price }}</div>
                         </div>
-                        <div class="bg-indigo-50 p-4 rounded-2xl flex justify-between items-center">
-                            <span class="text-xs font-bold text-indigo-400">合計殖利率</span>
-                            <span class="text-xl font-black text-indigo-600">{{ s.totalYield }}%</span>
+
+                        <div class="bg-slate-50 p-4 rounded-3xl border border-slate-100 flex justify-between items-center">
+                            <div class="flex flex-col">
+                                <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">合計殖利率</span>
+                                <span class="text-2xl font-black text-indigo-600">{{ s.totalYield }}%</span>
+                            </div>
+                            <div class="h-10 w-10 rounded-full flex items-center justify-center" :class="yg.color.replace('bg-', 'text-')">
+                                <i class="fa-solid fa-chart-line text-xl opacity-20"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,41 +81,63 @@
     const { createApp } = Vue;
     createApp({
         data() {
-            return { stocks: [], search: '', selectedCat: '' }
+            return {
+                stocks: [],
+                search: '',
+                selectedCat: '',
+                collapsedPrices: [] // 預設全部展開
+            }
         },
         computed: {
-            categories() { return [...new Set(this.stocks.map(s => s.category))].sort(); },
-            filtered() {
-                return this.stocks.filter(s => (s.id.includes(this.search) || s.name.includes(this.search)) && (this.selectedCat === '' || s.category === this.selectedCat));
+            // 自動提取所有出現過的產業名稱
+            categories() {
+                return [...new Set(this.stocks.map(s => s.category))].filter(Boolean).sort();
             },
+            // 基礎過濾：搜尋框 + 產業下拉選單
+            filteredStocks() {
+                return this.stocks.filter(s => {
+                    const matchSearch = s.id.includes(this.search) || s.name.includes(this.search);
+                    const matchCat = this.selectedCat === '' || s.category === this.selectedCat;
+                    return matchSearch && matchCat;
+                });
+            },
+            // 核心邏輯：股價四段分類 + 殖利率三段排序
             nestedData() {
                 const ranges = [
-                    { label: "股價 300+ 元", min: 300, max: 99999 },
+                    { label: "股價 300+ 元以上", min: 300, max: 99999 },
                     { label: "股價 100 - 300 元", min: 100, max: 300 },
                     { label: "股價 50 - 100 元", min: 50, max: 100 },
                     { label: "股價 0 - 50 元", min: 0, max: 50 }
                 ];
+
                 return ranges.map(r => {
-                    const inRange = this.filtered.filter(s => s.price >= r.min && s.price < r.max);
+                    const inRange = this.filteredStocks.filter(s => s.price >= r.min && s.price < r.max);
+                    
+                    // 排序函數：合計殖利率從高到低
+                    const sortByYield = (arr) => arr.sort((a, b) => b.totalYield - a.totalYield);
+
                     return {
-                        range: r.label, totalCount: inRange.length,
+                        range: r.label,
+                        totalCount: inRange.length,
                         yieldGroups: [
-                            { label: "殖利率 10% 以上", color: "bg-red-500", items: inRange.filter(s => s.totalYield >= 10).sort((a,b)=>b.totalYield-a.totalYield) },
-                            { label: "殖利率 5 - 10%", color: "bg-green-500", items: inRange.filter(s => s.totalYield >= 5 && s.totalYield < 10).sort((a,b)=>b.totalYield-a.totalYield) },
-                            { label: "殖利率 0 - 5%", color: "bg-gray-300", items: inRange.filter(s => s.totalYield < 5).sort((a,b)=>b.totalYield-a.totalYield) }
+                            { 
+                                label: "合計殖利率 10% 以上", 
+                                color: "bg-red-500", 
+                                items: sortByYield(inRange.filter(s => s.totalYield >= 10)) 
+                            },
+                            { 
+                                label: "合計殖利率 5 - 10%", 
+                                color: "bg-emerald-500", 
+                                items: sortByYield(inRange.filter(s => s.totalYield >= 5 && s.totalYield < 10)) 
+                            },
+                            { 
+                                label: "合計殖利率 0 - 5%", 
+                                color: "bg-slate-300", 
+                                items: sortByYield(inRange.filter(s => s.totalYield < 5)) 
+                            }
                         ]
                     };
                 });
             }
         },
-        methods: {
-            async load() {
-                const res = await fetch('./data.json?v=' + Date.now());
-                this.stocks = await res.json();
-            }
-        },
-        mounted() { this.load(); }
-    }).mount('#app');
-</script>
-</body>
-</html>
+        methods:
