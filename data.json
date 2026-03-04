@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "id": "2330",
+    "name": "個股 2330",
+    "market": "市",
+    "price": 1865.0,
+    "pbr": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "totalYield": 0.0
+  },
+  {
+    "id": "2317",
+    "name": "個股 2317",
+    "market": "市",
+    "price": 217.0,
+    "pbr": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "totalYield": 0.0
+  },
+  {
+    "id": "2454",
+    "name": "個股 2454",
+    "market": "市",
+    "price": 1720.0,
+    "pbr": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "totalYield": 0.0
+  },
+  {
+    "id": "2308",
+    "name": "個股 2308",
+    "market": "市",
+    "price": 1255.0,
+    "pbr": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "totalYield": 0.0
+  },
+  {
+    "id": "2382",
+    "name": "個股 2382",
+    "market": "市",
+    "price": 281.0,
+    "pbr": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "totalYield": 0.0
+  },
+  {
+    "id": "3231",
+    "name": "個股 3231",
+    "market": "市",
+    "price": 125.0,
+    "pbr": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "totalYield": 0.0
+  },
+  {
+    "id": "2881",
+    "name": "個股 2881",
+    "market": "市",
+    "price": 89.8,
+    "pbr": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "totalYield": 0.0
+  },
+  {
+    "id": "2882",
+    "name": "個股 2882",
+    "market": "市",
+    "price": 73.2,
+    "pbr": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "totalYield": 0.0
+  },
+  {
+    "id": "2412",
+    "name": "個股 2412",
+    "market": "市",
+    "price": 135.5,
+    "pbr": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "totalYield": 0.0
+  },
+  {
+    "id": "2886",
+    "name": "個股 2886",
+    "market": "市",
+    "price": 38.9,
+    "pbr": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
+    "totalYield": 0.0
+  }
+]
