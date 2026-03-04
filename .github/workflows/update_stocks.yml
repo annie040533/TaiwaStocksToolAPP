@@ -1,7 +1,7 @@
 name: Update Stock Data
 on:
   schedule:
-    - cron: '0 9 * * 1-5'
+    - cron: '0 10 * * 1-5' # 台北時間 18:00 更新
   workflow_dispatch:
 
 jobs:
@@ -17,67 +17,68 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests pandas
 
       - name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
+          import pandas as pd
           import json
-          import time
+          import io
 
           def get_data():
-              # 使用證交所官網查詢介面 (最穩定，含 PBR 與 殖利率)
-              url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=json&_={}".format(int(time.time()))
+              # 使用政府資料開放平台提供之 Open Data 連結 (穩定性最高)
+              url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
               headers = {
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                  'Referer': 'https://www.twse.com.tw/zh/page/trading/exchange/BWIBYK_ALL.html'
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
               }
               
               try:
-                  print("📡 正在嘗試連線至證交所官方 API...")
+                  print("📡 正在從政府 Open Data 獲取 PBR 與殖利率資料...")
                   resp = requests.get(url, headers=headers, timeout=30)
-                  data = resp.json()
                   
-                  if "data" not in data:
-                      print("❌ 證交所回傳格式異常")
-                      return []
-
+                  # 解決解析錯誤：使用 io.StringIO 將文字轉為檔案流，並指定引擎
+                  # 證交所 CSV 通常在第 1-3 行有說明，skiprows 能避開這些導致報錯的行
+                  df = pd.read_csv(io.StringIO(resp.text))
+                  
+                  # 清理欄位名稱 (移除引號與空格)
+                  df.columns = [c.replace('"', '').strip() for c in df.columns]
+                  
                   stocks = []
-                  # 證交所 JSON 欄位順序：0.代號, 1.名稱, 2.殖利率, 3.股利年度, 4.本益比, 5.本淨比, 6.最後價
-                  for row in data["data"]:
-                      sid = str(row[0]).strip()
+                  for _, row in df.iterrows():
+                      sid = str(row.get('證券代號', '')).replace('"', '').strip()
+                      
+                      # 僅抓取 4 位數一般個股
                       if len(sid) == 4 and sid.isdigit():
                           try:
-                              # 清洗數據
-                              def clean(v):
-                                  s = str(v).replace(',', '').strip()
-                                  return float(s) if s not in ['', '-', 'N/A'] else 0.0
+                              def to_float(val):
+                                  s = str(val).replace(',', '').replace('"', '').strip()
+                                  return float(s) if s not in ['', '-', 'None'] else 0.0
 
-                              price = clean(row[8]) # 這裡需注意證交所欄位索引，通常收盤價在第 8 或最後
-                              if price == 0: price = clean(row[7]) # 保險機制
-
-                              stocks.append({
-                                  "id": sid,
-                                  "name": str(row[1]).strip(),
-                                  "price": price,
-                                  "pbr": clean(row[5]),
-                                  "totalYield": clean(row[2]),
-                                  "category": "載入中..." # 前端會自動處理分類
-                              })
+                              price = to_float(row.get('收盤價', 0))
+                              if price > 0:
+                                  stocks.append({
+                                      "id": sid,
+                                      "name": str(row.get('證券名稱', '')).replace('"', '').strip(),
+                                      "price": price,
+                                      "pbr": to_float(row.get('本淨比', 0)),
+                                      "totalYield": to_float(row.get('殖利率(%)', 0)),
+                                      "category": "一般產業" # 稍後由前端自動分類
+                                  })
                           except: continue
                   return stocks
               except Exception as e:
-                  print(f"🔥 錯誤: {e}")
+                  print(f"🔥 讀取失敗: {e}")
                   return []
 
-          res = get_data()
-          if len(res) > 300:
+          final_list = get_data()
+          if len(final_list) > 300:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(res, f, ensure_ascii=False, indent=2)
-              print(f"🚀 成功更新 {len(res)} 檔個股 PBR 資料！")
+                  json.dump(final_list, f, ensure_ascii=False, indent=2)
+              print(f"🚀 成功！產出 {len(final_list)} 筆資料，包含正確的 PBR 與殖利率。")
           else:
-              print("🛑 無法獲取有效資料")
+              print("🛑 資料獲取異常，請檢查連結。")
               exit(1)
           EOF
 
@@ -86,4 +87,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "修正 API 抓取邏輯" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "修正資料來源至 Open Data" && git push)
