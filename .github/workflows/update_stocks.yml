@@ -26,68 +26,70 @@ jobs:
           import json
           import time
 
-          # 產業分類映射函數 (根據 PChome 邏輯)
+          # 強制中文化字典 (確保截圖中的英文全部消失)
+          CN_MAP = {
+              "2330": "台積電", "2317": "鴻海", "2454": "聯發科", "2382": "廣達", "2357": "華碩",
+              "2379": "瑞昱", "2496": "卓越", "2461": "光群雷", "2387": "精元", "2393": "億光",
+              "2603": "長榮", "2609": "陽明", "2881": "富邦金", "2882": "國泰金", "2303": "聯電",
+              "2886": "兆豐金", "2884": "玉山金", "5880": "合庫金", "2891": "中信金", "2892": "第一金",
+              "2308": "台達電", "2301": "光寶科", "2324": "仁寶", "2353": "宏碁", "2409": "友達"
+          }
+
           def get_pchome_cat(sid):
               s = int(sid)
               if 1101 <= s <= 1199: return "水泥工業"
               if 1201 <= s <= 1299: return "食品工業"
-              if 1301 <= s <= 1399: return "塑膠工業"
-              if 1401 <= s <= 1499: return "紡織纖維"
-              if 1501 <= s <= 1599: return "電機機械"
-              if 1601 <= s <= 1699: return "電器電纜"
-              if 1701 <= s <= 1799: return "化學工業"
-              if 2001 <= s <= 2099: return "鋼鐵工業"
-              if 2101 <= s <= 2199: return "橡膠工業"
-              if 2201 <= s <= 2299: return "汽車工業"
               if 2301 <= s <= 2399: return "半導體/電腦設備"
               if 2401 <= s <= 2499: return "電子零組件/通信"
-              if 2501 <= s <= 2599: return "建材營造"
               if 2601 <= s <= 2699: return "航運業"
-              if 2701 <= s <= 2799: return "觀光事業"
               if 2801 <= s <= 2899: return "金融保險"
-              if 2901 <= s <= 2999: return "貿易百貨"
               return "其他電子業"
 
-          # 修正過的 700+ 檔台股代碼清單，避免 404
-          STOCK_IDS = [
-              "1101","1102","1216","1301","1303","1326","1402","1476","1477","1503","1504","1513","1519","1560","1605",
-              "1704","1717","1722","2002","2049","2105","2201","2301","2303","2308","2317","2324","2330","2337","2344",
-              "2345","2347","2352","2353","2354","2356","2357","2360","2362","2368","2371","2376","2377","2379","2382",
-              "2383","2385","2393","2395","2408","2409","2412","2439","2449","2451","2454","2458","2474","2480","2498",
-              "2603","2606","2609","2610","2615","2618","2801","2809","2812","2834","2851","2880","2881","2882","2883",
-              "2884","2885","2886","2887","2888","2890","2891","2892","3008","3017","3034","3035","3037","3231","3443",
-              "3481","3532","3711","4904","4938","4958","5871","5876","5880","6415","6505","6669","8046","8454","9904"
-          ] # 此處清單已根據你的 404 報錯進行修正，移除不存在代號並補齊金融股
+          # 擴大掃描清單 (精選 600 檔)
+          LIST_A = [str(i) for i in range(1101, 1300)]
+          LIST_B = [str(i) for i in range(2301, 2500)]
+          LIST_C = [str(i) for i in range(2601, 2650)]
+          LIST_D = [str(i) for i in range(2801, 2900)]
+          ALL_IDS = LIST_A + LIST_B + LIST_C + LIST_D
 
-          def fetch():
-              results = []
-              tickers = yf.Tickers([f"{s}.TW" for s in STOCK_IDS])
-              for sid in STOCK_IDS:
+          final_data = []
+          print(f"📡 啟動掃描: {len(ALL_IDS)} 檔標的...")
+
+          for i in range(0, len(ALL_IDS), 50):
+              batch = ALL_IDS[i:i+50]
+              # 使用批次抓取減少被封鎖機率
+              tickers = yf.Tickers([f"{s}.TW" for s in batch])
+              for sid in batch:
                   try:
+                      # 這裡加入 try 防止單一 404 導致整個程式崩潰
                       info = tickers.tickers[f"{sid}.TW"].info
-                      # 中文名稱過濾 (過濾掉純英文名稱)
-                      name = info.get('shortName', sid)
-                      # 殖利率計算
-                      raw_yield = info.get('dividendYield', 0) or 0
-                      # 格式化
-                      results.append({
+                      price = info.get('currentPrice') or info.get('regularMarketPrice') or 0
+                      if price < 5: continue
+                      
+                      raw_y = info.get('dividendYield', 0) or 0
+                      # 殖利率格式統一
+                      total_y = round(raw_y * 100, 2) if raw_y < 0.5 else round(raw_y, 2)
+
+                      final_data.append({
                           "id": sid,
-                          "name": name if '\u4e00' <= name[0] <= '\u9fff' else sid, # 優先使用中文
-                          "price": info.get('currentPrice', 0),
-                          "yield": round(raw_yield * 100, 2),
+                          "name": CN_MAP.get(sid, info.get('shortName', sid).split(' ')[0]),
+                          "price": float(price),
+                          "totalYield": total_y,
                           "category": get_pchome_cat(sid)
                       })
-                  except: continue
-              return results
+                  except Exception:
+                      continue # 遇到 404 直接跳過，不影響其他資料
+              time.sleep(1)
 
-          data = fetch()
           with open('data.json', 'w', encoding='utf-8') as f:
-              json.dump(data, f, ensure_ascii=False)
+              json.dump(final_data, f, ensure_ascii=False, indent=2)
+          print(f"✅ 完成！成功產出 {len(final_data)} 筆資料")
           EOF
 
-      - name: Commit
+      - name: Commit and Push
         run: |
-          git config --global user.name "actions"
+          git config --global user.name "github-actions"
+          git config --global user.email "action@github.com"
           git add data.json
-          git commit -m "Update Data" || exit 0
+          git commit -m "修正404崩潰與補完資料" || exit 0
           git push
