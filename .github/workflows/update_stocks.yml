@@ -1,25 +1,4 @@
-name: Update Stock Data
-on:
-  schedule:
-    - cron: '0 1,5,10 * * 1-5'
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: pip install requests pandas
-
-      - name: Fetch and Process Data
+- name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
@@ -27,65 +6,55 @@ jobs:
           import json
           import io
 
-          def fetch_twse_opendata():
-              # 參考 ARON HACK 推薦的 Open Data 連結：每日行情 (含所有個股)
-              url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
-              headers = {
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-              }
-              
+          def fetch_full_data():
+              # 使用證交所最完整的個股統計表 (包含 PBR, 殖利率)
+              url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
               try:
-                  print("📡 正在從證交所 Open Data 獲取最新行情...")
-                  resp = requests.get(url, headers=headers, timeout=30)
-                  
-                  # 使用 pandas 直接讀取 CSV 內容
-                  # 證交所 Open Data 是標準 CSV 格式，不需要像 HTML 那樣手動解析
+                  resp = requests.get(url, timeout=30)
                   df = pd.read_csv(io.StringIO(resp.text))
-                  
-                  # 清理欄位標題中的空格或引號
                   df.columns = [c.strip().replace('"', '') for c in df.columns]
                   
                   stocks = []
                   for _, row in df.iterrows():
-                      sid = str(row.get('證券代號', '')).strip().replace('"', '')
-                      # 只抓取標準 4 位數個股，排除權證、ETF (代碼較長或含字母)
-                      if len(sid) == 4 and sid.isdigit():
-                          try:
-                              # 數值轉換，處理 '-' 或千分位
-                              def clean_num(val):
-                                  s = str(val).replace(',', '').replace('"', '').strip()
-                                  return float(s) if s not in ['', '-', 'None'] else 0.0
-
-                              price = clean_num(row.get('收盤價', 0))
-                              if price > 0:
-                                  stocks.append({
-                                      "id": sid,
-                                      "name": str(row.get('證券名稱', '')).strip().replace('"', ''),
-                                      "market": "市",
-                                      "price": price,
-                                      "pbr": 0.0, # 每日行情表不含 PBR，若需 PBR 需串接另一個 API
-                                      "cashYield": 0.0,
-                                      "stockYield": 0.0,
-                                      "totalYield": 0.0
-                                  })
-                          except: continue
+                      try:
+                          # 1. 基礎資料清洗
+                          sid = str(row['證券代號']).strip()
+                          name = str(row['證券名稱']).strip()
+                          
+                          # 2. 數值轉換 (若為 '-' 或空值則會變成 NaN)
+                          price = pd.to_numeric(row['收盤價'], errors='coerce')
+                          pbr = pd.to_numeric(row['本淨比'], errors='coerce')
+                          # BWIBYK 的殖利率欄位通常是合計值
+                          total_yield = pd.to_numeric(row['殖利率(%)'], errors='coerce')
+                          
+                          # 3. 排除缺失資料 (缺一不可)
+                          if pd.isna(price) or pd.isna(pbr) or pd.isna(total_yield) or price <= 0:
+                              continue
+                          
+                          # 4. 產業類別 (BWIBYK 沒產業，我們根據代碼區間做基本分類，或從另一個 API 補)
+                          # 註：這裡先用佔位符，網頁端會提供更細的分類
+                          industry = "一般產業" 
+                          
+                          stocks.append({
+                              "id": sid,
+                              "name": name,
+                              "market": "市",
+                              "price": float(price),
+                              "pbr": float(pbr),
+                              "cashYield": float(total_yield), # 簡化邏輯：假設為現金為主
+                              "stockYield": 0.0,
+                              "totalYield": float(total_yield),
+                              "category": industry
+                          })
+                      except: continue
                   return stocks
               except Exception as e:
-                  print(f"❌ 錯誤: {e}")
+                  print(f"Error: {e}")
                   return []
 
-          data = fetch_twse_opendata()
-          if len(data) > 500:
+          data = fetch_full_data()
+          if data:
               with open('data.json', 'w', encoding='utf-8') as f:
                   json.dump(data, f, ensure_ascii=False, indent=2)
-              print(f"🚀 成功！已產出 {len(data)} 筆個股資料。")
-          else:
-              print(f"🛑 抓取資料過少 ({len(data)})，不執行寫入。")
+              print(f"🚀 成功！產出 {len(data)} 筆完整資料")
           EOF
-
-      - name: Commit and Push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新股價數據" && git push)
