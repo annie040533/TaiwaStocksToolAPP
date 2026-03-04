@@ -26,21 +26,20 @@ jobs:
           import json
 
           def fetch_data():
-              # 串接證交所 OpenAPI：包含收盤價、殖利率、本淨比 (PBR) 與產業分類
+              # 使用證交所 OpenAPI：個股日本益比、殖利率及淨值比 (PBR)
               url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL"
               try:
                   resp = requests.get(url, timeout=30)
-                  raw = resp.json()
+                  raw_data = resp.json()
                   stocks = []
-                  for item in raw:
+                  for item in raw_data:
                       sid = item.get('Code', '').strip()
-                      # 僅抓取 4 位數個股，排除 ETF
+                      # 過濾標準 4 位數個股
                       if len(sid) == 4 and sid.isdigit():
                           try:
                               p = float(item.get('ClosingPrice', 0))
-                              y = float(item.get('YieldRatio', 0)) # 殖利率
-                              b = float(item.get('PBratio', 0))    # PBR 股價淨值比
-                              
+                              y = float(item.get('YieldRatio', 0))
+                              b = float(item.get('PBratio', 0))
                               if p > 0:
                                   stocks.append({
                                       "id": sid,
@@ -60,7 +59,6 @@ jobs:
           if len(data) > 300:
               with open('data.json', 'w', encoding='utf-8') as f:
                   json.dump(data, f, ensure_ascii=False, indent=2)
-              print(f"✅ 成功產出 {len(data)} 筆包含 PBR 的資料。")
           EOF
 
       - name: Commit and Push
@@ -68,4 +66,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "修正 PBR 欄位與摺疊邏輯" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "更新數據欄位與來源" && git push)
