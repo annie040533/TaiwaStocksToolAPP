@@ -5,6 +5,8 @@
     "price": 75.6,
     "pbr": 0.0,
     "totalYield": 1.88,
+    "cashYield": 1.88,
+    "stockYield": 0.0,
     "category": "Other"
   },
   {
@@ -13,6 +15,8 @@
     "price": 103.7,
     "pbr": 0.0,
     "totalYield": 2.82,
+    "cashYield": 2.82,
+    "stockYield": 0.0,
     "category": "Other"
   },
   {
@@ -21,6 +25,8 @@
     "price": 44.74,
     "pbr": 0.0,
     "totalYield": 1.07,
+    "cashYield": 1.07,
+    "stockYield": 0.0,
     "category": "Other"
   },
   {
@@ -29,6 +35,8 @@
     "price": 164.95,
     "pbr": 0.0,
     "totalYield": 1.87,
+    "cashYield": 1.87,
+    "stockYield": 0.0,
     "category": "Other"
   },
   {
@@ -37,6 +45,8 @@
     "price": 32.58,
     "pbr": 0.0,
     "totalYield": 3.9,
+    "cashYield": 3.9,
+    "stockYield": 0.0,
     "category": "Other"
   },
   {
@@ -45,6 +55,8 @@
     "price": 37.74,
     "pbr": 0.0,
     "totalYield": 9.74,
+    "cashYield": 9.74,
+    "stockYield": 0.0,
     "category": "Other"
   },
   {
@@ -53,6 +65,8 @@
     "price": 221.2,
     "pbr": 0.0,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Other"
   },
   {
@@ -61,6 +75,8 @@
     "price": 23.1,
     "pbr": 0.0,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Other"
   },
   {
@@ -69,6 +85,8 @@
     "price": 25.0,
     "pbr": 0.85,
     "totalYield": 3.86,
+    "cashYield": 3.86,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -77,6 +95,8 @@
     "price": 34.45,
     "pbr": 0.7,
     "totalYield": 6.26,
+    "cashYield": 6.26,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -85,6 +105,8 @@
     "price": 13.5,
     "pbr": 0.49,
     "totalYield": 3.94,
+    "cashYield": 3.94,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -93,6 +115,8 @@
     "price": 28.8,
     "pbr": 0.85,
     "totalYield": 5.72,
+    "cashYield": 5.72,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -101,6 +125,8 @@
     "price": 14.95,
     "pbr": 1.06,
     "totalYield": 4.93,
+    "cashYield": 4.93,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -109,6 +135,8 @@
     "price": 15.4,
     "pbr": 0.65,
     "totalYield": 5.77,
+    "cashYield": 5.77,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -117,6 +145,8 @@
     "price": 15.5,
     "pbr": 0.94,
     "totalYield": 1.87,
+    "cashYield": 1.87,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -125,6 +155,8 @@
     "price": 14.2,
     "pbr": 0.96,
     "totalYield": 3.47,
+    "cashYield": 3.47,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -133,6 +165,8 @@
     "price": 39.9,
     "pbr": 1.55,
     "totalYield": 2.93,
+    "cashYield": 2.93,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -141,6 +175,8 @@
     "price": 50.4,
     "pbr": 1.7,
     "totalYield": 5.52,
+    "cashYield": 5.52,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -149,6 +185,8 @@
     "price": 9.5,
     "pbr": 0.81,
     "totalYield": 3.51,
+    "cashYield": 3.51,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -157,6 +195,8 @@
     "price": 156.5,
     "pbr": 3.97,
     "totalYield": 4.49,
+    "cashYield": 4.49,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -165,6 +205,8 @@
     "price": 71.6,
     "pbr": 3.19,
     "totalYield": 4.06,
+    "cashYield": 4.06,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -173,6 +215,8 @@
     "price": 10.2,
     "pbr": 0.67,
     "totalYield": 3.56,
+    "cashYield": 3.56,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -181,6 +225,8 @@
     "price": 17.85,
     "pbr": 0.68,
     "totalYield": 7.46,
+    "cashYield": 7.46,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -189,6 +235,8 @@
     "price": 13.4,
     "pbr": 1.01,
     "totalYield": 3.69,
+    "cashYield": 3.69,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -197,6 +245,8 @@
     "price": 12.9,
     "pbr": 0.97,
     "totalYield": 5.34,
+    "cashYield": 5.34,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -204,7 +254,9 @@
     "name": "FORMOSA OILSEED PROCESSING",
     "price": 32.25,
     "pbr": 2.07,
-    "totalYield": 0.0,
+    "totalYield": 0.44,
+    "cashYield": 0.44,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -213,6 +265,8 @@
     "price": 29.25,
     "pbr": 1.49,
     "totalYield": 4.68,
+    "cashYield": 4.68,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -221,6 +275,8 @@
     "price": 43.65,
     "pbr": 1.37,
     "totalYield": 2.93,
+    "cashYield": 2.93,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -229,6 +285,8 @@
     "price": 82.7,
     "pbr": 3.65,
     "totalYield": 1.87,
+    "cashYield": 1.87,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -237,6 +295,8 @@
     "price": 150.5,
     "pbr": 4.09,
     "totalYield": 4.61,
+    "cashYield": 4.61,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -245,6 +305,8 @@
     "price": 32.85,
     "pbr": 2.23,
     "totalYield": 2.87,
+    "cashYield": 2.87,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -253,6 +315,8 @@
     "price": 36.65,
     "pbr": 0.79,
     "totalYield": 5.1,
+    "cashYield": 5.1,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -261,6 +325,8 @@
     "price": 43.65,
     "pbr": 0.71,
     "totalYield": 1.05,
+    "cashYield": 1.05,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -269,6 +335,8 @@
     "price": 27.9,
     "pbr": 0.92,
     "totalYield": 2.16,
+    "cashYield": 2.16,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -277,6 +345,8 @@
     "price": 158.5,
     "pbr": 1.57,
     "totalYield": 2.83,
+    "cashYield": 2.83,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -284,7 +354,9 @@
     "name": "FORMOSA PLASTIC",
     "price": 46.95,
     "pbr": 1.02,
-    "totalYield": 0.0,
+    "totalYield": 1.0,
+    "cashYield": 1.0,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -292,7 +364,9 @@
     "name": "NAN YA PLASTIC",
     "price": 79.3,
     "pbr": 1.91,
-    "totalYield": 0.0,
+    "totalYield": 0.82,
+    "cashYield": 0.82,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -301,6 +375,8 @@
     "price": 12.3,
     "pbr": 0.73,
     "totalYield": 1.57,
+    "cashYield": 1.57,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -309,6 +385,8 @@
     "price": 12.3,
     "pbr": 0.91,
     "totalYield": 1.16,
+    "cashYield": 1.16,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -317,6 +395,8 @@
     "price": 32.85,
     "pbr": 1.38,
     "totalYield": 7.69,
+    "cashYield": 7.69,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -325,6 +405,8 @@
     "price": 14.05,
     "pbr": 0.8,
     "totalYield": 1.72,
+    "cashYield": 1.72,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -333,6 +415,8 @@
     "price": 12.8,
     "pbr": 0.9,
     "totalYield": 1.5,
+    "cashYield": 1.5,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -341,6 +425,8 @@
     "price": 9.62,
     "pbr": 0.75,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -349,6 +435,8 @@
     "price": 12.7,
     "pbr": 0.5,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -357,6 +445,8 @@
     "price": 12.8,
     "pbr": 0.56,
     "totalYield": 1.19,
+    "cashYield": 1.19,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -365,6 +455,8 @@
     "price": 8.14,
     "pbr": 0.41,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -373,6 +465,8 @@
     "price": 63.6,
     "pbr": 0.65,
     "totalYield": 6.92,
+    "cashYield": 6.92,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -381,6 +475,8 @@
     "price": 12.7,
     "pbr": 1.04,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Real Estate"
   },
   {
@@ -389,6 +485,8 @@
     "price": 92.0,
     "pbr": 2.04,
     "totalYield": 5.58,
+    "cashYield": 5.58,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -397,6 +495,8 @@
     "price": 33.3,
     "pbr": 1.26,
     "totalYield": 1.12,
+    "cashYield": 1.12,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -405,6 +505,8 @@
     "price": 18.65,
     "pbr": 0.69,
     "totalYield": 4.86,
+    "cashYield": 4.86,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -413,6 +515,8 @@
     "price": 10.4,
     "pbr": 0.87,
     "totalYield": 1.9,
+    "cashYield": 1.9,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -421,6 +525,8 @@
     "price": 27.2,
     "pbr": 0.9,
     "totalYield": 1.05,
+    "cashYield": 1.05,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -429,6 +535,8 @@
     "price": 43.55,
     "pbr": 0.91,
     "totalYield": 1.07,
+    "cashYield": 1.07,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -437,6 +545,8 @@
     "price": 5.23,
     "pbr": 0.39,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -445,6 +555,8 @@
     "price": 17.05,
     "pbr": 0.25,
     "totalYield": 4.32,
+    "cashYield": 4.32,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -453,6 +565,8 @@
     "price": 41.7,
     "pbr": 0.79,
     "totalYield": 6.98,
+    "cashYield": 6.98,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -461,6 +575,8 @@
     "price": 6.67,
     "pbr": 0.37,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -469,6 +585,8 @@
     "price": 59.3,
     "pbr": 2.66,
     "totalYield": 8.46,
+    "cashYield": 8.46,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -477,6 +595,8 @@
     "price": 96.1,
     "pbr": 3.13,
     "totalYield": 6.0,
+    "cashYield": 6.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -485,6 +605,8 @@
     "price": 28.3,
     "pbr": 0.68,
     "totalYield": 5.5,
+    "cashYield": 5.5,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -493,6 +615,8 @@
     "price": 14.5,
     "pbr": 0.59,
     "totalYield": 3.96,
+    "cashYield": 3.96,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -501,6 +625,8 @@
     "price": 33.3,
     "pbr": 1.98,
     "totalYield": 1.53,
+    "cashYield": 1.53,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -509,6 +635,8 @@
     "price": 9.76,
     "pbr": 1.14,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -517,6 +645,8 @@
     "price": 20.05,
     "pbr": 1.28,
     "totalYield": 1.27,
+    "cashYield": 1.27,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -525,6 +655,8 @@
     "price": 11.55,
     "pbr": 0.51,
     "totalYield": 4.79,
+    "cashYield": 4.79,
+    "stockYield": 0.0,
     "category": "Technology"
   },
   {
@@ -533,6 +665,8 @@
     "price": 8.53,
     "pbr": 0.69,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -541,6 +675,8 @@
     "price": 19.1,
     "pbr": 0.88,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -549,6 +685,8 @@
     "price": 64.5,
     "pbr": 1.12,
     "totalYield": 2.27,
+    "cashYield": 2.27,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -557,6 +695,8 @@
     "price": 38.0,
     "pbr": 0.96,
     "totalYield": 2.11,
+    "cashYield": 2.11,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -565,6 +705,8 @@
     "price": 17.45,
     "pbr": 1.94,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -573,6 +715,8 @@
     "price": 17.15,
     "pbr": 0.77,
     "totalYield": 4.48,
+    "cashYield": 4.48,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -581,6 +725,8 @@
     "price": 21.05,
     "pbr": 2.62,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -589,6 +735,8 @@
     "price": 53.8,
     "pbr": 1.61,
     "totalYield": 13.74,
+    "cashYield": 13.74,
+    "stockYield": 0.0,
     "category": "Real Estate"
   },
   {
@@ -597,6 +745,8 @@
     "price": 32.4,
     "pbr": 0.79,
     "totalYield": 5.58,
+    "cashYield": 5.58,
+    "stockYield": 0.0,
     "category": "Real Estate"
   },
   {
@@ -605,6 +755,8 @@
     "price": 31.3,
     "pbr": 1.22,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Real Estate"
   },
   {
@@ -613,6 +765,8 @@
     "price": 28.35,
     "pbr": 0.91,
     "totalYield": 1.03,
+    "cashYield": 1.03,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -621,6 +775,8 @@
     "price": 12.65,
     "pbr": 0.76,
     "totalYield": 2.3,
+    "cashYield": 2.3,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -629,6 +785,8 @@
     "price": 9.99,
     "pbr": 1.53,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -637,6 +795,8 @@
     "price": 27.15,
     "pbr": 1.27,
     "totalYield": 16.04,
+    "cashYield": 16.04,
+    "stockYield": 0.0,
     "category": "Real Estate"
   },
   {
@@ -645,6 +805,8 @@
     "price": 26.35,
     "pbr": 1.56,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -653,6 +815,8 @@
     "price": 6.07,
     "pbr": 0.62,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -661,6 +825,8 @@
     "price": 13.25,
     "pbr": 0.76,
     "totalYield": 3.51,
+    "cashYield": 3.51,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -669,6 +835,8 @@
     "price": 15.3,
     "pbr": 0.74,
     "totalYield": 12.5,
+    "cashYield": 12.5,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -677,6 +845,8 @@
     "price": 5.35,
     "pbr": 0.57,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -685,6 +855,8 @@
     "price": 10.15,
     "pbr": 0.58,
     "totalYield": 2.66,
+    "cashYield": 2.66,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -693,6 +865,8 @@
     "price": 18.2,
     "pbr": 0.5,
     "totalYield": 5.35,
+    "cashYield": 5.35,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -701,6 +875,8 @@
     "price": 11.2,
     "pbr": 0.55,
     "totalYield": 4.37,
+    "cashYield": 4.37,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -709,6 +885,8 @@
     "price": 12.15,
     "pbr": 0.95,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -717,6 +895,8 @@
     "price": 12.9,
     "pbr": 1.1,
     "totalYield": 1.89,
+    "cashYield": 1.89,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -725,6 +905,8 @@
     "price": 8.2,
     "pbr": 0.73,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -733,6 +915,8 @@
     "price": 13.25,
     "pbr": 0.81,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Real Estate"
   },
   {
@@ -741,6 +925,8 @@
     "price": 15.25,
     "pbr": 0.69,
     "totalYield": 6.37,
+    "cashYield": 6.37,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -749,6 +935,8 @@
     "price": 11.95,
     "pbr": 1.05,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -757,6 +945,8 @@
     "price": 6.81,
     "pbr": 0.84,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -765,6 +955,8 @@
     "price": 17.95,
     "pbr": 1.14,
     "totalYield": 11.73,
+    "cashYield": 11.73,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -773,6 +965,8 @@
     "price": 10.65,
     "pbr": 0.92,
     "totalYield": 4.59,
+    "cashYield": 4.59,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -781,6 +975,8 @@
     "price": 12.35,
     "pbr": 0.82,
     "totalYield": 4.82,
+    "cashYield": 4.82,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -789,6 +985,8 @@
     "price": 17.65,
     "pbr": 1.26,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -797,6 +995,8 @@
     "price": 7.26,
     "pbr": 0.62,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -805,6 +1005,8 @@
     "price": 13.1,
     "pbr": 1.56,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -813,6 +1015,8 @@
     "price": 23.25,
     "pbr": 2.05,
     "totalYield": 4.28,
+    "cashYield": 4.28,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -821,6 +1025,8 @@
     "price": 12.4,
     "pbr": 1.31,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Technology"
   },
   {
@@ -829,6 +1035,8 @@
     "price": 89.5,
     "pbr": 2.12,
     "totalYield": 3.31,
+    "cashYield": 3.31,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -837,6 +1045,8 @@
     "price": 24.4,
     "pbr": 0.95,
     "totalYield": 8.13,
+    "cashYield": 8.13,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -845,6 +1055,8 @@
     "price": 10.15,
     "pbr": 0.63,
     "totalYield": 3.9,
+    "cashYield": 3.9,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -853,6 +1065,8 @@
     "price": 29.3,
     "pbr": 1.32,
     "totalYield": 12.04,
+    "cashYield": 12.04,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -861,6 +1075,8 @@
     "price": 388.0,
     "pbr": 3.83,
     "totalYield": 4.2,
+    "cashYield": 4.2,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -869,6 +1085,8 @@
     "price": 306.5,
     "pbr": 5.82,
     "totalYield": 5.11,
+    "cashYield": 5.11,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -877,6 +1095,8 @@
     "price": 198.5,
     "pbr": 2.85,
     "totalYield": 2.1,
+    "cashYield": 2.1,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -885,6 +1105,8 @@
     "price": 70.8,
     "pbr": 1.89,
     "totalYield": 2.88,
+    "cashYield": 2.88,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -893,6 +1115,8 @@
     "price": 11.2,
     "pbr": 1.21,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -901,6 +1125,8 @@
     "price": 7.22,
     "pbr": 1.16,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -909,6 +1135,8 @@
     "price": 155.0,
     "pbr": 3.9,
     "totalYield": 2.78,
+    "cashYield": 2.78,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -917,6 +1145,8 @@
     "price": 113.0,
     "pbr": 5.1,
     "totalYield": 1.39,
+    "cashYield": 1.39,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -925,6 +1155,8 @@
     "price": 24.95,
     "pbr": 1.21,
     "totalYield": 3.78,
+    "cashYield": 3.78,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -933,6 +1165,8 @@
     "price": 22.1,
     "pbr": 4.23,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Energy"
   },
   {
@@ -941,6 +1175,8 @@
     "price": 11.75,
     "pbr": 0.77,
     "totalYield": 1.66,
+    "cashYield": 1.66,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -948,7 +1184,9 @@
     "name": "FORTUNE ELECTRIC CO LTD",
     "price": 908.0,
     "pbr": 32.74,
-    "totalYield": 0.0,
+    "totalYield": 0.91,
+    "cashYield": 0.91,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -957,6 +1195,8 @@
     "price": 25.4,
     "pbr": 1.07,
     "totalYield": 3.85,
+    "cashYield": 3.85,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -965,6 +1205,8 @@
     "price": 40.9,
     "pbr": 1.37,
     "totalYield": 7.03,
+    "cashYield": 7.03,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -973,6 +1215,8 @@
     "price": 28.2,
     "pbr": 1.61,
     "totalYield": 7.89,
+    "cashYield": 7.89,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -981,6 +1225,8 @@
     "price": 62.1,
     "pbr": 0.96,
     "totalYield": 4.89,
+    "cashYield": 4.89,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -989,6 +1235,8 @@
     "price": 18.8,
     "pbr": 0.83,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -997,6 +1245,8 @@
     "price": 32.75,
     "pbr": 0.96,
     "totalYield": 6.6,
+    "cashYield": 6.6,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1004,7 +1254,9 @@
     "name": "ANDERSON INDUSTRIAL CORP",
     "price": 21.85,
     "pbr": 1.95,
-    "totalYield": 0.0,
+    "totalYield": 0.43,
+    "cashYield": 0.43,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1012,7 +1264,9 @@
     "name": "LUXE GREEN ENERGY TECHNOLOGY CO",
     "price": 23.9,
     "pbr": 2.04,
-    "totalYield": 0.0,
+    "totalYield": 0.79,
+    "cashYield": 0.79,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1021,6 +1275,8 @@
     "price": 27.75,
     "pbr": 0.84,
     "totalYield": 5.35,
+    "cashYield": 5.35,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1029,6 +1285,8 @@
     "price": 11.65,
     "pbr": 0.6,
     "totalYield": 3.33,
+    "cashYield": 3.33,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1037,6 +1295,8 @@
     "price": 23.1,
     "pbr": 0.67,
     "totalYield": 7.22,
+    "cashYield": 7.22,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1045,6 +1305,8 @@
     "price": 29.5,
     "pbr": 1.35,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1053,6 +1315,8 @@
     "price": 49.6,
     "pbr": 1.61,
     "totalYield": 5.92,
+    "cashYield": 5.92,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1061,6 +1325,8 @@
     "price": 55.0,
     "pbr": 1.93,
     "totalYield": 1.36,
+    "cashYield": 1.36,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1069,6 +1335,8 @@
     "price": 123.0,
     "pbr": 2.44,
     "totalYield": 8.47,
+    "cashYield": 8.47,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1077,6 +1345,8 @@
     "price": 21.7,
     "pbr": 4.75,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1085,6 +1355,8 @@
     "price": 17.25,
     "pbr": 0.72,
     "totalYield": 4.8,
+    "cashYield": 4.8,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1093,6 +1365,8 @@
     "price": 21.9,
     "pbr": 1.31,
     "totalYield": 6.99,
+    "cashYield": 6.99,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1101,6 +1375,8 @@
     "price": 24.0,
     "pbr": 0.93,
     "totalYield": 2.06,
+    "cashYield": 2.06,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1109,6 +1385,8 @@
     "price": 95.0,
     "pbr": 1.23,
     "totalYield": 6.19,
+    "cashYield": 6.19,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1116,7 +1394,9 @@
     "name": "KINIK CO",
     "price": 464.0,
     "pbr": 9.02,
-    "totalYield": 0.0,
+    "totalYield": 0.8,
+    "cashYield": 0.8,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1125,6 +1405,8 @@
     "price": 42.9,
     "pbr": 1.08,
     "totalYield": 5.06,
+    "cashYield": 5.06,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1133,6 +1415,8 @@
     "price": 21.25,
     "pbr": 1.19,
     "totalYield": 5.42,
+    "cashYield": 5.42,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1141,6 +1425,8 @@
     "price": 81.4,
     "pbr": 1.61,
     "totalYield": 7.18,
+    "cashYield": 7.18,
+    "stockYield": 0.0,
     "category": "Technology"
   },
   {
@@ -1149,6 +1435,8 @@
     "price": 46.85,
     "pbr": 0.94,
     "totalYield": 6.26,
+    "cashYield": 6.26,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1157,6 +1445,8 @@
     "price": 38.85,
     "pbr": 2.09,
     "totalYield": 1.2,
+    "cashYield": 1.2,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1165,6 +1455,8 @@
     "price": 9.09,
     "pbr": 0.16,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1173,6 +1465,8 @@
     "price": 1105.0,
     "pbr": 4.62,
     "totalYield": 1.69,
+    "cashYield": 1.69,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1180,7 +1474,9 @@
     "name": "CHIEFTEK PRECISION CO LTD",
     "price": 72.3,
     "pbr": 2.62,
-    "totalYield": 0.0,
+    "totalYield": 0.91,
+    "cashYield": 0.91,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1189,6 +1485,8 @@
     "price": 19.05,
     "pbr": 0.72,
     "totalYield": 2.62,
+    "cashYield": 2.62,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1197,6 +1495,8 @@
     "price": 36.8,
     "pbr": 0.79,
     "totalYield": 3.95,
+    "cashYield": 3.95,
+    "stockYield": 0.0,
     "category": "Technology"
   },
   {
@@ -1205,6 +1505,8 @@
     "price": 24.05,
     "pbr": 1.06,
     "totalYield": 6.17,
+    "cashYield": 6.17,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1213,6 +1515,8 @@
     "price": 32.15,
     "pbr": 0.71,
     "totalYield": 1.4,
+    "cashYield": 1.4,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1221,6 +1525,8 @@
     "price": 33.2,
     "pbr": 1.52,
     "totalYield": 2.84,
+    "cashYield": 2.84,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1229,6 +1535,8 @@
     "price": 37.65,
     "pbr": 1.77,
     "totalYield": 1.88,
+    "cashYield": 1.88,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1237,6 +1545,8 @@
     "price": 12.55,
     "pbr": 0.95,
     "totalYield": 6.11,
+    "cashYield": 6.11,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1245,6 +1555,8 @@
     "price": 34.0,
     "pbr": 1.36,
     "totalYield": 5.93,
+    "cashYield": 5.93,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1253,6 +1565,8 @@
     "price": 33.8,
     "pbr": 1.56,
     "totalYield": 1.68,
+    "cashYield": 1.68,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1261,6 +1575,8 @@
     "price": 46.1,
     "pbr": 2.33,
     "totalYield": 4.18,
+    "cashYield": 4.18,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1269,6 +1585,8 @@
     "price": 27.1,
     "pbr": 2.28,
     "totalYield": 6.35,
+    "cashYield": 6.35,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1277,6 +1595,8 @@
     "price": 14.7,
     "pbr": 1.2,
     "totalYield": 3.33,
+    "cashYield": 3.33,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1285,6 +1605,8 @@
     "price": 42.85,
     "pbr": 1.32,
     "totalYield": 3.32,
+    "cashYield": 3.32,
+    "stockYield": 0.0,
     "category": "Technology"
   },
   {
@@ -1293,6 +1615,8 @@
     "price": 204.5,
     "pbr": 4.55,
     "totalYield": 2.99,
+    "cashYield": 2.99,
+    "stockYield": 0.0,
     "category": "Industrials"
   },
   {
@@ -1301,6 +1625,8 @@
     "price": 10.7,
     "pbr": 0.59,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1309,6 +1635,8 @@
     "price": 37.35,
     "pbr": 0.87,
     "totalYield": 6.58,
+    "cashYield": 6.58,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -1317,6 +1645,8 @@
     "price": 119.5,
     "pbr": 1.74,
     "totalYield": 5.27,
+    "cashYield": 5.27,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1325,6 +1655,8 @@
     "price": 36.65,
     "pbr": 1.32,
     "totalYield": 5.25,
+    "cashYield": 5.25,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1333,6 +1665,8 @@
     "price": 16.4,
     "pbr": 0.89,
     "totalYield": 4.75,
+    "cashYield": 4.75,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1341,6 +1675,8 @@
     "price": 12.5,
     "pbr": 1.1,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1349,6 +1685,8 @@
     "price": 26.25,
     "pbr": 1.76,
     "totalYield": 1.03,
+    "cashYield": 1.03,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1357,6 +1695,8 @@
     "price": 46.8,
     "pbr": 2.3,
     "totalYield": 5.35,
+    "cashYield": 5.35,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1365,6 +1705,8 @@
     "price": 45.65,
     "pbr": 1.91,
     "totalYield": 15.69,
+    "cashYield": 15.69,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1373,6 +1715,8 @@
     "price": 9.62,
     "pbr": 0.81,
     "totalYield": 2.11,
+    "cashYield": 2.11,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1381,6 +1725,8 @@
     "price": 59.4,
     "pbr": 2.68,
     "totalYield": 1.84,
+    "cashYield": 1.84,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1389,6 +1735,8 @@
     "price": 6.96,
     "pbr": 0.42,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Financial Services"
   },
   {
@@ -1397,6 +1745,8 @@
     "price": 64.0,
     "pbr": 1.87,
     "totalYield": 4.4,
+    "cashYield": 4.4,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1405,6 +1755,8 @@
     "price": 16.7,
     "pbr": 1.77,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1413,6 +1765,8 @@
     "price": 46.2,
     "pbr": 0.84,
     "totalYield": 4.24,
+    "cashYield": 4.24,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1421,6 +1775,8 @@
     "price": 69.1,
     "pbr": 2.06,
     "totalYield": 6.27,
+    "cashYield": 6.27,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1429,6 +1785,8 @@
     "price": 27.8,
     "pbr": 0.82,
     "totalYield": 4.25,
+    "cashYield": 4.25,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1437,6 +1795,8 @@
     "price": 76.2,
     "pbr": 1.23,
     "totalYield": 4.65,
+    "cashYield": 4.65,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1445,6 +1805,8 @@
     "price": 46.5,
     "pbr": 2.79,
     "totalYield": 1.01,
+    "cashYield": 1.01,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1453,6 +1815,8 @@
     "price": 53.2,
     "pbr": 1.64,
     "totalYield": 5.62,
+    "cashYield": 5.62,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -1461,6 +1825,8 @@
     "price": 21.85,
     "pbr": 1.35,
     "totalYield": 5.43,
+    "cashYield": 5.43,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1469,6 +1835,8 @@
     "price": 26.1,
     "pbr": 2.27,
     "totalYield": 1.84,
+    "cashYield": 1.84,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -1477,6 +1845,8 @@
     "price": 28.95,
     "pbr": 1.6,
     "totalYield": 4.01,
+    "cashYield": 4.01,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1485,6 +1855,8 @@
     "price": 30.3,
     "pbr": 1.74,
     "totalYield": 3.13,
+    "cashYield": 3.13,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1493,6 +1865,8 @@
     "price": 18.5,
     "pbr": 1.25,
     "totalYield": 3.94,
+    "cashYield": 3.94,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1501,6 +1875,8 @@
     "price": 123.0,
     "pbr": 3.3,
     "totalYield": 3.09,
+    "cashYield": 3.09,
+    "stockYield": 0.0,
     "category": "Consumer Cyclical"
   },
   {
@@ -1509,6 +1885,8 @@
     "price": 31.45,
     "pbr": 0.95,
     "totalYield": 4.09,
+    "cashYield": 4.09,
+    "stockYield": 0.0,
     "category": "Consumer Defensive"
   },
   {
@@ -1517,6 +1895,8 @@
     "price": 36.65,
     "pbr": 1.49,
     "totalYield": 4.32,
+    "cashYield": 4.32,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1525,6 +1905,8 @@
     "price": 58.8,
     "pbr": 2.65,
     "totalYield": 2.99,
+    "cashYield": 2.99,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1532,7 +1914,9 @@
     "name": "CHUNGHWA CHEMICAL SYNTHESIS BIO",
     "price": 26.55,
     "pbr": 0.64,
-    "totalYield": 0.0,
+    "totalYield": 0.7,
+    "cashYield": 0.7,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1541,6 +1925,8 @@
     "price": 145.5,
     "pbr": 4.13,
     "totalYield": 1.61,
+    "cashYield": 1.61,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1549,6 +1935,8 @@
     "price": 14.85,
     "pbr": 1.08,
     "totalYield": 5.26,
+    "cashYield": 5.26,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1557,6 +1945,8 @@
     "price": 42.05,
     "pbr": 2.56,
     "totalYield": 1.9,
+    "cashYield": 1.9,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1565,6 +1955,8 @@
     "price": 67.6,
     "pbr": 2.54,
     "totalYield": 4.5,
+    "cashYield": 4.5,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1573,6 +1965,8 @@
     "price": 20.05,
     "pbr": 1.44,
     "totalYield": 1.67,
+    "cashYield": 1.67,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1581,6 +1975,8 @@
     "price": 255.0,
     "pbr": 3.02,
     "totalYield": 2.16,
+    "cashYield": 2.16,
+    "stockYield": 0.0,
     "category": "Healthcare"
   },
   {
@@ -1589,6 +1985,8 @@
     "price": 57.4,
     "pbr": 3.73,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Basic Materials"
   },
   {
@@ -1597,6 +1995,8 @@
     "price": 11.0,
     "pbr": 0.92,
     "totalYield": 0.0,
+    "cashYield": 0.0,
+    "stockYield": 0.0,
     "category": "Real Estate"
   }
 ]
