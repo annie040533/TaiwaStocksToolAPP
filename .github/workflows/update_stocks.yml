@@ -1,25 +1,4 @@
-name: Update Stock Data
-on:
-  schedule:
-    - cron: '0 1,5,10 * * 1-5'
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: pip install requests pandas
-
-      - name: Fetch and Process Data
+- name: Fetch and Process Data
         run: |
           python - <<EOF
           import requests
@@ -28,30 +7,39 @@ jobs:
           import io
 
           def fetch_data():
-              # 使用證交所 Open Data 連結，此連結較不易被 GitHub Actions 的 IP 封鎖
               url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
               headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/91.0.4472.124'}
               
               stocks = []
               try:
-                  print("📡 正在從證交所獲取最新數據...")
+                  print("📡 正在存取證交所資料...")
                   resp = requests.get(url, headers=headers, timeout=30)
                   
-                  # 使用 Pandas 自動解析，解決 CSV 欄位偏移問題
-                  # 證交所 Open Data 為 UTF-8 或 CP950，Pandas 通常能自動識別
-                  df = pd.read_csv(io.StringIO(resp.text))
-                  df.columns = [c.strip() for c in df.columns] # 清理標題空格
-                  print(f"📊 偵測到欄位: {list(df.columns)}")
+                  # 核心修正：證交所 CSV 前面可能有說明文字。
+                  # 我們改用更暴力但有效的方式：先讀取所有文字，過濾出含有「證券代號」的那一行作為開始。
+                  raw_text = resp.text
+                  lines = raw_text.split('\n')
+                  data_start_idx = 0
+                  for i, line in enumerate(lines):
+                      if "證券代號" in line:
+                          data_start_idx = i
+                          break
+                  
+                  # 重新封裝成 DataFrame，從標題行開始讀取
+                  clean_csv = "\n".join(lines[data_start_idx:])
+                  df = pd.read_csv(io.StringIO(clean_csv), on_bad_lines='skip')
+                  df.columns = [c.strip().replace('"', '') for c in df.columns]
+                  
+                  print(f"📊 成功定位數據起始點，欄位包含: {list(df.columns)}")
 
                   for _, row in df.iterrows():
+                      # 確保移除引號並清理空格
                       sid = str(row.get('證券代號', '')).strip().replace('"', '')
-                      # 過濾標準 4 位數個股
                       if len(sid) == 4 and sid.isdigit():
                           try:
-                              # 轉換函數，處理 '-' 或千分位逗號
                               def clean(v):
-                                  s = str(v).strip().replace(',', '')
-                                  return float(s) if s not in ['', '-'] else 0.0
+                                  s = str(v).strip().replace(',', '').replace('"', '')
+                                  return float(s) if s not in ['', '-', 'None'] else 0.0
 
                               price = clean(row.get('收盤價', 0))
                               yield_rate = clean(row.get('殖利率(%)', 0))
@@ -60,7 +48,7 @@ jobs:
                               if price > 0:
                                   stocks.append({
                                       "id": sid,
-                                      "name": str(row.get('證券名稱', '')).strip(),
+                                      "name": str(row.get('證券名稱', '')).strip().replace('"', ''),
                                       "market": "市",
                                       "price": price,
                                       "pbr": pbr,
@@ -69,24 +57,16 @@ jobs:
                                       "totalYield": yield_rate
                                   })
                           except: continue
-                  print(f"✅ 上市個股處理完成: {len(stocks)} 筆")
+                  print(f"✅ 解析完成，有效個股: {len(stocks)} 筆")
               except Exception as e:
-                  print(f"❌ 嚴重錯誤: {e}")
+                  print(f"❌ 解析失敗: {e}")
               return stocks
 
           data = fetch_data()
-          # 只有抓到資料才寫入，避免 [ ] 覆蓋舊資料
           if len(data) > 500:
               with open('data.json', 'w', encoding='utf-8') as f:
                   json.dump(data, f, ensure_ascii=False, indent=2)
-              print(f"🚀 data.json 成功產出 {len(data)} 筆！")
+              print(f"🚀 data.json 更新成功！共 {len(data)} 筆資料")
           else:
-              print("🛑 抓取量過低，本次不更新 data.json 以保護現有數據")
+              print(f"🛑 資料筆數 ({len(data)}) 低於門檻，不更新檔案。")
           EOF
-
-      - name: Commit and Push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新股價數據" && git push)
