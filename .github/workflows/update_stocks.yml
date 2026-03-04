@@ -23,77 +23,60 @@ jobs:
         run: |
           python - <<EOF
           import requests
-          import csv
           import json
-          import io
+          import time
 
           def get_data():
-              # 使用政府資料開放平台指定的 Open Data 連結 (包含 PBR 與殖利率)
-              url = "https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=open_data"
+              # 使用證交所官網最穩定的 JSON 查詢介面
+              # 加入 timestamp 防止緩存錯誤
+              url = f"https://www.twse.com.tw/exchangeReport/BWIBYK_ALL?response=json&_={int(time.time()*1000)}"
               headers = {
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+                  'Referer': 'https://www.twse.com.tw/zh/page/trading/exchange/BWIBYK_ALL.html'
               }
               
               try:
-                  print("📡 正在讀取證交所 Open Data...")
+                  print("📡 正在向證交所請求 JSON 數據...")
                   resp = requests.get(url, headers=headers, timeout=30)
-                  resp.encoding = 'utf-8'
+                  raw = resp.json()
                   
-                  if resp.status_code != 200:
-                      print(f"❌ HTTP 錯誤: {resp.status_code}")
+                  if "data" not in raw:
+                      print("🛑 證交所目前未回傳有效數據，可能是維護中")
                       return []
 
-                  # 改用原生 csv 模組手動解析，避免格式錯亂
-                  f = io.StringIO(resp.text)
-                  reader = csv.reader(f)
-                  
                   stocks = []
-                  header = None
-                  
-                  for row in reader:
-                      # 關鍵：尋找包含「證券代號」的那一行作為真正的標題列
-                      if "證券代號" in row:
-                          header = [c.replace('"', '').strip() for c in row]
-                          continue
-                      
-                      # 找到標題後才開始處理數據
-                      if header and len(row) >= len(header):
-                          data_dict = dict(zip(header, row))
-                          sid = data_dict.get('證券代號', '').replace('"', '').strip()
-                          
-                          # 篩選 4 位數個股
-                          if len(sid) == 4 and sid.isdigit():
-                              try:
-                                  def clean(val):
-                                      s = str(val).replace('"', '').replace(',', '').strip()
-                                      return float(s) if s not in ['', '-', 'None'] else 0.0
+                  # 證交所 JSON 欄位索引：0:代號, 1:名稱, 2:殖利率, 5:本淨比, 8:收盤價
+                  for row in raw["data"]:
+                      sid = str(row[0]).strip()
+                      if len(sid) == 4 and sid.isdigit():
+                          try:
+                              def clean(v):
+                                  s = str(v).replace(',', '').strip()
+                                  return float(s) if s not in ['', '-', 'N/A'] else 0.0
 
-                                  price = clean(data_dict.get('收盤價', 0))
-                                  pbr = clean(data_dict.get('本淨比', 0))
-                                  yield_ratio = clean(data_dict.get('殖利率(%)', 0))
-                                  
-                                  if price > 0:
-                                      stocks.append({
-                                          "id": sid,
-                                          "name": data_dict.get('證券名稱', '').replace('"', '').strip(),
-                                          "price": price,
-                                          "pbr": pbr,
-                                          "totalYield": yield_ratio,
-                                          "category": "一般產業"
-                                      })
-                              except: continue
+                              price = clean(row[8])
+                              if price > 0:
+                                  stocks.append({
+                                      "id": sid,
+                                      "name": str(row[1]).strip(),
+                                      "price": price,
+                                      "pbr": clean(row[5]),
+                                      "totalYield": clean(row[2]),
+                                      "category": "載入中" 
+                                  })
+                          except: continue
                   return stocks
               except Exception as e:
                   print(f"🔥 發生錯誤: {e}")
                   return []
 
-          final_res = get_data()
-          if len(final_res) > 300:
+          res = get_data()
+          if len(res) > 300:
               with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(final_res, f, ensure_ascii=False, indent=2)
-              print(f"🚀 成功！產出 {len(final_res)} 筆含 PBR 數據。")
+                  json.dump(res, f, ensure_ascii=False, indent=2)
+              print(f"🚀 成功更新 {len(res)} 筆 PBR 與殖利率資料！")
           else:
-              print(f"🛑 抓取數量異常 ({len(final_res)})")
+              print(f"🛑 抓取數量不足 ({len(res)})")
               exit(1)
           EOF
 
@@ -102,4 +85,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "修正 CSV 解析邏輯" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "修正 API 抓取至 JSON 來源" && git push)
