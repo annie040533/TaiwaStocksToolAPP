@@ -3,88 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>台股價值選股雷達</title>
+    <title>台股自動分析儀 - 分區雷達版</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>[v-cloak] { display: none; }</style>
+    <style>
+        [v-cloak] { display: none; }
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        .stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    </style>
 </head>
-<body class="bg-slate-50 min-h-screen pb-10">
+<body class="bg-slate-50 min-h-screen pb-20">
 
-<div id="app" v-cloak class="container mx-auto px-4 py-8 max-w-5xl">
-    
-    <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-        <div>
-            <h1 class="text-3xl font-extrabold text-slate-800 flex items-center">
-                <i class="fa-solid fa-bolt text-blue-600 mr-2"></i>台股價值選股雷達
-            </h1>
-            <p class="text-slate-400 text-sm mt-1">數據源：GitHub 自動同步 (防 ban 穩定版)</p>
+<div id="app" v-cloak>
+    <header class="bg-gradient-to-r from-indigo-900 to-blue-800 text-white py-6 shadow-lg mb-8">
+        <div class="container mx-auto px-4 max-w-6xl flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-black tracking-wider flex items-center">
+                    <i class="fa-solid fa-gem text-yellow-400 mr-2"></i>台股自動分析儀
+                </h1>
+                <p class="text-indigo-200 text-xs mt-1">數據源：證交所 Open Data (GitHub 自動同步)</p>
+            </div>
+            <button @click="fetchData" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-xs transition border border-white/20">
+                <i class="fa-solid fa-rotate mr-1"></i>重新載入
+            </button>
         </div>
-        <div class="flex items-center gap-2">
-            <div class="bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-200">
-                <span v-if="loading" class="text-blue-500 font-bold animate-pulse">同步中...</span>
-                <span v-else class="text-green-600 font-bold">已載入 {{ stocks.length }} 筆資料</span>
+    </header>
+
+    <main class="container mx-auto px-4 max-w-6xl">
+        <div class="flex flex-col md:flex-row gap-4 mb-10">
+            <div class="relative flex-1">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-slate-400"></i>
+                <input v-model="search" type="text" placeholder="搜尋代碼或名稱 (例如: 2330)..." 
+                    class="w-full pl-12 pr-4 py-3.5 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-blue-500 outline-none text-slate-700">
+            </div>
+            <div class="flex gap-2">
+                <div class="bg-white px-6 py-3.5 rounded-2xl shadow-sm text-slate-500 font-bold border border-slate-100">
+                    已載入 {{ stocks.length }} 筆
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-        <div class="relative md:col-span-2">
-            <i class="fa-solid fa-search absolute left-4 top-4 text-slate-300"></i>
-            <input v-model="search" type="text" placeholder="搜尋代碼或名稱 (如: 2330)..." 
-                class="w-full pl-12 pr-4 py-3 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-blue-500 outline-none text-lg">
+        <div v-if="loading" class="text-center py-20 text-slate-300">
+            <i class="fa-solid fa-spinner fa-spin fa-3x mb-4"></i>
+            <p>正在分析最新的價值數據...</p>
         </div>
-        <select v-model="priceRange" class="bg-white px-4 py-3 rounded-2xl border-none shadow-sm outline-none focus:ring-2 focus:ring-blue-500 font-bold text-slate-600">
-            <option value="all">所有價格區間</option>
-            <option value="0-20">0 - 20 元</option>
-            <option value="20-50">20 - 50 元</option>
-            <option value="50-100">50 - 100 元</option>
-            <option value="100-300">100 - 300 元</option>
-            <option value="300+">300 元以上</option>
-        </select>
-        <button @click="sortByYield" class="bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-200 transition active:scale-95">
-            <i class="fa-solid fa-arrow-down-wide-short mr-2"></i>按殖利率排序
-        </button>
-    </div>
 
-    <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
-        <table class="w-full text-left border-collapse">
-            <thead class="bg-slate-800 text-white text-sm uppercase tracking-wider">
-                <tr>
-                    <th class="px-6 py-5">代碼 / 名稱</th>
-                    <th class="px-6 py-5">收盤價</th>
-                    <th class="px-6 py-5 text-center">本淨比</th>
-                    <th class="px-6 py-5 text-right text-orange-400">合計殖利率</th>
-                    <th class="px-6 py-5 text-center">線圖</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-50 text-slate-700">
-                <tr v-for="s in filteredStocks" :key="s.id" class="hover:bg-blue-50/50 transition">
-                    <td class="px-6 py-5">
-                        <div class="font-black text-lg text-slate-900">{{ s.name }}</div>
-                        <div class="text-xs font-mono text-slate-400">{{ s.id }} · {{ s.industry }}</div>
-                    </td>
-                    <td class="px-6 py-5 font-bold text-slate-600">NT$ {{ s.price }}</td>
-                    <td class="px-6 py-5 text-center">
-                        <span :class="s.pbr < 1.2 ? 'bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold' : 'text-slate-400'">
-                            {{ s.pbr }}
-                        </span>
-                    </td>
-                    <td class="px-6 py-5 text-right font-black text-2xl text-orange-500">{{ s.totalYield }}%</td>
-                    <td class="px-6 py-5 text-center">
-                        <a :href="'https://www.wantgoo.com/stock/'+s.id+'/technical-chart'" target="_blank" class="text-slate-300 hover:text-blue-500 transition">
-                            <i class="fa-solid fa-chart-line fa-xl"></i>
+        <div v-else class="space-y-12">
+            <div v-for="group in priceGroups" :key="group.label" v-show="group.items.length > 0">
+                <div class="flex items-center mb-6">
+                    <div class="w-1.5 h-8 bg-indigo-600 rounded-full mr-4"></div>
+                    <h2 class="text-2xl font-black text-slate-800 tracking-tight">{{ group.label }}</h2>
+                    <span class="ml-auto text-sm text-slate-400 font-bold">{{ group.items.length }} 檔</span>
+                </div>
+
+                <div class="stock-grid">
+                    <div v-for="s in group.items" :key="s.id" 
+                        class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 relative overflow-hidden group">
+                        
+                        <div class="absolute -right-4 -top-4 text-slate-50 opacity-[0.03] group-hover:opacity-10 transition pointer-events-none">
+                            <i class="fa-solid fa-chart-line fa-8x"></i>
+                        </div>
+
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <span class="text-[10px] bg-indigo-50 text-indigo-600 px-2 py-1 rounded-md font-bold mb-2 inline-block tracking-widest uppercase">
+                                    {{ s.industry || '上市股票' }}
+                                </span>
+                                <h3 class="text-xl font-black text-slate-800 flex items-center">
+                                    {{ s.id }} {{ s.name }}
+                                </h3>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-black text-slate-900 leading-none">{{ s.price }}</div>
+                                <div class="text-[10px] text-slate-400 font-bold mt-1 uppercase">PBR: {{ s.pbr }}</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-2 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                            <div class="text-center">
+                                <p class="text-[10px] text-slate-400 font-bold mb-1">殖利率</p>
+                                <p :class="s.totalYield >= 5 ? 'text-emerald-600' : 'text-slate-700'" class="font-black text-lg">{{ s.totalYield }}%</p>
+                            </div>
+                            <div class="text-center border-x border-slate-200">
+                                <p class="text-[10px] text-slate-400 font-bold mb-1">市場</p>
+                                <p class="font-black text-slate-700 text-lg">上市</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[10px] text-slate-400 font-bold mb-1">代號</p>
+                                <p class="font-black text-indigo-500 text-lg">{{ s.id }}</p>
+                            </div>
+                        </div>
+
+                        <a :href="'https://www.wantgoo.com/stock/'+s.id+'/technical-chart'" target="_blank"
+                            class="mt-6 w-full bg-slate-900 text-white py-3 rounded-xl font-bold text-sm block text-center hover:bg-blue-600 transition shadow-lg shadow-slate-200">
+                            查看線圖
                         </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <div v-if="!loading && filteredStocks.length === 0" class="p-20 text-center text-slate-400">
-            <i class="fa-solid fa-box-open fa-3x mb-4 opacity-20"></i>
-            <p>查無資料，請確認 GitHub Actions 是否已執行成功產出 data.json</p>
+                    </div>
+                </div>
+            </div>
+
+            <div v-if="filteredStocks.length === 0" class="text-center py-32 bg-white rounded-3xl border-2 border-dashed border-slate-200">
+                <i class="fa-solid fa-inbox fa-3x text-slate-200 mb-4"></i>
+                <p class="text-slate-400 font-bold">目前資料更新中，請確認 GitHub Actions 已產出 data.json</p>
+                <button @click="search = ''" class="mt-4 text-indigo-500 font-bold underline">重設搜尋條件</button>
+            </div>
         </div>
-    </div>
+    </main>
 </div>
 
 <script>
@@ -94,35 +119,41 @@
             return {
                 stocks: [],
                 loading: true,
-                search: '',
-                priceRange: 'all'
+                search: ''
             }
         },
         computed: {
             filteredStocks() {
-                let list = this.stocks.filter(s => s.id.includes(this.search) || s.name.includes(this.search));
-                
-                // 價格區間過濾
-                if (this.priceRange !== 'all') {
-                    const [min, max] = this.priceRange.includes('+') ? [300, 999999] : this.priceRange.split('-').map(Number);
-                    list = list.filter(s => s.price >= min && s.price < max);
-                }
-                
-                // 預設按殖利率排序 (10%以上 > 5-10% > 0-5%)
-                return list.sort((a, b) => b.totalYield - a.totalYield);
+                return this.stocks.filter(s => 
+                    s.name.includes(this.search) || s.id.includes(this.search)
+                ).sort((a, b) => b.totalYield - a.totalYield);
+            },
+            priceGroups() {
+                const fs = this.filteredStocks;
+                return [
+                    { label: "股價 300+ 元區間", items: fs.filter(s => s.price >= 300) },
+                    { label: "股價 100 - 300 元區間", items: fs.filter(s => s.price >= 100 && s.price < 300) },
+                    { label: "股價 50 - 100 元區間", items: fs.filter(s => s.price >= 50 && s.price < 100) },
+                    { label: "股價 20 - 50 元區間", items: fs.filter(s => s.price >= 20 && s.price < 50) },
+                    { label: "股價 20 元以下區間", items: fs.filter(s => s.price < 20) }
+                ];
             }
         },
         methods: {
-            sortByYield() {
-                this.stocks.sort((a, b) => b.totalYield - a.totalYield);
-            },
             async fetchData() {
+                this.loading = true;
                 try {
-                    // 加入亂數 v= 防止瀏覽器快取舊資料
-                    const res = await fetch('./data.json?v=' + Date.now());
-                    this.stocks = await res.json();
+                    // 強制從同儲存庫目錄讀取，並加版本號防止快取
+                    const response = await fetch(`./data.json?v=${Date.now()}`);
+                    const data = await response.json();
+                    
+                    if (Array.isArray(data) && data.length > 0) {
+                        this.stocks = data;
+                    } else {
+                        throw new Error("Data is empty");
+                    }
                 } catch (e) {
-                    console.error("資料載入失敗，請確認 data.json 是否存在");
+                    console.error("Fetch failed, using local fallback if available");
                 } finally {
                     this.loading = false;
                 }
