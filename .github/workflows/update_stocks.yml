@@ -24,41 +24,57 @@ jobs:
           python - <<EOF
           import requests
           import json
+          import time
 
           def fetch_data():
-              # 使用證交所 OpenAPI：個股日本益比、殖利率及淨值比 (PBR)
+              # 使用 OpenAPI BWIBYK_ALL 包含殖利率與 PBR
               url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBYK_ALL"
-              try:
-                  resp = requests.get(url, timeout=30)
-                  raw_data = resp.json()
-                  stocks = []
-                  for item in raw_data:
-                      sid = item.get('Code', '').strip()
-                      # 過濾標準 4 位數個股
-                      if len(sid) == 4 and sid.isdigit():
-                          try:
-                              p = float(item.get('ClosingPrice', 0))
-                              y = float(item.get('YieldRatio', 0))
-                              b = float(item.get('PBratio', 0))
-                              if p > 0:
-                                  stocks.append({
-                                      "id": sid,
-                                      "name": item.get('Name', '').strip(),
-                                      "price": p,
-                                      "pbr": b,
-                                      "totalYield": y,
-                                      "category": item.get('Industry', '其他')
-                                  })
-                          except: continue
-                  return stocks
-              except Exception as e:
-                  print(f"Error: {e}")
-                  return []
+              headers = {
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+              }
+              
+              for attempt in range(3): # 增加重試機制
+                  try:
+                      resp = requests.get(url, headers=headers, timeout=30)
+                      if resp.status_code != 200:
+                          print(f"HTTP Error: {resp.status_code}")
+                          time.sleep(5)
+                          continue
+                          
+                      raw_data = resp.json()
+                      stocks = []
+                      for item in raw_data:
+                          sid = item.get('Code', '').strip()
+                          # 篩選 4 位數個股
+                          if len(sid) == 4 and sid.isdigit():
+                              try:
+                                  p = float(item.get('ClosingPrice', 0))
+                                  y = float(item.get('YieldRatio', 0))
+                                  b = float(item.get('PBratio', 0))
+                                  if p > 0:
+                                      stocks.append({
+                                          "id": sid,
+                                          "name": item.get('Name', '').strip(),
+                                          "price": p,
+                                          "pbr": b,
+                                          "totalYield": y,
+                                          "category": item.get('Industry', '其他')
+                                      })
+                              except: continue
+                      return stocks
+                  except Exception as e:
+                      print(f"Attempt {attempt+1} failed: {e}")
+                      time.sleep(5)
+              return []
 
           data = fetch_data()
           if len(data) > 300:
               with open('data.json', 'w', encoding='utf-8') as f:
                   json.dump(data, f, ensure_ascii=False, indent=2)
+              print(f"Successfully updated {len(data)} stocks.")
+          else:
+              print("Failed to fetch enough data.")
+              exit(1) # 讓 Workflow 顯示失敗以便追蹤
           EOF
 
       - name: Commit and Push
@@ -66,4 +82,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "更新數據欄位與來源" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "修正資料抓取與欄位問題" && git push)
