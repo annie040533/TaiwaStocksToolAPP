@@ -70,8 +70,198 @@
     "category": "Basic Materials"
   },
   {
+    "id": "1201",
+    "name": "WEI",
+    "price": 14.2,
+    "pbr": 0.96,
+    "totalYield": 3.47,
+    "cashYield": 3.47,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1203",
+    "name": "VE",
+    "price": 39.9,
+    "pbr": 1.55,
+    "totalYield": 2.93,
+    "cashYield": 2.93,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1210",
+    "name": "GREAT",
+    "price": 50.4,
+    "pbr": 1.7,
+    "totalYield": 5.52,
+    "cashYield": 5.52,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1215",
+    "name": "CHAROEN",
+    "price": 156.5,
+    "pbr": 3.97,
+    "totalYield": 4.49,
+    "cashYield": 4.49,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1216",
+    "name": "UNI-PRESIDENT",
+    "price": 71.6,
+    "pbr": 3.19,
+    "totalYield": 4.06,
+    "cashYield": 4.06,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1217",
+    "name": "AGV",
+    "price": 10.2,
+    "pbr": 0.67,
+    "totalYield": 3.56,
+    "cashYield": 3.56,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1218",
+    "name": "TAISUN",
+    "price": 17.9,
+    "pbr": 0.68,
+    "totalYield": 7.46,
+    "cashYield": 7.46,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1219",
+    "name": "FWUSOW",
+    "price": 13.4,
+    "pbr": 1.01,
+    "totalYield": 3.69,
+    "cashYield": 3.69,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1220",
+    "name": "TAI",
+    "price": 12.9,
+    "pbr": 0.97,
+    "totalYield": 5.34,
+    "cashYield": 5.34,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1225",
+    "name": "FORMOSA",
+    "price": 32.2,
+    "pbr": 2.07,
+    "totalYield": 0.44,
+    "cashYield": 0.44,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1227",
+    "name": "STANDARD",
+    "price": 29.2,
+    "pbr": 1.49,
+    "totalYield": 4.68,
+    "cashYield": 4.68,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1229",
+    "name": "LIEN",
+    "price": 43.6,
+    "pbr": 1.37,
+    "totalYield": 2.93,
+    "cashYield": 2.93,
+    "stockYield": 0.0,
+    "category": "Industrials"
+  },
+  {
+    "id": "1231",
+    "name": "LIAN",
+    "price": 82.7,
+    "pbr": 3.65,
+    "totalYield": 1.87,
+    "cashYield": 1.87,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1232",
+    "name": "TTET",
+    "price": 150.5,
+    "pbr": 4.09,
+    "totalYield": 4.61,
+    "cashYield": 4.61,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1233",
+    "name": "TEN",
+    "price": 32.9,
+    "pbr": 2.23,
+    "totalYield": 2.87,
+    "cashYield": 2.87,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1234",
+    "name": "HEY",
+    "price": 36.6,
+    "pbr": 0.79,
+    "totalYield": 5.1,
+    "cashYield": 5.1,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1235",
+    "name": "SHIN",
+    "price": 43.6,
+    "pbr": 0.71,
+    "totalYield": 1.05,
+    "cashYield": 1.05,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1236",
+    "name": "HUNYA",
+    "price": 27.9,
+    "pbr": 0.92,
+    "totalYield": 2.16,
+    "cashYield": 2.16,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
+    "id": "1256",
+    "name": "SUNJUICE",
+    "price": 158.5,
+    "pbr": 1.57,
+    "totalYield": 2.83,
+    "cashYield": 2.83,
+    "stockYield": 0.0,
+    "category": "Consumer Defensive"
+  },
+  {
     "id": "2301",
-    "name": "LITE-ON",
+    "name": "光寶科",
     "price": 155.5,
     "pbr": 3.93,
     "totalYield": 3.94,
@@ -91,7 +281,7 @@
   },
   {
     "id": "2303",
-    "name": "UNITED",
+    "name": "聯電",
     "price": 60.0,
     "pbr": 1.99,
     "totalYield": 4.55,
@@ -431,7 +621,7 @@
   },
   {
     "id": "2360",
-    "name": "致茂",
+    "name": "CHROMA",
     "price": 1340.0,
     "pbr": 19.25,
     "totalYield": 0.65,
@@ -491,7 +681,7 @@
   },
   {
     "id": "2368",
-    "name": "金像電",
+    "name": "GOLD",
     "price": 709.0,
     "pbr": 12.81,
     "totalYield": 0.78,
@@ -551,7 +741,7 @@
   },
   {
     "id": "2376",
-    "name": "GIGA-BYTE",
+    "name": "技嘉",
     "price": 214.0,
     "pbr": 2.58,
     "totalYield": 4.37,
@@ -601,7 +791,7 @@
   },
   {
     "id": "2385",
-    "name": "CHICONY",
+    "name": "群光",
     "price": 124.0,
     "pbr": 2.19,
     "totalYield": 7.94,
@@ -1091,7 +1281,7 @@
   },
   {
     "id": "2458",
-    "name": "ELAN",
+    "name": "義隆",
     "price": 127.0,
     "pbr": 3.8,
     "totalYield": 5.21,
@@ -1211,7 +1401,7 @@
   },
   {
     "id": "2474",
-    "name": "CATCHER",
+    "name": "可成",
     "price": 185.5,
     "pbr": 0.79,
     "totalYield": 6.09,
@@ -1251,7 +1441,7 @@
   },
   {
     "id": "2480",
-    "name": "STARK",
+    "name": "敦陽科",
     "price": 141.5,
     "pbr": 4.28,
     "totalYield": 5.15,
@@ -1411,7 +1601,7 @@
   },
   {
     "id": "2603",
-    "name": "EVERGREEN",
+    "name": "長榮",
     "price": 209.5,
     "pbr": 0.84,
     "totalYield": 15.01,
@@ -1461,7 +1651,7 @@
   },
   {
     "id": "2609",
-    "name": "YANG",
+    "name": "陽明",
     "price": 63.6,
     "pbr": 0.69,
     "totalYield": 11.36,
@@ -1521,7 +1711,7 @@
   },
   {
     "id": "2615",
-    "name": "WAN",
+    "name": "萬海",
     "price": 81.5,
     "pbr": 0.89,
     "totalYield": 4.02,
@@ -1741,7 +1931,7 @@
   },
   {
     "id": "2850",
-    "name": "SHINKONG",
+    "name": "新產",
     "price": 116.0,
     "pbr": 1.87,
     "totalYield": 5.98,
@@ -1801,7 +1991,7 @@
   },
   {
     "id": "2882",
-    "name": "CATHAY",
+    "name": "國泰金",
     "price": 73.2,
     "pbr": 1.22,
     "totalYield": 4.51,
@@ -1898,75 +2088,5 @@
     "cashYield": 3.2,
     "stockYield": 0.0,
     "category": "Financial Services"
-  },
-  {
-    "id": "1476",
-    "name": "儒鴻",
-    "price": 388.0,
-    "pbr": 3.83,
-    "totalYield": 4.2,
-    "cashYield": 4.2,
-    "stockYield": 0.0,
-    "category": "Consumer Cyclical"
-  },
-  {
-    "id": "1477",
-    "name": "聚陽",
-    "price": 306.5,
-    "pbr": 5.82,
-    "totalYield": 5.11,
-    "cashYield": 5.11,
-    "stockYield": 0.0,
-    "category": "Consumer Cyclical"
-  },
-  {
-    "id": "1519",
-    "name": "華城",
-    "price": 908.0,
-    "pbr": 32.74,
-    "totalYield": 0.91,
-    "cashYield": 0.91,
-    "stockYield": 0.0,
-    "category": "Industrials"
-  },
-  {
-    "id": "1560",
-    "name": "中砂",
-    "price": 464.0,
-    "pbr": 9.02,
-    "totalYield": 0.8,
-    "cashYield": 0.8,
-    "stockYield": 0.0,
-    "category": "Industrials"
-  },
-  {
-    "id": "1590",
-    "name": "亞德客-KY",
-    "price": 1105.0,
-    "pbr": 4.62,
-    "totalYield": 1.69,
-    "cashYield": 1.69,
-    "stockYield": 0.0,
-    "category": "Industrials"
-  },
-  {
-    "id": "2059",
-    "name": "川湖",
-    "price": 3170.0,
-    "pbr": 10.78,
-    "totalYield": 0.98,
-    "cashYield": 0.98,
-    "stockYield": 0.0,
-    "category": "Consumer Cyclical"
-  },
-  {
-    "id": "2207",
-    "name": "和泰車",
-    "price": 524.0,
-    "pbr": 3.69,
-    "totalYield": 3.64,
-    "cashYield": 3.64,
-    "stockYield": 0.0,
-    "category": "Consumer Cyclical"
   }
 ]
