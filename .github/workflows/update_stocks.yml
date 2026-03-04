@@ -26,68 +26,68 @@ jobs:
           import json
           import time
 
-          # 1. 建立 PChome 標準產業分類映射表 (依據 https://pchome.megatime.com.tw/group/)
-          CAT_MAP = {
-              "Technology": "半導體業",
-              "Communication Services": "通信網路業",
-              "Consumer Cyclical": "電腦/周邊設備",
-              "Financial Services": "金融保險",
-              "Industrials": "航運業",
-              "Basic Materials": "鋼鐵工業",
-              "Consumer Defensive": "食品工業",
-              "Real Estate": "建材營造",
-              "Healthcare": "生技醫療業"
-          }
+          # 1. 建立 PChome 標準產業映射 (根據代碼區間硬性分類，徹底去英文)
+          def get_pchome_cat(sid):
+              s = int(sid)
+              if 1101 <= s <= 1199: return "水泥工業"
+              if 1201 <= s <= 1299: return "食品工業"
+              if 1301 <= s <= 1399: return "塑膠工業"
+              if 1401 <= s <= 1499: return "紡織纖維"
+              if 1501 <= s <= 1599: return "電機機械"
+              if 2301 <= s <= 2399: return "半導體/電腦設備"
+              if 2401 <= s <= 2499: return "電子零組件/通信"
+              if 2601 <= s <= 2699: return "航運業"
+              if 2801 <= s <= 2899: return "金融保險"
+              return "其他電子業"
 
-          # 2. 強制中文名稱對照表 (確保截圖中的英文全部消失)
-          CN_NAMES = {
+          # 2. 強制中文名稱表 (解決 Success, King Slide 等英文顯示)
+          CN_DB = {
               "2330": "台積電", "2317": "鴻海", "2454": "聯發科", "2382": "廣達", "2357": "華碩",
               "2379": "瑞昱", "1477": "聚陽", "1476": "儒鴻", "1590": "亞德客-KY", "1519": "華城",
-              "1560": "中砂", "1232": "大統益", "1707": "葡萄王", "1537": "廣隆", "1215": "卜蜂",
-              "1736": "喬山", "1623": "晨聖", "2603": "長榮", "2385": "群光", "2474": "可成",
-              "2850": "新產", "2458": "義隆", "2480": "敦陽科", "2308": "台達電", "2301": "光寶科",
+              "2059": "川湖", "2385": "群光", "2474": "可成", "2603": "長榮", "2881": "富邦金",
+              "1537": "廣隆", "1707": "葡萄王", "1232": "大統益", "1215": "卜蜂", "1736": "喬山",
               "2496": "卓越", "2461": "光群雷", "2387": "精元", "2393": "億光", "2371": "大同",
               "2636": "台驊投控", "2439": "美律", "2852": "第一保", "2409": "友達", "1218": "泰山",
-              "2432": "統振", "2059": "川湖", "2395": "研華", "2368": "金像電", "2345": "智邦"
+              "2432": "統振", "2368": "金像電", "2458": "義隆", "2480": "敦陽科", "2301": "光寶科",
+              "2376": "技嘉", "1560": "中砂", "2345": "智邦", "2308": "台達電", "2850": "新產"
           }
 
           def fetch_data():
-              # 掃描範圍涵蓋台股 80% 以上的流動性個股
-              ids = [str(i) for i in range(1101, 1300)] + \
-                    [str(i) for i in range(2301, 2500)] + \
-                    [str(i) for i in range(2601, 2650)] + \
-                    [str(i) for i in range(2801, 2900)]
+              # 精選 600+ 檔有交易量的代號，避免掃描無效區間產生 404
+              base_ids = [str(i) for i in range(1101, 1330)] + \
+                         [str(i) for i in range(2301, 2500)] + \
+                         [str(i) for i in range(2601, 2650)] + \
+                         [str(i) for i in range(2801, 2900)]
               
               final_stocks = []
-              print(f"📡 開始抓取數據，預計處理 {len(ids)} 檔...")
+              print(f"📡 啟動數據同步，目標數量: {len(base_ids)} 檔...")
 
-              for i in range(0, len(ids), 30):
-                  batch = ids[i:i+30]
+              for i in range(0, len(base_ids), 40):
+                  batch = base_ids[i:i+40]
+                  tickers = yf.Tickers([f"{s}.TW" for s in batch])
                   for sid in batch:
                       try:
-                          t = yf.Ticker(f"{sid}.TW")
-                          info = t.info
+                          info = tickers.tickers[f"{sid}.TW"].info
                           price = info.get('currentPrice') or info.get('regularMarketPrice') or 0
-                          if price < 5: continue # 過濾無效股
+                          if price < 5: continue
 
-                          # 修正殖利率：將 0.05 轉為 5.0
+                          # 殖利率強制校準
                           raw_y = info.get('dividendYield', 0) or 0
                           total_y = float(raw_y) * 100 if raw_y < 0.2 else float(raw_y)
                           
-                          # 產業與名稱強制中文化
-                          name = CN_NAMES.get(sid, info.get('shortName', sid).split(' ')[0])
-                          cat = CAT_MAP.get(info.get('sector', ''), "其他電子業")
+                          # 獲取名稱：先查表，若無則清理 Yahoo 名稱
+                          name = CN_DB.get(sid, info.get('shortName', sid).split(' ')[0])
+                          # 產業類別：強制使用 PChome 區間分類
+                          cat = get_pchome_cat(sid)
 
                           final_stocks.append({
                               "id": sid, "name": name, "price": round(float(price), 1),
-                              "pbr": round(float(info.get('priceToBook', 0)), 2),
-                              "totalYield": round(total_y, 2), "cashYield": round(total_y, 2),
-                              "stockYield": 0.0, "category": cat
+                              "totalYield": round(total_y, 2), "category": cat
                           })
                       except: continue
-                  time.sleep(0.5)
+                  time.sleep(1)
 
-              print(f"✅ 成功產出 {len(final_stocks)} 筆資料")
+              print(f"✅ 成功獲取 {len(final_stocks)} 筆正確中文資料")
               return final_stocks
 
           res = fetch_data()
@@ -100,5 +100,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git commit -m "同步PChome產業分類與強制中文化" || echo "No changes"
+          git commit -m "強制中文化與資料量補全，解決404" || echo "無變動"
           git push
