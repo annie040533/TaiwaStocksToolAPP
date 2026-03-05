@@ -2,204 +2,204 @@
   {
     "id": "2330",
     "name": "台積電",
-    "price": 1865.0,
-    "totalYield": 124.0,
+    "price": 1900.0,
+    "totalYield": 129.0,
     "category": "半導體"
   },
   {
     "id": "2317",
     "name": "鴻海",
-    "price": 217.0,
-    "totalYield": 253.0,
+    "price": 224.0,
+    "totalYield": 267.0,
     "category": "電腦設備"
   },
   {
     "id": "2454",
     "name": "聯發科",
-    "price": 1720.0,
-    "totalYield": 295.0,
+    "price": 1775.0,
+    "totalYield": 311.0,
     "category": "半導體"
   },
   {
     "id": "2382",
     "name": "廣達",
-    "price": 281.0,
-    "totalYield": 441.0,
+    "price": 289.5,
+    "totalYield": 463.0,
     "category": "電腦設備"
   },
   {
     "id": "2303",
     "name": "聯電",
-    "price": 60.0,
-    "totalYield": 455.0,
+    "price": 62.1,
+    "totalYield": 475.0,
     "category": "半導體"
   },
   {
     "id": "2308",
     "name": "台達電",
-    "price": 1255.0,
-    "totalYield": 52.0,
+    "price": 1335.0,
+    "totalYield": 56.0,
     "category": "電子零組件"
   },
   {
     "id": "2881",
     "name": "富邦金",
-    "price": 89.8,
-    "totalYield": 445.0,
+    "price": 90.5,
+    "totalYield": 462.0,
     "category": "金融保險"
   },
   {
     "id": "2882",
     "name": "國泰金",
-    "price": 73.2,
-    "totalYield": 451.0,
+    "price": 73.6,
+    "totalYield": 478.0,
     "category": "金融保險"
   },
   {
     "id": "2886",
     "name": "兆豐金",
-    "price": 38.9,
-    "totalYield": 396.0,
+    "price": 39.3,
+    "totalYield": 411.0,
     "category": "金融保險"
   },
   {
     "id": "2603",
     "name": "長榮",
-    "price": 209.5,
-    "totalYield": 1501.0,
+    "price": 208.0,
+    "totalYield": 1551.0,
     "category": "航運業"
   },
   {
     "id": "2609",
     "name": "陽明",
-    "price": 63.6,
-    "totalYield": 1136.0,
+    "price": 60.0,
+    "totalYield": 1179.0,
     "category": "航運業"
   },
   {
     "id": "2615",
     "name": "萬海",
-    "price": 81.5,
-    "totalYield": 402.0,
+    "price": 78.7,
+    "totalYield": 429.0,
     "category": "航運業"
   },
   {
     "id": "1101",
     "name": "台泥",
-    "price": 25.0,
-    "totalYield": 386.0,
+    "price": 24.8,
+    "totalYield": 400.0,
     "category": "水泥工業"
   },
   {
     "id": "1102",
     "name": "亞泥",
-    "price": 34.45,
-    "totalYield": 626.0,
+    "price": 34.3,
+    "totalYield": 639.0,
     "category": "水泥工業"
   },
   {
     "id": "1216",
     "name": "統一",
-    "price": 71.6,
-    "totalYield": 406.0,
+    "price": 71.2,
+    "totalYield": 419.0,
     "category": "食品工業"
   },
   {
     "id": "2357",
     "name": "華碩",
-    "price": 500.0,
-    "totalYield": 653.0,
+    "price": 518.0,
+    "totalYield": 680.0,
     "category": "電腦設備"
   },
   {
     "id": "2353",
     "name": "宏碁",
-    "price": 25.85,
-    "totalYield": 637.0,
+    "price": 26.7,
+    "totalYield": 658.0,
     "category": "電腦設備"
   },
   {
     "id": "2409",
     "name": "友達",
-    "price": 14.95,
-    "totalYield": 765.0,
+    "price": 15.3,
+    "totalYield": 806.0,
     "category": "光電業"
   },
   {
     "id": "3481",
     "name": "群創",
-    "price": 24.75,
-    "totalYield": 385.0,
+    "price": 26.0,
+    "totalYield": 404.0,
     "category": "光電業"
   },
   {
     "id": "2891",
     "name": "中信金",
-    "price": 50.5,
-    "totalYield": 430.0,
+    "price": 51.5,
+    "totalYield": 456.0,
     "category": "金融保險"
   },
   {
     "id": "5880",
     "name": "合庫金",
-    "price": 23.45,
-    "totalYield": 292.0,
+    "price": 23.4,
+    "totalYield": 299.0,
     "category": "金融保險"
   },
   {
     "id": "2884",
     "name": "玉山金",
-    "price": 33.65,
-    "totalYield": 344.0,
+    "price": 34.05,
+    "totalYield": 357.0,
     "category": "金融保險"
   },
   {
     "id": "2892",
     "name": "第一金",
-    "price": 28.6,
-    "totalYield": 320.0,
+    "price": 29.05,
+    "totalYield": 332.0,
     "category": "金融保險"
   },
   {
     "id": "2880",
     "name": "華南金",
-    "price": 35.0,
-    "totalYield": 342.0,
+    "price": 35.4,
+    "totalYield": 357.0,
     "category": "金融保險"
   },
   {
     "id": "2301",
     "name": "-",
-    "price": 155.5,
-    "totalYield": 394.0,
+    "price": 161.0,
+    "totalYield": 483.0,
     "category": "其他電子"
   },
   {
     "id": "2302",
     "name": "2302",
-    "price": 16.8,
-    "totalYield": 320.0,
+    "price": 17.45,
+    "totalYield": 345.0,
     "category": "其他電子"
   },
   {
     "id": "2305",
     "name": "2305",
-    "price": 12.1,
+    "price": 12.65,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2312",
     "name": "2312",
-    "price": 22.4,
-    "totalYield": 250.0,
+    "price": 23.15,
+    "totalYield": 268.0,
     "category": "其他電子"
   },
   {
     "id": "2313",
     "name": "2313",
-    "price": 211.0,
-    "totalYield": 107.0,
+    "price": 205.0,
+    "totalYield": 114.0,
     "category": "其他電子"
   },
   {
@@ -212,8 +212,8 @@
   {
     "id": "2316",
     "name": "2316",
-    "price": 90.1,
-    "totalYield": 52.0,
+    "price": 93.7,
+    "totalYield": 55.0,
     "category": "其他電子"
   },
   {
@@ -226,148 +226,148 @@
   {
     "id": "2323",
     "name": "2323",
-    "price": 10.2,
-    "totalYield": 274.0,
+    "price": 10.6,
+    "totalYield": 294.0,
     "category": "其他電子"
   },
   {
     "id": "2324",
     "name": "2324",
-    "price": 29.4,
-    "totalYield": 362.0,
+    "price": 30.4,
+    "totalYield": 374.0,
     "category": "其他電子"
   },
   {
     "id": "2327",
     "name": "2327",
-    "price": 259.0,
-    "totalYield": 178.0,
+    "price": 267.5,
+    "totalYield": 193.0,
     "category": "其他電子"
   },
   {
     "id": "2328",
     "name": "2328",
-    "price": 46.1,
-    "totalYield": 222.0,
+    "price": 47.9,
+    "totalYield": 239.0,
     "category": "其他電子"
   },
   {
     "id": "2329",
     "name": "2329",
-    "price": 49.35,
-    "totalYield": 187.0,
+    "price": 52.5,
+    "totalYield": 203.0,
     "category": "其他電子"
   },
   {
     "id": "2331",
     "name": "2331",
-    "price": 23.5,
-    "totalYield": 81.0,
+    "price": 24.1,
+    "totalYield": 90.0,
     "category": "其他電子"
   },
   {
     "id": "2332",
     "name": "-",
-    "price": 14.45,
-    "totalYield": 65.0,
+    "price": 15.1,
+    "totalYield": 69.0,
     "category": "其他電子"
   },
   {
     "id": "2337",
     "name": "2337",
-    "price": 98.0,
+    "price": 107.5,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2338",
     "name": "2338",
-    "price": 48.65,
+    "price": 52.7,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2340",
     "name": "-",
-    "price": 24.25,
+    "price": 25.5,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2342",
     "name": "2342",
-    "price": 28.8,
-    "totalYield": 96.0,
+    "price": 30.3,
+    "totalYield": 104.0,
     "category": "其他電子"
   },
   {
     "id": "2344",
     "name": "2344",
-    "price": 104.0,
+    "price": 112.0,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2345",
     "name": "2345",
-    "price": 1305.0,
-    "totalYield": 77.0,
+    "price": 1420.0,
+    "totalYield": 84.0,
     "category": "其他電子"
   },
   {
     "id": "2347",
     "name": "2347",
-    "price": 67.5,
-    "totalYield": 576.0,
+    "price": 70.1,
+    "totalYield": 593.0,
     "category": "其他電子"
   },
   {
     "id": "2348",
     "name": "2348",
-    "price": 69.5,
-    "totalYield": 1250.0,
+    "price": 69.9,
+    "totalYield": 1295.0,
     "category": "其他電子"
   },
   {
     "id": "2349",
     "name": "2349",
-    "price": 12.65,
+    "price": 13.15,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2351",
     "name": "2351",
-    "price": 78.9,
-    "totalYield": 305.0,
+    "price": 81.0,
+    "totalYield": 317.0,
     "category": "其他電子"
   },
   {
     "id": "2352",
     "name": "2352",
-    "price": 23.3,
-    "totalYield": 1437.0,
+    "price": 23.75,
+    "totalYield": 1523.0,
     "category": "其他電子"
   },
   {
     "id": "2354",
     "name": "2354",
-    "price": 54.0,
-    "totalYield": 246.0,
+    "price": 55.6,
+    "totalYield": 259.0,
     "category": "其他電子"
   },
   {
     "id": "2355",
     "name": "-",
-    "price": 41.6,
-    "totalYield": 429.0,
+    "price": 41.75,
+    "totalYield": 445.0,
     "category": "其他電子"
   },
   {
     "id": "2356",
     "name": "2356",
-    "price": 40.25,
-    "totalYield": 397.0,
+    "price": 41.9,
+    "totalYield": 422.0,
     "category": "其他電子"
   },
   {
@@ -380,295 +380,295 @@
   {
     "id": "2359",
     "name": "2359",
-    "price": 119.0,
-    "totalYield": 80.0,
+    "price": 121.0,
+    "totalYield": 84.0,
     "category": "其他電子"
   },
   {
     "id": "2360",
     "name": "2360",
-    "price": 1340.0,
-    "totalYield": 65.0,
+    "price": 1405.0,
+    "totalYield": 67.0,
     "category": "其他電子"
   },
   {
     "id": "2362",
     "name": "2362",
-    "price": 36.65,
-    "totalYield": 659.0,
+    "price": 38.0,
+    "totalYield": 690.0,
     "category": "其他電子"
   },
   {
     "id": "2363",
     "name": "2363",
-    "price": 48.4,
+    "price": 50.3,
     "totalYield": 96.0,
     "category": "其他電子"
   },
   {
     "id": "2364",
     "name": "2364",
-    "price": 60.9,
+    "price": 62.3,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2365",
     "name": "2365",
-    "price": 33.1,
-    "totalYield": 171.0,
+    "price": 33.9,
+    "totalYield": 181.0,
     "category": "其他電子"
   },
   {
     "id": "2367",
     "name": "2367",
-    "price": 71.0,
-    "totalYield": 97.0,
+    "price": 69.9,
+    "totalYield": 99.0,
     "category": "其他電子"
   },
   {
     "id": "2368",
     "name": "2368",
-    "price": 709.0,
-    "totalYield": 78.0,
+    "price": 736.0,
+    "totalYield": 85.0,
     "category": "其他電子"
   },
   {
     "id": "2369",
     "name": "2369",
-    "price": 25.1,
+    "price": 26.75,
     "totalYield": 109.0,
     "category": "其他電子"
   },
   {
     "id": "2371",
     "name": "2371",
-    "price": 32.2,
-    "totalYield": 891.0,
+    "price": 33.05,
+    "totalYield": 964.0,
     "category": "其他電子"
   },
   {
     "id": "2373",
     "name": "2373",
-    "price": 55.8,
-    "totalYield": 658.0,
+    "price": 56.3,
+    "totalYield": 663.0,
     "category": "其他電子"
   },
   {
     "id": "2374",
     "name": "2374",
-    "price": 70.0,
-    "totalYield": 79.0,
+    "price": 72.8,
+    "totalYield": 85.0,
     "category": "其他電子"
   },
   {
     "id": "2375",
     "name": "2375",
-    "price": 82.8,
-    "totalYield": 168.0,
+    "price": 85.2,
+    "totalYield": 181.0,
     "category": "其他電子"
   },
   {
     "id": "2376",
     "name": "-",
-    "price": 214.0,
-    "totalYield": 437.0,
+    "price": 218.0,
+    "totalYield": 467.0,
     "category": "其他電子"
   },
   {
     "id": "2377",
     "name": "-",
-    "price": 93.8,
-    "totalYield": 521.0,
+    "price": 95.0,
+    "totalYield": 533.0,
     "category": "其他電子"
   },
   {
     "id": "2379",
     "name": "2379",
-    "price": 445.0,
-    "totalYield": 551.0,
+    "price": 456.0,
+    "totalYield": 573.0,
     "category": "其他電子"
   },
   {
     "id": "2380",
     "name": "2380",
-    "price": 5.0,
+    "price": 5.5,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2383",
     "name": "2383",
-    "price": 2190.0,
-    "totalYield": 71.0,
+    "price": 2365.0,
+    "totalYield": 76.0,
     "category": "其他電子"
   },
   {
     "id": "2385",
     "name": "2385",
-    "price": 124.0,
-    "totalYield": 794.0,
+    "price": 125.5,
+    "totalYield": 806.0,
     "category": "其他電子"
   },
   {
     "id": "2387",
     "name": "2387",
-    "price": 41.7,
-    "totalYield": 932.0,
+    "price": 42.2,
+    "totalYield": 959.0,
     "category": "其他電子"
   },
   {
     "id": "2388",
     "name": "2388",
-    "price": 44.5,
-    "totalYield": 42.0,
+    "price": 45.9,
+    "totalYield": 45.0,
     "category": "其他電子"
   },
   {
     "id": "2390",
     "name": "2390",
-    "price": 9.66,
+    "price": 9.85,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2392",
     "name": "2392",
-    "price": 36.0,
-    "totalYield": 666.0,
+    "price": 36.8,
+    "totalYield": 694.0,
     "category": "其他電子"
   },
   {
     "id": "2393",
     "name": "2393",
-    "price": 56.1,
-    "totalYield": 911.0,
+    "price": 58.4,
+    "totalYield": 947.0,
     "category": "其他電子"
   },
   {
     "id": "2395",
     "name": "2395",
-    "price": 311.5,
-    "totalYield": 254.0,
+    "price": 342.5,
+    "totalYield": 269.0,
     "category": "其他電子"
   },
   {
     "id": "2397",
     "name": "2397",
-    "price": 56.9,
-    "totalYield": 560.0,
+    "price": 58.2,
+    "totalYield": 598.0,
     "category": "其他電子"
   },
   {
     "id": "2399",
     "name": "2399",
-    "price": 22.8,
+    "price": 23.65,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2401",
     "name": "2401",
-    "price": 20.5,
+    "price": 21.55,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2402",
     "name": "2402",
-    "price": 50.1,
-    "totalYield": 358.0,
+    "price": 51.3,
+    "totalYield": 394.0,
     "category": "其他電子"
   },
   {
     "id": "2404",
     "name": "2404",
-    "price": 1000.0,
-    "totalYield": 276.0,
+    "price": 1100.0,
+    "totalYield": 280.0,
     "category": "其他電子"
   },
   {
     "id": "2405",
     "name": "2405",
-    "price": 14.6,
-    "totalYield": 109.0,
+    "price": 15.35,
+    "totalYield": 116.0,
     "category": "其他電子"
   },
   {
     "id": "2406",
     "name": "2406",
-    "price": 31.65,
+    "price": 31.75,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2408",
     "name": "2408",
-    "price": 234.5,
+    "price": 257.5,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2412",
     "name": "2412",
-    "price": 135.5,
-    "totalYield": 362.0,
+    "price": 137.0,
+    "totalYield": 369.0,
     "category": "其他電子"
   },
   {
     "id": "2413",
     "name": "2413",
-    "price": 47.2,
+    "price": 49.25,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2414",
     "name": "2414",
-    "price": 41.2,
-    "totalYield": 595.0,
+    "price": 41.75,
+    "totalYield": 607.0,
     "category": "其他電子"
   },
   {
     "id": "2415",
     "name": "2415",
-    "price": 25.9,
-    "totalYield": 447.0,
+    "price": 26.25,
+    "totalYield": 463.0,
     "category": "其他電子"
   },
   {
     "id": "2417",
     "name": "2417",
-    "price": 33.8,
-    "totalYield": 56.0,
+    "price": 34.55,
+    "totalYield": 59.0,
     "category": "其他電子"
   },
   {
     "id": "2419",
     "name": "2419",
-    "price": 28.2,
+    "price": 30.2,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2420",
     "name": "2420",
-    "price": 50.0,
-    "totalYield": 682.0,
+    "price": 52.3,
+    "totalYield": 700.0,
     "category": "其他電子"
   },
   {
     "id": "2421",
     "name": "2421",
-    "price": 134.5,
-    "totalYield": 258.0,
+    "price": 140.5,
+    "totalYield": 275.0,
     "category": "其他電子"
   },
   {
     "id": "2423",
     "name": "2423",
-    "price": 47.25,
-    "totalYield": 411.0,
+    "price": 48.7,
+    "totalYield": 423.0,
     "category": "其他電子"
   },
   {
@@ -681,35 +681,35 @@
   {
     "id": "2425",
     "name": "2425",
-    "price": 26.0,
-    "totalYield": 54.0,
+    "price": 26.7,
+    "totalYield": 58.0,
     "category": "其他電子"
   },
   {
     "id": "2426",
     "name": "2426",
-    "price": 18.9,
-    "totalYield": 50.0,
+    "price": 20.75,
+    "totalYield": 53.0,
     "category": "其他電子"
   },
   {
     "id": "2427",
     "name": "2427",
-    "price": 24.85,
-    "totalYield": 266.0,
+    "price": 25.8,
+    "totalYield": 281.0,
     "category": "其他電子"
   },
   {
     "id": "2428",
     "name": "2428",
-    "price": 168.5,
-    "totalYield": 341.0,
+    "price": 174.5,
+    "totalYield": 362.0,
     "category": "其他電子"
   },
   {
     "id": "2429",
     "name": "2429",
-    "price": 51.5,
+    "price": 51.9,
     "totalYield": 0,
     "category": "其他電子"
   },
@@ -723,71 +723,71 @@
   {
     "id": "2431",
     "name": "2431",
-    "price": 13.5,
+    "price": 12.7,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2432",
     "name": "2432",
-    "price": 23.45,
-    "totalYield": 705.0,
+    "price": 23.5,
+    "totalYield": 725.0,
     "category": "其他電子"
   },
   {
     "id": "2433",
     "name": "2433",
-    "price": 46.7,
-    "totalYield": 640.0,
+    "price": 46.8,
+    "totalYield": 642.0,
     "category": "其他電子"
   },
   {
     "id": "2434",
     "name": "2434",
-    "price": 29.35,
+    "price": 29.85,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2436",
     "name": "-",
-    "price": 54.7,
-    "totalYield": 260.0,
+    "price": 57.1,
+    "totalYield": 274.0,
     "category": "其他電子"
   },
   {
     "id": "2438",
     "name": "2438",
-    "price": 20.7,
+    "price": 21.5,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2439",
     "name": "2439",
-    "price": 82.7,
-    "totalYield": 830.0,
+    "price": 82.1,
+    "totalYield": 882.0,
     "category": "其他電子"
   },
   {
     "id": "2440",
     "name": "-",
-    "price": 15.2,
+    "price": 15.4,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2441",
     "name": "2441",
-    "price": 84.6,
-    "totalYield": 333.0,
+    "price": 88.1,
+    "totalYield": 355.0,
     "category": "其他電子"
   },
   {
     "id": "2442",
     "name": "2442",
-    "price": 18.9,
-    "totalYield": 40.0,
+    "price": 19.3,
+    "totalYield": 41.0,
     "category": "其他電子"
   },
   {
@@ -800,273 +800,273 @@
   {
     "id": "2444",
     "name": "2444",
-    "price": 13.4,
+    "price": 13.8,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2449",
     "name": "2449",
-    "price": 278.0,
-    "totalYield": 131.0,
+    "price": 295.0,
+    "totalYield": 144.0,
     "category": "其他電子"
   },
   {
     "id": "2450",
     "name": "2450",
-    "price": 29.55,
-    "totalYield": 513.0,
+    "price": 29.9,
+    "totalYield": 525.0,
     "category": "其他電子"
   },
   {
     "id": "2451",
     "name": "2451",
-    "price": 199.0,
-    "totalYield": 301.0,
+    "price": 213.5,
+    "totalYield": 306.0,
     "category": "其他電子"
   },
   {
     "id": "2453",
     "name": "2453",
-    "price": 50.6,
-    "totalYield": 498.0,
+    "price": 51.1,
+    "totalYield": 514.0,
     "category": "其他電子"
   },
   {
     "id": "2455",
     "name": "2455",
-    "price": 226.5,
-    "totalYield": 128.0,
+    "price": 218.0,
+    "totalYield": 142.0,
     "category": "其他電子"
   },
   {
     "id": "2457",
     "name": "2457",
-    "price": 28.25,
+    "price": 28.8,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2458",
     "name": "2458",
-    "price": 127.0,
-    "totalYield": 521.0,
+    "price": 137.0,
+    "totalYield": 505.0,
     "category": "其他電子"
   },
   {
     "id": "2459",
     "name": "2459",
-    "price": 65.5,
-    "totalYield": 595.0,
+    "price": 66.1,
+    "totalYield": 611.0,
     "category": "其他電子"
   },
   {
     "id": "2460",
     "name": "2460",
-    "price": 25.1,
+    "price": 26.0,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2461",
     "name": "2461",
-    "price": 15.65,
-    "totalYield": 1039.0,
+    "price": 15.8,
+    "totalYield": 1066.0,
     "category": "其他電子"
   },
   {
     "id": "2462",
     "name": "2462",
-    "price": 23.05,
-    "totalYield": 329.0,
+    "price": 23.7,
+    "totalYield": 350.0,
     "category": "其他電子"
   },
   {
     "id": "2464",
     "name": "2464",
-    "price": 66.9,
-    "totalYield": 49.0,
+    "price": 68.3,
+    "totalYield": 52.0,
     "category": "其他電子"
   },
   {
     "id": "2465",
     "name": "2465",
-    "price": 49.25,
+    "price": 50.7,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2466",
     "name": "2466",
-    "price": 48.1,
+    "price": 51.3,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2467",
     "name": "2467",
-    "price": 365.0,
-    "totalYield": 129.0,
+    "price": 400.0,
+    "totalYield": 137.0,
     "category": "其他電子"
   },
   {
     "id": "2468",
     "name": "2468",
-    "price": 33.0,
-    "totalYield": 260.0,
+    "price": 33.45,
+    "totalYield": 273.0,
     "category": "其他電子"
   },
   {
     "id": "2471",
     "name": "()",
-    "price": 48.2,
-    "totalYield": 614.0,
+    "price": 48.8,
+    "totalYield": 635.0,
     "category": "其他電子"
   },
   {
     "id": "2472",
     "name": "2472",
-    "price": 107.5,
-    "totalYield": 268.0,
+    "price": 111.5,
+    "totalYield": 288.0,
     "category": "其他電子"
   },
   {
     "id": "2474",
     "name": "2474",
     "price": 185.5,
-    "totalYield": 609.0,
+    "totalYield": 619.0,
     "category": "其他電子"
   },
   {
     "id": "2476",
     "name": "2476",
-    "price": 75.9,
-    "totalYield": 435.0,
+    "price": 78.6,
+    "totalYield": 461.0,
     "category": "其他電子"
   },
   {
     "id": "2477",
     "name": "2477",
-    "price": 23.2,
-    "totalYield": 539.0,
+    "price": 23.6,
+    "totalYield": 560.0,
     "category": "其他電子"
   },
   {
     "id": "2478",
     "name": "-",
-    "price": 67.3,
-    "totalYield": 253.0,
+    "price": 71.4,
+    "totalYield": 270.0,
     "category": "其他電子"
   },
   {
     "id": "2480",
     "name": "2480",
-    "price": 141.5,
-    "totalYield": 515.0,
+    "price": 143.5,
+    "totalYield": 525.0,
     "category": "其他電子"
   },
   {
     "id": "2481",
     "name": "2481",
-    "price": 88.0,
-    "totalYield": 152.0,
+    "price": 90.2,
+    "totalYield": 159.0,
     "category": "其他電子"
   },
   {
     "id": "2482",
     "name": "2482",
-    "price": 16.8,
-    "totalYield": 347.0,
+    "price": 17.1,
+    "totalYield": 363.0,
     "category": "其他電子"
   },
   {
     "id": "2483",
     "name": "2483",
-    "price": 22.0,
-    "totalYield": 127.0,
+    "price": 22.45,
+    "totalYield": 136.0,
     "category": "其他電子"
   },
   {
     "id": "2484",
     "name": "2484",
-    "price": 26.8,
-    "totalYield": 246.0,
+    "price": 27.65,
+    "totalYield": 261.0,
     "category": "其他電子"
   },
   {
     "id": "2485",
     "name": "2485",
-    "price": 49.8,
+    "price": 51.1,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2486",
     "name": "-",
-    "price": 125.0,
-    "totalYield": 37.0,
+    "price": 135.5,
+    "totalYield": 40.0,
     "category": "其他電子"
   },
   {
     "id": "2488",
     "name": "2488",
-    "price": 46.2,
-    "totalYield": 677.0,
+    "price": 46.75,
+    "totalYield": 693.0,
     "category": "其他電子"
   },
   {
     "id": "2489",
     "name": "2489",
-    "price": 41.5,
-    "totalYield": 248.0,
+    "price": 43.45,
+    "totalYield": 241.0,
     "category": "其他電子"
   },
   {
     "id": "2491",
     "name": "2491",
-    "price": 15.9,
+    "price": 16.4,
     "totalYield": 0,
     "category": "其他電子"
   },
   {
     "id": "2492",
     "name": "2492",
-    "price": 128.0,
-    "totalYield": 172.0,
+    "price": 131.5,
+    "totalYield": 188.0,
     "category": "其他電子"
   },
   {
     "id": "2493",
     "name": "2493",
-    "price": 98.8,
-    "totalYield": 372.0,
+    "price": 102.5,
+    "totalYield": 405.0,
     "category": "其他電子"
   },
   {
     "id": "2495",
     "name": "2495",
-    "price": 28.75,
-    "totalYield": 425.0,
+    "price": 30.3,
+    "totalYield": 452.0,
     "category": "其他電子"
   },
   {
     "id": "2496",
     "name": "2496",
-    "price": 67.7,
-    "totalYield": 1048.0,
+    "price": 68.7,
+    "totalYield": 1061.0,
     "category": "其他電子"
   },
   {
     "id": "2497",
     "name": "-",
-    "price": 42.0,
-    "totalYield": 449.0,
+    "price": 42.9,
+    "totalYield": 476.0,
     "category": "其他電子"
   },
   {
     "id": "2498",
     "name": "2498",
-    "price": 40.4,
+    "price": 41.55,
     "totalYield": 0,
     "category": "其他電子"
   }
