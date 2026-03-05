@@ -1,7 +1,7 @@
 name: Update Stock Data
 on:
   schedule:
-    - cron: '0 10 * * 1-5'
+    - cron: '0 1,5,10 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -17,71 +17,75 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install requests yfinance
+        run: pip install requests pandas
 
       - name: Fetch and Process Data
         run: |
           python - <<EOF
-          import yfinance as yf
+          import requests
+          import pandas as pd
           import json
-          import time
+          import io
 
-          # 手動交叉比對校正過的產業分類表 (避開函數偏差)
-          STOCK_MAP = {
-              "2330": ["台積電", "半導體"], "2317": ["鴻海", "電腦設備"], "2454": ["聯發科", "半導體"],
-              "2382": ["廣達", "電腦設備"], "2303": ["聯電", "半導體"], "2308": ["台達電", "電子零組件"],
-              "2881": ["富邦金", "金融保險"], "2882": ["國泰金", "金融保險"], "2886": ["兆豐金", "金融保險"],
-              "2603": ["長榮", "航運業"], "2609": ["陽明", "航運業"], "2615": ["萬海", "航運業"],
-              "1101": ["台泥", "水泥工業"], "1102": ["亞泥", "水泥工業"], "1216": ["統一", "食品工業"],
-              "2357": ["華碩", "電腦設備"], "2353": ["宏碁", "電腦設備"], "2409": ["友達", "光電業"],
-              "3481": ["群創", "光電業"], "2891": ["中信金", "金融保險"], "5880": ["合庫金", "金融保險"],
-              "2884": ["玉山金", "金融保險"], "2892": ["第一金", "金融保險"], "2880": ["華南金", "金融保險"]
-          }
-          # ... 此處會自動擴展至 600 檔符合交叉比對的代碼 ...
-
-          def fetch():
-              # 這裡定義 600 檔確定存在的代碼，避免 404
-              IDS = list(STOCK_MAP.keys()) + [str(x) for x in range(2300, 2500) if str(x) not in STOCK_MAP]
-              results = []
+          def fetch_twse_opendata():
+              # 參考 ARON HACK 推薦的 Open Data 連結：每日行情 (含所有個股)
+              url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
+              headers = {
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+              }
               
-              for i in range(0, len(IDS), 20):
-                  batch = [f"{s}.TW" for s in IDS[i:i+20]]
-                  tickers = yf.Tickers(batch)
-                  for sym in batch:
-                      sid = sym.replace(".TW", "")
-                      try:
-                          info = tickers.tickers[sym].info
-                          price = info.get('currentPrice') or info.get('regularMarketPrice')
-                          if not price: continue
-                          
-                          # 取得校正後的名稱與產業
-                          name = STOCK_MAP.get(sid, [info.get('shortName', sid), "其他"])[0]
-                          cat = STOCK_MAP.get(sid, ["", "其他電子"])[1]
-                          
-                          # 清理名稱中的英文
-                          import re
-                          name = re.sub(r'[a-zA-Z\s\.]', '', name)
-                          
-                          raw_yield = info.get('dividendYield', 0) or 0
-                          results.append({
-                              "id": sid,
-                              "name": name if name else sid,
-                              "price": price,
-                              "totalYield": round(raw_yield * 100, 2),
-                              "category": cat
-                          })
-                      except: continue
-                  time.sleep(1)
-              return results
+              try:
+                  print("📡 正在從證交所 Open Data 獲取最新行情...")
+                  resp = requests.get(url, headers=headers, timeout=30)
+                  
+                  # 使用 pandas 直接讀取 CSV 內容
+                  # 證交所 Open Data 是標準 CSV 格式，不需要像 HTML 那樣手動解析
+                  df = pd.read_csv(io.StringIO(resp.text))
+                  
+                  # 清理欄位標題中的空格或引號
+                  df.columns = [c.strip().replace('"', '') for c in df.columns]
+                  
+                  stocks = []
+                  for _, row in df.iterrows():
+                      sid = str(row.get('證券代號', '')).strip().replace('"', '')
+                      # 只抓取標準 4 位數個股，排除權證、ETF (代碼較長或含字母)
+                      if len(sid) == 4 and sid.isdigit():
+                          try:
+                              # 數值轉換，處理 '-' 或千分位
+                              def clean_num(val):
+                                  s = str(val).replace(',', '').replace('"', '').strip()
+                                  return float(s) if s not in ['', '-', 'None'] else 0.0
 
-          data = fetch()
-          with open('data.json', 'w', encoding='utf-8') as f:
-              json.dump(data, f, ensure_ascii=False, indent=2)
+                              price = clean_num(row.get('收盤價', 0))
+                              if price > 0:
+                                  stocks.append({
+                                      "id": sid,
+                                      "name": str(row.get('證券名稱', '')).strip().replace('"', ''),
+                                      "market": "市",
+                                      "price": price,
+                                      "pbr": 0.0, # 每日行情表不含 PBR，若需 PBR 需串接另一個 API
+                                      "cashYield": 0.0,
+                                      "stockYield": 0.0,
+                                      "totalYield": 0.0
+                                  })
+                          except: continue
+                  return stocks
+              except Exception as e:
+                  print(f"❌ 錯誤: {e}")
+                  return []
+
+          data = fetch_twse_opendata()
+          if len(data) > 500:
+              with open('data.json', 'w', encoding='utf-8') as f:
+                  json.dump(data, f, ensure_ascii=False, indent=2)
+              print(f"🚀 成功！已產出 {len(data)} 筆個股資料。")
+          else:
+              print(f"🛑 抓取資料過少 ({len(data)})，不執行寫入。")
           EOF
 
-      - name: Commit
+      - name: Commit and Push
         run: |
-          git config --global user.name "actions"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git commit -m "恢復資料與中文化" || exit 0
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新股價數據" && git push)
