@@ -1,7 +1,7 @@
 name: Update Stock Data
 on:
   schedule:
-    - cron: '0 1,5,10 * * 1-5'
+    - cron: '0 10 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install requests pandas yfinance
+        run: pip install requests pandas
 
       - name: Fetch and Process Data
         run: |
@@ -26,36 +26,45 @@ jobs:
           import pandas as pd
           import json
           import io
-          import time
 
           def fetch_data():
-              # 0304 版最穩定來源
-              url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
-              try:
-                  resp = requests.get(url)
-                  resp.encoding = 'utf-8'
-                  df = pd.read_csv(io.StringIO(resp.text))
+              # 1. 抓取 0304 版成交價 (證交所)
+              price_url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
+              resp = requests.get(price_url)
+              resp.encoding = 'utf-8'
+              df = pd.read_csv(io.StringIO(resp.text))
+              
+              # 2. 抓取 玩股網/證交所 統計資料 (PBR與殖利率)
+              # 這裡使用證交所提供的收盤統計表，內容包含 PBR 與 殖利率，數值與玩股網同步
+              stats_url = "https://www.twse.com.tw/exchangeReport/BWIBYM_ALL?response=open_data"
+              stats_resp = requests.get(stats_url)
+              stats_df = pd.read_csv(io.StringIO(stats_resp.text))
+              stats_dict = {}
+              for _, row in stats_df.iterrows():
+                  sid = str(row.get('證券代號', '')).strip().replace('"', '')
+                  stats_dict[sid] = {
+                      'pbr': float(row.get('股價淨值比', 0)),
+                      'yield': float(row.get('殖利率(%)', 0))
+                  }
+
+              stocks = []
+              for _, row in df.iterrows():
+                  sid = str(row.get('證券代號', '')).strip().replace('"', '')
+                  name = str(row.get('證券名稱', '')).strip().replace('"', '')
+                  try:
+                      price = float(str(row.get('收盤價', '0')).replace(',', ''))
+                  except: price = 0
                   
-                  stocks = []
-                  # 抓取前 600 檔確保穩定性與速度
-                  for _, row in df.head(600).iterrows():
-                      sid = str(row.get('證券代號', '')).strip().replace('"', '')
-                      name = str(row.get('證券名稱', '')).strip().replace('"', '')
-                      try:
-                          price = float(str(row.get('收盤價', '0')).replace(',', ''))
-                      except: price = 0
-                      
-                      if price > 0 and len(sid) == 4:
-                          # 預設模擬數據 (實務上 PBR/Yield 需從玩股網或 Yahoo 獲取，此處先保證顯示)
-                          stocks.append({
-                              "id": sid,
-                              "name": name,
-                              "price": price,
-                              "totalYield": 6.5, # 預設測試值
-                              "pbr": 1.15        # 預設測試值
-                          })
-                  return stocks
-              except: return []
+                  if price > 0 and len(sid) == 4:
+                      s_info = stats_dict.get(sid, {'pbr': 0.0, 'yield': 0.0})
+                      stocks.append({
+                          "id": sid,
+                          "name": name,
+                          "price": price,
+                          "pbr": s_info['pbr'],
+                          "totalYield": s_info['yield']
+                      })
+              return stocks
 
           data = fetch_data()
           with open('data.json', 'w', encoding='utf-8') as f:
@@ -64,7 +73,7 @@ jobs:
 
       - name: Commit and Push
         run: |
-          git config --global user.name \"github-actions[bot]\"
+          git config --global user.name "github-actions[bot]"
           git add data.json
-          git commit -m \"Update Data\" || exit 0
+          git commit -m "Fix PBR and Yield from Official Data" || exit 0
           git push
