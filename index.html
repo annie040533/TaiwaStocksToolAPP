@@ -2,95 +2,119 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>台股價值雷達 - 專業校正版</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台股價值選股雷達</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        [v-cloak] { display: none; }
-        .yield-badge { font-weight: 900; }
-        .stock-row { border-bottom: 1px solid #f1f5f9; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>[v-cloak] { display: none; }</style>
 </head>
-<body class="bg-gray-50 font-sans p-4">
+<body class="bg-slate-50 min-h-screen pb-20">
 
-<div id="app" v-cloak class="max-w-6xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-center mb-6 bg-white p-6 rounded-2xl shadow-sm border-l-8 border-blue-600">
-        <div>
-            <h1 class="text-3xl font-black text-gray-800">台股深度價值雷達</h1>
-            <p class="text-gray-400 font-bold">交叉比對校正版 | 數據同步更新</p>
+<div id="app" v-cloak>
+    <header class="bg-[#2d336b] text-white py-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 max-w-6xl flex justify-between items-center">
+            <h1 class="text-xl font-black italic tracking-tighter uppercase">
+                <i class="fa-solid fa-bolt text-yellow-400 mr-2"></i>台股雷達
+            </h1>
+            <button @click="fetchData" class="text-xs bg-white/10 px-3 py-1.5 rounded-lg border border-white/20">
+                <i class="fa-solid fa-rotate mr-1"></i>重載數據
+            </button>
         </div>
-        <div class="mt-4 md:mt-0 flex gap-2">
-            <select v-model="selectedCat" class="bg-gray-800 text-white px-4 py-2 rounded-lg font-bold">
-                <option value="">所有產業分類</option>
-                <option v-for="c in categories" :value="c">{{ c }}</option>
-            </select>
-        </div>
-    </div>
+    </header>
 
-    <div v-for="pg in nestedData" :key="pg.range" class="mb-10">
-        <div class="bg-blue-600 text-white px-6 py-2 rounded-t-xl font-black text-xl flex justify-between">
-            <span>{{ pg.range }}</span>
-            <span class="text-blue-200 text-sm italic">{{ pg.count }} 檔符合</span>
+    <main class="container mx-auto px-4 max-w-6xl mt-8">
+        <div class="mb-10">
+            <input v-model="search" type="text" placeholder="搜尋代碼或名稱..." 
+                class="w-full px-6 py-4 rounded-2xl shadow-sm border-none focus:ring-2 focus:ring-indigo-500 outline-none text-lg text-slate-700">
         </div>
 
-        <div class="bg-white rounded-b-xl shadow-md overflow-hidden p-4">
-            <div v-for="yg in pg.groups" :key="yg.label" class="mb-6 last:mb-0">
-                <div class="flex items-center gap-2 mb-3 border-b border-gray-100 pb-1">
-                    <div :class="yg.color" class="w-3 h-3 rounded-full"></div>
-                    <span class="font-black text-gray-600 text-sm uppercase tracking-widest">{{ yg.label }}</span>
+        <div v-if="!loading" class="space-y-12">
+            <div v-for="group in categorizedData" :key="group.label" v-show="group.items.length > 0">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="h-8 w-1.5 bg-indigo-600 rounded-full"></div>
+                    <h2 class="text-2xl font-black text-slate-800">{{ group.label }}</h2>
+                    <span class="text-xs font-bold text-slate-400 bg-slate-200 px-2 py-0.5 rounded-md">{{ group.items.length }} 檔</span>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div v-for="s in yg.items" :key="s.id" class="p-3 bg-gray-50 rounded-xl flex justify-between items-center border border-gray-100">
-                        <div>
-                            <div class="text-[10px] text-gray-400 font-bold">{{ s.category }}</div>
-                            <div class="font-black text-gray-800">{{ s.id }} {{ s.name }}</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div v-for="s in group.items" :key="s.id" 
+                        class="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                        
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <span class="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded font-bold">上市</span>
+                                <h3 class="text-xl font-black text-slate-800 mt-1">{{ s.id }} {{ s.name }}</h3>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-black text-slate-900 leading-none">{{ s.price }}</div>
+                                <div class="text-[10px] text-slate-400 font-bold mt-1 uppercase italic">PBR: {{ s.pbr }}</div>
+                            </div>
                         </div>
-                        <div class="text-right">
-                            <div class="text-xs font-bold text-gray-400">${{ s.price }}</div>
-                            <div class="text-lg font-black" :class="yg.textColor">{{ s.totalYield }}%</div>
+
+                        <div class="grid grid-cols-3 gap-2 bg-slate-50 p-4 rounded-2xl border border-slate-100 mb-6">
+                            <div class="text-center">
+                                <p class="text-[10px] text-slate-400 font-bold mb-1">現金</p>
+                                <p class="font-black text-slate-700 text-sm">{{ s.cashYield }}%</p>
+                            </div>
+                            <div class="text-center border-x border-slate-200">
+                                <p class="text-[10px] text-slate-400 font-bold mb-1">股票</p>
+                                <p class="font-black text-slate-700 text-sm">0%</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[10px] text-slate-400 font-bold mb-1">合計</p>
+                                <p :class="s.totalYield >= 5 ? 'text-emerald-600' : 'text-indigo-600'" class="font-black text-lg leading-none">
+                                    {{ s.totalYield }}%
+                                </p>
+                            </div>
                         </div>
+
+                        <a :href="'https://www.wantgoo.com/stock/'+s.id+'/technical-chart'" target="_blank"
+                            class="w-full bg-slate-900 text-white py-3.5 rounded-xl font-bold text-sm block text-center hover:bg-indigo-600 transition">
+                            查看詳細線圖
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div v-else class="text-center py-20 text-slate-300">
+            <i class="fa-solid fa-spinner fa-spin fa-3x mb-4"></i>
+            <p class="font-bold">資料同步中，請稍候...</p>
+        </div>
+    </main>
 </div>
 
 <script>
     const { createApp } = Vue;
     createApp({
-        data() { return { stocks: [], selectedCat: '' } },
+        data() { return { stocks: [], loading: true, search: '' } },
         computed: {
-            categories() { return [...new Set(this.stocks.map(s => s.category))].sort(); },
-            nestedData() {
-                const ranges = [
-                    { label: "股價 300+ 元以上", min: 300, max: 99999 },
-                    { label: "股價 100 - 300 元", min: 100, max: 300 },
-                    { label: "股價 50 - 100 元", min: 50, max: 100 },
-                    { label: "股價 0 - 50 元", min: 0, max: 50 }
+            filteredStocks() {
+                return this.stocks.filter(s => s.name.includes(this.search) || s.id.includes(this.search));
+            },
+            categorizedData() {
+                const fs = this.filteredStocks;
+                const sortFunc = (arr) => arr.sort((a, b) => b.totalYield - a.totalYield);
+                return [
+                    { label: "股價 300+ 元區間", items: sortFunc(fs.filter(s => s.price >= 300)) },
+                    { label: "股價 100 - 300 元區間", items: sortFunc(fs.filter(s => s.price >= 100 && s.price < 300)) },
+                    { label: "股價 50 - 100 元區間", items: sortFunc(fs.filter(s => s.price >= 50 && s.price < 100)) },
+                    { label: "股價 20 - 50 元區間", items: sortFunc(fs.filter(s => s.price >= 20 && s.price < 50)) },
+                    { label: "股價 0 - 20 元區間", items: sortFunc(fs.filter(s => s.price < 20)) }
                 ];
-                return ranges.map(r => {
-                    const inRange = this.stocks.filter(s => s.price >= r.min && s.price < r.max && (this.selectedCat==='' || s.category===this.selectedCat));
-                    const sortF = (arr) => arr.sort((a,b) => b.totalYield - a.totalYield);
-                    return {
-                        range: r.label,
-                        count: inRange.length,
-                        groups: [
-                            { label: "10% 以上", color: "bg-red-500", textColor: "text-red-600", items: sortF(inRange.filter(s => s.totalYield >= 10)) },
-                            { label: "5 - 10%", color: "bg-green-500", textColor: "text-green-600", items: sortF(inRange.filter(s => s.totalYield >= 5 && s.totalYield < 10)) },
-                            { label: "0 - 5%", color: "bg-gray-300", textColor: "text-gray-500", items: sortF(inRange.filter(s => s.totalYield < 5)) }
-                        ]
-                    };
-                });
             }
         },
-        async mounted() {
-            try {
-                const res = await fetch('./data.json?v=' + Date.now());
-                this.stocks = await res.json();
-            } catch (e) { console.error("資料載入錯誤"); }
-        }
+        methods: {
+            async fetchData() {
+                try {
+                    const res = await fetch('./data.json?v=' + Date.now());
+                    this.stocks = await res.json();
+                } catch (e) { console.error("Data error"); }
+                this.loading = false;
+            }
+        },
+        mounted() { this.fetchData(); }
     }).mount('#app');
 </script>
 </body>
