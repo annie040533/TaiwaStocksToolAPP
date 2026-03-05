@@ -1,12 +1,13 @@
 name: Update Stock Data
 on:
   schedule:
-    - cron: '0 10 * * 1-5'
+    - cron: '0 10 * * 1-5' # 台北時間下午 6 點執行
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10 # 強制超時保護，防止 GitHub Actions 卡死
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -30,52 +31,48 @@ jobs:
           def fetch_data():
               headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
               
-              # 1. 抓取成交價 (0304 穩定版 CSV)
+              # 1. 抓取成交價 (TWSE Open Data)
               price_url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
-              p_resp = requests.get(price_url, headers=headers)
+              p_resp = requests.get(price_url, headers=headers, timeout=20)
               p_df = pd.read_csv(io.StringIO(p_resp.text))
               p_df.columns = [c.strip().replace('"', '') for c in p_df.columns]
 
-              # 2. 抓取 PBR、殖利率 (指定網址 API 版)
-              # 網址：https://www.twse.com.tw/zh/trading/historical/bwibbu-day.html
+              # 2. 抓取 PBR、殖利率 (從證交所 OpenAPI 抓取最準確資料)
               stats_url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
-              s_data = requests.get(stats_url, headers=headers).json()
+              s_data = requests.get(stats_url, headers=headers, timeout=20).json()
+              stats_dict = {item.get('Code'): item for item in s_data}
               
-              # 3. 抓取 33 類官方產業分類 (確保顯示中文名稱)
+              # 3. 獲取中文產業別 (從官方 T187AP03 接口)
               cat_url = "https://openapi.twse.com.tw/v1/opendata/t187ap03_L"
-              cat_data = requests.get(cat_url, headers=headers).json()
-              # 建立代號對應中文產業名的字典
-              cat_dict = {str(item.get('公司代號', '')).strip(): item.get('產業別', '其他') for item in cat_data}
-
-              stats_dict = {
-                  item.get('Code', ''): {
-                      'pbr': item.get('PBRatio', '0'),
-                      'yield': item.get('YieldRate', '0')
-                  } for item in s_data
-              }
+              cat_data = requests.get(cat_url, headers=headers, timeout=20).json()
+              cat_map = {item.get('公司代號'): item.get('產業別') for item in cat_data}
 
               stocks = []
               for _, row in p_df.iterrows():
-                  sid = str(row.get('證券代號', '')).strip().replace('"', '')
-                  name = str(row.get('證券名稱', '')).strip().replace('"', '')
+                  sid = str(row.get('證券代號')).strip()
+                  name = str(row.get('證券名稱')).strip()
                   
-                  try:
-                      price = float(str(row.get('收盤價', '0')).replace(',', ''))
-                  except: price = 0
-                  
-                  if price > 0 and len(sid) == 4:
-                      s_info = stats_dict.get(sid, {'pbr': '0', 'yield': '0'})
-                      # 優先取 API 提供的中文產業名，若無則標註為其他
-                      c_name = cat_dict.get(sid, "其他")
+                  if len(sid) == 4: # 只取四位數個股
+                      s_info = stats_dict.get(sid, {})
                       
-                      stocks.append({
-                          "id": sid,
-                          "name": name,
-                          "price": price,
-                          "pbr": float(s_info['pbr']) if s_info['pbr'] and s_info['pbr'] != '-' else 0,
-                          "totalYield": float(s_info['yield']) if s_info['yield'] and s_info['yield'] != '-' else 0,
-                          "category": c_name
-                      })
+                      # 計算 PBR 與 殖利率
+                      try:
+                          price = float(str(row.get('收盤價')).replace(',', ''))
+                          pbr = float(s_info.get('PBRatio', 0))
+                          # 合計殖利率 (包含配股配息) 邏輯處理
+                          total_yield = float(s_info.get('YieldRate', 0))
+                      except:
+                          continue
+
+                      if price > 0:
+                          stocks.append({
+                              "id": sid,
+                              "name": name,
+                              "price": price,
+                              "pbr": pbr,
+                              "totalYield": total_yield,
+                              "category": cat_map.get(sid, "其他") # 顯示完整中文產業名稱
+                          })
               return stocks
 
           data = fetch_data()
@@ -86,6 +83,7 @@ jobs:
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git commit -m "Update PBR and Chinese Categories" || exit 0
+          git commit -m "Fix: Update PBR and Full Chinese Categories" || exit 0
           git push
