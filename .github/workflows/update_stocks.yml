@@ -27,65 +27,66 @@ jobs:
           import json
           import io
 
+          def clean_val(val):
+              if val is None: return 0.0
+              s = str(val).replace(',', '').strip()
+              if s in ['', '-', 'None']: return 0.0
+              try: return float(s)
+              except: return 0.0
+
           def fetch_data():
-              headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+              headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
               
               # 1. 抓取成交價 (0304 穩定版 CSV)
-              price_url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
-              p_resp = requests.get(price_url, headers=headers)
-              p_df = pd.read_csv(io.StringIO(p_resp.text))
-              p_df.columns = [c.strip().replace('"', '') for c in p_df.columns]
+              try:
+                  price_url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
+                  p_resp = requests.get(price_url, headers=headers, timeout=30)
+                  p_df = pd.read_csv(io.StringIO(p_resp.text))
+                  p_df.columns = [c.strip().replace('"', '') for c in p_df.columns]
+              except Exception as e:
+                  print(f"成交價抓取失敗: {e}")
+                  return []
 
-              # 2. 抓取 PBR、殖利率 (指定網址 API 版)
-              # 網址：https://www.twse.com.tw/zh/trading/historical/bwibbu-day.html
-              stats_url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
-              s_data = requests.get(stats_url, headers=headers).json()
-              
-              # 3. 抓取 33 類官方產業分類 (確保顯示中文名稱)
-              cat_url = "https://openapi.twse.com.tw/v1/opendata/t187ap03_L"
-              cat_data = requests.get(cat_url, headers=headers).json()
-              # 建立代號對應中文產業名的字典
-              cat_dict = {str(item.get('公司代號', '')).strip(): item.get('產業別', '其他') for item in cat_data}
+              # 2. 抓取 PBR、殖利率 (BWIBBU API)
+              try:
+                  stats_url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
+                  s_data = requests.get(stats_url, headers=headers, timeout=30).json()
+                  stats_map = {item.get('Code', ''): item for item in s_data}
+              except:
+                  stats_map = {}
 
-              stats_dict = {
-                  item.get('Code', ''): {
-                      'pbr': item.get('PBRatio', '0'),
-                      'yield': item.get('YieldRate', '0')
-                  } for item in s_data
-              }
+              # 3. 抓取官方 33 類產業別 (中文)
+              try:
+                  cat_url = "https://openapi.twse.com.tw/v1/opendata/t187ap03_L"
+                  cat_data = requests.get(cat_url, headers=headers, timeout=30).json()
+                  cat_dict = {str(item.get('公司代號', '')).strip(): item.get('產業別', '其他') for item in cat_data}
+              except:
+                  cat_dict = {}
 
               stocks = []
               for _, row in p_df.iterrows():
-                  sid = str(row.get('證券代號', '')).strip().replace('"', '')
-                  name = str(row.get('證券名稱', '')).strip().replace('"', '')
-                  
-                  try:
-                      price = float(str(row.get('收盤價', '0')).replace(',', ''))
-                  except: price = 0
-                  
-                  if price > 0 and len(sid) == 4:
-                      s_info = stats_dict.get(sid, {'pbr': '0', 'yield': '0'})
-                      # 優先取 API 提供的中文產業名，若無則標註為其他
-                      c_name = cat_dict.get(sid, "其他")
-                      
+                  sid = str(row.get('證券代號', '')).strip()
+                  if len(sid) == 4:
+                      s_info = stats_map.get(sid, {})
                       stocks.append({
                           "id": sid,
-                          "name": name,
-                          "price": price,
-                          "pbr": float(s_info['pbr']) if s_info['pbr'] and s_info['pbr'] != '-' else 0,
-                          "totalYield": float(s_info['yield']) if s_info['yield'] and s_info['yield'] != '-' else 0,
-                          "category": c_name
+                          "name": str(row.get('證券名稱', '')).strip(),
+                          "price": clean_val(row.get('收盤價', 0)),
+                          "pbr": clean_val(s_info.get('PBRatio', 0)),
+                          "totalYield": clean_val(s_info.get('YieldRate', 0)),
+                          "category": cat_dict.get(sid, "其他電子")
                       })
               return stocks
 
           data = fetch_data()
-          with open('data.json', 'w', encoding='utf-8') as f:
-              json.dump(data, f, ensure_ascii=False, indent=2)
+          if data:
+              with open('data.json', 'w', encoding='utf-8') as f:
+                  json.dump(data, f, ensure_ascii=False, indent=2)
           EOF
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git add data.json
-          git commit -m "Update PBR and Chinese Categories" || exit 0
+          git commit -m "Fix: Stable fetch with Chinese category and PBR" || exit 0
           git push
