@@ -3,6400 +3,3968 @@
     "id": "0050",
     "name": "元大台灣50",
     "price": 77.4,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 188.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "0051",
     "name": "元大中型100",
     "price": 106.25,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 282.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "0052",
     "name": "富邦科技",
     "price": 45.85,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 107.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "0053",
     "name": "元大電子",
     "price": 170.35,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 187.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "0055",
     "name": "元大MSCI金融",
     "price": 32.9,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 390.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "0056",
     "name": "元大高股息",
     "price": 38.5,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 974.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "0057",
     "name": "富邦摩台",
     "price": 226.7,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "0061",
     "name": "元大寶滬深",
     "price": 23.63,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "006203",
     "name": "元大MSCI台灣",
     "price": 139.2,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 179.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "006204",
     "name": "永豐臺灣加權",
     "price": 172.25,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 199.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "006205",
     "name": "富邦上証",
     "price": 41.19,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "006206",
     "name": "元大上證50",
     "price": 37.42,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "006207",
     "name": "復華滬深",
     "price": 31.59,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "006208",
     "name": "富邦台50",
     "price": 179.35,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 264.0,
-    "pbr": 0
-  },
-  {
-    "id": "00625K",
-    "name": "富邦上証+R",
-    "price": NaN,
-    "category": "其他",
-    "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00631L",
     "name": "元大台灣50正2",
     "price": 478.8,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00632R",
     "name": "元大台灣50反1",
     "price": 14.15,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00633L",
     "name": "富邦上証正2",
     "price": 45.87,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00634R",
     "name": "富邦上証反1",
     "price": 3.3,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00635U",
     "name": "期元大S&P黃金",
     "price": 54.8,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00636",
     "name": "國泰中國A50",
     "price": 26.48,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00636K",
     "name": "國泰中國A50+U",
     "price": 8.4,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00637L",
     "name": "元大滬深300正2",
     "price": 18.9,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00638R",
     "name": "元大滬深300反1",
     "price": 7.14,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00639",
     "name": "富邦深100",
     "price": 15.49,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00640L",
     "name": "富邦日本正2",
     "price": 91.2,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00641R",
     "name": "富邦日本反1",
     "price": 4.2,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00642U",
     "name": "期元大S&P石油",
     "price": 20.41,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00643",
     "name": "群益深証中小",
     "price": 18.18,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00643K",
     "name": "群益深証中小+R",
     "price": 3.98,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00645",
     "name": "富邦日本",
     "price": 52.05,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00646",
     "name": "元大S&P500",
     "price": 68.25,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00647L",
     "name": "元大S&P500正2",
     "price": 115.4,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00648R",
     "name": "元大S&P500反1",
     "price": 4.37,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00650L",
     "name": "復華香港正2",
     "price": 17.04,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00651R",
     "name": "復華香港反1",
     "price": 5.37,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00652",
     "name": "富邦印度",
     "price": 35.27,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00653L",
     "name": "富邦印度正2",
     "price": 50.95,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00654R",
     "name": "富邦印度反1",
     "price": 6.67,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00655L",
     "name": "國泰中國A50正2",
     "price": 31.8,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00656R",
     "name": "國泰中國A50反1",
     "price": 6.32,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00657",
     "name": "國泰日經225",
     "price": 65.65,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00657K",
     "name": "國泰日經225+U",
     "price": 20.57,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00660",
     "name": "元大歐洲50",
     "price": 42.81,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00661",
     "name": "元大日經225",
     "price": 71.85,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00662",
     "name": "富邦NASDAQ",
     "price": 101.9,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00663L",
     "name": "國泰臺灣加權正2",
     "price": 62.35,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00664R",
     "name": "國泰臺灣加權反1",
     "price": 2.28,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00665L",
     "name": "富邦恒生國企正2",
     "price": 9.53,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00666R",
     "name": "富邦恒生國企反1",
     "price": 9.28,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00668",
     "name": "國泰美國道瓊",
     "price": 56.15,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00668K",
     "name": "國泰美國道瓊+U",
     "price": 17.8,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00669R",
     "name": "國泰美國道瓊反1",
     "price": 5.69,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00670L",
     "name": "富邦NASDAQ正2",
     "price": 154.85,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00671R",
     "name": "富邦NASDAQ反1",
     "price": 2.9,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00673R",
     "name": "期元大S&P原油反1",
     "price": 21.02,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00674R",
     "name": "期元大S&P黃金反1",
     "price": 4.82,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00675L",
     "name": "富邦臺灣加權正2",
     "price": 189.55,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00676R",
     "name": "富邦臺灣加權反1",
     "price": 7.77,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00678",
     "name": "群益那斯達克生技",
     "price": 36.28,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00680L",
     "name": "元大美債20正2",
     "price": 7.42,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00681R",
     "name": "元大美債20反1",
     "price": 20.51,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00682U",
     "name": "期元大美元指數",
     "price": 20.34,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00683L",
     "name": "期元大美元指正2",
     "price": 21.09,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00684R",
     "name": "期元大美元指反1",
     "price": 15.37,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00685L",
     "name": "群益臺灣加權正2",
     "price": 170.6,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00686R",
     "name": "群益臺灣加權反1",
     "price": 1.4,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00688L",
     "name": "國泰20年美債正2",
     "price": 7.4,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00689R",
     "name": "國泰20年美債反1",
     "price": 21.3,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00690",
     "name": "兆豐藍籌30",
     "price": 52.2,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 530.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00692",
     "name": "富邦公司治理",
     "price": 67.85,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 294.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00693U",
     "name": "期街口S&P黃豆",
     "price": 22.05,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00700",
     "name": "富邦恒生國企",
     "price": 17.21,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00701",
     "name": "國泰股利精選30",
     "price": 29.1,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 865.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00702",
     "name": "國泰標普低波高息",
     "price": 24.65,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 531.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00703",
     "name": "台新MSCI中國",
     "price": 20.25,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00706L",
     "name": "期元大S&P日圓正2",
     "price": 20.12,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
-  },
-  {
-    "id": "00707R",
-    "name": "期元大S&P日圓反1",
-    "price": NaN,
-    "category": "其他",
-    "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00708L",
     "name": "期元大S&P黃金正2",
     "price": 122.2,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00709",
     "name": "富邦歐洲",
     "price": 38.1,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00710B",
     "name": "復華彭博非投等債",
     "price": 19.11,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 667.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00711B",
     "name": "復華彭博新興債",
     "price": 16.51,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 468.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00712",
     "name": "復華富時不動產",
     "price": 9.28,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 850.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00713",
     "name": "元大台灣高息低波",
     "price": 52.55,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 789.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00714",
     "name": "群益道瓊美國地產",
     "price": 21.37,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 241.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00715L",
     "name": "期街口布蘭特正2",
     "price": 37.76,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00717",
     "name": "富邦美國特別股",
     "price": 15.15,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 389.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00728",
     "name": "第一金工業30",
     "price": 43.61,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 541.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00730",
     "name": "富邦臺灣優質高息",
     "price": 23.08,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 565.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00731",
     "name": "復華富時高息低波",
     "price": 71.65,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 347.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00733",
     "name": "富邦臺灣中小",
     "price": 54.7,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 224.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00735",
     "name": "國泰臺韓科技",
     "price": 68.8,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 199.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00736",
     "name": "國泰新興市場",
     "price": 28.7,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 171.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00737",
     "name": "國泰AI機器人",
     "price": 34.55,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00738U",
     "name": "期元大道瓊白銀",
     "price": 69.0,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00739",
     "name": "元大MSCI A股",
     "price": 27.52,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 329.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00752",
     "name": "中信中國50",
     "price": 23.94,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00753L",
     "name": "中信中國50正2",
     "price": 10.64,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00757",
     "name": "統一FANG+",
     "price": 111.3,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00762",
     "name": "元大全球AI",
     "price": 82.35,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00763U",
     "name": "期街口道瓊銅",
     "price": 31.97,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00770",
     "name": "國泰北美科技",
     "price": 51.9,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 784.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00771",
     "name": "元大US高息特別股",
     "price": 16.27,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 521.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00775B",
     "name": "新光投等債15+",
     "price": 32.84,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 462.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00783",
     "name": "富邦中証500",
     "price": 29.01,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00830",
     "name": "國泰費城半導體",
     "price": 55.65,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 1610.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00850",
     "name": "元大臺灣ESG永續",
     "price": 63.2,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 421.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00851",
     "name": "台新全球AI",
     "price": 57.15,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 290.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00852L",
     "name": "國泰美國道瓊正2",
     "price": 30.84,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00861",
     "name": "元大全球未來通訊",
     "price": 65.6,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00865B",
     "name": "國泰US短期公債",
     "price": 47.76,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00875",
     "name": "國泰網路資安",
     "price": 37.75,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00876",
     "name": "元大全球5G",
     "price": 63.7,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00878",
     "name": "國泰永續高股息",
     "price": 22.4,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 774.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00881",
     "name": "國泰台灣科技龍頭",
     "price": 36.39,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 940.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00882",
     "name": "中信中國高股息",
     "price": 16.16,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 637.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00885",
     "name": "富邦越南",
     "price": 18.81,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00891",
     "name": "中信關鍵半導體",
     "price": 23.91,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 783.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00892",
     "name": "富邦台灣半導體",
     "price": 27.12,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 185.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00893",
     "name": "國泰智能電動車",
     "price": 33.6,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00894",
     "name": "中信小資高價30",
     "price": 32.53,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 575.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00895",
     "name": "富邦未來車",
     "price": 40.92,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00896",
     "name": "中信綠能及電動車",
     "price": 21.54,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 887.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00897",
     "name": "富邦基因免疫生技",
     "price": 10.11,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00898",
     "name": "國泰基因免疫革命",
     "price": 8.3,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00899",
     "name": "FT潔淨能源",
     "price": 23.04,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00900",
     "name": "富邦特選高股息30",
     "price": 14.34,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 794.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00901",
     "name": "永豐智能車供應鏈",
     "price": 29.81,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 920.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00902",
     "name": "中信電池及儲能",
     "price": 14.07,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00903",
     "name": "富邦元宇宙",
     "price": 16.16,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00904",
     "name": "新光臺灣半導體30",
     "price": 28.56,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 734.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00905",
     "name": "FT臺灣Smart",
     "price": 19.64,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 347.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00907",
     "name": "永豐優息存股",
     "price": 15.27,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 412.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00908",
     "name": "富邦入息REITs+",
     "price": 14.24,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 422.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00909",
     "name": "國泰數位支付服務",
     "price": 40.22,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00910",
     "name": "第一金太空衛星",
     "price": 56.9,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00911",
     "name": "兆豐洲際半導體",
     "price": 36.82,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00912",
     "name": "中信臺灣智慧50",
     "price": 24.61,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 570.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00913",
     "name": "兆豐台灣晶圓製造",
     "price": 29.41,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 467.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00915",
     "name": "凱基優選高股息30",
     "price": 23.6,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 571.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00916",
     "name": "國泰全球品牌50",
     "price": 26.17,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 93.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00917",
     "name": "中信特選金融",
     "price": 21.08,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 1577.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00918",
     "name": "大華優利高填息30",
     "price": 23.1,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 1083.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00919",
     "name": "群益台灣精選高息",
     "price": 23.71,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 1071.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00920",
     "name": "富邦ESG綠色電力",
     "price": 20.84,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00921",
     "name": "兆豐龍頭等權重",
     "price": 18.88,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 320.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00922",
     "name": "國泰台灣領袖50",
     "price": 30.47,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 661.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00923",
     "name": "群益台ESG低碳50",
     "price": 29.0,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 588.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00924",
     "name": "復華S&P500成長",
     "price": 28.46,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00926",
     "name": "凱基全球菁英55",
     "price": 23.43,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 615.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00927",
     "name": "群益半導體收益",
     "price": 24.53,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 689.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00929",
     "name": "復華台灣科技優息",
     "price": 19.34,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 448.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00930",
     "name": "永豐ESG低碳高息",
     "price": 17.68,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 493.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00932",
     "name": "兆豐永續高息等權",
     "price": 14.35,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 304.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00934",
     "name": "中信成長高股息",
     "price": 21.6,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 383.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00935",
     "name": "野村臺灣新科技50",
     "price": 37.96,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 383.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00936",
     "name": "台新永續高息中小",
     "price": 17.24,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 287.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00938",
     "name": "凱基優選30",
     "price": 18.68,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 152.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00939",
     "name": "統一台灣高息動能",
     "price": 15.81,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 467.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00940",
     "name": "元大台灣價值高息",
     "price": 9.65,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 452.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00941",
     "name": "中信上游半導體",
     "price": 21.87,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00943",
     "name": "兆豐電子高息等權",
     "price": 14.68,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 302.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00944",
     "name": "野村趨勢動能高息",
     "price": 15.07,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 404.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00945B",
     "name": "凱基美國非投等債",
     "price": 14.51,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 747.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00946",
     "name": "群益科技高息成長",
     "price": 9.94,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 454.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00947",
     "name": "台新臺灣IC設計",
     "price": 23.33,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 146.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00949",
     "name": "復華日本龍頭",
     "price": 19.66,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00951",
     "name": "台新日本半導體",
     "price": 14.16,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 114.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00952",
     "name": "凱基台灣AI50",
     "price": 12.59,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 182.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00953B",
     "name": "群益優選非投等債",
     "price": 9.71,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 803.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00954",
     "name": "中信日本半導體",
     "price": 15.17,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00956",
     "name": "中信日經高股息",
     "price": 12.54,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 494.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00960",
     "name": "野村全球航運龍頭",
     "price": 17.73,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 524.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00961",
     "name": "FT臺灣永續高息",
     "price": 10.15,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 330.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00962",
     "name": "台新AI優息動能",
     "price": 10.96,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 160.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00963",
     "name": "中信全球高股息",
     "price": 12.33,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 479.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00964",
     "name": "中信亞太高股息",
     "price": 13.74,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 497.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00965",
     "name": "元大航太防衛科技",
     "price": 26.45,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00971",
     "name": "野村美國研發龍頭",
     "price": 15.42,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 628.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00972",
     "name": "野村日本動能高息",
     "price": 19.74,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 215.0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009800",
     "name": "中信NASDAQ",
     "price": 11.03,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009801",
     "name": "中信美國創新科技",
     "price": 10.63,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009802",
     "name": "富邦旗艦50",
     "price": 12.92,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009803",
     "name": "保德信市值動能50",
     "price": 15.69,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009804",
     "name": "聯邦台精彩50",
     "price": 16.96,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009805",
     "name": "新光美國電力基建",
     "price": 14.86,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009808",
     "name": "華南永昌優選50",
     "price": 22.35,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009809",
     "name": "富邦淨零ESG50",
     "price": 12.39,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00980A",
     "name": "主動野村臺灣優選",
     "price": 16.87,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009810",
     "name": "保德信全球藍籌",
     "price": 18.55,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009811",
     "name": "統一美國50",
     "price": 11.44,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009812",
     "name": "野村日本東證",
     "price": 11.69,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009813",
     "name": "貝萊德標普卓越50",
     "price": 10.26,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009816",
     "name": "凱基台灣TOP50",
     "price": 10.83,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "009817",
     "name": "國泰日本不動產",
     "price": 9.88,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00981A",
     "name": "主動統一台股增長",
     "price": 19.5,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00981T",
     "name": "平衡凱基雙核收息",
     "price": 11.27,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00982A",
     "name": "主動群益台灣強棒",
     "price": 15.82,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00982D",
     "name": "主動富邦動態入息",
     "price": 10.21,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00982T",
     "name": "平衡兆豐台美動能",
     "price": 11.41,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00983A",
     "name": "主動中信ARK創新",
     "price": 11.07,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00983D",
     "name": "主動富邦複合收益",
     "price": 10.35,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00984A",
     "name": "主動安聯台灣高息",
     "price": 12.23,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00984D",
     "name": "主動聯博全球非投",
     "price": 9.99,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00985A",
     "name": "主動野村台灣50",
     "price": 15.88,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00985B",
     "name": "群益ESG投等債0-5",
     "price": 10.36,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00986A",
     "name": "主動台新龍頭成長",
     "price": 12.09,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00987A",
     "name": "主動台新優勢成長",
     "price": 11.16,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00988A",
     "name": "主動統一全球創新",
     "price": 12.67,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00989A",
     "name": "主動摩根美國科技",
     "price": 14.2,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00990A",
     "name": "主動元大AI新經濟",
     "price": 12.19,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00991A",
     "name": "主動復華未來50",
     "price": 12.12,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00992A",
     "name": "主動群益科技創新",
     "price": 12.26,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00993A",
     "name": "主動安聯台灣",
     "price": 10.24,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00994A",
     "name": "主動第一金台股優",
     "price": 11.44,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "00995A",
     "name": "主動中信台灣卓越",
     "price": 11.18,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "01001T",
     "name": "土銀富邦R1",
     "price": 11.85,
-    "category": "其他",
+    "pbr": 0.63,
     "totalYield": 0,
-    "pbr": 0.63
+    "category": "其他類"
   },
   {
     "id": "01002T",
     "name": "土銀國泰R1",
     "price": 14.56,
-    "category": "其他",
+    "pbr": 0.77,
     "totalYield": 0,
-    "pbr": 0.77
+    "category": "其他類"
   },
   {
     "id": "01004T",
     "name": "土銀富邦R2",
     "price": 11.21,
-    "category": "其他",
+    "pbr": 0.71,
     "totalYield": 0,
-    "pbr": 0.71
-  },
-  {
-    "id": "01007T",
-    "name": "兆豐國泰R2",
-    "price": NaN,
-    "category": "其他",
-    "totalYield": 0,
-    "pbr": 0.59
+    "category": "其他類"
   },
   {
     "id": "01009T",
     "name": "王道圓滿R1",
     "price": 5.81,
-    "category": "其他",
+    "pbr": 0.55,
     "totalYield": 0,
-    "pbr": 0.55
+    "category": "其他類"
   },
   {
     "id": "01010T",
     "name": "京城樂富R1",
     "price": 10.05,
-    "category": "其他",
+    "pbr": 0.93,
     "totalYield": 0,
-    "pbr": 0.93
+    "category": "其他類"
   },
   {
     "id": "020000",
     "name": "富邦特選蘋果N",
     "price": 20.18,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020011",
     "name": "統一微波高息20N",
     "price": 11.49,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020012",
     "name": "富邦行動通訊N",
     "price": 17.81,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "02001L",
     "name": "富邦蘋果正二N",
     "price": 64.95,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "02001R",
     "name": "富邦蘋果反一N",
     "price": 0.73,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020020",
     "name": "元大台股領航N",
     "price": 17.85,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020028",
     "name": "元大特選電動車N",
     "price": 14.49,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020029",
     "name": "元大ESG高股息N",
     "price": 10.51,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020030",
     "name": "統一智慧電動車N",
     "price": 10.78,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020031",
     "name": "統一IC設計臺灣N",
     "price": 6.69,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020032",
     "name": "元大綠能N",
     "price": 8.72,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020034",
     "name": "元大IC設計N",
     "price": 8.41,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
-  },
-  {
-    "id": "020036",
-    "name": "元大金融配息N",
-    "price": NaN,
-    "category": "其他",
-    "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020037",
     "name": "元大金融高股息N",
     "price": 8.5,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020038",
     "name": "元大ESG配息N",
     "price": 8.11,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "020039",
     "name": "元大加權N",
     "price": 10.65,
-    "category": "其他",
+    "pbr": 0,
     "totalYield": 0,
-    "pbr": 0
+    "category": "其他類"
   },
   {
     "id": "1101",
     "name": "台泥",
     "price": 24.8,
-    "category": "Building Materials",
+    "pbr": 0.84,
     "totalYield": 400.0,
-    "pbr": 0.84
+    "category": "Building Materials"
   },
   {
     "id": "1101B",
     "name": "台泥乙特",
     "price": 45.3,
-    "category": "Building Materials",
+    "pbr": 1.53,
     "totalYield": 445.0,
-    "pbr": 1.53
+    "category": "Building Materials"
   },
   {
     "id": "1102",
     "name": "亞泥",
     "price": 34.3,
-    "category": "Building Materials",
+    "pbr": 0.7,
     "totalYield": 639.0,
-    "pbr": 0.7
+    "category": "Building Materials"
   },
   {
     "id": "1103",
     "name": "嘉泥",
     "price": 13.6,
-    "category": "Building Materials",
+    "pbr": 0.49,
     "totalYield": 408.0,
-    "pbr": 0.49
+    "category": "Building Materials"
   },
   {
     "id": "1104",
     "name": "環泥",
     "price": 28.9,
-    "category": "Building Materials",
+    "pbr": 0.85,
     "totalYield": 590.0,
-    "pbr": 0.85
+    "category": "Building Materials"
   },
   {
     "id": "1108",
     "name": "幸福",
     "price": 15.05,
-    "category": "Building Materials",
+    "pbr": 1.07,
     "totalYield": 502.0,
-    "pbr": 1.07
+    "category": "Building Materials"
   },
   {
     "id": "1109",
     "name": "信大",
     "price": 15.35,
-    "category": "Building Materials",
+    "pbr": 0.64,
     "totalYield": 584.0,
-    "pbr": 0.64
+    "category": "Building Materials"
   },
   {
     "id": "1110",
     "name": "東泥",
     "price": 15.8,
-    "category": "Building Materials",
+    "pbr": 0.95,
     "totalYield": 194.0,
-    "pbr": 0.95
+    "category": "Building Materials"
   },
   {
     "id": "1201",
     "name": "味全",
     "price": 14.2,
-    "category": "Packaged Foods",
+    "pbr": 0.96,
     "totalYield": 352.0,
-    "pbr": 0.96
+    "category": "Packaged Foods"
   },
   {
     "id": "1203",
     "name": "味王",
     "price": 39.75,
-    "category": "Packaged Foods",
+    "pbr": 1.55,
     "totalYield": 301.0,
-    "pbr": 1.55
+    "category": "Packaged Foods"
   },
   {
     "id": "1210",
     "name": "大成",
     "price": 50.4,
-    "category": "Packaged Foods",
+    "pbr": 1.7,
     "totalYield": 561.0,
-    "pbr": 1.7
+    "category": "Packaged Foods"
   },
   {
     "id": "1213",
     "name": "大飲",
     "price": 9.9,
-    "category": "Beverages - Non-Alcoholic",
+    "pbr": 0.84,
     "totalYield": 368.0,
-    "pbr": 0.84
+    "category": "Beverages - Non-Alcoholic"
   },
   {
     "id": "1215",
     "name": "卜蜂",
     "price": 157.5,
-    "category": "Packaged Foods",
+    "pbr": 3.99,
     "totalYield": 447.0,
-    "pbr": 3.99
+    "category": "Packaged Foods"
   },
   {
     "id": "1216",
     "name": "統一",
     "price": 71.2,
-    "category": "Packaged Foods",
+    "pbr": 3.17,
     "totalYield": 419.0,
-    "pbr": 3.17
+    "category": "Packaged Foods"
   },
   {
     "id": "1217",
     "name": "愛之味",
     "price": 10.3,
-    "category": "Packaged Foods",
+    "pbr": 0.68,
     "totalYield": 363.0,
-    "pbr": 0.68
+    "category": "Packaged Foods"
   },
   {
     "id": "1218",
     "name": "泰山",
     "price": 17.9,
-    "category": "Packaged Foods",
+    "pbr": 0.69,
     "totalYield": 756.0,
-    "pbr": 0.69
+    "category": "Packaged Foods"
   },
   {
     "id": "1219",
     "name": "福壽",
     "price": 13.35,
-    "category": "Packaged Foods",
+    "pbr": 1.01,
     "totalYield": 373.0,
-    "pbr": 1.01
+    "category": "Packaged Foods"
   },
   {
     "id": "1220",
     "name": "台榮",
     "price": 12.9,
-    "category": "Packaged Foods",
+    "pbr": 0.97,
     "totalYield": 543.0,
-    "pbr": 0.97
+    "category": "Packaged Foods"
   },
   {
     "id": "1225",
     "name": "福懋油",
     "price": 31.5,
-    "category": "Packaged Foods",
+    "pbr": 2.02,
     "totalYield": 43.0,
-    "pbr": 2.02
+    "category": "Packaged Foods"
   },
   {
     "id": "1227",
     "name": "佳格",
     "price": 29.5,
-    "category": "Packaged Foods",
+    "pbr": 1.5,
     "totalYield": 479.0,
-    "pbr": 1.5
+    "category": "Packaged Foods"
   },
   {
     "id": "1229",
     "name": "聯華",
     "price": 44.0,
-    "category": "Conglomerates",
+    "pbr": 1.38,
     "totalYield": 298.0,
-    "pbr": 1.38
+    "category": "Conglomerates"
   },
   {
     "id": "1231",
     "name": "聯華食",
     "price": 81.7,
-    "category": "Packaged Foods",
+    "pbr": 3.61,
     "totalYield": 193.0,
-    "pbr": 3.61
+    "category": "Packaged Foods"
   },
   {
     "id": "1232",
     "name": "大統益",
     "price": 152.0,
-    "category": "Packaged Foods",
+    "pbr": 4.13,
     "totalYield": 465.0,
-    "pbr": 4.13
+    "category": "Packaged Foods"
   },
   {
     "id": "1233",
     "name": "天仁",
     "price": 32.6,
-    "category": "Packaged Foods",
+    "pbr": 2.21,
     "totalYield": 289.0,
-    "pbr": 2.21
+    "category": "Packaged Foods"
   },
   {
     "id": "1234",
     "name": "黑松",
     "price": 36.35,
-    "category": "Beverages - Non-Alcoholic",
+    "pbr": 0.78,
     "totalYield": 518.0,
-    "pbr": 0.78
+    "category": "Beverages - Non-Alcoholic"
   },
   {
     "id": "1235",
     "name": "興泰",
     "price": 43.1,
-    "category": "Farm Products",
+    "pbr": 0.7,
     "totalYield": 115.0,
-    "pbr": 0.7
+    "category": "Farm Products"
   },
   {
     "id": "1236",
     "name": "宏亞",
     "price": 27.8,
-    "category": "Confectioners",
+    "pbr": 0.92,
     "totalYield": 215.0,
-    "pbr": 0.92
+    "category": "Confectioners"
   },
   {
     "id": "1256",
     "name": "鮮活果汁-KY",
     "price": 169.0,
-    "category": "Beverages - Non-Alcoholic",
+    "pbr": 1.67,
     "totalYield": 294.0,
-    "pbr": 1.67
+    "category": "Beverages - Non-Alcoholic"
   },
   {
     "id": "1301",
     "name": "台塑",
     "price": 47.4,
-    "category": "Specialty Chemicals",
+    "pbr": 1.03,
     "totalYield": 106.0,
-    "pbr": 1.03
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1303",
     "name": "南亞",
     "price": 82.4,
-    "category": "Specialty Chemicals",
+    "pbr": 1.99,
     "totalYield": 88.0,
-    "pbr": 1.99
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1304",
     "name": "台聚",
     "price": 11.95,
-    "category": "Specialty Chemicals",
+    "pbr": 0.71,
     "totalYield": 163.0,
-    "pbr": 0.71
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1305",
     "name": "華夏",
     "price": 12.05,
-    "category": "Specialty Chemicals",
+    "pbr": 0.89,
     "totalYield": 122.0,
-    "pbr": 0.89
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1307",
     "name": "三芳",
     "price": 34.2,
-    "category": "Textile Manufacturing",
+    "pbr": 1.44,
     "totalYield": 822.0,
-    "pbr": 1.44
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1308",
     "name": "亞聚",
     "price": 13.65,
-    "category": "Specialty Chemicals",
+    "pbr": 0.78,
     "totalYield": 178.0,
-    "pbr": 0.78
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1309",
     "name": "台達化",
     "price": 12.7,
-    "category": "Specialty Chemicals",
+    "pbr": 0.89,
     "totalYield": 156.0,
-    "pbr": 0.89
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1310",
     "name": "台苯",
     "price": 9.7,
-    "category": "Chemicals",
+    "pbr": 0.76,
     "totalYield": 0,
-    "pbr": 0.76
+    "category": "Chemicals"
   },
   {
     "id": "1312",
     "name": "國喬",
     "price": 12.8,
-    "category": "Chemicals",
+    "pbr": 0.5,
     "totalYield": 0,
-    "pbr": 0.5
+    "category": "Chemicals"
   },
   {
     "id": "1312A",
     "name": "國喬特",
     "price": 22.8,
-    "category": "Chemicals",
+    "pbr": 0.9,
     "totalYield": 0,
-    "pbr": 0.9
+    "category": "Chemicals"
   },
   {
     "id": "1313",
     "name": "聯成",
     "price": 12.3,
-    "category": "Chemicals",
+    "pbr": 0.54,
     "totalYield": 117.0,
-    "pbr": 0.54
+    "category": "Chemicals"
   },
   {
     "id": "1314",
     "name": "中石化",
     "price": 8.11,
-    "category": "Specialty Chemicals",
+    "pbr": 0.4,
     "totalYield": 0,
-    "pbr": 0.4
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1315",
     "name": "達新",
     "price": 63.7,
-    "category": "Apparel Manufacturing",
+    "pbr": 0.65,
     "totalYield": 708.0,
-    "pbr": 0.65
+    "category": "Apparel Manufacturing"
   },
   {
     "id": "1316",
     "name": "上曜",
     "price": 13.0,
-    "category": "Real Estate Services",
+    "pbr": 1.07,
     "totalYield": 0,
-    "pbr": 1.07
+    "category": "Real Estate Services"
   },
   {
     "id": "1319",
     "name": "東陽",
     "price": 93.5,
-    "category": "Auto Parts",
+    "pbr": 2.07,
     "totalYield": 576.0,
-    "pbr": 2.07
+    "category": "Auto Parts"
   },
   {
     "id": "1321",
     "name": "大洋",
     "price": 33.7,
-    "category": "Specialty Chemicals",
+    "pbr": 1.28,
     "totalYield": 114.0,
-    "pbr": 1.28
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1323",
     "name": "永裕",
     "price": 18.65,
-    "category": "Packaging & Containers",
+    "pbr": 0.69,
     "totalYield": 483.0,
-    "pbr": 0.69
+    "category": "Packaging & Containers"
   },
   {
     "id": "1324",
     "name": "地球",
     "price": 10.45,
-    "category": "Business Equipment & Supplies",
+    "pbr": 0.88,
     "totalYield": 192.0,
-    "pbr": 0.88
+    "category": "Business Equipment & Supplies"
   },
   {
     "id": "1325",
     "name": "恆大",
     "price": 27.35,
-    "category": "Textile Manufacturing",
+    "pbr": 0.9,
     "totalYield": 110.0,
-    "pbr": 0.9
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1326",
     "name": "台化",
     "price": 43.9,
-    "category": "Chemicals",
+    "pbr": 0.92,
     "totalYield": 115.0,
-    "pbr": 0.92
+    "category": "Chemicals"
   },
   {
     "id": "1337",
     "name": "再生-KY",
     "price": 5.25,
-    "category": "Specialty Chemicals",
+    "pbr": 0.39,
     "totalYield": 0,
-    "pbr": 0.39
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1338",
     "name": "廣華-KY",
     "price": 17.15,
-    "category": "Auto Parts",
+    "pbr": 0.25,
     "totalYield": 455.0,
-    "pbr": 0.25
+    "category": "Auto Parts"
   },
   {
     "id": "1339",
     "name": "昭輝",
     "price": 42.3,
-    "category": "Auto Parts",
+    "pbr": 0.8,
     "totalYield": 719.0,
-    "pbr": 0.8
+    "category": "Auto Parts"
   },
   {
     "id": "1340",
     "name": "勝悅-KY",
     "price": 6.78,
-    "category": "Footwear & Accessories",
+    "pbr": 0.38,
     "totalYield": 0,
-    "pbr": 0.38
+    "category": "Footwear & Accessories"
   },
   {
     "id": "1341",
     "name": "富林-KY",
     "price": 60.0,
-    "category": "Textile Manufacturing",
+    "pbr": 2.69,
     "totalYield": 877.0,
-    "pbr": 2.69
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1342",
     "name": "八貫",
     "price": 97.4,
-    "category": "Textile Manufacturing",
+    "pbr": 3.17,
     "totalYield": 624.0,
-    "pbr": 3.17
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1402",
     "name": "遠東新",
     "price": 27.9,
-    "category": "Textile Manufacturing",
+    "pbr": 0.67,
     "totalYield": 565.0,
-    "pbr": 0.67
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1409",
     "name": "新纖",
     "price": 14.9,
-    "category": "Textile Manufacturing",
+    "pbr": 0.6,
     "totalYield": 414.0,
-    "pbr": 0.6
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1410",
     "name": "南染",
     "price": 33.45,
-    "category": "Textile Manufacturing",
+    "pbr": 1.99,
     "totalYield": 153.0,
-    "pbr": 1.99
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1413",
     "name": "宏洲",
     "price": 9.78,
-    "category": "Textile Manufacturing",
+    "pbr": 1.14,
     "totalYield": 0,
-    "pbr": 1.14
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1414",
     "name": "東和",
     "price": 20.5,
-    "category": "Textile Manufacturing",
+    "pbr": 1.31,
     "totalYield": 127.0,
-    "pbr": 1.31
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1416",
     "name": "廣豐",
     "price": 11.65,
-    "category": "Information Technology Services",
+    "pbr": 0.52,
     "totalYield": 485.0,
-    "pbr": 0.52
+    "category": "Information Technology Services"
   },
   {
     "id": "1417",
     "name": "嘉裕",
     "price": 8.75,
-    "category": "Apparel Retail",
+    "pbr": 0.71,
     "totalYield": 0,
-    "pbr": 0.71
+    "category": "Apparel Retail"
   },
   {
     "id": "1418",
     "name": "東華",
     "price": 19.5,
-    "category": "Textile Manufacturing",
+    "pbr": 0.9,
     "totalYield": 0,
-    "pbr": 0.9
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1419",
     "name": "新紡",
     "price": 65.0,
-    "category": "Textile Manufacturing",
+    "pbr": 1.12,
     "totalYield": 233.0,
-    "pbr": 1.12
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1423",
     "name": "利華",
     "price": 38.2,
-    "category": "Textile Manufacturing",
+    "pbr": 0.97,
     "totalYield": 211.0,
-    "pbr": 0.97
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1432",
     "name": "大魯閣",
     "price": 17.95,
-    "category": "Leisure",
+    "pbr": 1.99,
     "totalYield": 0,
-    "pbr": 1.99
+    "category": "Leisure"
   },
   {
     "id": "1434",
     "name": "福懋",
     "price": 17.3,
-    "category": "Textile Manufacturing",
+    "pbr": 0.77,
     "totalYield": 466.0,
-    "pbr": 0.77
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1435",
     "name": "中福",
     "price": 21.45,
-    "category": "Conglomerates",
+    "pbr": 2.67,
     "totalYield": 0,
-    "pbr": 2.67
+    "category": "Conglomerates"
   },
   {
     "id": "1436",
     "name": "華友聯",
     "price": 54.6,
-    "category": "Real Estate - Development",
+    "pbr": 1.63,
     "totalYield": 1399.0,
-    "pbr": 1.63
+    "category": "Real Estate - Development"
   },
   {
     "id": "1437",
     "name": "勤益控",
     "price": 32.1,
-    "category": "Real Estate Services",
+    "pbr": 0.79,
     "totalYield": 566.0,
-    "pbr": 0.79
+    "category": "Real Estate Services"
   },
   {
     "id": "1438",
     "name": "三地開發",
     "price": 31.3,
-    "category": "Real Estate - Diversified",
+    "pbr": 1.22,
     "totalYield": 0,
-    "pbr": 1.22
+    "category": "Real Estate - Diversified"
   },
   {
     "id": "1439",
     "name": "雋揚",
     "price": 27.95,
-    "category": "Textile Manufacturing",
+    "pbr": 0.9,
     "totalYield": 106.0,
-    "pbr": 0.9
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1440",
     "name": "南紡",
     "price": 12.8,
-    "category": "Textile Manufacturing",
+    "pbr": 0.77,
     "totalYield": 237.0,
-    "pbr": 0.77
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1441",
     "name": "大東",
     "price": 10.0,
-    "category": "Textile Manufacturing",
+    "pbr": 1.53,
     "totalYield": 0,
-    "pbr": 1.53
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1442",
     "name": "名軒",
     "price": 27.65,
-    "category": "Real Estate - Development",
+    "pbr": 1.3,
     "totalYield": 1657.0,
-    "pbr": 1.3
+    "category": "Real Estate - Development"
   },
   {
     "id": "1443",
     "name": "立益物流",
     "price": 26.4,
-    "category": "Integrated Freight & Logistics",
+    "pbr": 1.56,
     "totalYield": 0,
-    "pbr": 1.56
+    "category": "Integrated Freight & Logistics"
   },
   {
     "id": "1444",
     "name": "力麗",
     "price": 6.07,
-    "category": "Textile Manufacturing",
+    "pbr": 0.62,
     "totalYield": 0,
-    "pbr": 0.62
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1445",
     "name": "大宇",
     "price": 13.35,
-    "category": "Textile Manufacturing",
+    "pbr": 0.76,
     "totalYield": 377.0,
-    "pbr": 0.76
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1446",
     "name": "宏和",
     "price": 15.35,
-    "category": "Textile Manufacturing",
+    "pbr": 0.75,
     "totalYield": 1307.0,
-    "pbr": 0.75
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1447",
     "name": "力鵬",
     "price": 5.42,
-    "category": "Textile Manufacturing",
+    "pbr": 0.58,
     "totalYield": 0,
-    "pbr": 0.58
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1449",
     "name": "佳和",
     "price": 10.45,
-    "category": "Textile Manufacturing",
+    "pbr": 0.6,
     "totalYield": 266.0,
-    "pbr": 0.6
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1451",
     "name": "年興",
     "price": 18.3,
-    "category": "Textile Manufacturing",
+    "pbr": 0.5,
     "totalYield": 549.0,
-    "pbr": 0.5
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1452",
     "name": "宏益",
     "price": 11.25,
-    "category": "Textile Manufacturing",
+    "pbr": 0.56,
     "totalYield": 446.0,
-    "pbr": 0.56
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1453",
     "name": "大將",
     "price": 12.3,
-    "category": "Textile Manufacturing",
+    "pbr": 0.97,
     "totalYield": 0,
-    "pbr": 0.97
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1454",
     "name": "台富",
     "price": 12.95,
-    "category": "Textile Manufacturing",
+    "pbr": 1.1,
     "totalYield": 194.0,
-    "pbr": 1.1
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1455",
     "name": "集盛",
     "price": 8.21,
-    "category": "Textile Manufacturing",
+    "pbr": 0.73,
     "totalYield": 0,
-    "pbr": 0.73
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1456",
     "name": "怡華",
     "price": 12.6,
-    "category": "Real Estate Services",
+    "pbr": 0.77,
     "totalYield": 0,
-    "pbr": 0.77
+    "category": "Real Estate Services"
   },
   {
     "id": "1457",
     "name": "宜進",
     "price": 15.3,
-    "category": "Textile Manufacturing",
+    "pbr": 0.69,
     "totalYield": 656.0,
-    "pbr": 0.69
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1459",
     "name": "聯發",
     "price": 12.05,
-    "category": "Textile Manufacturing",
+    "pbr": 1.06,
     "totalYield": 0,
-    "pbr": 1.06
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1460",
     "name": "宏遠",
     "price": 6.68,
-    "category": "Textile Manufacturing",
+    "pbr": 0.82,
     "totalYield": 0,
-    "pbr": 0.82
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1463",
     "name": "強盛新",
     "price": 18.0,
-    "category": "Textile Manufacturing",
+    "pbr": 1.15,
     "totalYield": 1170.0,
-    "pbr": 1.15
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1464",
     "name": "得力",
     "price": 10.8,
-    "category": "Textile Manufacturing",
+    "pbr": 0.94,
     "totalYield": 469.0,
-    "pbr": 0.94
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1465",
     "name": "偉全",
     "price": 12.45,
-    "category": "Textile Manufacturing",
+    "pbr": 0.83,
     "totalYield": 486.0,
-    "pbr": 0.83
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1466",
     "name": "聚隆",
     "price": 18.1,
-    "category": "Textile Manufacturing",
+    "pbr": 1.29,
     "totalYield": 0,
-    "pbr": 1.29
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1467",
     "name": "南緯",
     "price": 7.24,
-    "category": "Apparel Manufacturing",
+    "pbr": 0.62,
     "totalYield": 0,
-    "pbr": 0.62
+    "category": "Apparel Manufacturing"
   },
   {
     "id": "1468",
     "name": "昶和",
     "price": 13.15,
-    "category": "Textile Manufacturing",
+    "pbr": 1.57,
     "totalYield": 0,
-    "pbr": 1.57
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1470",
     "name": "大統新創",
     "price": 22.75,
-    "category": "Textile Manufacturing",
+    "pbr": 2.0,
     "totalYield": 434.0,
-    "pbr": 2.0
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1471",
     "name": "首利",
     "price": 12.75,
-    "category": "Computer Hardware",
+    "pbr": 1.34,
     "totalYield": 0,
-    "pbr": 1.34
+    "category": "Computer Hardware"
   },
   {
     "id": "1472",
     "name": "三洋實業",
     "price": 89.0,
-    "category": "Engineering & Construction",
+    "pbr": 2.1,
     "totalYield": 335.0,
-    "pbr": 2.1
+    "category": "Engineering & Construction"
   },
   {
     "id": "1473",
     "name": "台南",
     "price": 24.9,
-    "category": "Apparel Manufacturing",
+    "pbr": 0.97,
     "totalYield": 820.0,
-    "pbr": 0.97
+    "category": "Apparel Manufacturing"
   },
   {
     "id": "1474",
     "name": "弘裕",
     "price": 10.2,
-    "category": "Textile Manufacturing",
+    "pbr": 0.64,
     "totalYield": 394.0,
-    "pbr": 0.64
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1475",
     "name": "業旺",
     "price": 29.75,
-    "category": "Textile Manufacturing",
+    "pbr": 1.34,
     "totalYield": 1229.0,
-    "pbr": 1.34
+    "category": "Textile Manufacturing"
   },
   {
     "id": "1476",
     "name": "儒鴻",
     "price": 395.0,
-    "category": "Apparel Manufacturing",
+    "pbr": 3.9,
     "totalYield": 438.0,
-    "pbr": 3.9
+    "category": "Apparel Manufacturing"
   },
   {
     "id": "1477",
     "name": "聚陽",
     "price": 309.5,
-    "category": "Apparel Manufacturing",
+    "pbr": 5.87,
     "totalYield": 525.0,
-    "pbr": 5.87
+    "category": "Apparel Manufacturing"
   },
   {
     "id": "1503",
     "name": "士電",
     "price": 207.0,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 2.97,
     "totalYield": 227.0,
-    "pbr": 2.97
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1504",
     "name": "東元",
     "price": 73.0,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 1.95,
     "totalYield": 311.0,
-    "pbr": 1.95
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "1506",
     "name": "正道",
     "price": 11.3,
-    "category": "Auto Parts",
+    "pbr": 1.22,
     "totalYield": 0,
-    "pbr": 1.22
+    "category": "Auto Parts"
   },
   {
     "id": "1512",
     "name": "瑞利",
     "price": 7.26,
-    "category": "Auto Parts",
+    "pbr": 1.17,
     "totalYield": 0,
-    "pbr": 1.17
+    "category": "Auto Parts"
   },
   {
     "id": "1513",
     "name": "中興電",
     "price": 160.0,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 4.02,
     "totalYield": 297.0,
-    "pbr": 4.02
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "1514",
     "name": "亞力",
     "price": 117.0,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 5.28,
     "totalYield": 150.0,
-    "pbr": 5.28
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1515",
     "name": "力山",
     "price": 25.55,
-    "category": "Leisure",
+    "pbr": 1.18,
     "totalYield": 401.0,
-    "pbr": 1.18
+    "category": "Leisure"
   },
   {
     "id": "1516",
     "name": "川飛",
     "price": 22.5,
-    "category": "Thermal Coal",
+    "pbr": 4.31,
     "totalYield": 0,
-    "pbr": 4.31
+    "category": "Thermal Coal"
   },
   {
     "id": "1517",
     "name": "利奇",
     "price": 11.85,
-    "category": "Metal Fabrication",
+    "pbr": 0.77,
     "totalYield": 170.0,
-    "pbr": 0.77
+    "category": "Metal Fabrication"
   },
   {
     "id": "1519",
     "name": "華城",
     "price": 951.0,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 34.29,
     "totalYield": 99.0,
-    "pbr": 34.29
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1521",
     "name": "大億",
     "price": 25.5,
-    "category": "Auto Parts",
+    "pbr": 1.07,
     "totalYield": 394.0,
-    "pbr": 1.07
+    "category": "Auto Parts"
   },
   {
     "id": "1522",
     "name": "堤維西",
     "price": 42.35,
-    "category": "Auto Parts",
+    "pbr": 1.42,
     "totalYield": 733.0,
-    "pbr": 1.42
+    "category": "Auto Parts"
   },
   {
     "id": "1522A",
     "name": "堤維西甲特",
     "price": 50.2,
-    "category": "Auto Parts",
+    "pbr": 1.68,
     "totalYield": 398.0,
-    "pbr": 1.68
+    "category": "Auto Parts"
   },
   {
     "id": "1524",
     "name": "耿鼎",
     "price": 29.15,
-    "category": "Auto Parts",
+    "pbr": 1.67,
     "totalYield": 816.0,
-    "pbr": 1.67
+    "category": "Auto Parts"
   },
   {
     "id": "1525",
     "name": "江申",
     "price": 62.1,
-    "category": "Auto Parts",
+    "pbr": 0.96,
     "totalYield": 499.0,
-    "pbr": 0.96
+    "category": "Auto Parts"
   },
   {
     "id": "1526",
     "name": "日馳",
     "price": 19.0,
-    "category": "Leisure",
+    "pbr": 0.84,
     "totalYield": 0,
-    "pbr": 0.84
+    "category": "Leisure"
   },
   {
     "id": "1527",
     "name": "鑽全",
     "price": 33.1,
-    "category": "Tools & Accessories",
+    "pbr": 0.97,
     "totalYield": 672.0,
-    "pbr": 0.97
+    "category": "Tools & Accessories"
   },
   {
     "id": "1528",
     "name": "恩德",
     "price": 22.25,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 1.98,
     "totalYield": 43.0,
-    "pbr": 1.98
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "1529",
     "name": "樂事綠能",
     "price": 24.6,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 2.1,
     "totalYield": 84.0,
-    "pbr": 2.1
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1530",
     "name": "亞崴",
     "price": 27.95,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 0.85,
     "totalYield": 552.0,
-    "pbr": 0.85
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "1531",
     "name": "高林股",
     "price": 11.85,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 0.61,
     "totalYield": 343.0,
-    "pbr": 0.61
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "1532",
     "name": "勤美",
     "price": 23.35,
-    "category": "Metal Fabrication",
+    "pbr": 0.68,
     "totalYield": 751.0,
-    "pbr": 0.68
+    "category": "Metal Fabrication"
   },
   {
     "id": "1533",
     "name": "車王電",
     "price": 29.85,
-    "category": "Auto Parts",
+    "pbr": 1.36,
     "totalYield": 0,
-    "pbr": 1.36
+    "category": "Auto Parts"
   },
   {
     "id": "1535",
     "name": "中宇",
     "price": 50.5,
-    "category": "Pollution & Treatment Controls",
+    "pbr": 1.64,
     "totalYield": 605.0,
-    "pbr": 1.64
+    "category": "Pollution & Treatment Controls"
   },
   {
     "id": "1536",
     "name": "和大",
     "price": 56.3,
-    "category": "Auto Parts",
+    "pbr": 1.98,
     "totalYield": 145.0,
-    "pbr": 1.98
+    "category": "Auto Parts"
   },
   {
     "id": "1537",
     "name": "廣隆",
     "price": 123.0,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 2.44,
     "totalYield": 854.0,
-    "pbr": 2.44
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1538",
     "name": "正峰",
     "price": 19.55,
-    "category": "Tools & Accessories",
+    "pbr": 4.28,
     "totalYield": 0,
-    "pbr": 4.28
+    "category": "Tools & Accessories"
   },
   {
     "id": "1539",
     "name": "巨庭",
     "price": 17.2,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 0.71,
     "totalYield": 493.0,
-    "pbr": 0.71
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "1540",
     "name": "喬福",
     "price": 22.45,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 1.34,
     "totalYield": 731.0,
-    "pbr": 1.34
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "1541",
     "name": "錩泰",
     "price": 24.4,
-    "category": "Tools & Accessories",
+    "pbr": 0.95,
     "totalYield": 208.0,
-    "pbr": 0.95
+    "category": "Tools & Accessories"
   },
   {
     "id": "1558",
     "name": "伸興",
     "price": 95.4,
-    "category": "Furnishings, Fixtures & Appliances",
+    "pbr": 1.23,
     "totalYield": 632.0,
-    "pbr": 1.23
+    "category": "Furnishings, Fixtures & Appliances"
   },
   {
     "id": "1560",
     "name": "中砂",
     "price": 479.0,
-    "category": "Tools & Accessories",
+    "pbr": 9.31,
     "totalYield": 86.0,
-    "pbr": 9.31
+    "category": "Tools & Accessories"
   },
   {
     "id": "1563",
     "name": "巧新",
     "price": 43.15,
-    "category": "Auto Parts",
+    "pbr": 1.09,
     "totalYield": 529.0,
-    "pbr": 1.09
+    "category": "Auto Parts"
   },
   {
     "id": "1568",
     "name": "倉佑",
     "price": 21.8,
-    "category": "Auto Parts",
+    "pbr": 1.22,
     "totalYield": 565.0,
-    "pbr": 1.22
+    "category": "Auto Parts"
   },
   {
     "id": "1582",
     "name": "信錦",
     "price": 82.3,
-    "category": "Electronic Components",
+    "pbr": 1.63,
     "totalYield": 676.0,
-    "pbr": 1.63
+    "category": "Electronic Components"
   },
   {
     "id": "1583",
     "name": "程泰",
     "price": 46.6,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 0.93,
     "totalYield": 646.0,
-    "pbr": 0.93
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "1587",
     "name": "吉茂",
     "price": 40.0,
-    "category": "Auto Parts",
+    "pbr": 2.15,
     "totalYield": 129.0,
-    "pbr": 2.15
+    "category": "Auto Parts"
   },
   {
     "id": "1589",
     "name": "永冠-KY",
     "price": 8.19,
-    "category": "Metal Fabrication",
+    "pbr": 0.14,
     "totalYield": 0,
-    "pbr": 0.14
+    "category": "Metal Fabrication"
   },
   {
     "id": "1590",
     "name": "亞德客-KY",
     "price": 1090.0,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 4.55,
     "totalYield": 181.0,
-    "pbr": 4.55
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "1597",
     "name": "直得",
     "price": 76.3,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 2.77,
     "totalYield": 97.0,
-    "pbr": 2.77
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1598",
     "name": "岱宇",
     "price": 19.95,
-    "category": "Leisure",
+    "pbr": 0.75,
     "totalYield": 262.0,
-    "pbr": 0.75
+    "category": "Leisure"
   },
   {
     "id": "1603",
     "name": "華電",
     "price": 37.2,
-    "category": "Electronics & Computer Distribution",
+    "pbr": 0.8,
     "totalYield": 408.0,
-    "pbr": 0.8
+    "category": "Electronics & Computer Distribution"
   },
   {
     "id": "1604",
     "name": "聲寶",
     "price": 24.15,
-    "category": "Furnishings, Fixtures & Appliances",
+    "pbr": 1.06,
     "totalYield": 624.0,
-    "pbr": 1.06
+    "category": "Furnishings, Fixtures & Appliances"
   },
   {
     "id": "1605",
     "name": "華新",
     "price": 33.05,
-    "category": "Steel",
+    "pbr": 0.73,
     "totalYield": 156.0,
-    "pbr": 0.73
+    "category": "Steel"
   },
   {
     "id": "1608",
     "name": "華榮",
     "price": 34.05,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 1.56,
     "totalYield": 301.0,
-    "pbr": 1.56
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1609",
     "name": "大亞",
     "price": 38.35,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 1.8,
     "totalYield": 199.0,
-    "pbr": 1.8
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1611",
     "name": "中電",
     "price": 12.55,
-    "category": "Furnishings, Fixtures & Appliances",
+    "pbr": 0.95,
     "totalYield": 637.0,
-    "pbr": 0.95
+    "category": "Furnishings, Fixtures & Appliances"
   },
   {
     "id": "1612",
     "name": "宏泰",
     "price": 34.6,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 1.38,
     "totalYield": 618.0,
-    "pbr": 1.38
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1614",
     "name": "三洋電",
     "price": 33.75,
-    "category": "Furnishings, Fixtures & Appliances",
+    "pbr": 1.56,
     "totalYield": 172.0,
-    "pbr": 1.56
+    "category": "Furnishings, Fixtures & Appliances"
   },
   {
     "id": "1615",
     "name": "大山",
     "price": 46.2,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 2.34,
     "totalYield": 434.0,
-    "pbr": 2.34
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1616",
     "name": "億泰",
     "price": 27.45,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 2.31,
     "totalYield": 666.0,
-    "pbr": 2.31
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1617",
     "name": "榮星",
     "price": 15.2,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 1.24,
     "totalYield": 340.0,
-    "pbr": 1.24
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1618",
     "name": "合機",
     "price": 43.3,
-    "category": "Electronics & Computer Distribution",
+    "pbr": 1.33,
     "totalYield": 350.0,
-    "pbr": 1.33
+    "category": "Electronics & Computer Distribution"
   },
   {
     "id": "1623",
     "name": "大東電",
     "price": 203.5,
-    "category": "Electrical Equipment & Parts",
+    "pbr": 4.53,
     "totalYield": 318.0,
-    "pbr": 4.53
+    "category": "Electrical Equipment & Parts"
   },
   {
     "id": "1626",
     "name": "艾美特-KY",
     "price": 10.7,
-    "category": "Furnishings, Fixtures & Appliances",
+    "pbr": 0.59,
     "totalYield": 0,
-    "pbr": 0.59
+    "category": "Furnishings, Fixtures & Appliances"
   },
   {
     "id": "1702",
     "name": "南僑",
     "price": 37.5,
-    "category": "Packaged Foods",
+    "pbr": 0.87,
     "totalYield": 669.0,
-    "pbr": 0.87
+    "category": "Packaged Foods"
   },
   {
     "id": "1707",
     "name": "葡萄王",
     "price": 120.5,
-    "category": "Drug Manufacturers - Specialty & Generic",
+    "pbr": 1.76,
     "totalYield": 536.0,
-    "pbr": 1.76
+    "category": "Drug Manufacturers - Specialty & Generic"
   },
   {
     "id": "1708",
     "name": "東鹼",
     "price": 35.85,
-    "category": "Chemicals",
+    "pbr": 1.29,
     "totalYield": 546.0,
-    "pbr": 1.29
+    "category": "Chemicals"
   },
   {
     "id": "1709",
     "name": "和益",
     "price": 16.65,
-    "category": "Chemicals",
+    "pbr": 0.9,
     "totalYield": 488.0,
-    "pbr": 0.9
+    "category": "Chemicals"
   },
   {
     "id": "1710",
     "name": "東聯",
     "price": 12.8,
-    "category": "Chemicals",
+    "pbr": 1.13,
     "totalYield": 0,
-    "pbr": 1.13
+    "category": "Chemicals"
   },
   {
     "id": "1711",
     "name": "永光",
     "price": 27.1,
-    "category": "Specialty Chemicals",
+    "pbr": 1.82,
     "totalYield": 114.0,
-    "pbr": 1.82
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1712",
     "name": "興農",
     "price": 47.0,
-    "category": "Agricultural Inputs",
+    "pbr": 2.31,
     "totalYield": 534.0,
-    "pbr": 2.31
+    "category": "Agricultural Inputs"
   },
   {
     "id": "1713",
     "name": "國化",
     "price": 46.5,
-    "category": "Specialty Chemicals",
+    "pbr": 1.95,
     "totalYield": 1643.0,
-    "pbr": 1.95
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1714",
     "name": "和桐",
     "price": 9.75,
-    "category": "Chemicals",
+    "pbr": 0.82,
     "totalYield": 213.0,
-    "pbr": 0.82
+    "category": "Chemicals"
   },
   {
     "id": "1717",
     "name": "長興",
     "price": 61.3,
-    "category": "Specialty Chemicals",
+    "pbr": 2.76,
     "totalYield": 202.0,
-    "pbr": 2.76
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1718",
     "name": "中纖",
     "price": 6.99,
-    "category": "Banks - Regional",
+    "pbr": 0.42,
     "totalYield": 0,
-    "pbr": 0.42
+    "category": "Banks - Regional"
   },
   {
     "id": "1720",
     "name": "生達",
     "price": 64.5,
-    "category": "Drug Manufacturers - Specialty & Generic",
+    "pbr": 1.88,
     "totalYield": 438.0,
-    "pbr": 1.88
+    "category": "Drug Manufacturers - Specialty & Generic"
   },
   {
     "id": "1721",
     "name": "三晃",
     "price": 17.1,
-    "category": "Chemicals",
+    "pbr": 1.81,
     "totalYield": 0,
-    "pbr": 1.81
+    "category": "Chemicals"
   },
   {
     "id": "1722",
     "name": "台肥",
     "price": 45.8,
-    "category": "Agricultural Inputs",
+    "pbr": 0.83,
     "totalYield": 433.0,
-    "pbr": 0.83
+    "category": "Agricultural Inputs"
   },
   {
     "id": "1723",
     "name": "中碳",
     "price": 68.9,
-    "category": "Chemicals",
+    "pbr": 2.05,
     "totalYield": 651.0,
-    "pbr": 2.05
+    "category": "Chemicals"
   },
   {
     "id": "1725",
     "name": "元禎",
     "price": 28.2,
-    "category": "Specialty Chemicals",
+    "pbr": 0.83,
     "totalYield": 450.0,
-    "pbr": 0.83
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1726",
     "name": "永記",
     "price": 76.1,
-    "category": "Specialty Chemicals",
+    "pbr": 1.23,
     "totalYield": 472.0,
-    "pbr": 1.23
+    "category": "Specialty Chemicals"
   },
   {
     "id": "1727",
     "name": "中華化",
     "price": 48.5,
-    "category": "Chemicals",
+    "pbr": 2.91,
     "totalYield": 108.0,
-    "pbr": 2.91
+    "category": "Chemicals"
   },
   {
     "id": "1730",
     "name": "花仙子",
     "price": 53.3,
-    "category": "Household & Personal Products",
+    "pbr": 1.64,
     "totalYield": 564.0,
-    "pbr": 1.64
+    "category": "Household & Personal Products"
   },
   {
     "id": "1731",
     "name": "美吾華",
     "price": 22.0,
-    "category": "Drug Manufacturers - Specialty & Generic",
+    "pbr": 1.36,
     "totalYield": 549.0,
-    "pbr": 1.36
+    "category": "Drug Manufacturers - Specialty & Generic"
   },
   {
     "id": "1732",
     "name": "毛寶",
     "price": 26.55,
-    "category": "Household & Personal Products",
+    "pbr": 2.31,
     "totalYield": 192.0,
-    "pbr": 2.31
+    "category": "Household & Personal Products"
   },
   {
     "id": "1733",
     "name": "五鼎",
     "price": 29.4,
-    "category": "Biotechnology",
+    "pbr": 1.62,
     "totalYield": 415.0,
-    "pbr": 1.62
+    "category": "Biotechnology"
   },
   {
     "id": "1734",
     "name": "杏輝",
     "price": 30.75,
-    "category": "Biotechnology",
+    "pbr": 1.77,
     "totalYield": 314.0,
-    "pbr": 1.77
+    "category": "Biotechnology"
   },
   {
     "id": "1735",
     "name": "日勝化",
     "price": 18.95,
-    "category": "Chemicals",
+    "pbr": 1.29,
     "totalYield": 432.0,
-    "pbr": 1.29
+    "category": "Chemicals"
   },
   {
     "id": "1736",
     "name": "喬山",
     "price": 135.0,
-    "category": "Leisure",
+    "pbr": 3.62,
     "totalYield": 325.0,
-    "pbr": 3.62
+    "category": "Leisure"
   },
   {
     "id": "1737",
     "name": "臺鹽",
     "price": 31.55,
-    "category": "Household & Personal Products",
+    "pbr": 0.95,
     "totalYield": 413.0,
-    "pbr": 0.95
+    "category": "Household & Personal Products"
   },
   {
     "id": "1752",
     "name": "南光",
     "price": 37.0,
-    "category": "Medical Instruments & Supplies",
+    "pbr": 1.5,
     "totalYield": 437.0,
-    "pbr": 1.5
+    "category": "Medical Instruments & Supplies"
   },
   {
     "id": "1760",
     "name": "寶齡富錦",
     "price": 60.8,
-    "category": "Biotechnology",
+    "pbr": 2.74,
     "totalYield": 306.0,
-    "pbr": 2.74
+    "category": "Biotechnology"
   },
   {
     "id": "1762",
     "name": "中化生",
     "price": 26.8,
-    "category": "Biotechnology",
+    "pbr": 0.64,
     "totalYield": 72.0,
-    "pbr": 0.64
+    "category": "Biotechnology"
   },
   {
     "id": "1773",
     "name": "勝一",
     "price": 149.5,
-    "category": "Chemicals",
+    "pbr": 4.24,
     "totalYield": 172.0,
-    "pbr": 4.24
+    "category": "Chemicals"
   },
   {
     "id": "1776",
     "name": "展宇",
     "price": 15.0,
-    "category": "Chemicals",
+    "pbr": 1.09,
     "totalYield": 539.0,
-    "pbr": 1.09
+    "category": "Chemicals"
   },
   {
     "id": "1783",
     "name": "和康生",
     "price": 42.95,
-    "category": "Medical Instruments & Supplies",
+    "pbr": 2.61,
     "totalYield": 197.0,
-    "pbr": 2.61
+    "category": "Medical Instruments & Supplies"
   },
   {
     "id": "1786",
     "name": "科妍",
     "price": 70.3,
-    "category": "Medical Instruments & Supplies",
+    "pbr": 2.64,
     "totalYield": 479.0,
-    "pbr": 2.64
+    "category": "Medical Instruments & Supplies"
   },
   {
     "id": "1789",
     "name": "神隆",
     "price": 20.3,
-    "category": "Drug Manufacturers - Specialty & Generic",
+    "pbr": 1.46,
     "totalYield": 175.0,
-    "pbr": 1.46
+    "category": "Drug Manufacturers - Specialty & Generic"
   },
   {
     "id": "1795",
     "name": "美時",
     "price": 269.0,
-    "category": "Drug Manufacturers - Specialty & Generic",
+    "pbr": 3.19,
     "totalYield": 227.0,
-    "pbr": 3.19
+    "category": "Drug Manufacturers - Specialty & Generic"
   },
   {
     "id": "1802",
     "name": "台玻",
     "price": 60.5,
-    "category": "Building Materials",
+    "pbr": 3.93,
     "totalYield": 0,
-    "pbr": 3.93
+    "category": "Building Materials"
   },
   {
     "id": "1805",
     "name": "寶徠",
     "price": 10.95,
-    "category": "Real Estate - Development",
+    "pbr": 0.92,
     "totalYield": 0,
-    "pbr": 0.92
+    "category": "Real Estate - Development"
   },
   {
     "id": "1806",
     "name": "冠軍",
     "price": 8.78,
-    "category": "Building Products & Equipment",
+    "pbr": 0.65,
     "totalYield": 1147.0,
-    "pbr": 0.65
+    "category": "Building Products & Equipment"
   },
   {
     "id": "1808",
     "name": "潤隆",
     "price": 29.45,
-    "category": "Real Estate - Development",
+    "pbr": 2.12,
     "totalYield": 761.0,
-    "pbr": 2.12
+    "category": "Real Estate - Development"
   },
   {
     "id": "1809",
     "name": "中釉",
     "price": 25.5,
-    "category": "Building Products & Equipment",
+    "pbr": 1.48,
     "totalYield": 98.0,
-    "pbr": 1.48
+    "category": "Building Products & Equipment"
   },
   {
     "id": "1810",
     "name": "和成",
     "price": 18.5,
-    "category": "Furnishings, Fixtures & Appliances",
+    "pbr": 0.82,
     "totalYield": 105.0,
-    "pbr": 0.82
+    "category": "Furnishings, Fixtures & Appliances"
   },
   {
     "id": "1817",
     "name": "凱撒衛",
     "price": 38.7,
-    "category": "Household & Personal Products",
+    "pbr": 1.3,
     "totalYield": 621.0,
-    "pbr": 1.3
+    "category": "Household & Personal Products"
   },
   {
     "id": "1903",
     "name": "士紙",
     "price": 52.3,
-    "category": "Household & Personal Products",
+    "pbr": 2.64,
     "totalYield": 0,
-    "pbr": 2.64
+    "category": "Household & Personal Products"
   },
   {
     "id": "1904",
     "name": "正隆",
     "price": 17.8,
-    "category": "Paper & Paper Products",
+    "pbr": 0.7,
     "totalYield": 254.0,
-    "pbr": 0.7
+    "category": "Paper & Paper Products"
   },
   {
     "id": "1905",
     "name": "華紙",
     "price": 11.75,
-    "category": "Paper & Paper Products",
+    "pbr": 0.86,
     "totalYield": 0,
-    "pbr": 0.86
+    "category": "Paper & Paper Products"
   },
   {
     "id": "1906",
     "name": "寶隆",
     "price": 11.65,
-    "category": "Paper & Paper Products",
+    "pbr": 0.62,
     "totalYield": 86.0,
-    "pbr": 0.62
+    "category": "Paper & Paper Products"
   },
   {
     "id": "1907",
     "name": "永豐餘",
     "price": 24.15,
-    "category": "Paper & Paper Products",
+    "pbr": 0.59,
     "totalYield": 332.0,
-    "pbr": 0.59
+    "category": "Paper & Paper Products"
   },
   {
     "id": "1909",
     "name": "榮成",
     "price": 9.35,
-    "category": "Paper & Paper Products",
+    "pbr": 0.62,
     "totalYield": 0,
-    "pbr": 0.62
+    "category": "Paper & Paper Products"
   },
   {
     "id": "2002",
     "name": "中鋼",
     "price": 19.3,
-    "category": "Steel",
+    "pbr": 1.01,
     "totalYield": 172.0,
-    "pbr": 1.01
+    "category": "Steel"
   },
   {
     "id": "2002A",
     "name": "中鋼特",
     "price": 38.8,
-    "category": "Steel",
+    "pbr": 2.02,
     "totalYield": 361.0,
-    "pbr": 2.02
+    "category": "Steel"
   },
   {
     "id": "2006",
     "name": "東和鋼鐵",
     "price": 81.0,
-    "category": "Steel",
+    "pbr": 1.72,
     "totalYield": 542.0,
-    "pbr": 1.72
+    "category": "Steel"
   },
   {
     "id": "2007",
     "name": "燁興",
     "price": 8.14,
-    "category": "Steel",
+    "pbr": 0.96,
     "totalYield": 0,
-    "pbr": 0.96
+    "category": "Steel"
   },
   {
     "id": "2008",
     "name": "高興昌",
     "price": 29.0,
-    "category": "Steel",
+    "pbr": 1.56,
     "totalYield": 172.0,
-    "pbr": 1.56
+    "category": "Steel"
   },
   {
     "id": "2009",
     "name": "第一銅",
     "price": 43.25,
-    "category": "Copper",
+    "pbr": 1.85,
     "totalYield": 119.0,
-    "pbr": 1.85
+    "category": "Copper"
   },
   {
     "id": "2010",
     "name": "春源",
     "price": 22.7,
-    "category": "Steel",
+    "pbr": 1.19,
     "totalYield": 586.0,
-    "pbr": 1.19
+    "category": "Steel"
   },
   {
     "id": "2012",
     "name": "春雨",
     "price": 16.75,
-    "category": "Steel",
+    "pbr": 1.23,
     "totalYield": 604.0,
-    "pbr": 1.23
+    "category": "Steel"
   },
   {
     "id": "2013",
     "name": "中鋼構",
     "price": 42.3,
-    "category": "Steel",
+    "pbr": 1.49,
     "totalYield": 477.0,
-    "pbr": 1.49
+    "category": "Steel"
   },
   {
     "id": "2014",
     "name": "中鴻",
     "price": 17.15,
-    "category": "Steel",
+    "pbr": 2.02,
     "totalYield": 0,
-    "pbr": 2.02
+    "category": "Steel"
   },
   {
     "id": "2015",
     "name": "豐興",
     "price": 66.7,
-    "category": "Steel",
+    "pbr": 1.71,
     "totalYield": 501.0,
-    "pbr": 1.71
+    "category": "Steel"
   },
   {
     "id": "2017",
     "name": "官田鋼",
     "price": 9.55,
-    "category": "Steel",
+    "pbr": 0.82,
     "totalYield": 0,
-    "pbr": 0.82
+    "category": "Steel"
   },
   {
     "id": "2020",
     "name": "美亞",
     "price": 23.85,
-    "category": "Steel",
+    "pbr": 1.47,
     "totalYield": 930.0,
-    "pbr": 1.47
+    "category": "Steel"
   },
   {
     "id": "2022",
     "name": "聚亨",
     "price": 8.83,
-    "category": "Tools & Accessories",
+    "pbr": 0.89,
     "totalYield": 0,
-    "pbr": 0.89
+    "category": "Tools & Accessories"
   },
   {
     "id": "2023",
     "name": "燁輝",
     "price": 14.5,
-    "category": "Steel",
+    "pbr": 0.81,
     "totalYield": 0,
-    "pbr": 0.81
+    "category": "Steel"
   },
   {
     "id": "2024",
     "name": "志聯",
     "price": 15.75,
-    "category": "Steel",
+    "pbr": 1.39,
     "totalYield": 0,
-    "pbr": 1.39
+    "category": "Steel"
   },
   {
     "id": "2025",
     "name": "千興",
     "price": 11.3,
-    "category": "Steel",
+    "pbr": 1.39,
     "totalYield": 0,
-    "pbr": 1.39
+    "category": "Steel"
   },
   {
     "id": "2027",
     "name": "大成鋼",
     "price": 36.35,
-    "category": "Steel",
+    "pbr": 1.2,
     "totalYield": 304.0,
-    "pbr": 1.2
+    "category": "Steel"
   },
   {
     "id": "2028",
     "name": "威致",
     "price": 18.25,
-    "category": "Steel",
+    "pbr": 1.26,
     "totalYield": 355.0,
-    "pbr": 1.26
+    "category": "Steel"
   },
   {
     "id": "2029",
     "name": "盛餘",
     "price": 21.2,
-    "category": "Steel",
+    "pbr": 0.68,
     "totalYield": 591.0,
-    "pbr": 0.68
+    "category": "Steel"
   },
   {
     "id": "2030",
     "name": "彰源",
     "price": 15.65,
-    "category": "Steel",
+    "pbr": 0.92,
     "totalYield": 467.0,
-    "pbr": 0.92
+    "category": "Steel"
   },
   {
     "id": "2031",
     "name": "新光鋼",
     "price": 38.0,
-    "category": "Steel",
+    "pbr": 1.05,
     "totalYield": 675.0,
-    "pbr": 1.05
+    "category": "Steel"
   },
   {
     "id": "2032",
     "name": "新鋼",
     "price": 15.25,
-    "category": "Steel",
+    "pbr": 1.16,
     "totalYield": 251.0,
-    "pbr": 1.16
+    "category": "Steel"
   },
   {
     "id": "2033",
     "name": "佳大",
     "price": 16.25,
-    "category": "Steel",
+    "pbr": 1.25,
     "totalYield": 124.0,
-    "pbr": 1.25
+    "category": "Steel"
   },
   {
     "id": "2034",
     "name": "允強",
     "price": 19.9,
-    "category": "Steel",
+    "pbr": 1.1,
     "totalYield": 509.0,
-    "pbr": 1.1
+    "category": "Steel"
   },
   {
     "id": "2038",
     "name": "海光",
     "price": 14.85,
-    "category": "Steel",
+    "pbr": 0.74,
     "totalYield": 0,
-    "pbr": 0.74
+    "category": "Steel"
   },
   {
     "id": "2049",
     "name": "上銀",
     "price": 239.5,
-    "category": "Tools & Accessories",
+    "pbr": 2.27,
     "totalYield": 99.0,
-    "pbr": 2.27
+    "category": "Tools & Accessories"
   },
   {
     "id": "2059",
     "name": "川湖",
     "price": 3320.0,
-    "category": "Furnishings, Fixtures & Appliances",
+    "pbr": 11.29,
     "totalYield": 102.0,
-    "pbr": 11.29
+    "category": "Furnishings, Fixtures & Appliances"
   },
   {
     "id": "2062",
     "name": "橋椿",
     "price": 20.85,
-    "category": "Building Products & Equipment",
+    "pbr": 0.57,
     "totalYield": 885.0,
-    "pbr": 0.57
+    "category": "Building Products & Equipment"
   },
   {
     "id": "2069",
     "name": "運錩",
     "price": 18.3,
-    "category": "Steel",
+    "pbr": 0.78,
     "totalYield": 506.0,
-    "pbr": 0.78
+    "category": "Steel"
   },
   {
     "id": "2101",
     "name": "南港",
     "price": 34.45,
-    "category": "Auto Parts",
+    "pbr": 2.21,
     "totalYield": 527.0,
-    "pbr": 2.21
+    "category": "Auto Parts"
   },
   {
     "id": "2102",
     "name": "泰豐",
     "price": 18.85,
-    "category": "Auto Parts",
+    "pbr": 1.52,
     "totalYield": 0,
-    "pbr": 1.52
+    "category": "Auto Parts"
   },
   {
     "id": "2103",
     "name": "台橡",
     "price": 19.1,
-    "category": "Specialty Chemicals",
+    "pbr": 0.82,
     "totalYield": 332.0,
-    "pbr": 0.82
+    "category": "Specialty Chemicals"
   },
   {
     "id": "2104",
     "name": "國際中橡",
     "price": 11.95,
-    "category": "Specialty Chemicals",
+    "pbr": 0.47,
     "totalYield": 0,
-    "pbr": 0.47
+    "category": "Specialty Chemicals"
   },
   {
     "id": "2105",
     "name": "正新",
     "price": 29.1,
-    "category": "Auto Parts",
+    "pbr": 1.15,
     "totalYield": 814.0,
-    "pbr": 1.15
+    "category": "Auto Parts"
   },
   {
     "id": "2106",
     "name": "建大",
     "price": 19.2,
-    "category": "Auto Parts",
+    "pbr": 0.98,
     "totalYield": 580.0,
-    "pbr": 0.98
+    "category": "Auto Parts"
   },
   {
     "id": "2107",
     "name": "厚生",
     "price": 25.2,
-    "category": "Specialty Chemicals",
+    "pbr": 0.59,
     "totalYield": 560.0,
-    "pbr": 0.59
+    "category": "Specialty Chemicals"
   },
   {
     "id": "2108",
     "name": "南帝",
     "price": 24.95,
-    "category": "Specialty Chemicals",
+    "pbr": 0.88,
     "totalYield": 407.0,
-    "pbr": 0.88
+    "category": "Specialty Chemicals"
   },
   {
     "id": "2109",
     "name": "華豐",
     "price": 14.9,
-    "category": "Auto Parts",
+    "pbr": 1.27,
     "totalYield": 1010.0,
-    "pbr": 1.27
+    "category": "Auto Parts"
   },
   {
     "id": "2114",
     "name": "鑫永銓",
     "price": 89.7,
-    "category": "Auto Parts",
+    "pbr": 2.3,
     "totalYield": 562.0,
-    "pbr": 2.3
+    "category": "Auto Parts"
   },
   {
     "id": "2115",
     "name": "六暉-KY",
     "price": 23.8,
-    "category": "Auto Parts",
+    "pbr": 0.81,
     "totalYield": 622.0,
-    "pbr": 0.81
+    "category": "Auto Parts"
   },
   {
     "id": "2201",
     "name": "裕隆",
     "price": 29.2,
-    "category": "Auto Manufacturers",
+    "pbr": 0.5,
     "totalYield": 455.0,
-    "pbr": 0.5
+    "category": "Auto Manufacturers"
   },
   {
     "id": "2204",
     "name": "中華",
     "price": 55.6,
-    "category": "Auto Manufacturers",
+    "pbr": 0.84,
     "totalYield": 742.0,
-    "pbr": 0.84
+    "category": "Auto Manufacturers"
   },
   {
     "id": "2206",
     "name": "三陽工業",
     "price": 60.0,
-    "category": "Auto Manufacturers",
+    "pbr": 1.91,
     "totalYield": 505.0,
-    "pbr": 1.91
+    "category": "Auto Manufacturers"
   },
   {
     "id": "2207",
     "name": "和泰車",
     "price": 517.0,
-    "category": "Auto & Truck Dealerships",
+    "pbr": 3.64,
     "totalYield": 382.0,
-    "pbr": 3.64
+    "category": "Auto & Truck Dealerships"
   },
   {
     "id": "2208",
     "name": "台船",
     "price": 22.1,
-    "category": "Aerospace & Defense",
+    "pbr": 4.18,
     "totalYield": 0,
-    "pbr": 4.18
+    "category": "Aerospace & Defense"
   },
   {
     "id": "2211",
     "name": "長榮鋼",
     "price": 102.5,
-    "category": "Steel",
+    "pbr": 1.59,
     "totalYield": 498.0,
-    "pbr": 1.59
+    "category": "Steel"
   },
   {
     "id": "2227",
     "name": "裕日車",
     "price": 52.8,
-    "category": "Auto Manufacturers",
+    "pbr": 0.94,
     "totalYield": 741.0,
-    "pbr": 0.94
+    "category": "Auto Manufacturers"
   },
   {
     "id": "2228",
     "name": "劍麟",
     "price": 93.6,
-    "category": "Auto Parts",
+    "pbr": 1.58,
     "totalYield": 992.0,
-    "pbr": 1.58
+    "category": "Auto Parts"
   },
   {
     "id": "2231",
     "name": "為升",
     "price": 89.1,
-    "category": "Auto Parts",
+    "pbr": 3.44,
     "totalYield": 239.0,
-    "pbr": 3.44
+    "category": "Auto Parts"
   },
   {
     "id": "2233",
     "name": "宇隆",
     "price": 229.5,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 3.69,
     "totalYield": 314.0,
-    "pbr": 3.69
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "2236",
     "name": "百達-KY",
     "price": 112.0,
-    "category": "Specialty Industrial Machinery",
+    "pbr": 3.49,
     "totalYield": 28.0,
-    "pbr": 3.49
+    "category": "Specialty Industrial Machinery"
   },
   {
     "id": "2239",
     "name": "英利-KY",
     "price": 24.4,
-    "category": "Auto Parts",
+    "pbr": 0.27,
     "totalYield": 0,
-    "pbr": 0.27
+    "category": "Auto Parts"
   },
   {
     "id": "2241",
     "name": "艾姆勒",
     "price": 30.05,
-    "category": "Auto Parts",
+    "pbr": 2.34,
     "totalYield": 0,
-    "pbr": 2.34
+    "category": "Auto Parts"
   },
   {
     "id": "2243",
     "name": "宏旭-KY",
     "price": 11.95,
-    "category": "Auto Parts",
+    "pbr": 1.21,
     "totalYield": 0,
-    "pbr": 1.21
+    "category": "Auto Parts"
   },
   {
     "id": "2247",
     "name": "汎德永業",
     "price": 249.0,
-    "category": "Auto & Truck Dealerships",
+    "pbr": 1.54,
     "totalYield": 1002.0,
-    "pbr": 1.54
-  },
-  {
-    "id": "2248",
-    "name": "華勝-KY",
-    "price": 48.6,
-    "category": "Auto Parts",
-    "totalYield": 581.0,
-    "pbr": 1.55
-  },
-  {
-    "id": "2250",
-    "name": "IKKA-KY",
-    "price": 64.8,
-    "category": "Specialty Industrial Machinery",
-    "totalYield": 520.0,
-    "pbr": 1.14
-  },
-  {
-    "id": "2254",
-    "name": "巨鎧精密-創",
-    "price": 71.2,
-    "category": "Auto Parts",
-    "totalYield": 0,
-    "pbr": 3.96
-  },
-  {
-    "id": "2258",
-    "name": "鴻華先進-創",
-    "price": 35.75,
-    "category": "Auto Manufacturers",
-    "totalYield": 0,
-    "pbr": 4.21
-  },
-  {
-    "id": "2301",
-    "name": "光寶科",
-    "price": 161.0,
-    "category": "Computer Hardware",
-    "totalYield": 483.0,
-    "pbr": 4.07
-  },
-  {
-    "id": "2302",
-    "name": "麗正",
-    "price": 17.45,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 345.0,
-    "pbr": 1.62
-  },
-  {
-    "id": "2303",
-    "name": "聯電",
-    "price": 62.1,
-    "category": "Semiconductors",
-    "totalYield": 475.0,
-    "pbr": 2.06
-  },
-  {
-    "id": "2305",
-    "name": "全友",
-    "price": 12.65,
-    "category": "Computer Hardware",
-    "totalYield": 0,
-    "pbr": 1.17
-  },
-  {
-    "id": "2308",
-    "name": "台達電",
-    "price": 1335.0,
-    "category": "Electronic Components",
-    "totalYield": 56.0,
-    "pbr": 12.94
-  },
-  {
-    "id": "2312",
-    "name": "金寶",
-    "price": 23.15,
-    "category": "Computer Hardware",
-    "totalYield": 268.0,
-    "pbr": 1.58
-  },
-  {
-    "id": "2313",
-    "name": "華通",
-    "price": 205.0,
-    "category": "Electronic Components",
-    "totalYield": 114.0,
-    "pbr": 5.52
-  },
-  {
-    "id": "2314",
-    "name": "台揚",
-    "price": 19.35,
-    "category": "Communication Equipment",
-    "totalYield": 0,
-    "pbr": 8.92
-  },
-  {
-    "id": "2316",
-    "name": "楠梓電",
-    "price": 93.7,
-    "category": "Electronic Components",
-    "totalYield": 55.0,
-    "pbr": 1.46
-  },
-  {
-    "id": "2317",
-    "name": "鴻海",
-    "price": 224.0,
-    "category": "Electronic Components",
-    "totalYield": 267.0,
-    "pbr": 1.91
-  },
-  {
-    "id": "2321",
-    "name": "東訊",
-    "price": NaN,
-    "category": "Communication Equipment",
-    "totalYield": 0,
-    "pbr": 5.33
-  },
-  {
-    "id": "2323",
-    "name": "中環",
-    "price": 10.6,
-    "category": "Computer Hardware",
-    "totalYield": 294.0,
-    "pbr": 0.65
-  },
-  {
-    "id": "2324",
-    "name": "仁寶",
-    "price": 30.4,
-    "category": "Computer Hardware",
-    "totalYield": 374.0,
-    "pbr": 1.04
-  },
-  {
-    "id": "2327",
-    "name": "國巨*",
-    "price": 267.5,
-    "category": "Electronic Components",
-    "totalYield": 193.0,
-    "pbr": 3.5
-  },
-  {
-    "id": "2328",
-    "name": "廣宇",
-    "price": 47.9,
-    "category": "Electronic Components",
-    "totalYield": 239.0,
-    "pbr": 1.78
-  },
-  {
-    "id": "2329",
-    "name": "華泰",
-    "price": 52.5,
-    "category": "Semiconductors",
-    "totalYield": 203.0,
-    "pbr": 2.99
-  },
-  {
-    "id": "2330",
-    "name": "台積電",
-    "price": 1900.0,
-    "category": "Semiconductors",
-    "totalYield": 129.0,
-    "pbr": 9.09
-  },
-  {
-    "id": "2331",
-    "name": "精英",
-    "price": 24.1,
-    "category": "Computer Hardware",
-    "totalYield": 90.0,
-    "pbr": 1.2
-  },
-  {
-    "id": "2332",
-    "name": "友訊",
-    "price": 15.1,
-    "category": "Communication Equipment",
-    "totalYield": 69.0,
-    "pbr": 1.07
-  },
-  {
-    "id": "2337",
-    "name": "旺宏",
-    "price": 107.5,
-    "category": "Semiconductors",
-    "totalYield": 0,
-    "pbr": 4.33
-  },
-  {
-    "id": "2338",
-    "name": "光罩",
-    "price": 52.7,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 0,
-    "pbr": 3.21
-  },
-  {
-    "id": "2340",
-    "name": "台亞",
-    "price": 25.5,
-    "category": "Semiconductors",
-    "totalYield": 0,
-    "pbr": 1.71
-  },
-  {
-    "id": "2342",
-    "name": "茂矽",
-    "price": 30.3,
-    "category": "Semiconductors",
-    "totalYield": 104.0,
-    "pbr": 2.01
-  },
-  {
-    "id": "2344",
-    "name": "華邦電",
-    "price": 112.0,
-    "category": "Semiconductors",
-    "totalYield": 0,
-    "pbr": 4.67
-  },
-  {
-    "id": "2345",
-    "name": "智邦",
-    "price": 1420.0,
-    "category": "Communication Equipment",
-    "totalYield": 84.0,
-    "pbr": 16.0
-  },
-  {
-    "id": "2347",
-    "name": "聯強",
-    "price": 70.1,
-    "category": "Electronics & Computer Distribution",
-    "totalYield": 593.0,
-    "pbr": 1.58
-  },
-  {
-    "id": "2348",
-    "name": "海悅",
-    "price": 69.9,
-    "category": "Real Estate Services",
-    "totalYield": 1295.0,
-    "pbr": 1.41
-  },
-  {
-    "id": "2348A",
-    "name": "海悅甲特",
-    "price": 38.05,
-    "category": "Real Estate Services",
-    "totalYield": 423.0,
-    "pbr": 0.77
-  },
-  {
-    "id": "2349",
-    "name": "錸德",
-    "price": 13.15,
-    "category": "Computer Hardware",
-    "totalYield": 0,
-    "pbr": 1.75
-  },
-  {
-    "id": "2351",
-    "name": "順德",
-    "price": 81.0,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 317.0,
-    "pbr": 2.18
-  },
-  {
-    "id": "2352",
-    "name": "佳世達",
-    "price": 23.75,
-    "category": "Computer Hardware",
-    "totalYield": 1523.0,
-    "pbr": 1.36
-  },
-  {
-    "id": "2353",
-    "name": "宏碁",
-    "price": 26.7,
-    "category": "Computer Hardware",
-    "totalYield": 658.0,
-    "pbr": 1.1
-  },
-  {
-    "id": "2354",
-    "name": "鴻準",
-    "price": 55.6,
-    "category": "Electronics & Computer Distribution",
-    "totalYield": 259.0,
-    "pbr": 0.76
-  },
-  {
-    "id": "2355",
-    "name": "敬鵬",
-    "price": 41.75,
-    "category": "Electronic Components",
-    "totalYield": 445.0,
-    "pbr": 1.01
-  },
-  {
-    "id": "2356",
-    "name": "英業達",
-    "price": 41.9,
-    "category": "Computer Hardware",
-    "totalYield": 422.0,
-    "pbr": 2.14
-  },
-  {
-    "id": "2357",
-    "name": "華碩",
-    "price": 518.0,
-    "category": "Computer Hardware",
-    "totalYield": 680.0,
-    "pbr": 1.49
-  },
-  {
-    "id": "2359",
-    "name": "所羅門",
-    "price": 121.0,
-    "category": "Electronic Components",
-    "totalYield": 84.0,
-    "pbr": 3.74
-  },
-  {
-    "id": "2360",
-    "name": "致茂",
-    "price": 1405.0,
-    "category": "Scientific & Technical Instruments",
-    "totalYield": 67.0,
-    "pbr": 20.19
-  },
-  {
-    "id": "2362",
-    "name": "藍天",
-    "price": 38.0,
-    "category": "Computer Hardware",
-    "totalYield": 690.0,
-    "pbr": 0.54
-  },
-  {
-    "id": "2363",
-    "name": "矽統",
-    "price": 50.3,
-    "category": "Semiconductors",
-    "totalYield": 96.0,
-    "pbr": 1.5
-  },
-  {
-    "id": "2364",
-    "name": "倫飛",
-    "price": 62.3,
-    "category": "Computer Hardware",
-    "totalYield": 0,
-    "pbr": 4.17
-  },
-  {
-    "id": "2365",
-    "name": "昆盈",
-    "price": 33.9,
-    "category": "Computer Hardware",
-    "totalYield": 181.0,
-    "pbr": 2.52
-  },
-  {
-    "id": "2367",
-    "name": "燿華",
-    "price": 69.9,
-    "category": "Electronic Components",
-    "totalYield": 99.0,
-    "pbr": 4.05
-  },
-  {
-    "id": "2368",
-    "name": "金像電",
-    "price": 736.0,
-    "category": "Electronic Components",
-    "totalYield": 85.0,
-    "pbr": 13.3
-  },
-  {
-    "id": "2369",
-    "name": "菱生",
-    "price": 26.75,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 109.0,
-    "pbr": 2.1
-  },
-  {
-    "id": "2371",
-    "name": "大同",
-    "price": 33.05,
-    "category": "Conglomerates",
-    "totalYield": 964.0,
-    "pbr": 1.16
-  },
-  {
-    "id": "2373",
-    "name": "震旦行",
-    "price": 56.3,
-    "category": "Industrial Distribution",
-    "totalYield": 663.0,
-    "pbr": 1.84
-  },
-  {
-    "id": "2374",
-    "name": "佳能",
-    "price": 72.8,
-    "category": "Electronic Components",
-    "totalYield": 85.0,
-    "pbr": 3.05
-  },
-  {
-    "id": "2375",
-    "name": "凱美",
-    "price": 85.2,
-    "category": "Electronic Components",
-    "totalYield": 181.0,
-    "pbr": 0.98
-  },
-  {
-    "id": "2376",
-    "name": "技嘉",
-    "price": 218.0,
-    "category": "Computer Hardware",
-    "totalYield": 467.0,
-    "pbr": 2.63
-  },
-  {
-    "id": "2377",
-    "name": "微星",
-    "price": 95.0,
-    "category": "Computer Hardware",
-    "totalYield": 533.0,
-    "pbr": 1.54
-  },
-  {
-    "id": "2379",
-    "name": "瑞昱",
-    "price": 456.0,
-    "category": "Semiconductors",
-    "totalYield": 573.0,
-    "pbr": 4.5
-  },
-  {
-    "id": "2380",
-    "name": "虹光",
-    "price": 5.5,
-    "category": "Computer Hardware",
-    "totalYield": 0,
-    "pbr": 2.81
-  },
-  {
-    "id": "2382",
-    "name": "廣達",
-    "price": 289.5,
-    "category": "Computer Hardware",
-    "totalYield": 463.0,
-    "pbr": 4.58
-  },
-  {
-    "id": "2383",
-    "name": "台光電",
-    "price": 2365.0,
-    "category": "Electronic Components",
-    "totalYield": 76.0,
-    "pbr": 19.04
-  },
-  {
-    "id": "2385",
-    "name": "群光",
-    "price": 125.5,
-    "category": "Computer Hardware",
-    "totalYield": 806.0,
-    "pbr": 2.21
-  },
-  {
-    "id": "2387",
-    "name": "精元",
-    "price": 42.2,
-    "category": "Computer Hardware",
-    "totalYield": 959.0,
-    "pbr": 0.77
-  },
-  {
-    "id": "2388",
-    "name": "威盛",
-    "price": 45.9,
-    "category": "Semiconductors",
-    "totalYield": 45.0,
-    "pbr": 1.26
-  },
-  {
-    "id": "2390",
-    "name": "云辰",
-    "price": 9.85,
-    "category": "Security & Protection Services",
-    "totalYield": 0,
-    "pbr": 0.81
-  },
-  {
-    "id": "2392",
-    "name": "正崴",
-    "price": 36.8,
-    "category": "Electronic Components",
-    "totalYield": 694.0,
-    "pbr": 0.79
-  },
-  {
-    "id": "2393",
-    "name": "億光",
-    "price": 58.4,
-    "category": "Electronic Components",
-    "totalYield": 947.0,
-    "pbr": 1.36
-  },
-  {
-    "id": "2395",
-    "name": "研華",
-    "price": 342.5,
-    "category": "Computer Hardware",
-    "totalYield": 269.0,
-    "pbr": 5.4
-  },
-  {
-    "id": "2397",
-    "name": "友通",
-    "price": 58.2,
-    "category": "Computer Hardware",
-    "totalYield": 598.0,
-    "pbr": 1.97
-  },
-  {
-    "id": "2399",
-    "name": "映泰",
-    "price": 23.65,
-    "category": "Computer Hardware",
-    "totalYield": 0,
-    "pbr": 1.96
-  },
-  {
-    "id": "2401",
-    "name": "凌陽",
-    "price": 21.55,
-    "category": "Semiconductors",
-    "totalYield": 0,
-    "pbr": 1.55
-  },
-  {
-    "id": "2402",
-    "name": "毅嘉",
-    "price": 51.3,
-    "category": "Electronic Components",
-    "totalYield": 394.0,
-    "pbr": 2.36
-  },
-  {
-    "id": "2404",
-    "name": "漢唐",
-    "price": 1100.0,
-    "category": "Engineering & Construction",
-    "totalYield": 280.0,
-    "pbr": 13.24
-  },
-  {
-    "id": "2405",
-    "name": "輔信",
-    "price": 15.35,
-    "category": "Computer Hardware",
-    "totalYield": 116.0,
-    "pbr": 1.51
-  },
-  {
-    "id": "2406",
-    "name": "國碩",
-    "price": 31.75,
-    "category": "Solar",
-    "totalYield": 0,
-    "pbr": 3.1
-  },
-  {
-    "id": "2408",
-    "name": "南亞科",
-    "price": 257.5,
-    "category": "Semiconductors",
-    "totalYield": 0,
-    "pbr": 5.07
-  },
-  {
-    "id": "2409",
-    "name": "友達",
-    "price": 15.3,
-    "category": "Electronic Components",
-    "totalYield": 806.0,
-    "pbr": 0.78
-  },
-  {
-    "id": "2412",
-    "name": "中華電",
-    "price": 137.0,
-    "category": "Telecom Services",
-    "totalYield": 369.0,
-    "pbr": 2.75
-  },
-  {
-    "id": "2413",
-    "name": "環科",
-    "price": 49.25,
-    "category": "Electronic Components",
-    "totalYield": 0,
-    "pbr": 3.34
-  },
-  {
-    "id": "2414",
-    "name": "精技",
-    "price": 41.75,
-    "category": "Computer Hardware",
-    "totalYield": 607.0,
-    "pbr": 2.18
-  },
-  {
-    "id": "2415",
-    "name": "錩新",
-    "price": 26.25,
-    "category": "Metal Fabrication",
-    "totalYield": 463.0,
-    "pbr": 1.5
-  },
-  {
-    "id": "2417",
-    "name": "圓剛",
-    "price": 34.55,
-    "category": "Computer Hardware",
-    "totalYield": 59.0,
-    "pbr": 1.67
-  },
-  {
-    "id": "2419",
-    "name": "仲琦",
-    "price": 30.2,
-    "category": "Communication Equipment",
-    "totalYield": 0,
-    "pbr": 2.11
-  },
-  {
-    "id": "2420",
-    "name": "新巨",
-    "price": 52.3,
-    "category": "Electrical Equipment & Parts",
-    "totalYield": 700.0,
-    "pbr": 2.13
-  },
-  {
-    "id": "2421",
-    "name": "建準",
-    "price": 140.5,
-    "category": "Specialty Industrial Machinery",
-    "totalYield": 275.0,
-    "pbr": 4.72
-  },
-  {
-    "id": "2423",
-    "name": "固緯",
-    "price": 48.7,
-    "category": "Scientific & Technical Instruments",
-    "totalYield": 423.0,
-    "pbr": 2.4
-  },
-  {
-    "id": "2424",
-    "name": "隴華",
-    "price": 32.8,
-    "category": "Consumer Electronics",
-    "totalYield": 0,
-    "pbr": 6.54
-  },
-  {
-    "id": "2425",
-    "name": "承啟",
-    "price": 26.7,
-    "category": "Computer Hardware",
-    "totalYield": 58.0,
-    "pbr": 1.11
-  },
-  {
-    "id": "2426",
-    "name": "鼎元",
-    "price": 20.75,
-    "category": "Semiconductors",
-    "totalYield": 53.0,
-    "pbr": 1.65
-  },
-  {
-    "id": "2427",
-    "name": "三商電",
-    "price": 25.8,
-    "category": "Business Equipment & Supplies",
-    "totalYield": 281.0,
-    "pbr": 1.58
-  },
-  {
-    "id": "2428",
-    "name": "興勤",
-    "price": 174.5,
-    "category": "Electronic Components",
-    "totalYield": 362.0,
-    "pbr": 2.14
-  },
-  {
-    "id": "2429",
-    "name": "銘旺科",
-    "price": 51.9,
-    "category": "Electronic Components",
-    "totalYield": 0,
-    "pbr": 5.47
-  },
-  {
-    "id": "2430",
-    "name": "燦坤",
-    "price": 23.0,
-    "category": "Specialty Retail",
-    "totalYield": 652.0,
-    "pbr": 0.62
-  },
-  {
-    "id": "2431",
-    "name": "聯昌",
-    "price": 12.7,
-    "category": "Electronic Components",
-    "totalYield": 0,
-    "pbr": 1.12
-  },
-  {
-    "id": "2432",
-    "name": "倚天酷碁-創",
-    "price": 23.5,
-    "category": "Computer Hardware",
-    "totalYield": 725.0,
-    "pbr": 1.27
-  },
-  {
-    "id": "2433",
-    "name": "互盛電",
-    "price": 46.8,
-    "category": "Business Equipment & Supplies",
-    "totalYield": 642.0,
-    "pbr": 2.11
-  },
-  {
-    "id": "2434",
-    "name": "統懋",
-    "price": 29.85,
-    "category": "Semiconductors",
-    "totalYield": 0,
-    "pbr": 2.3
-  },
-  {
-    "id": "2436",
-    "name": "偉詮電",
-    "price": 57.1,
-    "category": "Semiconductors",
-    "totalYield": 274.0,
-    "pbr": 2.9
-  },
-  {
-    "id": "2438",
-    "name": "翔耀",
-    "price": 21.5,
-    "category": "Electrical Equipment & Parts",
-    "totalYield": 0,
-    "pbr": 4.0
-  },
-  {
-    "id": "2439",
-    "name": "美律",
-    "price": 82.1,
-    "category": "Consumer Electronics",
-    "totalYield": 882.0,
-    "pbr": 1.17
-  },
-  {
-    "id": "2440",
-    "name": "太空梭",
-    "price": 15.4,
-    "category": "Electrical Equipment & Parts",
-    "totalYield": 0,
-    "pbr": 1.81
-  },
-  {
-    "id": "2441",
-    "name": "超豐",
-    "price": 88.1,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 355.0,
-    "pbr": 2.18
-  },
-  {
-    "id": "2442",
-    "name": "新美齊",
-    "price": 19.3,
-    "category": "Real Estate - Development",
-    "totalYield": 41.0,
-    "pbr": 1.06
-  },
-  {
-    "id": "2444",
-    "name": "兆勁",
-    "price": 13.8,
-    "category": "Communication Equipment",
-    "totalYield": 0,
-    "pbr": 1.71
-  },
-  {
-    "id": "2449",
-    "name": "京元電子",
-    "price": 295.0,
-    "category": "Semiconductors",
-    "totalYield": 144.0,
-    "pbr": 7.66
-  },
-  {
-    "id": "2450",
-    "name": "神腦",
-    "price": 29.9,
-    "category": "Electronics & Computer Distribution",
-    "totalYield": 525.0,
-    "pbr": 1.2
-  },
-  {
-    "id": "2451",
-    "name": "創見",
-    "price": 213.5,
-    "category": "Computer Hardware",
-    "totalYield": 306.0,
-    "pbr": 4.69
-  },
-  {
-    "id": "2453",
-    "name": "凌群",
-    "price": 51.1,
-    "category": "Information Technology Services",
-    "totalYield": 514.0,
-    "pbr": 2.4
-  },
-  {
-    "id": "2454",
-    "name": "聯發科",
-    "price": 1775.0,
-    "category": "Semiconductors",
-    "totalYield": 311.0,
-    "pbr": 7.07
-  },
-  {
-    "id": "2455",
-    "name": "全新",
-    "price": 218.0,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 142.0,
-    "pbr": 12.2
-  },
-  {
-    "id": "2457",
-    "name": "飛宏",
-    "price": 28.8,
-    "category": "Electrical Equipment & Parts",
-    "totalYield": 0,
-    "pbr": 1.36
-  },
-  {
-    "id": "2458",
-    "name": "義隆",
-    "price": 137.0,
-    "category": "Semiconductors",
-    "totalYield": 505.0,
-    "pbr": 4.1
-  },
-  {
-    "id": "2459",
-    "name": "敦吉",
-    "price": 66.1,
-    "category": "Electronic Components",
-    "totalYield": 611.0,
-    "pbr": 1.3
-  },
-  {
-    "id": "2460",
-    "name": "建通",
-    "price": 26.0,
-    "category": "Electronic Components",
-    "totalYield": 0,
-    "pbr": 2.97
-  },
-  {
-    "id": "2461",
-    "name": "光群雷",
-    "price": 15.8,
-    "category": "Packaging & Containers",
-    "totalYield": 1066.0,
-    "pbr": 0.94
-  },
-  {
-    "id": "2462",
-    "name": "良得電",
-    "price": 23.7,
-    "category": "Consumer Electronics",
-    "totalYield": 350.0,
-    "pbr": 1.21
-  },
-  {
-    "id": "2464",
-    "name": "盟立",
-    "price": 68.3,
-    "category": "Specialty Industrial Machinery",
-    "totalYield": 52.0,
-    "pbr": 2.88
-  },
-  {
-    "id": "2465",
-    "name": "麗臺",
-    "price": 50.7,
-    "category": "Computer Hardware",
-    "totalYield": 0,
-    "pbr": 7.33
-  },
-  {
-    "id": "2466",
-    "name": "冠西電",
-    "price": 51.3,
-    "category": "Electronic Components",
-    "totalYield": 0,
-    "pbr": 4.36
-  },
-  {
-    "id": "2467",
-    "name": "志聖",
-    "price": 400.0,
-    "category": "Specialty Industrial Machinery",
-    "totalYield": 137.0,
-    "pbr": 9.29
-  },
-  {
-    "id": "2468",
-    "name": "華經",
-    "price": 33.45,
-    "category": "Information Technology Services",
-    "totalYield": 273.0,
-    "pbr": 1.88
-  },
-  {
-    "id": "2471",
-    "name": "資通",
-    "price": 48.8,
-    "category": "Information Technology Services",
-    "totalYield": 635.0,
-    "pbr": 2.71
-  },
-  {
-    "id": "2472",
-    "name": "立隆電",
-    "price": 111.5,
-    "category": "Electronic Components",
-    "totalYield": 288.0,
-    "pbr": 2.28
-  },
-  {
-    "id": "2474",
-    "name": "可成",
-    "price": 185.5,
-    "category": "Metal Fabrication",
-    "totalYield": 619.0,
-    "pbr": 0.79
-  },
-  {
-    "id": "2476",
-    "name": "鉅祥",
-    "price": 78.6,
-    "category": "Specialty Industrial Machinery",
-    "totalYield": 461.0,
-    "pbr": 2.0
-  },
-  {
-    "id": "2477",
-    "name": "美隆電",
-    "price": 23.6,
-    "category": "Consumer Electronics",
-    "totalYield": 560.0,
-    "pbr": 0.93
-  },
-  {
-    "id": "2478",
-    "name": "大毅",
-    "price": 71.4,
-    "category": "Electronic Components",
-    "totalYield": 270.0,
-    "pbr": 1.54
-  },
-  {
-    "id": "2480",
-    "name": "敦陽科",
-    "price": 143.5,
-    "category": "Computer Hardware",
-    "totalYield": 525.0,
-    "pbr": 4.34
-  },
-  {
-    "id": "2481",
-    "name": "強茂",
-    "price": 90.2,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 159.0,
-    "pbr": 2.48
-  },
-  {
-    "id": "2482",
-    "name": "連宇",
-    "price": 17.1,
-    "category": "Business Equipment & Supplies",
-    "totalYield": 363.0,
-    "pbr": 1.2
-  },
-  {
-    "id": "2483",
-    "name": "百容",
-    "price": 22.45,
-    "category": "Electrical Equipment & Parts",
-    "totalYield": 136.0,
-    "pbr": 0.96
-  },
-  {
-    "id": "2484",
-    "name": "希華",
-    "price": 27.65,
-    "category": "Electronic Components",
-    "totalYield": 261.0,
-    "pbr": 1.19
-  },
-  {
-    "id": "2485",
-    "name": "兆赫",
-    "price": 51.1,
-    "category": "Communication Equipment",
-    "totalYield": 0,
-    "pbr": 3.29
-  },
-  {
-    "id": "2486",
-    "name": "一詮",
-    "price": 135.5,
-    "category": "Electronic Components",
-    "totalYield": 40.0,
-    "pbr": 6.22
-  },
-  {
-    "id": "2488",
-    "name": "漢平",
-    "price": 46.75,
-    "category": "Consumer Electronics",
-    "totalYield": 693.0,
-    "pbr": 1.33
-  },
-  {
-    "id": "2489",
-    "name": "瑞軒",
-    "price": 43.45,
-    "category": "Electrical Equipment & Parts",
-    "totalYield": 241.0,
-    "pbr": 1.96
-  },
-  {
-    "id": "2491",
-    "name": "吉祥全",
-    "price": 16.4,
-    "category": "Furnishings, Fixtures & Appliances",
-    "totalYield": 0,
-    "pbr": 1.58
-  },
-  {
-    "id": "2492",
-    "name": "華新科",
-    "price": 131.5,
-    "category": "Electronic Components",
-    "totalYield": 188.0,
-    "pbr": 1.23
-  },
-  {
-    "id": "2493",
-    "name": "揚博",
-    "price": 102.5,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 405.0,
-    "pbr": 4.22
-  },
-  {
-    "id": "2495",
-    "name": "普安",
-    "price": 30.3,
-    "category": "Computer Hardware",
-    "totalYield": 452.0,
-    "pbr": 1.88
-  },
-  {
-    "id": "2496",
-    "name": "卓越",
-    "price": 68.7,
-    "category": "Education & Training Services",
-    "totalYield": 1061.0,
-    "pbr": 1.54
-  },
-  {
-    "id": "2497",
-    "name": "怡利電",
-    "price": 42.9,
-    "category": "Auto Parts",
-    "totalYield": 476.0,
-    "pbr": 2.36
-  },
-  {
-    "id": "2498",
-    "name": "宏達電",
-    "price": 41.55,
-    "category": "Consumer Electronics",
-    "totalYield": 0,
-    "pbr": 1.3
-  },
-  {
-    "id": "2501",
-    "name": "國建",
-    "price": 22.75,
-    "category": "Real Estate - Development",
-    "totalYield": 443.0,
-    "pbr": 0.91
-  },
-  {
-    "id": "2504",
-    "name": "國產",
-    "price": 38.4,
-    "category": "Building Materials",
-    "totalYield": 735.0,
-    "pbr": 1.74
-  },
-  {
-    "id": "2505",
-    "name": "國揚",
-    "price": 18.8,
-    "category": "Real Estate - Development",
-    "totalYield": 0,
-    "pbr": 0.67
-  },
-  {
-    "id": "2506",
-    "name": "太設",
-    "price": 8.88,
-    "category": "Real Estate - Development",
-    "totalYield": 452.0,
-    "pbr": 0.42
-  },
-  {
-    "id": "2509",
-    "name": "全坤建",
-    "price": 14.2,
-    "category": "Real Estate Services",
-    "totalYield": 0,
-    "pbr": 0.82
-  },
-  {
-    "id": "2511",
-    "name": "太子",
-    "price": 8.15,
-    "category": "Real Estate - Development",
-    "totalYield": 375.0,
-    "pbr": 0.52
-  },
-  {
-    "id": "2514",
-    "name": "龍邦",
-    "price": 14.45,
-    "category": "Engineering & Construction",
-    "totalYield": 0,
-    "pbr": 0.41
-  },
-  {
-    "id": "2515",
-    "name": "中工",
-    "price": 17.05,
-    "category": "Engineering & Construction",
-    "totalYield": 0,
-    "pbr": 1.24
-  },
-  {
-    "id": "2516",
-    "name": "新建",
-    "price": 14.5,
-    "category": "Engineering & Construction",
-    "totalYield": 0,
-    "pbr": 1.74
-  },
-  {
-    "id": "2520",
-    "name": "冠德",
-    "price": 31.05,
-    "category": "Real Estate - Diversified",
-    "totalYield": 1033.0,
-    "pbr": 0.78
-  },
-  {
-    "id": "2524",
-    "name": "京城",
-    "price": 41.15,
-    "category": "Real Estate - Development",
-    "totalYield": 0,
-    "pbr": 0.71
-  },
-  {
-    "id": "2527",
-    "name": "宏璟",
-    "price": 30.7,
-    "category": "Real Estate Services",
-    "totalYield": 671.0,
-    "pbr": 0.61
-  },
-  {
-    "id": "2528",
-    "name": "皇普",
-    "price": 27.05,
-    "category": "Real Estate Services",
-    "totalYield": 552.0,
-    "pbr": 1.5
-  },
-  {
-    "id": "2530",
-    "name": "華建",
-    "price": 26.6,
-    "category": "Engineering & Construction",
-    "totalYield": 1124.0,
-    "pbr": 2.09
-  },
-  {
-    "id": "2534",
-    "name": "宏盛",
-    "price": 20.0,
-    "category": "Real Estate - Development",
-    "totalYield": 515.0,
-    "pbr": 0.63
-  },
-  {
-    "id": "2535",
-    "name": "達欣工",
-    "price": 72.3,
-    "category": "Engineering & Construction",
-    "totalYield": 532.0,
-    "pbr": 1.92
-  },
-  {
-    "id": "2536",
-    "name": "宏普",
-    "price": 23.5,
-    "category": "Real Estate - Development",
-    "totalYield": 216.0,
-    "pbr": 0.65
-  },
-  {
-    "id": "2537",
-    "name": "聯上發",
-    "price": 10.25,
-    "category": "Real Estate - Development",
-    "totalYield": 0,
-    "pbr": 0.7
-  },
-  {
-    "id": "2538",
-    "name": "基泰",
-    "price": 10.45,
-    "category": "Real Estate - Development",
-    "totalYield": 676.0,
-    "pbr": 0.8
-  },
-  {
-    "id": "2539",
-    "name": "櫻花建",
-    "price": 48.6,
-    "category": "Real Estate - Development",
-    "totalYield": 104.0,
-    "pbr": 3.5
-  },
-  {
-    "id": "2540",
-    "name": "愛山林",
-    "price": 48.0,
-    "category": "Real Estate Services",
-    "totalYield": 150.0,
-    "pbr": 2.76
-  },
-  {
-    "id": "2542",
-    "name": "興富發",
-    "price": 36.7,
-    "category": "Real Estate - Development",
-    "totalYield": 543.0,
-    "pbr": 1.56
-  },
-  {
-    "id": "2543",
-    "name": "皇昌",
-    "price": 71.3,
-    "category": "Engineering & Construction",
-    "totalYield": 143.0,
-    "pbr": 3.92
-  },
-  {
-    "id": "2545",
-    "name": "皇翔",
-    "price": 37.25,
-    "category": "Real Estate - Diversified",
-    "totalYield": 1247.0,
-    "pbr": 0.93
-  },
-  {
-    "id": "2546",
-    "name": "根基",
-    "price": 86.6,
-    "category": "Engineering & Construction",
-    "totalYield": 372.0,
-    "pbr": 1.99
-  },
-  {
-    "id": "2547",
-    "name": "日勝生",
-    "price": 11.05,
-    "category": "Conglomerates",
-    "totalYield": 534.0,
-    "pbr": 0.81
-  },
-  {
-    "id": "2548",
-    "name": "華固",
-    "price": 114.0,
-    "category": "Real Estate - Development",
-    "totalYield": 491.0,
-    "pbr": 1.62
-  },
-  {
-    "id": "2597",
-    "name": "潤弘",
-    "price": 169.0,
-    "category": "Engineering & Construction",
-    "totalYield": 387.0,
-    "pbr": 6.7
-  },
-  {
-    "id": "2601",
-    "name": "益航",
-    "price": 7.19,
-    "category": "Department Stores",
-    "totalYield": 0,
-    "pbr": 0.79
-  },
-  {
-    "id": "2603",
-    "name": "長榮",
-    "price": 208.0,
-    "category": "Marine Shipping",
-    "totalYield": 1551.0,
-    "pbr": 0.83
-  },
-  {
-    "id": "2605",
-    "name": "新興",
-    "price": 34.95,
-    "category": "Marine Shipping",
-    "totalYield": 371.0,
-    "pbr": 1.26
-  },
-  {
-    "id": "2606",
-    "name": "裕民",
-    "price": 66.2,
-    "category": "Marine Shipping",
-    "totalYield": 485.0,
-    "pbr": 1.58
-  },
-  {
-    "id": "2607",
-    "name": "榮運",
-    "price": 54.6,
-    "category": "Integrated Freight & Logistics",
-    "totalYield": 1828.0,
-    "pbr": 0.98
-  },
-  {
-    "id": "2608",
-    "name": "嘉里大榮",
-    "price": 31.3,
-    "category": "Trucking",
-    "totalYield": 529.0,
-    "pbr": 1.19
-  },
-  {
-    "id": "2609",
-    "name": "陽明",
-    "price": 60.0,
-    "category": "Marine Shipping",
-    "totalYield": 1179.0,
-    "pbr": 0.65
-  },
-  {
-    "id": "2610",
-    "name": "華航",
-    "price": 18.9,
-    "category": "Airlines",
-    "totalYield": 428.0,
-    "pbr": 1.22
-  },
-  {
-    "id": "2611",
-    "name": "志信",
-    "price": 14.9,
-    "category": "Marine Shipping",
-    "totalYield": 1104.0,
-    "pbr": 1.05
-  },
-  {
-    "id": "2612",
-    "name": "中航",
-    "price": 64.5,
-    "category": "Integrated Freight & Logistics",
-    "totalYield": 327.0,
-    "pbr": 0.99
-  },
-  {
-    "id": "2613",
-    "name": "中櫃",
-    "price": 26.1,
-    "category": "Marine Shipping",
-    "totalYield": 383.0,
-    "pbr": 1.1
-  },
-  {
-    "id": "2614",
-    "name": "東森",
-    "price": 20.65,
-    "category": "Conglomerates",
-    "totalYield": 123.0,
-    "pbr": 1.67
-  },
-  {
-    "id": "2615",
-    "name": "萬海",
-    "price": 78.7,
-    "category": "Marine Shipping",
-    "totalYield": 429.0,
-    "pbr": 0.86
-  },
-  {
-    "id": "2616",
-    "name": "山隆",
-    "price": 19.8,
-    "category": "Specialty Retail",
-    "totalYield": 167.0,
-    "pbr": 0.92
-  },
-  {
-    "id": "2617",
-    "name": "台航",
-    "price": 32.2,
-    "category": "Marine Shipping",
-    "totalYield": 473.0,
-    "pbr": 0.79
-  },
-  {
-    "id": "2618",
-    "name": "長榮航",
-    "price": 34.05,
-    "category": "Airlines",
-    "totalYield": 709.0,
-    "pbr": 1.4
-  },
-  {
-    "id": "2630",
-    "name": "亞航",
-    "price": 52.4,
-    "category": "Aerospace & Defense",
-    "totalYield": 117.0,
-    "pbr": 3.12
-  },
-  {
-    "id": "2633",
-    "name": "台灣高鐵",
-    "price": 26.6,
-    "category": "Railroads",
-    "totalYield": 395.0,
-    "pbr": 2.06
-  },
-  {
-    "id": "2634",
-    "name": "漢翔",
-    "price": 54.9,
-    "category": "Aerospace & Defense",
-    "totalYield": 258.0,
-    "pbr": 3.04
-  },
-  {
-    "id": "2636",
-    "name": "台驊控股",
-    "price": 65.8,
-    "category": "Integrated Freight & Logistics",
-    "totalYield": 920.0,
-    "pbr": 1.0
-  },
-  {
-    "id": "2637",
-    "name": "慧洋-KY",
-    "price": 71.7,
-    "category": "Marine Shipping",
-    "totalYield": 697.0,
-    "pbr": 1.14
-  },
-  {
-    "id": "2642",
-    "name": "宅配通",
-    "price": 24.45,
-    "category": "Integrated Freight & Logistics",
-    "totalYield": 205.0,
-    "pbr": 1.07
-  },
-  {
-    "id": "2645",
-    "name": "長榮航太",
-    "price": 167.5,
-    "category": "Aerospace & Defense",
-    "totalYield": 274.0,
-    "pbr": 4.79
-  },
-  {
-    "id": "2646",
-    "name": "星宇航空",
-    "price": 22.05,
-    "category": "Airlines",
-    "totalYield": 0,
-    "pbr": 2.05
-  },
-  {
-    "id": "2701",
-    "name": "萬企",
-    "price": 10.9,
-    "category": "Real Estate Services",
-    "totalYield": 258.0,
-    "pbr": 0.6
-  },
-  {
-    "id": "2702",
-    "name": "華園",
-    "price": 11.55,
-    "category": "Lodging",
-    "totalYield": 0,
-    "pbr": 0.58
-  },
-  {
-    "id": "2704",
-    "name": "國賓",
-    "price": 42.9,
-    "category": "Lodging",
-    "totalYield": 118.0,
-    "pbr": 0.59
-  },
-  {
-    "id": "2705",
-    "name": "六福",
-    "price": 16.1,
-    "category": "Lodging",
-    "totalYield": 0,
-    "pbr": 0.65
-  },
-  {
-    "id": "2706",
-    "name": "第一店",
-    "price": 12.7,
-    "category": "Real Estate Services",
-    "totalYield": 277.0,
-    "pbr": 0.65
-  },
-  {
-    "id": "2707",
-    "name": "晶華",
-    "price": 185.0,
-    "category": "Lodging",
-    "totalYield": 778.0,
-    "pbr": 6.48
-  },
-  {
-    "id": "2712",
-    "name": "遠雄來",
-    "price": 17.0,
-    "category": "Resorts & Casinos",
-    "totalYield": 0,
-    "pbr": 1.69
-  },
-  {
-    "id": "2722",
-    "name": "夏都",
-    "price": 24.05,
-    "category": "Resorts & Casinos",
-    "totalYield": 62.0,
-    "pbr": 1.42
-  },
-  {
-    "id": "2723",
-    "name": "美食-KY",
-    "price": 68.0,
-    "category": "Restaurants",
-    "totalYield": 450.0,
-    "pbr": 1.29
-  },
-  {
-    "id": "2727",
-    "name": "王品",
-    "price": 219.0,
-    "category": "Restaurants",
-    "totalYield": 677.0,
-    "pbr": 4.22
-  },
-  {
-    "id": "2731",
-    "name": "雄獅",
-    "price": 163.0,
-    "category": "Travel Services",
-    "totalYield": 469.0,
-    "pbr": 3.3
-  },
-  {
-    "id": "2739",
-    "name": "寒舍",
-    "price": 32.7,
-    "category": "Lodging",
-    "totalYield": 310.0,
-    "pbr": 1.99
-  },
-  {
-    "id": "2748",
-    "name": "雲品",
-    "price": 39.9,
-    "category": "Lodging",
-    "totalYield": 505.0,
-    "pbr": 1.46
-  },
-  {
-    "id": "2753",
-    "name": "八方雲集",
-    "price": 182.5,
-    "category": "Restaurants",
-    "totalYield": 553.0,
-    "pbr": 3.52
-  },
-  {
-    "id": "2762",
-    "name": "世界健身-KY",
-    "price": 78.2,
-    "category": "Leisure",
-    "totalYield": 1239.0,
-    "pbr": 2.95
-  },
-  {
-    "id": "2801",
-    "name": "彰銀",
-    "price": 20.65,
-    "category": "Banks - Regional",
-    "totalYield": 243.0,
-    "pbr": 1.1
-  },
-  {
-    "id": "2812",
-    "name": "台中銀",
-    "price": 20.25,
-    "category": "Banks - Regional",
-    "totalYield": 193.0,
-    "pbr": 1.37
-  },
-  {
-    "id": "2816",
-    "name": "旺旺保",
-    "price": 30.2,
-    "category": "Insurance - Diversified",
-    "totalYield": 503.0,
-    "pbr": 0.89
-  },
-  {
-    "id": "2820",
-    "name": "華票",
-    "price": 16.85,
-    "category": "Capital Markets",
-    "totalYield": 464.0,
-    "pbr": 0.83
-  },
-  {
-    "id": "2832",
-    "name": "台產",
-    "price": 49.35,
-    "category": "Insurance - Property & Casualty",
-    "totalYield": 1449.0,
-    "pbr": 1.09
-  },
-  {
-    "id": "2834",
-    "name": "臺企銀",
-    "price": 15.35,
-    "category": "Banks - Regional",
-    "totalYield": 130.0,
-    "pbr": 1.04
-  },
-  {
-    "id": "2836",
-    "name": "高雄銀",
-    "price": 12.5,
-    "category": "Banks - Regional",
-    "totalYield": 242.0,
-    "pbr": 0.87
-  },
-  {
-    "id": "2836A",
-    "name": "高雄銀甲特",
-    "price": 24.1,
-    "category": "Banks - Regional",
-    "totalYield": 322.0,
-    "pbr": 1.69
-  },
-  {
-    "id": "2838",
-    "name": "聯邦銀",
-    "price": 19.6,
-    "category": "Banks - Regional",
-    "totalYield": 181.0,
-    "pbr": 1.06
-  },
-  {
-    "id": "2838A",
-    "name": "聯邦銀甲特",
-    "price": 54.4,
-    "category": "Banks - Regional",
-    "totalYield": 484.0,
-    "pbr": 2.93
-  },
-  {
-    "id": "2845",
-    "name": "遠東銀",
-    "price": 12.35,
-    "category": "Banks - Regional",
-    "totalYield": 405.0,
-    "pbr": 0.88
-  },
-  {
-    "id": "2849",
-    "name": "安泰銀",
-    "price": 13.45,
-    "category": "Banks - Regional",
-    "totalYield": 287.0,
-    "pbr": 0.74
-  },
-  {
-    "id": "2850",
-    "name": "新產",
-    "price": 117.5,
-    "category": "Insurance - Property & Casualty",
-    "totalYield": 616.0,
-    "pbr": 1.9
-  },
-  {
-    "id": "2851",
-    "name": "中再保",
-    "price": 27.35,
-    "category": "Insurance - Reinsurance",
-    "totalYield": 710.0,
-    "pbr": 1.06
-  },
-  {
-    "id": "2852",
-    "name": "第一保",
-    "price": 26.95,
-    "category": "Insurance - Property & Casualty",
-    "totalYield": 795.0,
-    "pbr": 0.91
-  },
-  {
-    "id": "2855",
-    "name": "統一證",
-    "price": 30.3,
-    "category": "Capital Markets",
-    "totalYield": 374.0,
-    "pbr": 1.23
-  },
-  {
-    "id": "2867",
-    "name": "三商壽",
-    "price": 8.06,
-    "category": "Insurance - Life",
-    "totalYield": 0,
-    "pbr": 1.17
-  },
-  {
-    "id": "2880",
-    "name": "華南金",
-    "price": 35.4,
-    "category": "Banks - Regional",
-    "totalYield": 357.0,
-    "pbr": 2.16
-  },
-  {
-    "id": "2881",
-    "name": "富邦金",
-    "price": 90.5,
-    "category": "Insurance - Life",
-    "totalYield": 462.0,
-    "pbr": 1.33
-  },
-  {
-    "id": "2881A",
-    "name": "富邦特",
-    "price": 63.3,
-    "category": "Insurance - Life",
-    "totalYield": 434.0,
-    "pbr": 0.93
-  },
-  {
-    "id": "2881B",
-    "name": "富邦金乙特",
-    "price": 61.6,
-    "category": "Insurance - Life",
-    "totalYield": 351.0,
-    "pbr": 0.91
-  },
-  {
-    "id": "2881C",
-    "name": "富邦金丙特",
-    "price": 52.1,
-    "category": "Insurance - Life",
-    "totalYield": 347.0,
-    "pbr": 0.77
-  },
-  {
-    "id": "2882",
-    "name": "國泰金",
-    "price": 73.6,
-    "category": "Insurance - Life",
-    "totalYield": 478.0,
-    "pbr": 1.23
-  },
-  {
-    "id": "2882A",
-    "name": "國泰特",
-    "price": 60.8,
-    "category": "Insurance - Life",
-    "totalYield": 415.0,
-    "pbr": 1.02
-  },
-  {
-    "id": "2882B",
-    "name": "國泰金乙特",
-    "price": 60.1,
-    "category": "Insurance - Life",
-    "totalYield": 354.0,
-    "pbr": 1.01
-  },
-  {
-    "id": "2883",
-    "name": "凱基金",
-    "price": 20.3,
-    "category": "Insurance - Life",
-    "totalYield": 423.0,
-    "pbr": 1.17
-  },
-  {
-    "id": "2883B",
-    "name": "凱基金乙特",
-    "price": 8.02,
-    "category": "Insurance - Life",
-    "totalYield": 442.0,
-    "pbr": 0.46
-  },
-  {
-    "id": "2884",
-    "name": "玉山金",
-    "price": 34.05,
-    "category": "Banks - Regional",
-    "totalYield": 357.0,
-    "pbr": 2.02
-  },
-  {
-    "id": "2885",
-    "name": "元大金",
-    "price": 45.35,
-    "category": "Financial Conglomerates",
-    "totalYield": 334.0,
-    "pbr": 1.84
-  },
-  {
-    "id": "2886",
-    "name": "兆豐金",
-    "price": 39.3,
-    "category": "Banks - Regional",
-    "totalYield": 411.0,
-    "pbr": 1.52
-  },
-  {
-    "id": "2887",
-    "name": "台新新光金",
-    "price": 24.55,
-    "category": "Banks - Regional",
-    "totalYield": 373.0,
-    "pbr": 1.34
-  },
-  {
-    "id": "2887E",
-    "name": "台新新光戊特一",
-    "price": 50.2,
-    "category": "Banks - Regional",
-    "totalYield": 485.0,
-    "pbr": 2.74
-  },
-  {
-    "id": "2887F",
-    "name": "台新新光戊特二",
-    "price": 47.3,
-    "category": "Banks - Regional",
-    "totalYield": 399.0,
-    "pbr": 2.58
-  },
-  {
-    "id": "2887G",
-    "name": "台新新光庚特一",
-    "price": 40.6,
-    "category": "Banks - Regional",
-    "totalYield": 0,
-    "pbr": 2.21
-  },
-  {
-    "id": "2887H",
-    "name": "台新新光庚特二",
-    "price": 40.0,
-    "category": "Banks - Regional",
-    "totalYield": 0,
-    "pbr": 2.18
-  },
-  {
-    "id": "2887I",
-    "name": "台新新光辛特",
-    "price": 9.28,
-    "category": "Banks - Regional",
-    "totalYield": 0,
-    "pbr": 0.51
-  },
-  {
-    "id": "2887Z1",
-    "name": "台新新光己特",
-    "price": 17.5,
-    "category": "Banks - Regional",
-    "totalYield": 373.0,
-    "pbr": 0.95
-  },
-  {
-    "id": "2889",
-    "name": "國票金",
-    "price": 16.2,
-    "category": "Capital Markets",
-    "totalYield": 185.0,
-    "pbr": 1.32
-  },
-  {
-    "id": "2890",
-    "name": "永豐金",
-    "price": 31.65,
-    "category": "Banks - Regional",
-    "totalYield": 291.0,
-    "pbr": 1.92
-  },
-  {
-    "id": "2891",
-    "name": "中信金",
-    "price": 51.5,
-    "category": "Banks - Regional",
-    "totalYield": 456.0,
-    "pbr": 2.19
-  },
-  {
-    "id": "2891B",
-    "name": "中信金乙特",
-    "price": 63.7,
-    "category": "Banks - Regional",
-    "totalYield": 355.0,
-    "pbr": 2.71
-  },
-  {
-    "id": "2891C",
-    "name": "中信金丙特",
-    "price": 60.3,
-    "category": "Banks - Regional",
-    "totalYield": 318.0,
-    "pbr": 2.57
-  },
-  {
-    "id": "2892",
-    "name": "第一金",
-    "price": 29.05,
-    "category": "Banks - Regional",
-    "totalYield": 332.0,
-    "pbr": 1.48
-  },
-  {
-    "id": "2897",
-    "name": "王道銀行",
-    "price": 9.79,
-    "category": "Banks - Regional",
-    "totalYield": 519.0,
-    "pbr": 0.66
-  },
-  {
-    "id": "2897B",
-    "name": "王道銀乙特",
-    "price": 11.8,
-    "category": "Banks - Regional",
-    "totalYield": 123.0,
-    "pbr": 0.8
-  },
-  {
-    "id": "2901",
-    "name": "欣欣",
-    "price": 23.6,
-    "category": "Department Stores",
-    "totalYield": 158.0,
-    "pbr": 1.97
-  },
-  {
-    "id": "2903",
-    "name": "遠百",
-    "price": 22.3,
-    "category": "Department Stores",
-    "totalYield": 608.0,
-    "pbr": 1.03
-  },
-  {
-    "id": "2904",
-    "name": "匯僑",
-    "price": 17.5,
-    "category": "Oil & Gas Equipment & Services",
-    "totalYield": 571.0,
-    "pbr": 1.07
-  },
-  {
-    "id": "2905",
-    "name": "三商",
-    "price": 15.85,
-    "category": "Insurance - Life",
-    "totalYield": 196.0,
-    "pbr": 1.06
-  },
-  {
-    "id": "2906",
-    "name": "高林",
-    "price": 12.5,
-    "category": "Specialty Retail",
-    "totalYield": 484.0,
-    "pbr": 0.78
-  },
-  {
-    "id": "2908",
-    "name": "特力",
-    "price": 20.2,
-    "category": "Home Improvement Retail",
-    "totalYield": 446.0,
-    "pbr": 1.53
-  },
-  {
-    "id": "2910",
-    "name": "統領",
-    "price": 22.3,
-    "category": "Department Stores",
-    "totalYield": 436.0,
-    "pbr": 1.44
-  },
-  {
-    "id": "2911",
-    "name": "麗嬰房",
-    "price": 5.12,
-    "category": "Apparel Retail",
-    "totalYield": 0,
-    "pbr": 3.46
-  },
-  {
-    "id": "2912",
-    "name": "統一超",
-    "price": 220.0,
-    "category": "Grocery Stores",
-    "totalYield": 410.0,
-    "pbr": 5.37
-  },
-  {
-    "id": "2913",
-    "name": "農林",
-    "price": 12.5,
-    "category": "Farm Products",
-    "totalYield": 0,
-    "pbr": 0.79
-  },
-  {
-    "id": "2915",
-    "name": "潤泰全",
-    "price": 51.5,
-    "category": "Textile Manufacturing",
-    "totalYield": 489.0,
-    "pbr": 0.56
-  },
-  {
-    "id": "2923",
-    "name": "鼎固-KY",
-    "price": 22.55,
-    "category": "Real Estate - Development",
-    "totalYield": 101.0,
-    "pbr": 0.83
-  },
-  {
-    "id": "2929",
-    "name": "淘帝-KY",
-    "price": 7.23,
-    "category": "Apparel Manufacturing",
-    "totalYield": 0,
-    "pbr": 0.29
-  },
-  {
-    "id": "2939",
-    "name": "永邑-KY",
-    "price": 21.8,
-    "category": "Conglomerates",
-    "totalYield": 0,
-    "pbr": 1.71
-  },
-  {
-    "id": "2945",
-    "name": "三商家購",
-    "price": 41.3,
-    "category": "Grocery Stores",
-    "totalYield": 361.0,
-    "pbr": 1.4
-  },
-  {
-    "id": "3002",
-    "name": "歐格",
-    "price": 21.6,
-    "category": "Electrical Equipment & Parts",
-    "totalYield": 340.0,
-    "pbr": 1.79
-  },
-  {
-    "id": "3003",
-    "name": "健和興",
-    "price": 49.9,
-    "category": "Electrical Equipment & Parts",
-    "totalYield": 416.0,
-    "pbr": 1.23
-  },
-  {
-    "id": "3004",
-    "name": "豐達科",
-    "price": 109.0,
-    "category": "Tools & Accessories",
-    "totalYield": 243.0,
-    "pbr": 1.77
-  },
-  {
-    "id": "3005",
-    "name": "神基",
-    "price": 123.5,
-    "category": "Computer Hardware",
-    "totalYield": 562.0,
-    "pbr": 3.18
-  },
-  {
-    "id": "3006",
-    "name": "晶豪科",
-    "price": 148.0,
-    "category": "Semiconductors",
-    "totalYield": 68.0,
-    "pbr": 4.1
-  },
-  {
-    "id": "3008",
-    "name": "大立光",
-    "price": 2360.0,
-    "category": "Electronic Components",
-    "totalYield": 347.0,
-    "pbr": 1.67
-  },
-  {
-    "id": "3010",
-    "name": "華立",
-    "price": 123.5,
-    "category": "Electronics & Computer Distribution",
-    "totalYield": 463.0,
-    "pbr": 1.43
-  },
-  {
-    "id": "3011",
-    "name": "今皓",
-    "price": 12.25,
-    "category": "Electronic Components",
-    "totalYield": 0,
-    "pbr": 1.06
-  },
-  {
-    "id": "3013",
-    "name": "晟銘電",
-    "price": 102.0,
-    "category": "Computer Hardware",
-    "totalYield": 61.0,
-    "pbr": 4.4
-  },
-  {
-    "id": "3014",
-    "name": "聯陽",
-    "price": 119.0,
-    "category": "Semiconductors",
-    "totalYield": 773.0,
-    "pbr": 2.98
-  },
-  {
-    "id": "3015",
-    "name": "全漢",
-    "price": 53.3,
-    "category": "Electrical Equipment & Parts",
-    "totalYield": 573.0,
-    "pbr": 0.8
-  },
-  {
-    "id": "3016",
-    "name": "嘉晶",
-    "price": 56.6,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 92.0,
-    "pbr": 3.34
-  },
-  {
-    "id": "3017",
-    "name": "奇鋐",
-    "price": 1820.0,
-    "category": "Electronic Components",
-    "totalYield": 57.0,
-    "pbr": 19.38
-  },
-  {
-    "id": "3018",
-    "name": "隆銘綠能",
-    "price": 13.2,
-    "category": "Engineering & Construction",
-    "totalYield": 0,
-    "pbr": 1.76
-  },
-  {
-    "id": "3019",
-    "name": "亞光",
-    "price": 135.5,
-    "category": "Electronic Components",
-    "totalYield": 301.0,
-    "pbr": 2.71
-  },
-  {
-    "id": "3021",
-    "name": "鴻名",
-    "price": 16.6,
-    "category": "Computer Hardware",
-    "totalYield": 187.0,
-    "pbr": 1.03
-  },
-  {
-    "id": "3022",
-    "name": "威強電",
-    "price": 59.2,
-    "category": "Computer Hardware",
-    "totalYield": 801.0,
-    "pbr": 1.0
-  },
-  {
-    "id": "3023",
-    "name": "信邦",
-    "price": 234.0,
-    "category": "Electronic Components",
-    "totalYield": 463.0,
-    "pbr": 3.82
-  },
-  {
-    "id": "3024",
-    "name": "憶聲",
-    "price": 10.2,
-    "category": "Consumer Electronics",
-    "totalYield": 398.0,
-    "pbr": 0.96
-  },
-  {
-    "id": "3025",
-    "name": "星通",
-    "price": 56.7,
-    "category": "Communication Equipment",
-    "totalYield": 604.0,
-    "pbr": 4.26
-  },
-  {
-    "id": "3026",
-    "name": "禾伸堂",
-    "price": 109.0,
-    "category": "Electronic Components",
-    "totalYield": 521.0,
-    "pbr": 1.85
-  },
-  {
-    "id": "3027",
-    "name": "盛達",
-    "price": 22.6,
-    "category": "Conglomerates",
-    "totalYield": 0,
-    "pbr": 1.22
-  },
-  {
-    "id": "3028",
-    "name": "增你強",
-    "price": 53.8,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 405.0,
-    "pbr": 2.17
-  },
-  {
-    "id": "3029",
-    "name": "零壹",
-    "price": 118.5,
-    "category": "Computer Hardware",
-    "totalYield": 466.0,
-    "pbr": 3.43
-  },
-  {
-    "id": "3030",
-    "name": "德律",
-    "price": 249.0,
-    "category": "Scientific & Technical Instruments",
-    "totalYield": 211.0,
-    "pbr": 6.13
-  },
-  {
-    "id": "3031",
-    "name": "佰鴻",
-    "price": 19.2,
-    "category": "Electronic Components",
-    "totalYield": 531.0,
-    "pbr": 1.17
-  },
-  {
-    "id": "3032",
-    "name": "偉訓",
-    "price": 66.7,
-    "category": "Computer Hardware",
-    "totalYield": 430.0,
-    "pbr": 2.87
-  },
-  {
-    "id": "3033",
-    "name": "威健",
-    "price": 30.25,
-    "category": "Electronics & Computer Distribution",
-    "totalYield": 714.0,
-    "pbr": 1.43
-  },
-  {
-    "id": "3034",
-    "name": "聯詠",
-    "price": 374.5,
-    "category": "Semiconductors",
-    "totalYield": 755.0,
-    "pbr": 3.58
-  },
-  {
-    "id": "3035",
-    "name": "智原",
-    "price": 159.0,
-    "category": "Semiconductor Equipment & Materials",
-    "totalYield": 190.0,
-    "pbr": 3.17
-  },
-  {
-    "id": "3036",
-    "name": "文曄",
-    "price": 211.0,
-    "category": "Electronic Components",
-    "totalYield": 307.0,
-    "pbr": 2.67
-  },
-  {
-    "id": "3037",
-    "name": "欣興",
-    "price": 450.0,
-    "category": "Electronic Components",
-    "totalYield": 36.0,
-    "pbr": 6.84
+    "category": "Auto & Truck Dealerships"
   }
 ]
