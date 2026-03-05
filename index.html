@@ -22,7 +22,7 @@
                            class="w-full bg-white/10 border border-white/20 rounded-xl py-2.5 pl-11 pr-4 focus:ring-2 ring-yellow-400 focus:outline-none placeholder:text-white/40">
                 </div>
                 <select v-model="selectedCat" class="bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 font-bold focus:outline-none md:w-64">
-                    <option value="">所有產業分類 (33類)</option>
+                    <option value="">所有產業分類</option>
                     <option v-for="c in categories" :value="c" class="text-black">{{ c }}</option>
                 </select>
                 <button @click="loadData" class="bg-white/20 px-4 py-2 rounded-xl text-xs hover:bg-white/30 transition">手動刷新</button>
