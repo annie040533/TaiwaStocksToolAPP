@@ -1,0 +1,72 @@
+name: TW Stock Radar
+on:
+  schedule:
+    - cron: '0 9 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests pandas
+      - name: Run logic
+        run: |
+          python - <<EOF
+          import requests
+          import pandas as pd
+          import json
+          import io
+
+          def get_val(v):
+              s = str(v).replace(',', '').strip()
+              return float(s) if s not in ['', '-', 'None'] else 0.0
+
+          try:
+              headers = {'User-Agent': 'Mozilla/5.0'}
+              # 1. 抓價格
+              p_url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
+              p_df = pd.read_csv(io.StringIO(requests.get(p_url, headers=headers).text))
+              p_df.columns = [c.strip().replace('"', '') for c in p_df.columns]
+
+              # 2. 抓 PBR & 殖利率 (官方 OpenAPI)
+              s_url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
+              s_data = requests.get(s_url, headers=headers).json()
+              s_map = {item.get('Code'): item for item in s_data}
+
+              # 3. 抓中文產業別
+              c_url = "https://openapi.twse.com.tw/v1/opendata/t187ap03_L"
+              c_data = requests.get(c_url, headers=headers).json()
+              c_map = {item.get('公司代號'): item.get('產業別') for item in c_data}
+
+              final_data = []
+              for _, row in p_df.iterrows():
+                  sid = str(row.get('證券代號')).strip()
+                  if len(sid) == 4:
+                      info = s_map.get(sid, {})
+                      final_data.append({
+                          "id": sid,
+                          "name": str(row.get('證券名稱')).strip(),
+                          "price": get_val(row.get('收盤價')),
+                          "pbr": get_val(info.get('PBRatio')),
+                          "totalYield": get_val(info.get('YieldRate')),
+                          "category": c_map.get(sid, "其他") # 這裡確保是中文
+                      })
+              
+              with open('data.json', 'w', encoding='utf-8') as f:
+                  json.dump(final_data, f, ensure_ascii=False, indent=2)
+          except Exception as e:
+              print(f"Error: {e}")
+          EOF
+      - name: Push data
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "Refresh Data" || exit 0
+          git push
