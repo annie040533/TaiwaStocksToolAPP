@@ -30,30 +30,23 @@ jobs:
           def fetch_data():
               headers = {'User-Agent': 'Mozilla/5.0'}
               
-              # 1. 抓取成交價 (修正版: 處理 CSV 格式錯誤)
+              # 1. 抓取成交價 (維持 0304 穩定版)
               price_url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
               p_resp = requests.get(price_url, headers=headers)
               p_df = pd.read_csv(io.StringIO(p_resp.text))
-              # 清理可能的多餘欄位
               p_df.columns = [c.strip().replace('"', '') for c in p_df.columns]
 
-              # 2. 抓取 淨值比(PBR) 與 殖利率 (與玩股網同步的來源)
-              # 這個 API 專門提供當日統計資料
-              stats_url = "https://www.twse.com.tw/exchangeReport/BWIBYM_ALL?response=open_data"
+              # 2. 透過 OpenAPI 抓取 PBR 與 殖利率
+              stats_url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
               s_resp = requests.get(stats_url, headers=headers)
-              # 處理 CSV 可能出現的說明文字行
-              s_raw = s_resp.text.split('\n')
-              s_clean = "\n".join([line for line in s_raw if len(line.split(',')) >= 7])
-              s_df = pd.read_csv(io.StringIO(s_clean))
-              s_df.columns = [c.strip().replace('"', '') for c in s_df.columns]
+              s_data = s_resp.json()
               
-              stats_dict = {}
-              for _, row in s_df.iterrows():
-                  sid = str(row.get('證券代號', '')).strip().replace('"', '')
-                  stats_dict[sid] = {
-                      'pbr': float(str(row.get('股價淨值比', '0')).replace(',', '')),
-                      'yield': float(str(row.get('殖利率(%)', '0')).replace(',', ''))
-                  }
+              stats_dict = {
+                  item['Code']: {
+                      'pbr': float(item['PBRatio']) if item['PBRatio'] else 0,
+                      'yield': float(item['YieldRate']) if item['YieldRate'] else 0
+                  } for item in s_data
+              }
 
               stocks = []
               for _, row in p_df.iterrows():
@@ -75,14 +68,13 @@ jobs:
               return stocks
 
           data = fetch_data()
-          if data:
-              with open('data.json', 'w', encoding='utf-8') as f:
-                  json.dump(data, f, ensure_ascii=False, indent=2)
+          with open('data.json', 'w', encoding='utf-8') as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
           EOF
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git add data.json
-          git commit -m "Fix: CSV Parser and PBR Data" || exit 0
+          git commit -m "Update PBR and Yield from TWSE OpenAPI" || exit 0
           git push
