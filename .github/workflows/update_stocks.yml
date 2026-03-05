@@ -30,23 +30,30 @@ jobs:
           def fetch_data():
               headers = {'User-Agent': 'Mozilla/5.0'}
               
-              # 1. 抓取成交價 (維持 0304 穩定版)
+              # 1. 抓取成交價 (0304 最穩定 CSV 版)
               price_url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
               p_resp = requests.get(price_url, headers=headers)
               p_df = pd.read_csv(io.StringIO(p_resp.text))
               p_df.columns = [c.strip().replace('"', '') for c in p_df.columns]
 
-              # 2. 透過 OpenAPI 抓取 PBR 與 殖利率
+              # 2. 抓取 PBR、殖利率與官方分類 (OpenAPI JSON 版)
+              # 這個 API 包含 Code, Name, YieldRate, PE, PBRatio
               stats_url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
-              s_resp = requests.get(stats_url, headers=headers)
-              s_data = s_resp.json()
+              s_data = requests.get(stats_url, headers=headers).json()
               
-              stats_dict = {
-                  item['Code']: {
-                      'pbr': float(item['PBRatio']) if item['PBRatio'] else 0,
-                      'yield': float(item['YieldRate']) if item['YieldRate'] else 0
-                  } for item in s_data
-              }
+              # 3. 抓取官方產業分類清單 (對應您要求的 33 類)
+              cat_url = "https://openapi.twse.com.tw/v1/opendata/t187ap03_L"
+              cat_data = requests.get(cat_url, headers=headers).json()
+              cat_dict = {item['公司代號']: item['產業別'] for item in cat_data}
+
+              stats_dict = {}
+              for item in s_data:
+                  code = item.get('Code', '')
+                  if code:
+                      stats_dict[code] = {
+                          'pbr': item.get('PBRatio', '0'),
+                          'yield': item.get('YieldRate', '0')
+                      }
 
               stocks = []
               for _, row in p_df.iterrows():
@@ -57,13 +64,14 @@ jobs:
                   except: price = 0
                   
                   if price > 0 and len(sid) == 4:
-                      s_info = stats_dict.get(sid, {'pbr': 0.0, 'yield': 0.0})
+                      s_info = stats_dict.get(sid, {'pbr': '0', 'yield': '0'})
                       stocks.append({
                           "id": sid,
                           "name": name,
                           "price": price,
-                          "pbr": s_info['pbr'],
-                          "totalYield": s_info['yield']
+                          "pbr": float(s_info['pbr']) if s_info['pbr'] else 0,
+                          "totalYield": float(s_info['yield']) if s_info['yield'] else 0,
+                          "category": cat_dict.get(sid, "其他")
                       })
               return stocks
 
@@ -76,5 +84,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git add data.json
-          git commit -m "Update PBR and Yield from TWSE OpenAPI" || exit 0
+          git commit -m "Fix: Key Error and Add Full Categories" || exit 0
           git push
