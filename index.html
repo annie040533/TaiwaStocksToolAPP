@@ -2,35 +2,27 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>台股價值選股雷達</title>
+    <title>台股價值選股雷達 - 修正版</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        [v-cloak] { display: none; }
-        body { font-family: "Microsoft JhengHei", sans-serif; }
-    </style>
 </head>
-<body class="bg-[#f3f4f6] min-h-screen">
+<body class="bg-gray-100 min-h-screen">
 
-<div id="app" v-cloak>
-    <header class="bg-[#2d336b] text-white p-6 sticky top-0 z-50 shadow-2xl">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-4 w-full md:w-auto">
-                <h1 class="text-2xl font-black italic tracking-tighter">台股雷達</h1>
-                <button @click="fetchData" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-xs border border-white/20">
-                    <i class="fa-solid fa-sync"></i> 重載數據
-                </button>
+<div id="app" class="pb-10">
+    <header class="bg-[#2d336b] text-white p-6 sticky top-0 z-50 shadow-xl">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-black italic tracking-tight"><i class="fa-solid fa-bolt text-yellow-400 mr-2"></i>台股雷達</h1>
+                <button @click="loadData" class="text-xs border border-white/30 px-4 py-2 rounded-lg hover:bg-white/10">重載數據</button>
             </div>
-            
-            <div class="flex flex-col md:flex-row gap-4 w-full md:flex-1 md:justify-end">
-                <div class="relative md:w-64">
-                    <i class="fa-solid fa-search absolute left-3 top-3 text-white/50"></i>
-                    <input v-model="search" type="text" placeholder="搜尋代碼/名稱..." 
-                           class="w-full bg-white/10 border border-white/30 rounded-xl py-2 pl-9 pr-4 focus:outline-none focus:ring-2 ring-yellow-400">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="relative">
+                    <i class="fa-solid fa-search absolute left-4 top-3.5 text-white/50"></i>
+                    <input v-model="search" type="text" placeholder="搜尋股票代碼或名稱..." class="w-full bg-white/10 border border-white/20 rounded-xl py-2.5 pl-11 pr-4 focus:ring-2 ring-yellow-400 focus:outline-none">
                 </div>
-                <select v-model="selectedCat" class="bg-white/10 border border-white/30 rounded-xl px-4 py-2 font-bold focus:outline-none md:w-48">
-                    <option value="" class="text-black">所有產業</option>
+                <select v-model="selectedCat" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 font-bold focus:outline-none">
+                    <option value="" class="text-black">所有產業類別 (玩股網交叉比對)</option>
                     <option v-for="c in categories" :value="c" class="text-black">{{ c }}</option>
                 </select>
             </div>
@@ -38,48 +30,43 @@
     </header>
 
     <main class="max-w-6xl mx-auto p-4 md:p-6">
-        <div v-for="pg in nestedData" :key="pg.range" class="mb-8">
-            <div @click="pg.open = !pg.open" 
-                 class="bg-white p-5 rounded-2xl shadow-sm border-l-8 border-[#2d336b] cursor-pointer flex justify-between items-center hover:bg-gray-50 transition mb-3">
-                <span class="text-xl font-black text-slate-800">{{ pg.range }} <span class="text-sm font-bold text-slate-400 ml-2">({{ pg.count }} 檔)</span></span>
-                <i class="fa-solid" :class="pg.open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        <div v-for="(pg, pIdx) in priceGroups" :key="pg.label" class="mb-6">
+            <div @click="pg.isOpen = !pg.isOpen" 
+                 class="bg-white p-5 rounded-2xl shadow-sm border-l-[12px] border-[#2d336b] cursor-pointer flex justify-between items-center hover:bg-slate-50 transition">
+                <span class="text-xl font-black text-slate-800">{{ pg.label }} <span class="text-sm font-bold text-slate-400 ml-2">({{ pg.count }} 檔)</span></span>
+                <i class="fa-solid text-slate-300" :class="pg.isOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
             </div>
 
-            <div v-if="pg.open" class="space-y-4 ml-2 md:ml-6">
-                <div v-for="yg in pg.yieldGroups" :key="yg.label" v-show="yg.items.length > 0">
-                    <div @click="yg.open = !yg.open" class="bg-slate-200/60 p-3 rounded-xl cursor-pointer flex items-center gap-3 mb-3">
+            <div v-if="pg.isOpen" class="mt-4 ml-4 space-y-4">
+                <div v-for="(yg, yIdx) in pg.yieldGroups" :key="yg.label" v-show="yg.items.length > 0">
+                    <div @click="yg.isOpen = !yg.isOpen" class="bg-slate-200/50 p-3 rounded-xl cursor-pointer flex items-center gap-3">
                         <div :class="yg.color" class="w-3 h-3 rounded-full"></div>
                         <span class="font-black text-slate-600 text-sm">{{ yg.label }}</span>
                         <i class="fa-solid fa-caret-down text-slate-400"></i>
                     </div>
 
-                    <div v-if="yg.open" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <div v-for="s in yg.items" :key="s.id" class="bg-white p-5 rounded-[2.5rem] shadow-md border border-slate-100 relative group">
-                            <div class="absolute top-0 left-0 bg-blue-600 text-white px-4 py-1.5 rounded-br-2xl text-[10px] font-black uppercase">
+                    <div v-if="yg.isOpen" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                        <div v-for="s in yg.items" :key="s.id" class="bg-white p-6 rounded-[2.5rem] shadow-md border border-slate-50 relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 bg-indigo-600 text-white px-4 py-1.5 rounded-br-2xl text-[10px] font-black">
                                 {{ getCategory(s.id) }}
                             </div>
-                            <div class="text-right text-2xl font-black text-slate-900 mb-1">
-                                <span class="text-xs text-slate-300 font-bold mr-1">TWD</span>${{ s.price }}
-                            </div>
-                            
+                            <div class="text-right text-2xl font-black text-slate-900 mb-1">${{ s.price }}</div>
                             <div class="mb-4">
-                                <span class="text-slate-400 text-xs font-bold">{{ s.id }}</span>
+                                <span class="text-slate-400 text-xs font-bold tracking-widest">{{ s.id }}</span>
                                 <h3 class="text-xl font-black text-slate-800">{{ s.name }}</h3>
                             </div>
-
                             <div class="flex gap-2 mb-4">
                                 <div class="flex-1 bg-amber-50 p-3 rounded-2xl border border-amber-100 text-center">
                                     <div class="text-[10px] font-bold text-amber-600">合計殖利率</div>
                                     <div class="text-lg font-black text-amber-700">{{ s.totalYield }}%</div>
                                 </div>
-                                <div class="flex-1 bg-sky-50 p-3 rounded-2xl border border-sky-100 text-center">
-                                    <div class="text-[10px] font-bold text-sky-600">淨值比(PBR)</div>
-                                    <div class="text-lg font-black text-sky-700">{{ s.pbr }}</div>
+                                <div class="flex-1 bg-blue-50 p-3 rounded-2xl border border-blue-100 text-center">
+                                    <div class="text-[10px] font-bold text-blue-600">淨值比(PBR)</div>
+                                    <div class="text-lg font-black text-blue-700">{{ s.pbr }}</div>
                                 </div>
                             </div>
-
                             <a :href="'https://www.wantgoo.com/stock/' + s.id" target="_blank" 
-                               class="block w-full py-2 bg-slate-50 rounded-xl text-center text-xs font-bold text-slate-400 group-hover:bg-[#2d336b] group-hover:text-white transition-all">
+                               class="block w-full py-2 bg-slate-50 rounded-xl text-center text-xs font-bold text-slate-400 group-hover:bg-[#2d336b] group-hover:text-white transition-colors">
                                 查看詳細技術線圖 <i class="fa-solid fa-chart-line ml-1"></i>
                             </a>
                         </div>
@@ -93,65 +80,70 @@
 <script>
     const { createApp } = Vue;
     createApp({
-        data() { return { stocks: [], search: '', selectedCat: '' } },
+        data() {
+            return {
+                stocks: [],
+                search: '',
+                selectedCat: '',
+                // 預先定義股價區間架構
+                priceGroups: [
+                    { label: "股價 300 以上", min: 300, max: 99999, isOpen: true, count: 0, yieldGroups: [] },
+                    { label: "股價 100 - 300", min: 100, max: 300, isOpen: true, count: 0, yieldGroups: [] },
+                    { label: "股價 50 - 100", min: 50, max: 100, isOpen: false, count: 0, yieldGroups: [] },
+                    { label: "股價 20 - 50", min: 20, max: 50, isOpen: false, count: 0, yieldGroups: [] },
+                    { label: "股價 0 - 20", min: 0, max: 20, isOpen: false, count: 0, yieldGroups: [] }
+                ]
+            }
+        },
+        watch: {
+            // 當搜尋或篩選改變時，重新計算分組
+            search() { this.processData(); },
+            selectedCat() { this.processData(); },
+            stocks() { this.processData(); }
+        },
         computed: {
-            categories() { 
+            categories() {
                 const cats = this.stocks.map(s => this.getCategory(s.id));
                 return [...new Set(cats)].sort();
-            },
-            nestedData() {
-                const filtered = this.stocks.filter(s => 
-                    (s.name.includes(this.search) || s.id.includes(this.search)) &&
-                    (this.selectedCat === '' || this.getCategory(s.id) === this.selectedCat)
-                );
-                
-                const ranges = [
-                    { label: "股價 300 以上", min: 300, max: 99999, open: true },
-                    { label: "股價 100 - 300", min: 100, max: 300, open: true },
-                    { label: "股價 50 - 100", min: 50, max: 100, open: false },
-                    { label: "股價 20 - 50", min: 20, max: 50, open: false },
-                    { label: "股價 0 - 20", min: 0, max: 20, open: false }
-                ];
-
-                return ranges.map(r => {
-                    const inRange = filtered.filter(s => s.price >= r.min && s.price < r.max);
-                    return {
-                        ...r,
-                        count: inRange.length,
-                        yieldGroups: [
-                            { label: "合計殖利率 10% 以上", color: "bg-red-500", open: true, items: inRange.filter(s => s.totalYield >= 10).sort((a,b)=>b.totalYield-a.totalYield) },
-                            { label: "合計殖利率 5 - 10%", color: "bg-green-500", open: true, items: inRange.filter(s => s.totalYield >= 5 && s.totalYield < 10).sort((a,b)=>b.totalYield-a.totalYield) },
-                            { label: "合計殖利率 0 - 5%", color: "bg-slate-400", open: false, items: inRange.filter(s => s.totalYield < 5).sort((a,b)=>b.totalYield-a.totalYield) }
-                        ]
-                    };
-                });
             }
         },
         methods: {
             getCategory(id) {
                 const n = parseInt(id);
-                if (n >= 1100 && n <= 1199) return "水泥工業";
-                if (n >= 1200 && n <= 1299) return "食品工業";
-                if (n >= 1300 && n <= 1399) return "塑膠工業";
-                if (n >= 2300 && n <= 2499) {
-                    if ([2330, 2454, 2303, 3711].includes(n)) return "半導體業";
-                    if ([2317, 2382, 2357].includes(n)) return "電腦及週邊";
-                    return "電子工業";
-                }
-                if (n >= 2600 && n <= 2699) return "航運業";
-                if (n >= 2800 && n <= 2899) return "金融保險";
+                if (n >= 1101 && n <= 1110) return "水泥工業";
+                if (n >= 1201 && n <= 1299) return "食品工業";
+                if (n >= 2330 && n <= 2330) return "半導體業(台積電)";
+                if (n >= 2301 && n <= 2499) return "電子/電腦週邊";
+                if (n >= 2601 && n <= 2699) return "航運業";
+                if (n >= 2801 && n <= 2899) return "金融保險";
                 return "其他產業";
             },
-            async fetchData() {
+            async loadData() {
                 try {
                     const res = await fetch('./data.json?v=' + Date.now());
                     this.stocks = await res.json();
-                } catch (e) {
-                    console.error("目前尚無資料，請等待 GitHub Actions 執行完畢。");
-                }
+                } catch (e) { console.error("資料尚未就緒"); }
+            },
+            processData() {
+                const filtered = this.stocks.filter(s => 
+                    (s.name.includes(this.search) || s.id.includes(this.search)) &&
+                    (this.selectedCat === '' || this.getCategory(s.id) === this.selectedCat)
+                );
+
+                this.priceGroups.forEach(pg => {
+                    const inPrice = filtered.filter(s => s.price >= pg.min && s.price < pg.max);
+                    pg.count = inPrice.length;
+                    pg.yieldGroups = [
+                        { label: "合計殖利率 10% 以上", color: "bg-red-500", isOpen: true, items: inPrice.filter(s => s.totalYield >= 10).sort((a,b)=>b.totalYield-a.totalYield) },
+                        { label: "合計殖利率 5 - 10%", color: "bg-green-500", isOpen: true, items: inPrice.filter(s => s.totalYield >= 5 && s.totalYield < 10).sort((a,b)=>b.totalYield-a.totalYield) },
+                        { label: "合計殖利率 0 - 5%", color: "bg-slate-400", isOpen: false, items: inPrice.filter(s => s.totalYield < 5).sort((a,b)=>b.totalYield-a.totalYield) }
+                    ];
+                });
             }
         },
-        mounted() { this.fetchData(); }
+        mounted() {
+            this.loadData();
+        }
     }).mount('#app');
 </script>
 </body>
