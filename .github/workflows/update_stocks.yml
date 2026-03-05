@@ -28,28 +28,31 @@ jobs:
           import io
 
           def fetch_data():
-              headers = {'User-Agent': 'Mozilla/5.0'}
+              headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
               
-              # 1. 抓取成交價 (0304 穩定版)
+              # 1. 抓取成交價 (0304 穩定版 CSV)
               price_url = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL?response=open_data"
-              p_df = pd.read_csv(io.StringIO(requests.get(price_url, headers=headers).text))
+              p_resp = requests.get(price_url, headers=headers)
+              p_df = pd.read_csv(io.StringIO(p_resp.text))
               p_df.columns = [c.strip().replace('"', '') for c in p_df.columns]
 
-              # 2. 抓取 PBR、殖利率 (OpenAPI)
+              # 2. 抓取 PBR、殖利率 (指定網址 API 版)
+              # 網址：https://www.twse.com.tw/zh/trading/historical/bwibbu-day.html
               stats_url = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
               s_data = requests.get(stats_url, headers=headers).json()
+              
+              # 3. 抓取 33 類官方產業分類 (確保顯示中文名稱)
+              cat_url = "https://openapi.twse.com.tw/v1/opendata/t187ap03_L"
+              cat_data = requests.get(cat_url, headers=headers).json()
+              # 建立代號對應中文產業名的字典
+              cat_dict = {str(item.get('公司代號', '')).strip(): item.get('產業別', '其他') for item in cat_data}
+
               stats_dict = {
                   item.get('Code', ''): {
                       'pbr': item.get('PBRatio', '0'),
                       'yield': item.get('YieldRate', '0')
                   } for item in s_data
               }
-
-              # 3. 抓取官方 33 類產業分類 (關鍵修正)
-              cat_url = "https://openapi.twse.com.tw/v1/opendata/t187ap03_L"
-              cat_data = requests.get(cat_url, headers=headers).json()
-              # 這裡要確保欄位名稱正確：'公司代號' 與 '產業別'
-              cat_dict = {str(item.get('公司代號', '')).strip(): item.get('產業別', '其他') for item in cat_data}
 
               stocks = []
               for _, row in p_df.iterrows():
@@ -62,8 +65,8 @@ jobs:
                   
                   if price > 0 and len(sid) == 4:
                       s_info = stats_dict.get(sid, {'pbr': '0', 'yield': '0'})
-                      # 抓取產業別，如果 API 沒抓到，就留空讓前端 getCategory 處理
-                      final_cat = cat_dict.get(sid, "")
+                      # 優先取 API 提供的中文產業名，若無則標註為其他
+                      c_name = cat_dict.get(sid, "其他")
                       
                       stocks.append({
                           "id": sid,
@@ -71,7 +74,7 @@ jobs:
                           "price": price,
                           "pbr": float(s_info['pbr']) if s_info['pbr'] and s_info['pbr'] != '-' else 0,
                           "totalYield": float(s_info['yield']) if s_info['yield'] and s_info['yield'] != '-' else 0,
-                          "category": final_cat
+                          "category": c_name
                       })
               return stocks
 
@@ -84,5 +87,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git add data.json
-          git commit -m "Fix: Restore missing category names" || exit 0
+          git commit -m "Update PBR and Chinese Categories" || exit 0
           git push
